@@ -1,0 +1,118 @@
+//
+//  AppendixView.swift
+//  Draft
+//
+
+import SwiftUI
+
+struct AppendixView: View {
+    @Environment(AppCoordinator.self) private var coordinator
+
+    var body: some View {
+        List {
+            Button {
+                coordinator.push(.scrollViewSafeArea)
+            } label: {
+                Text("ScrollView & Safe Area")
+            }
+
+            Button {
+                coordinator.push(.contentMarginsPlayground)
+            } label: {
+                Text("contentMargins Playground")
+            }
+
+            Button {
+                coordinator.push(.fixedHeightBottomSheet)
+            } label: {
+                Text("Fixed Height Bottom Sheet")
+            }
+
+            Button {
+                coordinator.push(.dynamicHeightBottomSheet)
+            } label: {
+                Text("Dynamic Height Bottom Sheet iOS 16+")
+            }
+
+            Button {
+                coordinator.push(.dynamicHeightBottomSheetiOS18)
+            } label: {
+                Text("Dynamic Height Bottom Sheet iOS 18+")
+            }
+
+            Button {
+                coordinator.push(.localizeDaytime)
+            } label: {
+                Text("Localize Datetime")
+            }
+
+            Button {
+                coordinator.push(.canonicalValue)
+            } label: {
+                Text("Learn Canonical Value")
+            }
+
+            Button {
+                coordinator.push(.fullScreenCover)
+            } label: {
+                Text("Full-Screen Cover")
+            }
+
+            Button {
+                coordinator.push(.learnVideo)
+            } label: {
+                Text("Learn VideoPlayer")
+            }
+
+            Button {
+                coordinator.push(.learnPhotoPicker)
+            } label: {
+                Text("Learn PhotoPicker")
+            }
+
+            Button {
+                coordinator.push(.keyboardLab)
+            } label: {
+                Text("Keyboard Lab")
+            }
+
+            Button {
+                coordinator.push(.sideMenuLab)
+            } label: {
+                Text("Side Menu Lab")
+            }
+
+            Button {
+                coordinator.push(.markdownLab)
+            } label: {
+                Text("Markdown Lab")
+            }
+
+            Button {
+                coordinator.push(.learnAnimation)
+            } label: {
+                Text("Learn Animation")
+            }
+
+            Button {
+                coordinator.push(.lineHeightExact)
+            } label: {
+                Text(".lineHeight(.exact) - iOS 26")
+            }
+
+            Button {
+                coordinator.push(.observationLab)
+            } label: {
+                Text("Observation Lab: @Observable vs ObservableObject")
+            }
+        }
+        .navigationTitle("Appendix")
+    }
+}
+
+#Preview {
+    NavigationStack {
+        AppendixView()
+            .environment(AppCoordinator())
+    }
+}
