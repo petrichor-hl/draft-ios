@@ -186,7 +186,7 @@ struct LocalizeDatetime: View {
     return f.localizedString(for: date, relativeTo: .now)
   }
 
-  private func row(_ title: String, _ value: String) -> some View {
+  private func row(_ title: LocalizedStringKey, _ value: String) -> some View {
     VStack(alignment: .leading, spacing: 2) {
       Text(title)
         .font(.caption)

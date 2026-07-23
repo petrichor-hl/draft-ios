@@ -1,0 +1,1598 @@
+{
+  "sourceLanguage" : "vi",
+  "strings" : {
+    "" : {
+      "shouldTranslate" : false
+    },
+    "\n" : {
+      "shouldTranslate" : false
+    },
+    " " : {
+      "shouldTranslate" : false
+    },
+    ".dateTime tuỳ biến" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Custom .dateTime"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ".dateTime personalizado"
+          }
+        }
+      }
+    },
+    ".dateTime tuỳ biến (giống với format trên)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Custom .dateTime (same as the format above)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ".dateTime personalizado (igual al formato anterior)"
+          }
+        }
+      }
+    },
+    ".formatted(.dateTime.locale(locale))" : {
+
+    },
+    ".formatted() (dùng Locale.current ⚠️)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ".formatted() (uses Locale.current ⚠️)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ".formatted() (usa Locale.current ⚠️)"
+          }
+        }
+      }
+    },
+    ".lineHeight(.exact(points: %lld))" : {
+
+    },
+    ".lineHeight(.exact) - iOS 26" : {
+
+    },
+    ".relative(.named)" : {
+
+    },
+    "“%@”" : {
+
+    },
+    "@Observable — track từng property" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "@Observable — tracks each property"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "@Observable — rastrea cada propiedad"
+          }
+        }
+      }
+    },
+    "%lld pt" : {
+
+    },
+    "•" : {
+      "shouldTranslate" : false
+    },
+    "`.lineHeight` cần iOS 26." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "`.lineHeight` requires iOS 26."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "`.lineHeight` requiere iOS 26."
+          }
+        }
+      }
+    },
+    "°C" : {
+
+    },
+    "°F" : {
+
+    },
+    "→ Canonical (base = mét)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "→ Canonical (base = meters)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "→ Canónico (base = metros)"
+          }
+        }
+      }
+    },
+    "→ Đổi sang đích" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "→ Convert to target"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "→ Convertir al destino"
+          }
+        }
+      }
+    },
+    "→ Đổi sang đích (.formatted() trần ⚠️)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "→ Convert to target (bare .formatted() ⚠️)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "→ Convertir al destino (.formatted() sin locale ⚠️)"
+          }
+        }
+      }
+    },
+    "+100 kcal" : {
+
+    },
+    "+250 ml" : {
+
+    },
+    "0 · Canonical value là gì?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0 · What is a canonical value?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0 · ¿Qué es un valor canónico?"
+          }
+        }
+      }
+    },
+    "0 °C → canonical" : {
+
+    },
+    "1 · Gõ số & quan sát canonical" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 · Type a number & watch the canonical"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 · Escribe un número y observa el canónico"
+          }
+        }
+      }
+    },
+    "1 · Parsing chuỗi ISO 8601" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 · Parsing an ISO 8601 string"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 · Análisis de una cadena ISO 8601"
+          }
+        }
+      }
+    },
+    "1 ft → canonical" : {
+
+    },
+    "1 kg → canonical" : {
+
+    },
+    "1 km → canonical" : {
+
+    },
+    "1 km + 300 m" : {
+
+    },
+    "1 km > 900 m ?" : {
+
+    },
+    "1️⃣ Meal mới, giá trị khác" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1️⃣ New Meal, different value"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1️⃣ Meal nuevo, valor diferente"
+          }
+        }
+      }
+    },
+    "1 mile → canonical" : {
+
+    },
+    "1 pound → canonical" : {
+
+    },
+    "1. Text" : {
+
+    },
+    "2 · baseUnit() — đơn vị gốc (canonical)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2 · baseUnit() — the base (canonical) unit"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2 · baseUnit() — la unidad base (canónica)"
+          }
+        }
+      }
+    },
+    "2 · Date.FormatStyle (khuyến nghị)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2 · Date.FormatStyle (recommended)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2 · Date.FormatStyle (recomendado)"
+          }
+        }
+      }
+    },
+    "2️⃣ Append" : {
+
+    },
+    "2️⃣ RemoveLast" : {
+
+    },
+    "2. AttributedString" : {
+
+    },
+    "3 · Canonical value = quy về base unit" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3 · Canonical value = converted to the base unit"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3 · Valor canónico = convertido a la unidad base"
+          }
+        }
+      }
+    },
+    "3 · DateFormatter (pattern tuỳ chỉnh)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3 · DateFormatter (custom pattern)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3 · DateFormatter (patrón personalizado)"
+          }
+        }
+      }
+    },
+    "3️⃣ Mảng mới, khác" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3️⃣ New array, different"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3️⃣ Array nuevo, diferente"
+          }
+        }
+      }
+    },
+    "3 sải → canonical" : {
+
+    },
+    "3 sải → km" : {
+
+    },
+    "3. swift-markdown" : {
+
+    },
+    "4 · Ép locale tường minh (độc lập với toggle)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "4 · Explicit locale (independent of the toggle)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "4 · Locale explícito (independiente del toggle)"
+          }
+        }
+      }
+    },
+    "4 · km → canonical → miles" : {
+
+    },
+    "4️⃣ Meal mới, y hệt" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "4️⃣ New Meal, identical"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "4️⃣ Meal nuevo, idéntico"
+          }
+        }
+      }
+    },
+    "5 · coefficient & constant" : {
+
+    },
+    "5 · Tương đối (relative)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5 · Relative"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5 · Relativo"
+          }
+        }
+      }
+    },
+    "5️⃣ Mảng mới, y hệt" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5️⃣ New array, identical"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5️⃣ Array nuevo, idéntico"
+          }
+        }
+      }
+    },
+    "6 · Tách thành phần (Calendar)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "6 · Extracting components (Calendar)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "6 · Extraer componentes (Calendar)"
+          }
+        }
+      }
+    },
+    "6 · Tự định nghĩa đơn vị" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "6 · Defining your own unit"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "6 · Definir tu propia unidad"
+          }
+        }
+      }
+    },
+    "7 · Cộng & so sánh khác đơn vị" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "7 · Adding & comparing across units"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "7 · Sumar y comparar entre unidades"
+          }
+        }
+      }
+    },
+    "A full-screen modal view." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Una vista modal a pantalla completa."
+          }
+        }
+      }
+    },
+    "Aa" : {
+      "shouldTranslate" : false
+    },
+    "Accessory" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accesorio"
+          }
+        }
+      }
+    },
+    "Appendix" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apéndice"
+          }
+        }
+      }
+    },
+    "Bấm **+100 kcal** ở mỗi section rồi quan sát WaterCard: màu nền đổi + số lần body tăng = có re-render." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap **+100 kcal** in each section and watch the WaterCard: background color changes + body count increases = a re-render happened."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toca **+100 kcal** en cada sección y observa la WaterCard: el color de fondo cambia + el contador de body aumenta = hubo un re-render."
+          }
+        }
+      }
+    },
+    "Baseline" : {
+
+    },
+    "baseUnit() là class method trên Dimension. Canonical value luôn được đo bằng đơn vị này." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "baseUnit() is a class method on Dimension. The canonical value is always measured in this unit."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "baseUnit() es un método de clase en Dimension. El valor canónico siempre se mide en esta unidad."
+          }
+        }
+      }
+    },
+    "Bắt đầu" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inicio"
+          }
+        }
+      }
+    },
+    "body chạy: %lld lần" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "body ran: %lld times"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "body ejecutado: %lld veces"
+          }
+        }
+      }
+    },
+    "Bước 1: → canonical (mét)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Step 1: → canonical (meters)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paso 1: → canónico (metros)"
+          }
+        }
+      }
+    },
+    "Bước 2: canonical → miles" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Step 2: canonical → miles"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paso 2: canónico → millas"
+          }
+        }
+      }
+    },
+    "CalorieCard — đọc todayCalories" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CalorieCard — reads todayCalories"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CalorieCard — lee todayCalories"
+          }
+        }
+      }
+    },
+    "canonical = value × coefficient + constant" : {
+
+    },
+    "Canonical Value" : {
+
+    },
+    "Change Square Size" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cambiar el tamaño del cuadrado"
+          }
+        }
+      }
+    },
+    "Chế độ tối" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dark mode"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modo oscuro"
+          }
+        }
+      }
+    },
+    "Chỉ cần khai báo coefficient (quan hệ với đơn vị gốc), đơn vị mới lập tức đổi qua lại được với MỌI đơn vị length khác — nhờ đi qua canonical." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Just declare the coefficient (its relation to the base unit) and the new unit can immediately convert to and from EVERY other length unit — via the canonical value."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Basta declarar el coefficient (su relación con la unidad base) y la nueva unidad podrá convertirse de inmediato con TODAS las demás unidades de longitud — a través del valor canónico."
+          }
+        }
+      }
+    },
+    "Chỉ giờ" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time only"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solo la hora"
+          }
+        }
+      }
+    },
+    "Chọn ngôn ngữ" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose Language"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elegir idioma"
+          }
+        }
+      }
+    },
+    "Close" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cerrar"
+          }
+        }
+      }
+    },
+    "Confirmed" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirmado"
+          }
+        }
+      }
+    },
+    "Cộng/so sánh được dù khác đơn vị vì Measurement tự quy cả hai về canonical value rồi mới tính." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can add/compare across units because Measurement converts both to the canonical value before computing."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puedes sumar/comparar entre unidades porque Measurement convierte ambas al valor canónico antes de calcular."
+          }
+        }
+      }
+    },
+    "contentMargins Playground" : {
+
+    },
+    "converter.baseUnitValue(fromValue:) trả về giá trị canonical trực tiếp, không cần tạo Measurement." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "converter.baseUnitValue(fromValue:) returns the canonical value directly, no Measurement needed."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "converter.baseUnitValue(fromValue:) devuelve el valor canónico directamente, sin crear un Measurement."
+          }
+        }
+      }
+    },
+    "date: .abbreviated, time: .shortened" : {
+
+    },
+    "date: .complete, time: .omitted" : {
+
+    },
+    "day" : {
+
+    },
+    "dd/MM/yyyy HH:mm" : {
+
+    },
+    "Định nghĩa" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Definition"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Definición"
+          }
+        }
+      }
+    },
+    "Đơn vị đích" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Target unit"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unidad de destino"
+          }
+        }
+      }
+    },
+    "Đơn vị nguồn" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Source unit"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unidad de origen"
+          }
+        }
+      }
+    },
+    "Dựng lại theo tutorial Kavsoft" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rebuilt from the Kavsoft tutorial"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reconstruido del tutorial de Kavsoft"
+          }
+        }
+      }
+    },
+    "Dynamic Height Bottom Sheet iOS 16+" : {
+
+    },
+    "Dynamic Height Bottom Sheet iOS 18+" : {
+
+    },
+    "Edges" : {
+
+    },
+    "EEE, d MMM yyyy" : {
+
+    },
+    "en_US" : {
+
+    },
+    "English" : {
+      "shouldTranslate" : false
+    },
+    "Fixed Height Bottom Sheet" : {
+
+    },
+    "Foundation KHÔNG đổi km→miles trực tiếp. Nó đi 2 bước: về mét (canonical) rồi ra miles. Mét là điểm trung chuyển chung." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foundation does NOT convert km→miles directly. It goes in 2 steps: to meters (canonical), then to miles. Meters are the common interchange point."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foundation NO convierte km→millas directamente. Va en 2 pasos: a metros (canónico) y luego a millas. El metro es el punto de intercambio común."
+          }
+        }
+      }
+    },
+    "Full-Screen Cover" : {
+
+    },
+    "Giá trị" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Value"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valor"
+          }
+        }
+      }
+    },
+    "Giá trị ở đơn vị gốc = canonical value. Đây là \"ngôn ngữ chung\" để các đơn vị cùng loại so sánh, cộng và đổi qua lại được." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The value in the base unit = the canonical value. It is the \"common language\" that lets units of the same kind compare, add, and convert."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El valor en la unidad base = el valor canónico. Es el \"idioma común\" que permite comparar, sumar y convertir unidades del mismo tipo."
+          }
+        }
+      }
+    },
+    "h:mm a" : {
+
+    },
+    "Hello World!" : {
+
+    },
+    "Hiện lưới line height" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show line-height grid"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar cuadrícula de line height"
+          }
+        }
+      }
+    },
+    "Home / Push-style Side Menu" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Home / Menú lateral estilo push"
+          }
+        }
+      }
+    },
+    "hour" : {
+
+    },
+    "Image from Gallery" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imagen de la galería"
+          }
+        }
+      }
+    },
+    "Input" : {
+
+    },
+    "inputAccessoryView (UIKit) — dính keo" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "inputAccessoryView (UIKit) — glued tight"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "inputAccessoryView (UIKit) — pegado firme"
+          }
+        }
+      }
+    },
+    "ISO8601DateFormatter" : {
+
+    },
+    "Kéo thumb qua ngưỡng để xác nhận — DragGesture + offset" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drag the thumb past the threshold to confirm — DragGesture + offset"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arrastra el control más allá del umbral para confirmar — DragGesture + offset"
+          }
+        }
+      }
+    },
+    "Kéo từ GIỮA màn hình sang phải → mở menu" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drag from the MIDDLE of the screen to the right → opens the menu"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arrastra desde el CENTRO de la pantalla hacia la derecha → abre el menú"
+          }
+        }
+      }
+    },
+    "Kéo từ SÁT cạnh trái → back (pop)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drag from the LEFT edge → back (pop)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arrastra desde el borde IZQUIERDO → back (pop)"
+          }
+        }
+      }
+    },
+    "Keyboard Lab" : {
+
+    },
+    "keyboardLayoutGuide — bar rời, dừng êm - Giống Zalo" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "keyboardLayoutGuide — detached bar, smooth stop - like Zalo"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "keyboardLayoutGuide — barra separada, se detiene suave - como Zalo"
+          }
+        }
+      }
+    },
+    "km" : {
+
+    },
+    "Lam Tran" : {
+      "shouldTranslate" : false
+    },
+    "Language Picker" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selector de idioma"
+          }
+        }
+      }
+    },
+    "Layout Guide" : {
+
+    },
+    "Layout Guide ⭐️" : {
+
+    },
+    "Learn Animation" : {
+
+    },
+    "Learn Canonical Value" : {
+
+    },
+    "Learn PhotoPicker" : {
+
+    },
+    "Learn VideoPlayer" : {
+
+    },
+    "Length có constant = 0 (tuyến tính thuần). Nhiệt độ có constant ≠ 0 (affine): 0°C không phải 0K, mà là 273.15K. constant chính là điểm gốc lệch nhau." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Length has constant = 0 (purely linear). Temperature has constant ≠ 0 (affine): 0°C is not 0K but 273.15K. The constant is the offset between origins."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Length tiene constant = 0 (puramente lineal). La temperatura tiene constant ≠ 0 (afín): 0°C no es 0K, sino 273.15K. La constant es el desfase entre orígenes."
+          }
+        }
+      }
+    },
+    "Locale đang chọn: %@\nLocale.current: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selected locale: %1$@\nLocale.current: %2$@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Locale seleccionado: %1$@\nLocale.current: %2$@"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Locale đang chọn: %1$@\nLocale.current: %2$@"
+          }
+        }
+      }
+    },
+    "Locale sẽ truyền ở root: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Locale passed at root: %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Locale pasado en el root: %@"
+          }
+        }
+      }
+    },
+    "Localize Datetime" : {
+
+    },
+    "Margin" : {
+
+    },
+    "Markdown Lab" : {
+
+    },
+    "MealCard — đọc lastMeal" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MealCard — reads lastMeal"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MealCard — lee lastMeal"
+          }
+        }
+      }
+    },
+    "Media from Gallery" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Medios de la galería"
+          }
+        }
+      }
+    },
+    "Menu" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menú"
+          }
+        }
+      }
+    },
+    "Message %lld" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mensaje %lld"
+          }
+        }
+      }
+    },
+    "mile" : {
+
+    },
+    "minute" : {
+
+    },
+    "Mỗi Dimension (UnitLength, UnitMass, UnitTemperature…) có MỘT đơn vị gốc — baseUnit(). Mọi đơn vị khác quy về đơn vị gốc bằng công thức:" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Each Dimension (UnitLength, UnitMass, UnitTemperature…) has ONE base unit — baseUnit(). Every other unit converts to the base unit using the formula:"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cada Dimension (UnitLength, UnitMass, UnitTemperature…) tiene UNA unidad base — baseUnit(). Todas las demás unidades se convierten a la unidad base con la fórmula:"
+          }
+        }
+      }
+    },
+    "month" : {
+
+    },
+    "Native, 0 dependency — chỉ inline" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Native, 0 dependencies — inline only"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nativo, 0 dependencias — solo inline"
+          }
+        }
+      }
+    },
+    "Ngôn ngữ" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Language"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Idioma"
+          }
+        }
+      }
+    },
+    "Ngôn ngữ hiển thị" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Display language"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Idioma de visualización"
+          }
+        }
+      }
+    },
+    "Nhập vào" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Input"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entrada"
+          }
+        }
+      }
+    },
+    "No image selected" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ninguna imagen seleccionada"
+          }
+        }
+      }
+    },
+    "No video selected" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ningún vídeo seleccionado"
+          }
+        }
+      }
+    },
+    "ObservableObject — track cả object" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ObservableObject — tracks the whole object"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ObservableObject — rastrea el objeto completo"
+          }
+        }
+      }
+    },
+    "Observation Lab" : {
+
+    },
+    "Observation Lab: @Observable vs ObservableObject" : {
+
+    },
+    "Parse được block, nhưng render thì sao?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parses blocks, but how does it render?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Analiza bloques, pero ¿cómo se renderiza?"
+          }
+        }
+      }
+    },
+    "Parse ra AST → tự render đủ table/list" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parse to AST → render tables/lists yourself"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Analiza a AST → renderiza tablas/listas tú mismo"
+          }
+        }
+      }
+    },
+    "Placement" : {
+
+    },
+    "Present Full-Screen Cover" : {
+
+    },
+    "RelativeDateTimeFormatter" : {
+
+    },
+    "Reset" : {
+
+    },
+    "Reset to 0" : {
+
+    },
+    "Row %lld" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fila %lld"
+          }
+        }
+      }
+    },
+    "safeAreaInset — thanh nhập desync khi kéo" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "safeAreaInset — input bar desyncs while dragging"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "safeAreaInset — la barra de entrada se desincroniza al arrastrar"
+          }
+        }
+      }
+    },
+    "ScrollView & Safe Area" : {
+
+    },
+    "Show Bottom Sheet" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar Bottom Sheet"
+          }
+        }
+      }
+    },
+    "Show Local Video .MOV" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar vídeo local .MOV"
+          }
+        }
+      }
+    },
+    "Show Local Video .mp4" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar vídeo local .mp4"
+          }
+        }
+      }
+    },
+    "Show Local Video .mp4 - But hide the Controls" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar vídeo local .mp4 — pero ocultar los controles"
+          }
+        }
+      }
+    },
+    "Show Remote Video" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar vídeo remoto"
+          }
+        }
+      }
+    },
+    "Side Menu Lab" : {
+
+    },
+    "Slide to Confirm (Kavsoft)" : {
+
+    },
+    "style: .medium / .short" : {
+
+    },
+    "Swipe to confirm" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desliza para confirmar"
+          }
+        }
+      }
+    },
+    "Swipe to Confirm" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desliza para confirmar"
+          }
+        }
+      }
+    },
+    "The sheet height is the sum of its children's heights." : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La altura del sheet es la suma de las alturas de sus hijos."
+          }
+        }
+      }
+    },
+    "Thông báo" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notification"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notificación"
+          }
+        }
+      }
+    },
+    "Tiếng Việt" : {
+      "shouldTranslate" : false
+    },
+    "Title" : {
+
+    },
+    "tl.hoanglam174@gmail.com" : {
+      "shouldTranslate" : false
+    },
+    "Tracking" : {
+
+    },
+    "Tự đọc chiều cao bàn phím (SwiftUI)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Read the keyboard height yourself (SwiftUI)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lee la altura del teclado tú mismo (SwiftUI)"
+          }
+        }
+      }
+    },
+    "UnitArea" : {
+
+    },
+    "UnitDuration" : {
+
+    },
+    "UnitLength" : {
+
+    },
+    "UnitMass" : {
+
+    },
+    "UnitSpeed" : {
+
+    },
+    "UnitTemperature" : {
+
+    },
+    "vi_VN" : {
+
+    },
+    "Video from Gallery" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vídeo de la galería"
+          }
+        }
+      }
+    },
+    "WaterCard — đọc waterMl" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WaterCard — reads waterMl"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WaterCard — lee waterMl"
+          }
+        }
+      }
+    },
+    "WeightsCard — đọc weights" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WeightsCard — reads weights"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WeightsCard — lee weights"
+          }
+        }
+      }
+    },
+    "year" : {
+
+    }
+  },
+  "version" : "1.2"
+}

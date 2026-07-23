@@ -11,6 +11,8 @@ import SwiftUI
 struct DraftApp: App {
     @State private var coordinator = AppCoordinator()
 
+    @AppStorage(StorageKeys.appLanguage) private var language: AppLanguage = .vietnamese
+
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $coordinator.path) {
@@ -20,6 +22,7 @@ struct DraftApp: App {
                     }
             }
             .environment(coordinator)
+            .environment(\.locale, language.locale)
         }
     }
 }

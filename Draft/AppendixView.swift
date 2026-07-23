@@ -107,6 +107,15 @@ struct AppendixView: View {
             }
         }
         .navigationTitle("Appendix")
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    coordinator.push(.languagePicker)
+                } label: {
+                    Image(systemName: "globe")
+                }
+            }
+        }
     }
 }
 

@@ -46,8 +46,8 @@ struct KeyboardLab: View {
 
 // Một dòng trong danh sách: tiêu đề + mô tả ngắn
 private struct LabRow: View {
-  let title: String
-  let subtitle: String
+  let title: LocalizedStringKey
+  let subtitle: LocalizedStringKey
 
   var body: some View {
     VStack(alignment: .leading, spacing: 2) {

@@ -53,6 +53,7 @@ enum AppRoute: Hashable {
     case kavsoftSlideToConfirm
     case lineHeightExact
     case observationLab
+    case languagePicker
 }
 
 extension AppRoute: View {
@@ -108,6 +109,8 @@ extension AppRoute: View {
             LineHeightExactScreen()
         case .observationLab:
             ObservationLab()
+        case .languagePicker:
+            LanguagePickerScreen()
         }
     }
 }

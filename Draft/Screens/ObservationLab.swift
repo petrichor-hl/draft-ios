@@ -60,7 +60,7 @@ private enum RenderCounter {
 // MARK: - Card UI chung
 
 private struct CardBody: View {
-  let title: String
+  let title: LocalizedStringKey
   let value: String
   let renders: Int
   
