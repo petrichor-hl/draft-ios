@@ -55,6 +55,7 @@ enum AppRoute: Hashable {
     case observationLab
     case languagePicker
     case snackBarLab
+    case toastLab
 }
 
 extension AppRoute: View {
@@ -114,6 +115,8 @@ extension AppRoute: View {
             LanguagePickerScreen()
         case .snackBarLab:
             SnackBarLab()
+        case .toastLab:
+            DemoToastFirstView()
         }
     }
 }

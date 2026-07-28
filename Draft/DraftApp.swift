@@ -28,6 +28,7 @@ struct DraftApp: App {
     .onChange(of: scenePhase) { phase in
       if phase == .active {
         SnackBarWindowManager.shared.setup()
+        ToastWindowManager.shared.setup()
       }
     }
   }

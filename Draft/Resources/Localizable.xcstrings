@@ -810,6 +810,9 @@
         }
       }
     },
+    "Dismiss Sticky" : {
+
+    },
     "Đơn vị đích" : {
       "localizations" : {
         "en" : {
@@ -879,6 +882,9 @@
     "English" : {
       "shouldTranslate" : false
     },
+    "First View" : {
+
+    },
     "Fixed Height Bottom Sheet" : {
 
     },
@@ -932,6 +938,12 @@
           }
         }
       }
+    },
+    "Go back" : {
+
+    },
+    "Go to Second View" : {
+
     },
     "h:mm a" : {
 
@@ -1430,6 +1442,9 @@
     "ScrollView & Safe Area" : {
 
     },
+    "Second View" : {
+
+    },
     "Show Bottom Sheet" : {
       "localizations" : {
         "es" : {
@@ -1439,6 +1454,12 @@
           }
         }
       }
+    },
+    "Show Error Toast" : {
+
+    },
+    "Show Info Toast" : {
+
     },
     "Show Local Video .MOV" : {
       "localizations" : {
@@ -1483,6 +1504,15 @@
     "Show snackbar" : {
 
     },
+    "Show Sticky Toast" : {
+
+    },
+    "Show Success Toast" : {
+
+    },
+    "Show Warning Toast" : {
+
+    },
     "Side Menu Lab" : {
 
     },
@@ -1499,6 +1529,9 @@
 
     },
     "Số lần bấm Hoàn tác" : {
+
+    },
+    "Sticky • no tap close" : {
 
     },
     "style: .medium / .short" : {
@@ -1561,6 +1594,9 @@
     },
     "tl.hoanglam174@gmail.com" : {
       "shouldTranslate" : false
+    },
+    "Toast Lab" : {
+
     },
     "Tracking" : {
 

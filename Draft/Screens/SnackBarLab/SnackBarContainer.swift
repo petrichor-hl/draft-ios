@@ -33,7 +33,7 @@ struct SnackBarContainer: View {
   
   // MARK: - Views
   
-  /// Báo frame global của snackbar cho `PassthroughWindow` hit-test.
+  /// Báo frame global của snackbar cho `SnackBarPassthroughWindow` hit-test.
   private func frameReader(for id: UUID) -> some View {
     GeometryReader { geo in
       Color.clear

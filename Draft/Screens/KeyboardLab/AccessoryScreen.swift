@@ -105,7 +105,7 @@ private struct MessageRow: View {
         .padding(.horizontal, 14)
         .padding(.vertical, 10)
         .background(
-          (message.isMine ? Color.blue : Color.gray).opacity(0.15),
+          (message.isMine ? Color.blue : Color.gray.s500).opacity(0.15),
           in: .rect(cornerRadius: 16)
         )
       if !message.isMine { Spacer(minLength: 48) }

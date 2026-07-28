@@ -51,13 +51,13 @@ struct LearnPhotoPicker: View {
             Text("No image selected")
           }
         }
-        .foregroundStyle(Color.gray)
+        .foregroundStyle(Color.gray.s500)
         .frame(height: 250)
         .frame(maxWidth: .infinity)
         .overlay(
           RoundedRectangle(cornerRadius: 12)
             .strokeBorder(
-              Color.gray,
+              Color.gray.s500,
               style: StrokeStyle(lineWidth: 1, dash: [10])
             )
         )
@@ -84,13 +84,13 @@ struct LearnPhotoPicker: View {
             Text("No video selected")
           }
         }
-        .foregroundStyle(Color.gray)
+        .foregroundStyle(Color.gray.s500)
         .frame(height: 250)
         .frame(maxWidth: .infinity)
         .overlay(
           RoundedRectangle(cornerRadius: 12)
             .strokeBorder(
-              Color.gray,
+              Color.gray.s500,
               style: StrokeStyle(lineWidth: 1, dash: [10])
             )
         )

@@ -6,7 +6,7 @@
 import SwiftUI
 import UIKit
 
-final class PassthroughWindow: UIWindow {
+final class SnackBarPassthroughWindow: UIWindow {
   override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
     guard let hitView = super.hitTest(point, with: event) else { return nil }
     guard let frame = SnackBarManager.shared.frame, frame.contains(point) else { return nil }
@@ -32,7 +32,7 @@ final class SnackBarWindowManager {
       return
     }
     
-    let window = PassthroughWindow(windowScene: windowScene)
+    let window = SnackBarPassthroughWindow(windowScene: windowScene)
     window.windowLevel = .alert + 1
     window.backgroundColor = .clear
     window.isUserInteractionEnabled = true

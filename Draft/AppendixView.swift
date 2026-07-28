@@ -111,6 +111,12 @@ struct AppendixView: View {
             } label: {
                 Text("SnackBar Lab")
             }
+
+            Button {
+                coordinator.push(.toastLab)
+            } label: {
+                Text("Toast Lab")
+            }
         }
         .navigationTitle("Appendix")
         .toolbar {
