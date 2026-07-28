@@ -105,6 +105,12 @@ struct AppendixView: View {
             } label: {
                 Text("Observation Lab: @Observable vs ObservableObject")
             }
+
+            Button {
+                coordinator.push(.snackBarLab)
+            } label: {
+                Text("SnackBar Lab")
+            }
         }
         .navigationTitle("Appendix")
         .toolbar {

@@ -527,6 +527,12 @@
         }
       }
     },
+    "Bắn 3 cái cùng lúc" : {
+
+    },
+    "Bắn 3 cái liên tiếp (cách nhau 1s)" : {
+
+    },
     "Baseline" : {
 
     },
@@ -716,6 +722,12 @@
         }
       }
     },
+    "Có action button" : {
+
+    },
+    "Cơ bản" : {
+
+    },
     "Confirmed" : {
       "localizations" : {
         "es" : {
@@ -742,6 +754,9 @@
         }
       }
     },
+    "Content dài (2 dòng)" : {
+
+    },
     "contentMargins Playground" : {
 
     },
@@ -760,6 +775,12 @@
           }
         }
       }
+    },
+    "Đã lưu bữa ăn vào nhật ký" : {
+
+    },
+    "Đã xoá nguyên liệu" : {
+
     },
     "date: .abbreviated, time: .shortened" : {
 
@@ -820,6 +841,9 @@
           }
         }
       }
+    },
+    "Đóng sheet" : {
+
     },
     "Dựng lại theo tutorial Kavsoft" : {
       "localizations" : {
@@ -1043,6 +1067,12 @@
         }
       }
     },
+    "Không có action button" : {
+
+    },
+    "Không thể đồng bộ dữ liệu, vui lòng kiểm tra kết nối mạng của bạn" : {
+
+    },
     "km" : {
 
     },
@@ -1193,6 +1223,9 @@
     "minute" : {
 
     },
+    "Mở sheet rồi show snackbar" : {
+
+    },
     "Mỗi Dimension (UnitLength, UnitMass, UnitTemperature…) có MỘT đơn vị gốc — baseUnit(). Mọi đơn vị khác quy về đơn vị gốc bằng công thức:" : {
       "localizations" : {
         "en" : {
@@ -1295,6 +1328,9 @@
           }
         }
       }
+    },
+    "Nổi trên sheet" : {
+
     },
     "ObservableObject — track cả object" : {
       "localizations" : {
@@ -1444,10 +1480,25 @@
         }
       }
     },
+    "Show snackbar" : {
+
+    },
     "Side Menu Lab" : {
 
     },
     "Slide to Confirm (Kavsoft)" : {
+
+    },
+    "SnackBar #%lld" : {
+
+    },
+    "SnackBar Lab" : {
+
+    },
+    "SnackBar phải nổi trên sheet này" : {
+
+    },
+    "Số lần bấm Hoàn tác" : {
 
     },
     "style: .medium / .short" : {
@@ -1472,6 +1523,9 @@
           }
         }
       }
+    },
+    "Thay thế" : {
+
     },
     "The sheet height is the sum of its children's heights." : {
       "localizations" : {
@@ -1509,6 +1563,9 @@
       "shouldTranslate" : false
     },
     "Tracking" : {
+
+    },
+    "Trạng thái" : {
 
     },
     "Tự đọc chiều cao bàn phím (SwiftUI)" : {
@@ -1557,6 +1614,9 @@
           }
         }
       }
+    },
+    "Vuốt/bấm vào List trong lúc snackbar hiển thị để kiểm tra passthrough." : {
+
     },
     "WaterCard — đọc waterMl" : {
       "localizations" : {
