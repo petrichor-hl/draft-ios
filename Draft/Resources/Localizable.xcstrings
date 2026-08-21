@@ -10,6 +10,9 @@
     " " : {
       "shouldTranslate" : false
     },
+    ".asymmetric(insertion:removal:) cho phép vào một kiểu, ra một kiểu. Rất hay dùng: trượt vào từ dưới, mờ dần khi ra — vì người dùng không cần thấy đường đi của thứ sắp biến mất." : {
+
+    },
     ".dateTime tuỳ biến" : {
       "localizations" : {
         "en" : {
@@ -89,6 +92,9 @@
         }
       }
     },
+    "%lld" : {
+
+    },
     "%lld pt" : {
 
     },
@@ -110,6 +116,9 @@
           }
         }
       }
+    },
+    "`JumpValues` là một struct thường, mỗi property là một track riêng biệt và CHẠY ĐỘC LẬP: yOffset chỉ có 2 mốc, còn squash có 5 mốc trong cùng khoảng thời gian. Đó là điều PhaseAnimator không làm được.\n\nBốn loại mốc: LinearKeyframe (đều), CubicKeyframe (bézier, nối mượt với mốc kề bên), SpringKeyframe (vật lý), MoveKeyframe (nhảy tức thì, không nội suy).\n\n`duration` của mỗi keyframe là thời gian ĐI TỚI mốc đó, tính từ mốc trước — không phải mốc thời gian tuyệt đối." : {
+
     },
     "°C" : {
 
@@ -165,10 +174,16 @@
         }
       }
     },
+    "+ 7" : {
+
+    },
     "+100 kcal" : {
 
     },
     "+250 ml" : {
+
+    },
+    "$isOn.animation(.bouncy)" : {
 
     },
     "0 · Canonical value là gì?" : {
@@ -259,6 +274,15 @@
     "1 pound → canonical" : {
 
     },
+    "1. Basics ⭐️" : {
+
+    },
+    "1. Chồng nhau" : {
+
+    },
+    "1. Hai .sheet chồng lên cùng một view" : {
+
+    },
     "1. Text" : {
 
     },
@@ -300,7 +324,16 @@
     "2️⃣ RemoveLast" : {
 
     },
+    "2. Anh em" : {
+
+    },
     "2. AttributedString" : {
+
+    },
+    "2. Curves" : {
+
+    },
+    "2. Hai .sheet ở hai view anh em" : {
 
     },
     "3 · Canonical value = quy về base unit" : {
@@ -357,7 +390,16 @@
     "3 sải → km" : {
 
     },
+    "3. .sheet(item:)" : {
+
+    },
+    "3. Một .sheet(item:) duy nhất" : {
+
+    },
     "3. swift-markdown" : {
+
+    },
+    "3. Transitions" : {
 
     },
     "4 · Ép locale tường minh (độc lập với toggle)" : {
@@ -395,6 +437,15 @@
         }
       }
     },
+    "4. Hai .fullScreenCover" : {
+
+    },
+    "4. Hai fullScreenCover" : {
+
+    },
+    "4. Phase & Keyframe" : {
+
+    },
     "5 · coefficient & constant" : {
 
     },
@@ -430,6 +481,12 @@
         }
       }
     },
+    "5. Một .sheet + một .fullScreenCover" : {
+
+    },
+    "5. sheet + cover" : {
+
+    },
     "6 · Tách thành phần (Calendar)" : {
       "localizations" : {
         "en" : {
@@ -462,6 +519,12 @@
         }
       }
     },
+    "6. Đảo thứ tự" : {
+
+    },
+    "6. Đảo thứ tự: cover trước, sheet sau" : {
+
+    },
     "7 · Cộng & so sánh khác đơn vị" : {
       "localizations" : {
         "en" : {
@@ -477,6 +540,57 @@
           }
         }
       }
+    },
+    "① Cách 1 & 2: transaction vs modifier" : {
+
+    },
+    "① PhaseAnimator(_:trigger:)" : {
+
+    },
+    "① Timing curve" : {
+
+    },
+    "① Transition cần một animation đang hiệu lực" : {
+
+    },
+    "② Ba điều dễ vấp" : {
+
+    },
+    "② Bỏ trigger đi thì nó lặp mãi" : {
+
+    },
+    "② Cách 3: Binding.animation(_:)" : {
+
+    },
+    "② Spring preset (iOS 17+)" : {
+
+    },
+    "②b Spring cũng có duration" : {
+
+    },
+    "③ contentTransition" : {
+
+    },
+    "③ KeyframeAnimator(initialValue:trigger:)" : {
+
+    },
+    "③ Không phải cái gì cũng nội suy được" : {
+
+    },
+    "③ Modifier" : {
+
+    },
+    "④ .animation(nil, value:) — miễn trừ" : {
+
+    },
+    "④ Dùng cái nào" : {
+
+    },
+    "④ Hai núm vặn của spring" : {
+
+    },
+    "⑤ completion (iOS 17+)" : {
+
     },
     "A full-screen modal view." : {
       "localizations" : {
@@ -501,6 +615,21 @@
         }
       }
     },
+    "activeSheet" : {
+
+    },
+    "Ẩn (có animation)" : {
+
+    },
+    "Ẩn (không animation)" : {
+
+    },
+    "Animation Basics" : {
+
+    },
+    "Animation nhiều chặng, iOS 17+" : {
+
+    },
     "Appendix" : {
       "localizations" : {
         "es" : {
@@ -510,6 +639,12 @@
           }
         }
       }
+    },
+    "Ba dòng đầu chồng khít lên nhau: .snappy CHÍNH LÀ spring(duration: 0.5, bounce: 0.15). Tương tự .smooth = bounce 0, .bouncy = bounce 0.3. Cả ba đều nhận (duration:) và (duration:extraBounce:).\n\nNhưng duration của spring KHÔNG phải \"chạy xong sau ngần ấy giây\" như timing curve. Apple gọi nó là perceptual duration — thời gian cảm nhận được là đã tới nơi. Với bounce > 0, phần nảy dư vẫn còn lắc thêm sau mốc đó (chính vì vậy withAnimation(completion:) mới cần phân biệt .logicallyComplete với .removed).\n\nCách nhớ: timing curve có duration + đường cong. Spring có duration + độ nảy. Cùng một núm \"bao lâu\", khác cái núm thứ hai." : {
+
+    },
+    "Ba preset Apple khuyến nghị dùng làm mặc định: \n- smooth (không nảy), \n- snappy (nảy nhẹ, dứt khoát — hợp tap/toggle), \n- bouncy (nảy rõ, vui).\n\nƯu thế thật sự của spring nằm ở chỗ nó GIỮ VẬN TỐC: nếu bạn đổi đích giữa chừng (kéo, thả, đổi ý), spring nối tiếp mượt còn timing curve thì khựng lại rồi chạy đoạn mới." : {
+
     },
     "Bấm **+100 kcal** ở mỗi section rồi quan sát WaterCard: màu nền đổi + số lần body tăng = có re-render." : {
       "localizations" : {
@@ -531,6 +666,9 @@
 
     },
     "Bắn 3 cái liên tiếp (cách nhau 1s)" : {
+
+    },
+    "Bản nháp của bạn an toàn" : {
 
     },
     "Baseline" : {
@@ -568,6 +706,12 @@
         }
       }
     },
+    "Bẫy: trigger là STATE, không phải EVENT" : {
+
+    },
+    "Binding trần" : {
+
+    },
     "body chạy: %lld lần" : {
       "localizations" : {
         "en" : {
@@ -583,6 +727,9 @@
           }
         }
       }
+    },
+    "Bool: gán true" : {
+
     },
     "Bước 1: → canonical (mét)" : {
       "localizations" : {
@@ -616,6 +763,15 @@
         }
       }
     },
+    "Cả hai đều là animation \"chạy tự động\", không nhận input liên tục. Nếu chuyển động phải bám theo ngón tay người dùng thì vẫn là DragGesture + state, như bài Swipe to Confirm." : {
+
+    },
+    "Cách đúng — enum quyết định sheet nào đang mở" : {
+
+    },
+    "Cách gắn" : {
+
+    },
     "CalorieCard — đọc todayCalories" : {
       "localizations" : {
         "en" : {
@@ -647,6 +803,12 @@
           }
         }
       }
+    },
+    "Chạy tới" : {
+
+    },
+    "Chạy về" : {
+
     },
     "Chế độ tối" : {
       "localizations" : {
@@ -680,6 +842,9 @@
         }
       }
     },
+    "Chỉ có một biến, nên không thể rơi vào trạng thái hai sheet cùng bật." : {
+
+    },
     "Chỉ giờ" : {
       "localizations" : {
         "en" : {
@@ -695,6 +860,21 @@
           }
         }
       }
+    },
+    "Chỉ mở A" : {
+
+    },
+    "Chỉ mở B" : {
+
+    },
+    "Chỉ mở cover" : {
+
+    },
+    "Chỉ mở sheet" : {
+
+    },
+    "Chỉ rung khi TĂNG. Closure nhận (old, new) và trả về SensoryFeedback? — trả nil là không rung. Bấm giảm để nghe sự im lặng." : {
+
     },
     "Chọn ngôn ngữ" : {
       "localizations" : {
@@ -712,6 +892,15 @@
         }
       }
     },
+    "Chưa có sự kiện nào" : {
+
+    },
+    "Chưa dựng demo cho chủ đề này." : {
+
+    },
+    "Chúng trả về Animation mới nên nối chuỗi được: .easeInOut(duration: 0.3).delay(0.1).speed(2). Lưu ý .speed(2) tương đương chia đôi duration, và autoreverses: true nghĩa là mỗi lượt lặp gồm đi + về." : {
+
+    },
     "Close" : {
       "localizations" : {
         "es" : {
@@ -726,6 +915,9 @@
 
     },
     "Cơ bản" : {
+
+    },
+    "Có điều kiện" : {
 
     },
     "Confirmed" : {
@@ -776,10 +968,34 @@
         }
       }
     },
+    "Core Haptics" : {
+
+    },
+    "Counter: tapCount += 1" : {
+
+    },
+    "Cover %@" : {
+
+    },
+    "Cover có đi chung cửa với sheet không?" : {
+
+    },
+    "Cross-platform. Apple không công bố chúng map xuống generator nào trên iOS — bạn khai báo ý nghĩa, hệ thống chọn cảm giác. Dùng khi bạn chỉ biết 'chuyện gì vừa xảy ra' chứ chưa quyết cảm giác." : {
+
+    },
+    "Curves" : {
+
+    },
+    "Đã lưu" : {
+
+    },
     "Đã lưu bữa ăn vào nhật ký" : {
 
     },
     "Đã xoá nguyên liệu" : {
+
+    },
+    "dampingFraction" : {
 
     },
     "date: .abbreviated, time: .shortened" : {
@@ -792,6 +1008,15 @@
 
     },
     "dd/MM/yyyy HH:mm" : {
+
+    },
+    "developer.apple.com/documentation/swiftui/animations" : {
+
+    },
+    "Đi theo thứ tự 1 → 4. Mỗi màn có phần footer giải thích ngay dưới demo." : {
+
+    },
+    "Điểm" : {
 
     },
     "Định nghĩa" : {
@@ -811,6 +1036,9 @@
       }
     },
     "Dismiss Sticky" : {
+
+    },
+    "Đổi state trần (không animation)" : {
 
     },
     "Đơn vị đích" : {
@@ -845,7 +1073,16 @@
         }
       }
     },
+    "Đóng" : {
+
+    },
     "Đóng sheet" : {
+
+    },
+    "Double Sheet Lab" : {
+
+    },
+    "Đừng đặt trong row của List" : {
 
     },
     "Dựng lại theo tutorial Kavsoft" : {
@@ -864,10 +1101,19 @@
         }
       }
     },
+    "Đúng trường hợp cần test — sheet thứ hai đi đâu?" : {
+
+    },
+    "duration" : {
+
+    },
     "Dynamic Height Bottom Sheet iOS 16+" : {
 
     },
     "Dynamic Height Bottom Sheet iOS 18+" : {
+
+    },
+    "ease/spring chạy đua song song + delay, repeat, speed" : {
 
     },
     "Edges" : {
@@ -881,6 +1127,12 @@
     },
     "English" : {
       "shouldTranslate" : false
+    },
+    "false" : {
+
+    },
+    "Feedback Generator" : {
+
     },
     "First View" : {
 
@@ -905,6 +1157,9 @@
       }
     },
     "Full-Screen Cover" : {
+
+    },
+    "Generator" : {
 
     },
     "Giá trị" : {
@@ -948,7 +1203,22 @@
     "h:mm a" : {
 
     },
+    "Hai loại khác nhau có thành hai kênh độc lập?" : {
+
+    },
+    "Haptic chỉ hoạt động trên iPhone thật. Simulator, iPad, Low Power Mode đều im lặng." : {
+
+    },
+    "Haptics Lab" : {
+
+    },
     "Hello World!" : {
+
+    },
+    "Hiện (có animation)" : {
+
+    },
+    "Hiện (không animation)" : {
 
     },
     "Hiện lưới line height" : {
@@ -990,6 +1260,9 @@
         }
       }
     },
+    "Impact" : {
+
+    },
     "Input" : {
 
     },
@@ -1009,7 +1282,16 @@
         }
       }
     },
+    "insertion ≠ removal" : {
+
+    },
+    "intensity" : {
+
+    },
     "ISO8601DateFormatter" : {
+
+    },
+    "Kéo duration lên 4–5 giây rồi bấm Toggle. Ở tốc độ thường (0.6s) mắt không phân biệt nổi, cả bốn ô trông y như nhau.\n\nRanh giới: giữa hai giá trị có tồn tại \"giá trị ở giữa\" không?\n\n✅ 28.4pt là một cỡ chữ hợp lệ → nội suy được, chữ lớn dần từng frame.\n\n❌ Không có kiểu chữ nào nửa serif nửa sans, cũng không có chuỗi nào nằm giữa \"Xin chào\" và \"Tạm biệt\". Không nội suy được, SwiftUI CHỒNG MỜ ảnh cũ với ảnh mới trong đúng khoảng thời gian đó — chạy chậm sẽ thấy rõ hai chữ đè lên nhau.\n\nNên phát biểu cho đủ: animation là nội suy giá trị; chỗ nào không nội suy được thì mặc định lùi về crossfade. contentTransition (bài 3) chính là chỗ bạn chọn hiệu ứng thay cho cái crossfade mặc định đó.\n\nCái conform Animatable là các đại lượng số — CGFloat, Double, CGSize, CGPoint, Angle, Color, EdgeInsets, UnitPoint. Kiểu chữ, chuỗi, Bool, Image, enum thì không." : {
 
     },
     "Kéo thumb qua ngưỡng để xác nhận — DragGesture + offset" : {
@@ -1079,10 +1361,22 @@
         }
       }
     },
+    "Khác anchor thì có thoát được không?" : {
+
+    },
+    "Không có `if` thì không có transition" : {
+
+    },
     "Không có action button" : {
 
     },
+    "Không có trigger, PhaseAnimator quay vòng liên tục — dùng cho loading indicator, chấm \"đang gõ\", icon nhấp nháy. Ba chấm ở đây dùng chung một cặp phase [false, true], chỉ khác nhau ở .delay theo index." : {
+
+    },
     "Không thể đồng bộ dữ liệu, vui lòng kiểm tra kết nối mạng của bạn" : {
+
+    },
+    "Kịch bản" : {
 
     },
     "km" : {
@@ -1136,6 +1430,9 @@
         }
       }
     },
+    "level" : {
+
+    },
     "Locale đang chọn: %@\nLocale.current: %@" : {
       "localizations" : {
         "en" : {
@@ -1175,6 +1472,9 @@
       }
     },
     "Localize Datetime" : {
+
+    },
+    "Lý do nó tồn tại: hai cách trên đòi bạn phải sở hữu ĐOẠN CODE ĐỔI STATE (withAnimation) hoặc VIEW BỊ ĐỔI (.animation(value:)). Với Toggle, Slider, Picker, TextField thì việc ghi state xảy ra BÊN TRONG control của SwiftUI — không có chỗ nào cho bạn đặt withAnimation. Gắn vào binding là cách chen vào giữa.\n\nCơ chế: `$x.animation(.bouncy)` trả về một Binding mới, setter của nó chính là withAnimation(.bouncy) { x = newValue }. Nên nó lan ra TOÀN BỘ view phụ thuộc x, giống hệt cách 1 — khác cách 2 vốn chỉ ảnh hưởng đúng một view." : {
 
     },
     "Margin" : {
@@ -1235,7 +1535,34 @@
     "minute" : {
 
     },
+    "Mở A" : {
+
+    },
+    "Mở A và B trong cùng một tick" : {
+
+    },
+    "Mở A, 1,5s sau đổi sang B" : {
+
+    },
+    "Mở A, 1,5s sau mở B (A vẫn đang present)" : {
+
+    },
+    "Mở B" : {
+
+    },
+    "Mở B, 1,5s sau mở A (B vẫn đang present)" : {
+
+    },
+    "Mở cả hai trong cùng một tick" : {
+
+    },
+    "Mở cover, 1,5s sau mở sheet" : {
+
+    },
     "Mở sheet rồi show snackbar" : {
+
+    },
+    "Mở sheet, 1,5s sau mở cover" : {
 
     },
     "Mỗi Dimension (UnitLength, UnitMass, UnitTemperature…) có MỘT đơn vị gốc — baseUnit(). Mọi đơn vị khác quy về đơn vị gốc bằng công thức:" : {
@@ -1253,6 +1580,9 @@
           }
         }
       }
+    },
+    "Mỗi lần `trigger` đổi giá trị, SwiftUI đi hết một vòng phases rồi dừng lại ở phase đầu tiên. Bạn không tự quản lý state trung gian — chỉ mô tả \"trông như thế nào ở từng chặng\"." : {
+
     },
     "month" : {
 
@@ -1272,6 +1602,9 @@
           }
         }
       }
+    },
+    "Nền tảng" : {
+
     },
     "Ngôn ngữ" : {
       "localizations" : {
@@ -1321,6 +1654,15 @@
         }
       }
     },
+    "Nhật ký" : {
+
+    },
+    "Nhảy" : {
+
+    },
+    "Nhớ mục ② của bài Basics: Int và String không animate được. .numericText() là cách SwiftUI lách — nó không nội suy con số mà cuộn từng chữ số như đồng hồ cơ. Tương tự .symbolEffect(.replace) morph giữa hai SF Symbol thay vì đổi phựt." : {
+
+    },
     "No image selected" : {
       "localizations" : {
         "es" : {
@@ -1342,6 +1684,18 @@
       }
     },
     "Nổi trên sheet" : {
+
+    },
+    "Notification" : {
+
+    },
+    "Nút 1: A nhảy tức thì, B vẫn mượt → .animation(_:value:) không cần ai cho phép.\nNút 2: A bò chậm 1.5 giây, còn B vẫn snappy → animation gắn tại view GHI ĐÈ transaction từ withAnimation." : {
+
+    },
+    "Nút Bool chỉ rung ở lần bấm ĐẦU. SwiftUI so oldValue != newValue, gán lại cùng giá trị thì không có gì đổi. Reset cũng rung, vì false != true — đó là bằng chứng nó so sánh chứ không nhìn 'true nghĩa là xảy ra'." : {
+
+    },
+    "Nút thứ hai làm banner nhấp nháy xuất hiện/biến mất tức thì, dù .transition vẫn nằm nguyên đó. Transition chỉ MÔ TẢ hình thù của việc vào/ra; ai cấp thời gian cho nó là withAnimation (hoặc .animation(_:value:) đặt ngoài container)." : {
 
     },
     "ObservableObject — track cả object" : {
@@ -1398,10 +1752,25 @@
         }
       }
     },
+    "Pause → Play" : {
+
+    },
+    "Phase & Keyframe" : {
+
+    },
+    "Picker, drag-snap, submit form" : {
+
+    },
     "Placement" : {
 
     },
+    "Play → Pause" : {
+
+    },
     "Present Full-Screen Cover" : {
+
+    },
+    "Real World" : {
 
     },
     "RelativeDateTimeFormatter" : {
@@ -1411,6 +1780,15 @@
 
     },
     "Reset to 0" : {
+
+    },
+    "Reset về false" : {
+
+    },
+    "response" : {
+
+    },
+    "response = độ \"cứng\" của lò xo, hiểu nôm na là bao lâu để đi hết một dao động. Nhỏ → nhanh và gắt, lớn → chậm và lười.\n\ndampingFraction = ma sát. 1.0 là tới đích rồi dừng, không nảy (critically damped). Càng nhỏ càng nảy qua nảy lại; thử 0.2 để thấy rõ." : {
 
     },
     "Row %lld" : {
@@ -1439,10 +1817,28 @@
         }
       }
     },
+    "Sân khấu ở màn này lúc đầu nằm trong một row của List và transition lúc CHÈN VÀO bị nuốt mất, dù lúc GỠ RA vẫn chạy. Đo bằng video, mép phải của banner khi hiện ra: trong List là -1 → 716 (một bước), ngoài List là -1 → 301 → 414 → 529 → 609 → 646 → 648. Nay nó nằm ngoài List, gắn bằng .safeAreaInset(edge: .top)." : {
+
+    },
     "ScrollView & Safe Area" : {
 
     },
     "Second View" : {
+
+    },
+    "Selection" : {
+
+    },
+    "Semantic" : {
+
+    },
+    "SensoryFeedback" : {
+
+    },
+    "SensoryFeedback ⭐️" : {
+
+    },
+    "Sheet %@" : {
 
     },
     "Show Bottom Sheet" : {
@@ -1519,6 +1915,9 @@
     "Slide to Confirm (Kavsoft)" : {
 
     },
+    "Slider duration ở thanh dưới chỉ nối vào nhóm này; spring có duration riêng (section ②b).\n\nlinear — tốc độ không đổi suốt quãng đường. Không vật thật nào chuyển động kiểu này, nên mắt đọc ra ngay là \"máy móc\".\n\neaseIn — khởi động chậm rồi nhanh dần, kết thúc ở lúc nhanh nhất. Hợp cho thứ đang RỜI ĐI khỏi màn hình: nó lao đi và biến mất.\n\neaseOut — bắt đầu nhanh rồi hãm dần, dừng êm. Hợp cho thứ đang XUẤT HIỆN: tới ngay trước mắt rồi từ từ đậu lại.\n\neaseInOut — chậm ở CẢ HAI ĐẦU, nhanh ở giữa. Dùng khi điểm đi và điểm đến đều nằm trên màn hình.\n\nVậy khi nào easeInOut, khi nào spring? Spring có đà nên nó VỌT QUA ĐÍCH rồi quay lại. Điều đó chỉ có nghĩa với thứ chuyển động trong không gian (vị trí, kích thước). Với opacity hay màu sắc thì nảy là vô nghĩa — độ mờ 1.05 không tồn tại, màu vọt qua rồi lùi lại trông như lỗi render. Nên: fade và đổi màu → easeInOut; di chuyển và phóng to → spring." : {
+
+    },
     "SnackBar #%lld" : {
 
     },
@@ -1531,10 +1930,19 @@
     "Số lần bấm Hoàn tác" : {
 
     },
+    "Số lần chạy xong" : {
+
+    },
     "Sticky • no tap close" : {
 
     },
     "style: .medium / .short" : {
+
+    },
+    "SwiftUI chỉ chạy transition khi IDENTITY của view thay đổi — view mới xuất hiện hoặc view cũ mất đi. Nếu bạn chỉ đổi nội dung (Text(\"A\") → Text(\"B\")) thì view vẫn là chính nó, không có gì để chèn hay gỡ. Muốn ép có transition, gắn .id(value) để mỗi giá trị là một view khác nhau." : {
+
+    },
+    "SwiftUI iOS 17+ — khai báo theo state" : {
 
     },
     "Swipe to confirm" : {
@@ -1556,6 +1964,18 @@
           }
         }
       }
+    },
+    "Symbol" : {
+
+    },
+    "Symbols" : {
+
+    },
+    "Tạm biệt" : {
+
+    },
+    "Thả tim" : {
+
     },
     "Thay thế" : {
 
@@ -1586,6 +2006,12 @@
         }
       }
     },
+    "Thứ tự modifier hay loại presentation mới quyết định?" : {
+
+    },
+    "Thực hành" : {
+
+    },
     "Tiếng Việt" : {
       "shouldTranslate" : false
     },
@@ -1598,10 +2024,40 @@
     "Toast Lab" : {
 
     },
+    "TODO — bước 3" : {
+
+    },
+    "TODO — bước 4" : {
+
+    },
+    "TODO — bước 5" : {
+
+    },
+    "Toggle" : {
+
+    },
+    "Topics" : {
+
+    },
     "Tracking" : {
 
     },
     "Trạng thái" : {
+
+    },
+    "Transaction chảy xuống TOÀN BỘ cây view bên dưới chỗ state đổi. Muốn một view nào đó đứng yên tuyệt đối thì gắn .animation(nil, value:) — hữu ích khi một phần UI (badge, số liệu) không nên trượt theo phần còn lại." : {
+
+    },
+    "Transition" : {
+
+    },
+    "Transitions" : {
+
+    },
+    "true" : {
+
+    },
+    "Trước iOS 17 phải tự đoán bằng DispatchQueue.asyncAfter(duration) — sai bét với spring vì spring không có duration cố định. Nay dùng completionCriteria: .logicallyComplete (mặc định, kích hoạt khi giá trị đã tới đích) hoặc .removed (đợi cả phần nảy dư tắt hẳn)." : {
 
     },
     "Tự đọc chiều cao bàn phím (SwiftUI)" : {
@@ -1619,6 +2075,18 @@
           }
         }
       }
+    },
+    "Tự vẽ sóng: intensity × sharpness × duration" : {
+
+    },
+    "UIKit — intensity + so sánh prepare()" : {
+
+    },
+    "UINotificationFeedbackGenerator. Ba nhịp có tiết tấu riêng — dùng để báo KẾT QUẢ, không dùng cho thao tác thường." : {
+
+    },
+    "UISelectionFeedbackGenerator. Cực nhẹ, thiết kế để bắn liên tục khi người dùng lướt qua từng nấc (Picker, slider có step)." : {
+
     },
     "UnitArea" : {
 
@@ -1651,6 +2119,12 @@
         }
       }
     },
+    "View này giữ .sheet A — List bên dưới giữ .sheet B" : {
+
+    },
+    "View xuất hiện/biến mất + contentTransition" : {
+
+    },
     "Vuốt/bấm vào List trong lúc snackbar hiển thị để kiểm tra passthrough." : {
 
     },
@@ -1670,6 +2144,9 @@
         }
       }
     },
+    "weight = nặng/nhẹ, flexibility = cứng/mềm. Hai TRỤC KHÁC NHAU, không phải hai tên gọi của cùng một thang. Kéo intensity về 0 rồi bấm lại để thấy khác biệt." : {
+
+    },
     "WeightsCard — đọc weights" : {
       "localizations" : {
         "en" : {
@@ -1685,6 +2162,24 @@
           }
         }
       }
+    },
+    "withAnimation + completion" : {
+
+    },
+    "withAnimation vs .animation(value:) — animate GIÁ TRỊ" : {
+
+    },
+    "withAnimation(.bouncy)" : {
+
+    },
+    "withAnimation(.easeInOut 1.5s)" : {
+
+    },
+    "Xin chào" : {
+
+    },
+    "Xoá" : {
+
     },
     "year" : {
 
