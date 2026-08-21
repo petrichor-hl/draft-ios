@@ -25,7 +25,7 @@ struct DraftApp: App {
       .environment(coordinator)
       .environment(\.locale, language.locale)
     }
-    .onChange(of: scenePhase) { phase in
+    .onChange(of: scenePhase) { _, phase in
       if phase == .active {
         SnackBarWindowManager.shared.setup()
         ToastWindowManager.shared.setup()
