@@ -901,6 +901,9 @@
     "Chúng trả về Animation mới nên nối chuỗi được: .easeInOut(duration: 0.3).delay(0.1).speed(2). Lưu ý .speed(2) tương đương chia đôi duration, và autoreverses: true nghĩa là mỗi lượt lặp gồm đi + về." : {
 
     },
+    "Clone từ BitePal — số đo lấy từ video gốc" : {
+
+    },
     "Close" : {
       "localizations" : {
         "es" : {
@@ -1016,6 +1019,9 @@
     "Đi theo thứ tự 1 → 4. Mỗi màn có phần footer giải thích ngay dưới demo." : {
 
     },
+    "Dialog là view riêng, bật ra bằng transition scale(anchor: .bottomTrailing).\nFAB đứng yên, dấu + xoay 45° thành ×." : {
+
+    },
     "Điểm" : {
 
     },
@@ -1127,6 +1133,15 @@
     },
     "English" : {
       "shouldTranslate" : false
+    },
+    "FAB → Dialog" : {
+
+    },
+    "FAB + Dialog tách rời" : {
+
+    },
+    "FAB đứng yên, + xoay thành ×, dialog bật ra riêng" : {
+
     },
     "false" : {
 
@@ -1931,6 +1946,9 @@
 
     },
     "Số lần chạy xong" : {
+
+    },
+    "spring(duration: 0.42, bounce: 0.33)\nĐo từ video gốc — vọt qua đích 5.8% quãng đường." : {
 
     },
     "Sticky • no tap close" : {
