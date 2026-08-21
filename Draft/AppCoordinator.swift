@@ -61,6 +61,13 @@ enum AppRoute: Hashable {
     case languagePicker
     case snackBarLab
     case toastLab
+    case doubleSheetLab
+    case doubleSheetChained
+    case doubleSheetSibling
+    case doubleSheetItem
+    case doubleCover
+    case sheetAndCover
+    case coverAndSheetReversed
 }
 
 extension AppRoute: View {
@@ -132,6 +139,20 @@ extension AppRoute: View {
             SnackBarLab()
         case .toastLab:
             DemoToastFirstView()
+        case .doubleSheetLab:
+            DoubleSheetLab()
+        case .doubleSheetChained:
+            ChainedSheetScreen()
+        case .doubleSheetSibling:
+            SiblingSheetScreen()
+        case .doubleSheetItem:
+            SingleSheetItemScreen()
+        case .doubleCover:
+            DoubleCoverScreen()
+        case .sheetAndCover:
+            SheetAndCoverScreen()
+        case .coverAndSheetReversed:
+            CoverAndSheetReversedScreen()
         }
     }
 }
