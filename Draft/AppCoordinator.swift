@@ -55,6 +55,7 @@ enum AppRoute: Hashable {
     case animationPhaseKeyframe
     case animationTopic(AnimationTopic)
     case fabExpand
+    case fabSeparateDialog
     case swipeToConfirm
     case kavsoftSlideToConfirm
     case lineHeightExact
@@ -133,6 +134,8 @@ extension AppRoute: View {
             AnimationTopicScreen(topic: topic)
         case .fabExpand:
             FABExpandScreen()
+        case .fabSeparateDialog:
+            FABSeparateDialogScreen()
         case .swipeToConfirm:
             SwipeToConfirm()
         case .kavsoftSlideToConfirm:

@@ -76,6 +76,13 @@ struct LearnAnimation: View {
         }
 
         Button {
+          coordinator.push(.fabSeparateDialog)
+        } label: {
+          LabRow(title: "FAB + Dialog tách rời",
+                 subtitle: "FAB đứng yên, + xoay thành ×, dialog bật ra riêng")
+        }
+
+        Button {
           coordinator.push(.swipeToConfirm)
         } label: {
           LabRow(title: "Swipe to Confirm",
