@@ -69,6 +69,13 @@ struct LearnAnimation: View {
 
       Section {
         Button {
+          coordinator.push(.fabExpand)
+        } label: {
+          LabRow(title: "FAB → Dialog",
+                 subtitle: "Clone từ BitePal — số đo lấy từ video gốc")
+        }
+
+        Button {
           coordinator.push(.swipeToConfirm)
         } label: {
           LabRow(title: "Swipe to Confirm",
