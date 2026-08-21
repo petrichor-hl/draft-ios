@@ -15,18 +15,56 @@ struct LearnAnimation: View {
 
   var body: some View {
     List {
-      Button {
-        coordinator.push(.swipeToConfirm)
-      } label: {
-        LabRow(title: "Swipe to Confirm",
-               subtitle: "Kéo thumb qua ngưỡng để xác nhận — DragGesture + offset")
+      Section {
+        Button {
+          coordinator.push(.animationBasics)
+        } label: {
+          LabRow(title: "1. Basics ⭐️",
+                 subtitle: "withAnimation vs .animation(value:) — animate GIÁ TRỊ")
+        }
+
+        Button {
+          coordinator.push(.animationCurves)
+        } label: {
+          LabRow(title: "2. Curves",
+                 subtitle: "ease/spring chạy đua song song + delay, repeat, speed")
+        }
+
+        Button {
+          coordinator.push(.animationTransitions)
+        } label: {
+          LabRow(title: "3. Transitions",
+                 subtitle: "View xuất hiện/biến mất + contentTransition")
+        }
+
+        Button {
+          coordinator.push(.animationPhaseKeyframe)
+        } label: {
+          LabRow(title: "4. Phase & Keyframe",
+                 subtitle: "Animation nhiều chặng, iOS 17+")
+        }
+      } header: {
+        Text("Nền tảng")
+      } footer: {
+        Text("Đi theo thứ tự 1 → 4. Mỗi màn có phần footer giải thích ngay dưới demo.")
       }
 
-      Button {
-        coordinator.push(.kavsoftSlideToConfirm)
-      } label: {
-        LabRow(title: "Slide to Confirm (Kavsoft)",
-               subtitle: "Dựng lại theo tutorial Kavsoft")
+      Section {
+        Button {
+          coordinator.push(.swipeToConfirm)
+        } label: {
+          LabRow(title: "Swipe to Confirm",
+                 subtitle: "Kéo thumb qua ngưỡng để xác nhận — DragGesture + offset")
+        }
+
+        Button {
+          coordinator.push(.kavsoftSlideToConfirm)
+        } label: {
+          LabRow(title: "Slide to Confirm (Kavsoft)",
+                 subtitle: "Dựng lại theo tutorial Kavsoft")
+        }
+      } header: {
+        Text("Thực hành")
       }
     }
     .navigationTitle("Learn Animation")

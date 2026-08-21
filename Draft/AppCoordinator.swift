@@ -49,6 +49,10 @@ enum AppRoute: Hashable {
     case markdownAttributedString
     case markdownSwiftMarkdown
     case learnAnimation
+    case animationBasics
+    case animationCurves
+    case animationTransitions
+    case animationPhaseKeyframe
     case swipeToConfirm
     case kavsoftSlideToConfirm
     case lineHeightExact
@@ -103,6 +107,14 @@ extension AppRoute: View {
             MarkdownSwiftMarkdownScreen()
         case .learnAnimation:
             LearnAnimation()
+        case .animationBasics:
+            AnimationBasicsScreen()
+        case .animationCurves:
+            AnimationCurvesScreen()
+        case .animationTransitions:
+            AnimationTransitionsScreen()
+        case .animationPhaseKeyframe:
+            AnimationPhaseKeyframeScreen()
         case .swipeToConfirm:
             SwipeToConfirm()
         case .kavsoftSlideToConfirm:
