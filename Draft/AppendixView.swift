@@ -123,6 +123,12 @@ struct AppendixView: View {
             } label: {
                 Text("Double Sheet Lab")
             }
+
+            Button {
+                coordinator.push(.hapticsLab)
+            } label: {
+                Text("Haptics Lab")
+            }
         }
         .navigationTitle("Appendix")
         .toolbar {

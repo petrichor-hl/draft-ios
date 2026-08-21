@@ -68,6 +68,11 @@ enum AppRoute: Hashable {
     case doubleCover
     case sheetAndCover
     case coverAndSheetReversed
+    case hapticsLab
+    case hapticsSensory
+    case hapticsGenerator
+    case hapticsCore
+    case hapticsRealWorld
 }
 
 extension AppRoute: View {
@@ -153,6 +158,16 @@ extension AppRoute: View {
             SheetAndCoverScreen()
         case .coverAndSheetReversed:
             CoverAndSheetReversedScreen()
+        case .hapticsLab:
+            HapticsLab()
+        case .hapticsSensory:
+            SensoryFeedbackScreen()
+        case .hapticsGenerator:
+            GeneratorScreen()
+        case .hapticsCore:
+            CoreHapticsScreen()
+        case .hapticsRealWorld:
+            RealWorldScreen()
         }
     }
 }
