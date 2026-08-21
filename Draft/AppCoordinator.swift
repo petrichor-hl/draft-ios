@@ -73,6 +73,12 @@ enum AppRoute: Hashable {
     case hapticsLab
     case hapticsSensory
     case hapticsGenerator
+    case hapticsPrepare
+    case hapticsImpact
+    case hapticsNotification
+    case hapticsSelection
+    case hapticsLocation
+    case hapticsOutsideView
     case hapticsCore
     case hapticsRealWorld
 }
@@ -170,6 +176,18 @@ extension AppRoute: View {
             SensoryFeedbackScreen()
         case .hapticsGenerator:
             GeneratorScreen()
+        case .hapticsPrepare:
+            PrepareLatencyScreen()
+        case .hapticsImpact:
+            ImpactStyleScreen()
+        case .hapticsNotification:
+            NotificationTypeScreen()
+        case .hapticsSelection:
+            SelectionScreen()
+        case .hapticsLocation:
+            LocationFeedbackScreen()
+        case .hapticsOutsideView:
+            OutsideViewScreen()
         case .hapticsCore:
             CoreHapticsScreen()
         case .hapticsRealWorld:

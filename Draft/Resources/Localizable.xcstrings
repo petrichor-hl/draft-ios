@@ -10,6 +10,9 @@
     " " : {
       "shouldTranslate" : false
     },
+    ".%@" : {
+
+    },
     ".asymmetric(insertion:removal:) cho phép vào một kiểu, ra một kiểu. Rất hay dùng: trượt vào từ dưới, mờ dần khi ra — vì người dùng không cần thấy đường đi của thứ sắp biến mất." : {
 
     },
@@ -283,6 +286,9 @@
     "1. Hai .sheet chồng lên cùng một view" : {
 
     },
+    "1. SensoryFeedback ⭐️" : {
+
+    },
     "1. Text" : {
 
     },
@@ -333,6 +339,9 @@
     "2. Curves" : {
 
     },
+    "2. Feedback Generator" : {
+
+    },
     "2. Hai .sheet ở hai view anh em" : {
 
     },
@@ -368,6 +377,12 @@
         }
       }
     },
+    "3 loại" : {
+
+    },
+    "3 loại — kéo dài, có tiết tấu, dễ chồng nhau" : {
+
+    },
     "3️⃣ Mảng mới, khác" : {
       "localizations" : {
         "en" : {
@@ -391,6 +406,9 @@
 
     },
     "3. .sheet(item:)" : {
+
+    },
+    "3. Core Haptics" : {
 
     },
     "3. Một .sheet(item:) duy nhất" : {
@@ -446,6 +464,9 @@
     "4. Phase & Keyframe" : {
 
     },
+    "4. Real World" : {
+
+    },
     "5 · coefficient & constant" : {
 
     },
@@ -480,6 +501,12 @@
           }
         }
       }
+    },
+    "5 style" : {
+
+    },
+    "5 style + intensity — style chốt ở init" : {
+
     },
     "5. Một .sheet + một .fullScreenCover" : {
 
@@ -602,6 +629,9 @@
         }
       }
     },
+    "A. prepare() & độ trễ ⭐️" : {
+
+    },
     "Aa" : {
       "shouldTranslate" : false
     },
@@ -640,6 +670,9 @@
         }
       }
     },
+    "B. Impact" : {
+
+    },
     "Ba dòng đầu chồng khít lên nhau: .snappy CHÍNH LÀ spring(duration: 0.5, bounce: 0.15). Tương tự .smooth = bounce 0, .bouncy = bounce 0.3. Cả ba đều nhận (duration:) và (duration:extraBounce:).\n\nNhưng duration của spring KHÔNG phải \"chạy xong sau ngần ấy giây\" như timing curve. Apple gọi nó là perceptual duration — thời gian cảm nhận được là đã tới nơi. Với bounce > 0, phần nảy dư vẫn còn lắc thêm sau mốc đó (chính vì vậy withAnimation(completion:) mới cần phân biệt .logicallyComplete với .removed).\n\nCách nhớ: timing curve có duration + đường cong. Spring có duration + độ nảy. Cùng một núm \"bao lâu\", khác cái núm thứ hai." : {
 
     },
@@ -661,6 +694,12 @@
           }
         }
       }
+    },
+    "Bấm nút này rồi bấm NGAY ô \"Lạnh\" ở trên — nó sẽ rung dứt khoát như ô Ấm, vì cùng dùng chung coldGenerator và engine vừa được đánh thức.\n\nLàm lại: bấm nút này, đếm thầm 5 giây, rồi mới bấm ô \"Lạnh\" — độ trễ quay lại. Đó là lúc cửa sổ giữ nóng đã hết hạn." : {
+
+    },
+    "Bắn .success 5 lần liên tiếp" : {
+
     },
     "Bắn 3 cái cùng lúc" : {
 
@@ -763,6 +802,12 @@
         }
       }
     },
+    "C. Notification" : {
+
+    },
+    "Cả 4 màn đều gọi thẳng UIKit, không dùng .sensoryFeedback. Mọi generator đều là @MainActor." : {
+
+    },
     "Cả hai đều là animation \"chạy tự động\", không nhận input liên tục. Nếu chuyển động phải bám theo ngón tay người dùng thì vẫn là DragGesture + state, như bài Swipe to Confirm." : {
 
     },
@@ -770,6 +815,9 @@
 
     },
     "Cách gắn" : {
+
+    },
+    "Cách thử: chờ ô trên báo \"đã nguội\", bấm ô Lạnh — cú rung đến hơi trễ so với lúc ngón nhấc. Chờ nguội lại, bấm ô Ấm — rung khớp đúng khoảnh khắc nhấc ngón.\n\nCả hai ô dùng CHUNG một loại gesture và cùng bắn ở touch-up, nên khác biệt duy nhất là dòng prepare(). Khoảng 80–150ms giữa lúc ngón chạm và lúc nhấc chính là cửa sổ để engine kịp khởi động.\n\nBấm ô Lạnh HAI lần liên tiếp thì lần hai cũng dứt khoát — vì cú rung thứ nhất đã đánh thức engine. Đó không phải lỗi demo, đó chính là cơ chế đang chạy." : {
 
     },
     "CalorieCard — đọc todayCalories" : {
@@ -788,10 +836,16 @@
         }
       }
     },
+    "Cảm giác y hệt F1. Nhưng để làm được, ViewModel phải phơi ra hai property tồn tại CHỈ ĐỂ làm trigger: milestone (đếm mốc) và outcome (kết quả). Chúng không phục vụ giao diện gì cả.\n\nVà vì .sensoryFeedback chỉ so oldValue != newValue, `milestone` bắt buộc phải là bộ đếm tăng dần — đúng cái bẫy ở màn SensoryFeedback." : {
+
+    },
     "canonical = value × coefficient + constant" : {
 
     },
     "Canonical Value" : {
+
+    },
+    "Chạm khắp vùng xanh — sát mép trên, sát mép dưới, giữa. Bật/tắt toggle để so.\n\nGenerator được tạo bằng init(style:view:) với chính view này làm mốc, nên toạ độ truyền vào impactOccurred(at:) mới có ý nghĩa. Dùng init(style:) thường rồi gọi at: là vô nghĩa." : {
 
     },
     "Change Square Size" : {
@@ -803,6 +857,12 @@
           }
         }
       }
+    },
+    "Chạy — haptic qua .sensoryFeedback" : {
+
+    },
+    "Chạy — haptic trong ViewModel" : {
+
     },
     "Chạy tới" : {
 
@@ -843,6 +903,9 @@
       }
     },
     "Chỉ có một biến, nên không thể rơi vào trạng thái hai sheet cùng bật." : {
+
+    },
+    "Chỉ có nghĩa khi bắn liên tục" : {
 
     },
     "Chỉ giờ" : {
@@ -892,10 +955,19 @@
         }
       }
     },
+    "Chọn quả" : {
+
+    },
+    "chưa chạy" : {
+
+    },
     "Chưa có sự kiện nào" : {
 
     },
     "Chưa dựng demo cho chủ đề này." : {
+
+    },
+    "Chưa rung lần nào — engine đang lạnh" : {
 
     },
     "Chúng trả về Animation mới nên nối chuỗi được: .easeInOut(duration: 0.3).delay(0.1).speed(2). Lưu ý .speed(2) tương đương chia đôi duration, và autoreverses: true nghĩa là mỗi lượt lặp gồm đi + về." : {
@@ -921,6 +993,9 @@
 
     },
     "Có điều kiện" : {
+
+    },
+    "Cold vs Warm" : {
 
     },
     "Confirmed" : {
@@ -986,7 +1061,13 @@
     "Cross-platform. Apple không công bố chúng map xuống generator nào trên iOS — bạn khai báo ý nghĩa, hệ thống chọn cảm giác. Dùng khi bạn chỉ biết 'chuyện gì vừa xảy ra' chứ chưa quyết cảm giác." : {
 
     },
+    "Cửa sổ giữ nóng" : {
+
+    },
     "Curves" : {
+
+    },
+    "D. Selection" : {
 
     },
     "Đã lưu" : {
@@ -999,6 +1080,12 @@
 
     },
     "dampingFraction" : {
+
+    },
+    "Đang bắn…" : {
+
+    },
+    "đang chạy…" : {
 
     },
     "date: .abbreviated, time: .shortened" : {
@@ -1019,7 +1106,7 @@
     "Đi theo thứ tự 1 → 4. Mỗi màn có phần footer giải thích ngay dưới demo." : {
 
     },
-    "Dialog là view riêng, bật ra bằng transition scale(anchor: .bottomTrailing).\nFAB đứng yên, dấu + xoay 45° thành ×." : {
+    "Dialog là view riêng, bật ra bằng transition scale(anchor: .bottomTrailing).\nFAB đứng yên, dấu + xoay 225° thành ×." : {
 
     },
     "Điểm" : {
@@ -1041,7 +1128,16 @@
         }
       }
     },
+    "Định vị" : {
+
+    },
     "Dismiss Sticky" : {
+
+    },
+    "Đo độ trễ Taptic Engine bằng ngón tay" : {
+
+    },
+    "Đối chứng: Picker hệ thống" : {
 
     },
     "Đổi state trần (không animation)" : {
@@ -1091,6 +1187,9 @@
     "Đừng đặt trong row của List" : {
 
     },
+    "Đừng kỳ vọng rung ở góc trên trái nghe khác hẳn góc dưới phải — phần cứng không định vị được như vậy. at: là thông tin bạn ĐƯA CHO hệ thống để nó tinh chỉnh, không phải lệnh chọn vị trí rung.\n\nVậy vì sao vẫn nên truyền? Vì nó miễn phí, và vì đây là API hướng tới phần cứng tương lai cùng các thiết bị nhiều actuator. Code viết đúng hôm nay thì mai không phải sửa." : {
+
+    },
     "Dựng lại theo tutorial Kavsoft" : {
       "localizations" : {
         "en" : {
@@ -1119,6 +1218,15 @@
     "Dynamic Height Bottom Sheet iOS 18+" : {
 
     },
+    "E. Định vị (iOS 17.5+)" : {
+
+    },
+    "E1. Chạm định vị" : {
+
+    },
+    "E2. UICanvasFeedbackGenerator" : {
+
+    },
     "ease/spring chạy đua song song + delay, repeat, speed" : {
 
     },
@@ -1131,8 +1239,23 @@
     "en_US" : {
 
     },
+    "Engine còn nóng — chờ %@s" : {
+
+    },
+    "Engine đã nguội — sẵn sàng thử" : {
+
+    },
     "English" : {
       "shouldTranslate" : false
+    },
+    "F. Bắn ngoài view" : {
+
+    },
+    "F1. Gọi thẳng" : {
+
+    },
+    "F2. Bắc cầu qua state" : {
+
     },
     "FAB → Dialog" : {
 
@@ -1144,9 +1267,6 @@
 
     },
     "false" : {
-
-    },
-    "Feedback Generator" : {
 
     },
     "First View" : {
@@ -1174,7 +1294,13 @@
     "Full-Screen Cover" : {
 
     },
+    "Gần như không cảm thấy gì, và đó là CHỦ Ý. Đây là haptic nhẹ nhất hệ thống. Dùng nó cho một sự kiện đơn lẻ là dùng sai API." : {
+
+    },
     "Generator" : {
+
+    },
+    "Ghép thành chuỗi" : {
 
     },
     "Giá trị" : {
@@ -1215,6 +1341,9 @@
     "Go to Second View" : {
 
     },
+    "Gọi prepare() ngay bây giờ" : {
+
+    },
     "h:mm a" : {
 
     },
@@ -1222,6 +1351,12 @@
 
     },
     "Haptic chỉ hoạt động trên iPhone thật. Simulator, iPad, Low Power Mode đều im lặng." : {
+
+    },
+    "Haptic sinh ra từ TƯƠNG TÁC trong view (chạm, kéo, chọn) → .sensoryFeedback, khai báo gọn hơn.\n\nHaptic sinh ra từ LOGIC ngoài view (task async, delegate, notification, timer) → generator gọi thẳng. Bắc cầu qua state chỉ tổ đẻ ra property giả và một bẫy đồng bộ." : {
+
+    },
+    "Haptic từ Task async — chỗ modifier bó tay" : {
 
     },
     "Haptics Lab" : {
@@ -1262,6 +1397,9 @@
         }
       }
     },
+    "hỏng" : {
+
+    },
     "hour" : {
 
     },
@@ -1276,6 +1414,9 @@
       }
     },
     "Impact" : {
+
+    },
+    "impactOccurred(at:) + UICanvasFeedbackGenerator" : {
 
     },
     "Input" : {
@@ -1303,10 +1444,25 @@
     "intensity" : {
 
     },
+    "intensity là HỆ SỐ NHÂN lên preset, không phải trục độc lập. Kéo về 0 thì mọi nút bên dưới im hoàn toàn." : {
+
+    },
+    "iPhone chỉ có MỘT Taptic Engine" : {
+
+    },
     "ISO8601DateFormatter" : {
 
     },
+    "Kéo chậm qua 20 nấc: từng cú tách nhẹ ghép lại thành cảm giác BÁNH RĂNG, giống vặn núm cơ. Đây mới là thứ class này được sinh ra để làm.\n\nĐể ý nấc ĐẦU hơi trễ, các nấc sau khớp hoàn hảo — chính chuỗi rung đã tự giữ engine nóng, đúng cơ chế bạn đo ở màn A. Muốn nấc đầu cũng khớp thì gọi prepare() lúc gesture bắt đầu." : {
+
+    },
     "Kéo duration lên 4–5 giây rồi bấm Toggle. Ở tốc độ thường (0.6s) mắt không phân biệt nổi, cả bốn ô trông y như nhau.\n\nRanh giới: giữa hai giá trị có tồn tại \"giá trị ở giữa\" không?\n\n✅ 28.4pt là một cỡ chữ hợp lệ → nội suy được, chữ lớn dần từng frame.\n\n❌ Không có kiểu chữ nào nửa serif nửa sans, cũng không có chuỗi nào nằm giữa \"Xin chào\" và \"Tạm biệt\". Không nội suy được, SwiftUI CHỒNG MỜ ảnh cũ với ảnh mới trong đúng khoảng thời gian đó — chạy chậm sẽ thấy rõ hai chữ đè lên nhau.\n\nNên phát biểu cho đủ: animation là nội suy giá trị; chỗ nào không nội suy được thì mặc định lùi về crossfade. contentTransition (bài 3) chính là chỗ bạn chọn hiệu ứng thay cho cái crossfade mặc định đó.\n\nCái conform Animatable là các đại lượng số — CGFloat, Double, CGSize, CGPoint, Angle, Color, EdgeInsets, UnitPoint. Kiểu chữ, chuỗi, Bool, Image, enum thì không." : {
+
+    },
+    "Kéo ngón chậm qua các ô. Mỗi lần vượt một vạch lưới là một alignmentOccurred(at:) — cảm giác \"khớp vào lưới\" như khi kéo object trong Keynote. Nhấc ngón ra là pathCompleted(at:), một cú chốt khác hẳn.\n\nClass này (iOS 17.5+) sinh ra riêng cho canvas tự vẽ: nó chỉ có hai khái niệm là CĂN và XONG, không có style hay intensity. Bạn mô tả sự kiện, hệ thống chọn cảm giác." : {
+
+    },
+    "Kéo qua từng nấc" : {
 
     },
     "Kéo thumb qua ngưỡng để xác nhận — DragGesture + offset" : {
@@ -1492,6 +1648,9 @@
     "Lý do nó tồn tại: hai cách trên đòi bạn phải sở hữu ĐOẠN CODE ĐỔI STATE (withAnimation) hoặc VIEW BỊ ĐỔI (.animation(value:)). Với Toggle, Slider, Picker, TextField thì việc ghi state xảy ra BÊN TRONG control của SwiftUI — không có chỗ nào cho bạn đặt withAnimation. Gắn vào binding là cách chen vào giữa.\n\nCơ chế: `$x.animation(.bouncy)` trả về một Binding mới, setter của nó chính là withAnimation(.bouncy) { x = newValue }. Nên nó lan ra TOÀN BỘ view phụ thuộc x, giống hệt cách 1 — khác cách 2 vốn chỉ ảnh hưởng đúng một view." : {
 
     },
+    "Màn này KHÔNG gắn haptic nào cho Picker. Nhưng cứ quay thử — nó vẫn tách từng nấc.\n\nĐó là UIKit tự bắn selection feedback bên trong. Bài học: các control dựng sẵn đã có haptic riêng, bạn thêm nữa là rung đúp. Chỉ tự gọi khi làm control TỰ VẼ." : {
+
+    },
     "Margin" : {
 
     },
@@ -1580,6 +1739,9 @@
     "Mở sheet, 1,5s sau mở cover" : {
 
     },
+    "Mỗi 20% một cú impact, kết thúc bằng notification .success hoặc .error (hỏng ngẫu nhiên 1/3 số lần để bạn nghe được cả hai).\n\nToàn bộ lệnh haptic nằm trong UploadTask — view không biết haptic tồn tại. Đây là tách lớp đúng: ai biết \"chuyện gì vừa xảy ra\" thì người đó phát tín hiệu." : {
+
+    },
     "Mỗi Dimension (UnitLength, UnitMass, UnitTemperature…) có MỘT đơn vị gốc — baseUnit(). Mọi đơn vị khác quy về đơn vị gốc bằng công thức:" : {
       "localizations" : {
         "en" : {
@@ -1602,6 +1764,15 @@
     "month" : {
 
     },
+    "Một cú đơn lẻ" : {
+
+    },
+    "Một instance dùng chung cho cả ba — khác Impact, ở đây kiểu là tham số của method.\n\nBấm .error rồi bấm .success ngay sau để nghe rõ: mỗi loại là một CHUỖI nhịp có tiết tấu riêng, không phải một cú tách đơn lẻ như Impact." : {
+
+    },
+    "Năm cú success cách nhau 120ms. Vì mỗi cú kéo dài hơn khoảng cách đó, chúng đè lên nhau thành một mớ ù ù vô nghĩa — người dùng không đếm được đã có mấy sự kiện.\n\nKết luận: Notification chỉ dành cho KẾT QUẢ CUỐI của một tác vụ. Thao tác lặp lại nhiều lần thì dùng Selection hoặc Impact." : {
+
+    },
     "Native, 0 dependency — chỉ inline" : {
       "localizations" : {
         "en" : {
@@ -1619,6 +1790,9 @@
       }
     },
     "Nền tảng" : {
+
+    },
+    "Ngoài view" : {
 
     },
     "Ngôn ngữ" : {
@@ -1701,6 +1875,9 @@
     "Nổi trên sheet" : {
 
     },
+    "NOTE: Not verified yet" : {
+
+    },
     "Notification" : {
 
     },
@@ -1711,6 +1888,9 @@
 
     },
     "Nút thứ hai làm banner nhấp nháy xuất hiện/biến mất tức thì, dù .transition vẫn nằm nguyên đó. Transition chỉ MÔ TẢ hình thù của việc vào/ra; ai cấp thời gian cho nó là withAnimation (hoặc .animation(_:value:) đặt ngoài container)." : {
+
+    },
+    "Ở tầng UIKit cả năm nằm chung MỘT enum. Lên SwiftUI, Apple tách thành hai overload: light/medium/heavy thành `weight`, soft/rigid thành `flexibility`. Cùng phần cứng, khác cách gọi tên.\n\nĐối chiếu chéo: mở màn SensoryFeedback, bấm .impact(weight: .heavy) ở intensity 1.00, rồi quay lại đây bấm .heavy ở 1.00 — y hệt nhau." : {
 
     },
     "ObservableObject — track cả object" : {
@@ -1782,7 +1962,13 @@
     "Play → Pause" : {
 
     },
+    "prepare()" : {
+
+    },
     "Present Full-Screen Cover" : {
+
+    },
+    "Quy tắc chọn" : {
 
     },
     "Real World" : {
@@ -1844,13 +2030,13 @@
     "Selection" : {
 
     },
+    "selectionChanged()" : {
+
+    },
     "Semantic" : {
 
     },
     "SensoryFeedback" : {
-
-    },
-    "SensoryFeedback ⭐️" : {
 
     },
     "Sheet %@" : {
@@ -1948,6 +2134,9 @@
     "Số lần chạy xong" : {
 
     },
+    "Số lần qua vạch" : {
+
+    },
     "spring(duration: 0.42, bounce: 0.33)\nĐo từ video gốc — vọt qua đích 5.8% quãng đường." : {
 
     },
@@ -1990,6 +2179,9 @@
 
     },
     "Tạm biệt" : {
+
+    },
+    "Taptic Engine tự ngủ sau khoảng 1–2 giây không dùng (Apple không công bố con số chính xác). Mốc 3s ở đây là để chắc chắn nó đã ngủ hẳn." : {
 
     },
     "Thả tim" : {
@@ -2042,9 +2234,6 @@
     "Toast Lab" : {
 
     },
-    "TODO — bước 3" : {
-
-    },
     "TODO — bước 4" : {
 
     },
@@ -2063,6 +2252,9 @@
     "Trạng thái" : {
 
     },
+    "Trạng thái engine" : {
+
+    },
     "Transaction chảy xuống TOÀN BỘ cây view bên dưới chỗ state đổi. Muốn một view nào đó đứng yên tuyệt đối thì gắn .animation(nil, value:) — hữu ích khi một phần UI (badge, số liệu) không nên trượt theo phần còn lại." : {
 
     },
@@ -2076,6 +2268,9 @@
 
     },
     "Trước iOS 17 phải tự đoán bằng DispatchQueue.asyncAfter(duration) — sai bét với spring vì spring không có duration cố định. Nay dùng completionCriteria: .logicallyComplete (mặc định, kích hoạt khi giá trị đã tới đích) hoặc .removed (đợi cả phần nảy dư tắt hẳn)." : {
+
+    },
+    "Truyền toạ độ (at:)" : {
 
     },
     "Tự đọc chiều cao bàn phím (SwiftUI)" : {
@@ -2097,7 +2292,7 @@
     "Tự vẽ sóng: intensity × sharpness × duration" : {
 
     },
-    "UIKit — intensity + so sánh prepare()" : {
+    "UIKit — prepare(), impact, notification, selection" : {
 
     },
     "UINotificationFeedbackGenerator. Ba nhịp có tiết tấu riêng — dùng để báo KẾT QUẢ, không dùng cho thao tác thường." : {
@@ -2122,6 +2317,9 @@
 
     },
     "UnitTemperature" : {
+
+    },
+    "Vì sao không được lặp" : {
 
     },
     "vi_VN" : {
@@ -2197,6 +2395,12 @@
 
     },
     "Xoá" : {
+
+    },
+    "Xoá chấm" : {
+
+    },
+    "xong" : {
 
     },
     "year" : {
