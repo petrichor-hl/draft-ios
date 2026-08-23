@@ -79,90 +79,18 @@ struct TableWheelPicker: View {
   }
 }
 
-// MARK: - Wheel, hai cột
-
-/// Hai cột ĐỘC LẬP dưới CHUNG một plinth — cân nặng `nguyên . lẻ` chẳng hạn.
-///
-/// ## Vì sao là hai scroll view, không phải một layout hai cột
-///
-/// Với bánh xe, `contentOffset` CHÍNH LÀ state: hàng nào đang chọn = offset
-/// đang ở đâu. Mà một `UIScrollView` chỉ có MỘT `contentOffset`. Hai cột cần
-/// đứng ở hai chỗ khác nhau và cuộn rời nhau, nên phải là hai scroll view.
-///
-/// Custom layout đổi được chỗ VẼ của item, nhưng không đẻ thêm được offset thứ
-/// hai. Ép một collection view làm hai cột rời thì phải tự gắn pan gesture cho
-/// từng vùng, tự giữ offset ảo, rồi tự viết lại giảm tốc + rubber-band + snap
-/// theo vận tốc — tức là viết tay lại đúng phần `UIScrollView` đang cho không,
-/// mà đó lại là LÝ DO cả kho này chọn table/collection ngay từ đầu.
-///
-/// ## Cái gì chung, cái gì riêng
-///
-///     CHUNG    plinth, metrics, dấu ngăn ở giữa
-///     RIÊNG    contentOffset, selectedIndex, gesture, momentum, haptic
-///
-/// Mỗi cột có `UISelectionFeedbackGenerator` riêng, nên cuộn hai cột bằng hai
-/// ngón cho hai chuỗi rung độc lập — không phải gộp.
-///
-/// ## Hai cột này KHÔNG ràng buộc nhau
-///
-/// Cuộn cột nào cũng không đụng cột kia. Ca ngày sinh 3 cột mới là ca có ràng
-/// buộc (đổi sang tháng 02 thì ngày 31 phải bị kẹp lại, và bánh xe phải đi
-/// theo). Để cạnh nhau mới thấy ràng buộc đó tốn thêm những gì.
-struct TableWheelPairPicker: View {
-  var leadingValues: [String]
-  @Binding var leadingIndex: Int
-  var trailingValues: [String]
-  @Binding var trailingIndex: Int
-
-  /// Chữ đứng yên giữa hai cột — dấu `.` của cân nặng chẳng hạn.
-  var separator: String
-
-  var unitLabel: String = ""
-
-  /// Hai bề rộng khác nhau vì hai cột chứa số dài ngắn khác nhau: cột nguyên
-  /// phải chứa nổi "200" ở cỡ chữ 40pt, cột lẻ chỉ có một chữ số. Cho bằng nhau
-  /// thì cụm số lệch hẳn sang một bên so với dấu chấm.
-  var leadingWidth: CGFloat = 100
-  var trailingWidth: CGFloat = 60
-  var separatorWidth: CGFloat = 24
-
-  var metrics: TableWheelMetrics = .default
-
-  var body: some View {
-    ZStack {
-      WheelPlinth(unitLabel: unitLabel, height: metrics.rowHeight)
-
-      // Cụm hai cột nằm GIỮA khung, còn nhãn đơn vị bám mép phải của plinth —
-      // đúng như mockup: `60 . 0` ở giữa, `kg` tách ra bên phải.
-      HStack(spacing: 0) {
-        TableWheelColumn(
-          values: leadingValues,
-          selectedIndex: $leadingIndex,
-          metrics: metrics
-        )
-        .frame(width: leadingWidth)
-
-        // Cùng cỡ chữ và cùng độ đậm với hàng ở tâm, để dấu chấm nằm đúng
-        // baseline của hai con số hai bên.
-        Text(separator)
-          .font(.system(size: metrics.fontSize, weight: .bold))
-          .frame(width: separatorWidth)
-
-        TableWheelColumn(
-          values: trailingValues,
-          selectedIndex: $trailingIndex,
-          metrics: metrics
-        )
-        .frame(width: trailingWidth)
-      }
-    }
-    .frame(height: metrics.height)
-  }
-}
-
 // MARK: - Column
 
-private struct TableWheelColumn: UIViewRepresentable {
+/// KHÔNG `private`: các view nhiều cột (`TwoColumn/TableWheelPairPicker`, và
+/// cột ngày tháng năm sau này) nằm ở FILE khác nên không thấy được `private`.
+///
+/// Lưu ý `private` chặn theo FILE, không theo thư mục — Swift không có khái
+/// niệm thư mục con, `internal` là phạm vi cả module. Dời file quanh các thư
+/// mục không đổi gì về quyền truy cập.
+///
+/// Đây là viên gạch dùng chung; cái gì XẾP những viên gạch này lại thì nằm ở
+/// thư mục theo số cột, không thuộc file này.
+struct TableWheelColumn: UIViewRepresentable {
   let values: [String]
   @Binding var selectedIndex: Int
   let metrics: TableWheelMetrics
