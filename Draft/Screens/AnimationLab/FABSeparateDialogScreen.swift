@@ -112,21 +112,27 @@ struct FABSeparateDialogScreen: View {
   // MARK: - FAB đứng yên, chỉ xoay dấu +
 
   private var fabButton: some View {
-    Circle()
-      .fill(Color(white: 0.11))
-      .frame(width: fabSize, height: fabSize)
-      .overlay {
-        // + xoay 45° thành ×. Không đổi icon, không crossfade — chỉ là một
-        // Angle chạy từ 0 tới 45, nên nó nảy theo đúng spring bên trên.
-        Image(systemName: "plus")
-          .font(.title2.weight(.semibold))
-          .foregroundStyle(.white)
-          .rotationEffect(.degrees(isOpen ? 225 : 0))
-      }
-      .shadow(color: .black.opacity(0.18), radius: 10, y: 4)
-      .padding(.trailing, fabTrailing)
-      .padding(.bottom, fabBottom)
-      .onTapGesture { toggle() }
+    // Button chứ không phải .onTapGesture: chỉ Button mới có trạng thái
+    // isPressed để làm hiệu ứng nhấn lún.
+    Button {
+      toggle()
+    } label: {
+      Circle()
+        .fill(Color(white: 0.11))
+        .frame(width: fabSize, height: fabSize)
+        .overlay {
+          // + xoay 45° thành ×. Không đổi icon, không crossfade — chỉ là một
+          // Angle chạy từ 0 tới 45, nên nó nảy theo đúng spring bên trên.
+          Image(systemName: "plus")
+            .font(.title2.weight(.semibold))
+            .foregroundStyle(.white)
+            .rotationEffect(.degrees(isOpen ? 225 : 0))
+        }
+        .shadow(color: .black.opacity(0.18), radius: 10, y: 4)
+    }
+    .buttonStyle(PressScaleStyle())
+    .padding(.trailing, fabTrailing)
+    .padding(.bottom, fabBottom)
   }
 
   private func toggle() {
@@ -143,6 +149,21 @@ struct FABSeparateDialogScreen: View {
       .foregroundStyle(.secondary)
       .padding()
       .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+  }
+}
+
+// MARK: - Hiệu ứng nhấn lún
+
+struct PressScaleStyle: ButtonStyle {
+  var pressedScale: CGFloat = 0.8
+  var pressIn: Animation = .spring(duration: 0.2, bounce: 0)
+  var pressOut: Animation = .spring(duration: 0.12, bounce: 0.3)
+
+  func makeBody(configuration: Configuration) -> some View {
+    configuration.label
+      .scaleEffect(configuration.isPressed ? pressedScale : 1)
+      .animation(configuration.isPressed ? pressIn : pressOut,
+                 value: configuration.isPressed)
   }
 }
 
