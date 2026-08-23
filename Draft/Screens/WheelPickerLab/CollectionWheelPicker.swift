@@ -152,15 +152,7 @@ struct CollectionWheelPicker: View {
 
   var body: some View {
     ZStack {
-      Text(unitLabel)
-        .font(.system(size: 20, weight: .semibold))
-        .padding(.trailing, 16)
-        .frame(maxWidth: .infinity, alignment: .trailing)
-        .frame(height: metrics.centerRowHeight)
-        .background(
-          Color(uiColor: .secondarySystemBackground),
-          in: RoundedRectangle(cornerRadius: 16)
-        )
+      WheelPlinth(unitLabel: unitLabel, height: metrics.centerRowHeight)
 
       CollectionWheelColumn(
         values: values,

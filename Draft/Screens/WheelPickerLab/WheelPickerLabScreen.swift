@@ -17,6 +17,11 @@ struct WheelPickerLabScreen: View {
   @State private var waterGoalMl = 2500
   @State private var heightCm = 170
   @State private var birthYear = 1995
+
+  /// Cân nặng tính bằng PHẦN MƯỜI kg — 600 là 60.0kg. Lý do ở
+  /// `WeightTableWheelSheet`.
+  @State private var weightTenths = 600
+
   @State private var presented: Sheet?
 
   /// Chiều cao ĐO ĐƯỢC của sheet đang mở — xem `.sheet` ở cuối `body`.
@@ -30,6 +35,7 @@ struct WheelPickerLabScreen: View {
     case heightCollection
     case birthYearTable
     case birthYearCollection
+    case weightTable
 
     var id: String { rawValue }
   }
@@ -82,7 +88,22 @@ struct WheelPickerLabScreen: View {
       }
 
       Section {
-        Text("Cân nặng — 2 cột (nguyên . thập phân)")
+        row("UITableView tự dựng", valueText: weightText) { presented = .weightTable }
+      } header: {
+        Text("2 cột — cân nặng")
+      } footer: {
+        Text(
+          """
+          Hai cột cuộn rời nhau dưới chung một plinth, nhưng CÓ ràng buộc: \
+          chạm trần 200 thì phần lẻ bị kẹp về 0. Phần khó không nằm ở việc sửa \
+          state mà ở chỗ bắt bánh xe đi theo khi cú kẹp rơi đúng lúc nó đang \
+          trôi. Giá trị lưu là Int phần mười kg, không phải Double.
+          """
+        )
+      }
+
+      Section {
+        Text("Cân nặng — bản collection và đối chứng Picker hệ thống")
         Text("Ngày sinh — 3 cột phụ thuộc nhau")
       } header: {
         Text("Chưa làm")
@@ -150,10 +171,24 @@ struct WheelPickerLabScreen: View {
     }
   }
 
+  /// Cân nặng ghép chuỗi thủ công từ canonical, không qua formatter số —
+  /// cùng lý do locale với `Text(verbatim:)` ở `row`.
+  private var weightText: String {
+    "\(weightTenths / 10).\(weightTenths % 10) kg"
+  }
+
   private func row(
     _ title: String,
     value: Int,
     unit: String = "",
+    action: @escaping () -> Void
+  ) -> some View {
+    row(title, valueText: unit.isEmpty ? "\(value)" : "\(value) \(unit)", action: action)
+  }
+
+  private func row(
+    _ title: String,
+    valueText: String,
     action: @escaping () -> Void
   ) -> some View {
     Button(action: action) {
@@ -163,7 +198,7 @@ struct WheelPickerLabScreen: View {
         Spacer()
         // `Text(verbatim:)` chứ không nội suy: `Text("\(2500)")` bị format theo
         // locale và ra "2.500".
-        Text(verbatim: unit.isEmpty ? "\(value)" : "\(value) \(unit)")
+        Text(verbatim: valueText)
           .foregroundStyle(.secondary)
       }
     }
@@ -186,6 +221,8 @@ struct WheelPickerLabScreen: View {
       BirthYearTableWheelSheet(year: $birthYear)
     case .birthYearCollection:
       BirthYearCollectionWheelSheet(year: $birthYear)
+    case .weightTable:
+      WeightTableWheelSheet(tenths: $weightTenths)
     }
   }
 }

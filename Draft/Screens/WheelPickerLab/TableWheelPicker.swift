@@ -67,21 +67,94 @@ struct TableWheelPicker: View {
 
   var body: some View {
     ZStack {
-      Text(unitLabel)
-        .font(.system(size: 20, weight: .semibold))
-        .padding(.trailing, 16)
-        .frame(maxWidth: .infinity, alignment: .trailing)
-        .frame(height: metrics.rowHeight)
-        .background(
-          Color(uiColor: .secondarySystemBackground),
-          in: .rect(cornerRadius: 16)
-        )
+      WheelPlinth(unitLabel: unitLabel, height: metrics.rowHeight)
 
       TableWheelColumn(
         values: values,
         selectedIndex: $selectedIndex,
         metrics: metrics
       )
+    }
+    .frame(height: metrics.height)
+  }
+}
+
+// MARK: - Wheel, hai cột
+
+/// Hai cột ĐỘC LẬP dưới CHUNG một plinth — cân nặng `nguyên . lẻ` chẳng hạn.
+///
+/// ## Vì sao là hai scroll view, không phải một layout hai cột
+///
+/// Với bánh xe, `contentOffset` CHÍNH LÀ state: hàng nào đang chọn = offset
+/// đang ở đâu. Mà một `UIScrollView` chỉ có MỘT `contentOffset`. Hai cột cần
+/// đứng ở hai chỗ khác nhau và cuộn rời nhau, nên phải là hai scroll view.
+///
+/// Custom layout đổi được chỗ VẼ của item, nhưng không đẻ thêm được offset thứ
+/// hai. Ép một collection view làm hai cột rời thì phải tự gắn pan gesture cho
+/// từng vùng, tự giữ offset ảo, rồi tự viết lại giảm tốc + rubber-band + snap
+/// theo vận tốc — tức là viết tay lại đúng phần `UIScrollView` đang cho không,
+/// mà đó lại là LÝ DO cả kho này chọn table/collection ngay từ đầu.
+///
+/// ## Cái gì chung, cái gì riêng
+///
+///     CHUNG    plinth, metrics, dấu ngăn ở giữa
+///     RIÊNG    contentOffset, selectedIndex, gesture, momentum, haptic
+///
+/// Mỗi cột có `UISelectionFeedbackGenerator` riêng, nên cuộn hai cột bằng hai
+/// ngón cho hai chuỗi rung độc lập — không phải gộp.
+///
+/// ## Hai cột này KHÔNG ràng buộc nhau
+///
+/// Cuộn cột nào cũng không đụng cột kia. Ca ngày sinh 3 cột mới là ca có ràng
+/// buộc (đổi sang tháng 02 thì ngày 31 phải bị kẹp lại, và bánh xe phải đi
+/// theo). Để cạnh nhau mới thấy ràng buộc đó tốn thêm những gì.
+struct TableWheelPairPicker: View {
+  var leadingValues: [String]
+  @Binding var leadingIndex: Int
+  var trailingValues: [String]
+  @Binding var trailingIndex: Int
+
+  /// Chữ đứng yên giữa hai cột — dấu `.` của cân nặng chẳng hạn.
+  var separator: String
+
+  var unitLabel: String = ""
+
+  /// Hai bề rộng khác nhau vì hai cột chứa số dài ngắn khác nhau: cột nguyên
+  /// phải chứa nổi "200" ở cỡ chữ 40pt, cột lẻ chỉ có một chữ số. Cho bằng nhau
+  /// thì cụm số lệch hẳn sang một bên so với dấu chấm.
+  var leadingWidth: CGFloat = 100
+  var trailingWidth: CGFloat = 60
+  var separatorWidth: CGFloat = 24
+
+  var metrics: TableWheelMetrics = .default
+
+  var body: some View {
+    ZStack {
+      WheelPlinth(unitLabel: unitLabel, height: metrics.rowHeight)
+
+      // Cụm hai cột nằm GIỮA khung, còn nhãn đơn vị bám mép phải của plinth —
+      // đúng như mockup: `60 . 0` ở giữa, `kg` tách ra bên phải.
+      HStack(spacing: 0) {
+        TableWheelColumn(
+          values: leadingValues,
+          selectedIndex: $leadingIndex,
+          metrics: metrics
+        )
+        .frame(width: leadingWidth)
+
+        // Cùng cỡ chữ và cùng độ đậm với hàng ở tâm, để dấu chấm nằm đúng
+        // baseline của hai con số hai bên.
+        Text(separator)
+          .font(.system(size: metrics.fontSize, weight: .bold))
+          .frame(width: separatorWidth)
+
+        TableWheelColumn(
+          values: trailingValues,
+          selectedIndex: $trailingIndex,
+          metrics: metrics
+        )
+        .frame(width: trailingWidth)
+      }
     }
     .frame(height: metrics.height)
   }
@@ -135,7 +208,7 @@ private struct TableWheelColumn: UIViewRepresentable {
   /// Và vì `delegate` là `weak`: nếu chỉ table giữ Coordinator thì nó chết ngay.
   /// `context.coordinator` là chủ sở hữu **strong** duy nhất.
   ///
-  /// Bảng phân loại 9 thành viên nằm trong thân class, ngay dưới `init`.
+  /// Bảng phân loại 12 thành viên nằm trong thân class, ngay dưới `init`.
   ///
   /// ## Vì sao `: NSObject`
   ///
@@ -175,9 +248,12 @@ private struct TableWheelColumn: UIViewRepresentable {
     │ tableView(_:willDisplay:forRowAt:)                             │ tuỳ chọn — UITableViewDelegate   │
     │ scrollViewWillEndDragging(_:withVelocity:targetContentOffset:) │ tuỳ chọn — UIScrollViewDelegate  │
     │ scrollViewDidScroll(_:)                                        │ tuỳ chọn — UIScrollViewDelegate  │
+    │ scrollViewDidEndDragging(_:willDecelerate:)                    │ tuỳ chọn — UIScrollViewDelegate  │
+    │ scrollViewDidEndDecelerating(_:)                               │ tuỳ chọn — UIScrollViewDelegate  │
     │ offset(forRowIndex:in:)                                        │ của mình                         │
     │ rowIndex(atOffset:in:)                                         │ của mình                         │
     │ restyle(_:in:)                                                 │ của mình                         │
+    │ settle(_:)                                                     │ của mình                         │
     │ parent, selectionFeedback                                      │ của mình                         │
     └────────────────────────────────────────────────────────────────┴──────────────────────────────────┘
 
@@ -249,6 +325,18 @@ private struct TableWheelColumn: UIViewRepresentable {
       selectionFeedback.selectionChanged()
     }
 
+    /// Hai hàm dưới là MÉP SAU của chuyển động — chỗ muộn nhất còn sửa được.
+    /// Cả hai cùng gọi `settle`, xem lý do ở đó.
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+      // Còn trôi tiếp thì chưa phải mép sau — `didEndDecelerating` sẽ lo.
+      guard !decelerate else { return }
+      settle(scrollView)
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+      settle(scrollView)
+    }
+
     // MARK: Của mình
 
     // `rowIndex` là chỉ số 0-based vào `values` — cùng một con số với
@@ -267,6 +355,27 @@ private struct TableWheelColumn: UIViewRepresentable {
     func rowIndex(atOffset offset: CGFloat, in scrollView: UIScrollView) -> Int {
       let raw = (offset + scrollView.contentInset.top) / parent.metrics.rowHeight
       return min(max(Int(raw.rounded()), 0), max(parent.values.count - 1, 0))
+    }
+
+    /// Kéo bánh xe về đúng hàng mà state đang nói, sau khi chuyển động đã dừng.
+    ///
+    /// Cần vì `updateUIView` CỐ Ý bỏ qua khi bánh xe còn kéo hoặc còn trôi. Bình
+    /// thường điều đó vô hại — người dùng cuộn tới đâu thì state ghi tới đó, hai
+    /// bên vốn đã khớp nên hàm này không làm gì.
+    ///
+    /// Nó chỉ ra tay khi state bị sửa TỪ NGOÀI đúng lúc bánh xe đang chạy: cột
+    /// nguyên chạm 200 nên cột lẻ bị kẹp về 0 (xem `WeightTableWheelSheet`). Cú
+    /// đẩy ấy rơi vào khoảng lặng của `updateUIView`, và nếu không có hàm này
+    /// thì bánh xe nằm lại ở hàng cũ trong khi state đã đổi — state và UI nói
+    /// hai chuyện khác nhau, đúng cảnh mà `externalChangeProbe` dựng ra để xem.
+    ///
+    /// `animated: true`, khác `updateUIView`: đây là một chỉnh sửa người dùng
+    /// CẦN THẤY. Bánh xe tự trườn về 0 chính là câu trả lời cho "sao tôi chọn
+    /// 200.5 mà không được".
+    private func settle(_ scrollView: UIScrollView) {
+      let desiredOffsetY = offset(forRowIndex: parent.selectedIndex, in: scrollView)
+      guard abs(scrollView.contentOffset.y - desiredOffsetY) > 0.5 else { return }
+      scrollView.setContentOffset(CGPoint(x: 0, y: desiredOffsetY), animated: true)
     }
 
     private func restyle(_ cell: UITableViewCell, in tableView: UITableView) {
