@@ -355,6 +355,9 @@
     "2️⃣ Append" : {
 
     },
+    "2 cột — cân nặng" : {
+
+    },
     "2️⃣ RemoveLast" : {
 
     },
@@ -404,6 +407,9 @@
           }
         }
       }
+    },
+    "3 cột — ngày sự kiện" : {
+
     },
     "3 loại" : {
 
@@ -882,7 +888,7 @@
     "Cảm giác y hệt F1. Nhưng để làm được, ViewModel phải phơi ra hai property tồn tại CHỈ ĐỂ làm trigger: milestone (đếm mốc) và outcome (kết quả). Chúng không phục vụ giao diện gì cả.\n\nVà vì .sensoryFeedback chỉ so oldValue != newValue, `milestone` bắt buộc phải là bộ đếm tăng dần — đúng cái bẫy ở màn SensoryFeedback." : {
 
     },
-    "Cân nặng — 2 cột (nguyên . thập phân)" : {
+    "Cân nặng hiện tại" : {
 
     },
     "canonical = value × coefficient + constant" : {
@@ -1020,9 +1026,6 @@
 
     },
     "Chưa dựng demo cho chủ đề này." : {
-
-    },
-    "Chưa làm" : {
 
     },
     "Chưa rung lần nào — engine đang lạnh" : {
@@ -1412,6 +1415,9 @@
 
     },
     "h:mm a" : {
+
+    },
+    "Hai cột cuộn rời nhau dưới chung một plinth, nhưng CÓ ràng buộc: chạm trần 200 thì phần lẻ bị kẹp về 0. Phần khó không nằm ở việc sửa state mà ở chỗ bắt bánh xe đi theo khi cú kẹp rơi đúng lúc nó đang trôi. Giá trị lưu là Int phần mười kg, không phải Double." : {
 
     },
     "Hai loại khác nhau có thành hai kênh độc lập?" : {
@@ -1871,9 +1877,6 @@
     "Nền tảng" : {
 
     },
-    "Ngày sinh — 3 cột phụ thuộc nhau" : {
-
-    },
     "Ngoài view" : {
 
     },
@@ -2053,6 +2056,9 @@
     "Quy tắc chọn" : {
 
     },
+    "Ràng buộc đổi CHẤT so với ca cân nặng: ở đó hai cột luôn đủ hàng, chỉ giá trị bị kẹp. Ở đây SỐ HÀNG của cột ngày co dãn theo tháng và năm (28/29/30/31), nên mảng nguồn ngắn lại ngay dưới chân bánh xe. Thử chọn 31/01 rồi kéo tháng sang 02." : {
+
+    },
     "Real World" : {
 
     },
@@ -2229,6 +2235,9 @@
 
     },
     "style: .medium / .short" : {
+
+    },
+    "Sự kiện diễn ra khi nào?" : {
 
     },
     "SwiftUI chỉ chạy transition khi IDENTITY của view thay đổi — view mới xuất hiện hoặc view cũ mất đi. Nếu bạn chỉ đổi nội dung (Text(\"A\") → Text(\"B\")) thì view vẫn là chính nó, không có gì để chèn hay gỡ. Muốn ép có transition, gắn .id(value) để mỗi giá trị là một view khác nhau." : {

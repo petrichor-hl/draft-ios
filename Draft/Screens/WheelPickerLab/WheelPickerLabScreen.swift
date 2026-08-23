@@ -2,9 +2,9 @@
 //  WheelPickerLabScreen.swift
 //  Draft
 //
-//  Kho wheel picker. Bắt đầu bằng ca đơn giản nhất — MỘT cột, bước không đều,
-//  có nhãn đơn vị. Hai cột (cân nặng) và ba cột (ngày sinh) làm sau, trên cùng
-//  một component.
+//  Kho wheel picker. Đi từ ca đơn giản nhất — MỘT cột, bước không đều, có nhãn
+//  đơn vị — rồi hai cột (cân nặng) và ba cột (ngày sự kiện), tất cả trên cùng
+//  một viên gạch `TableWheelColumn` / `CollectionWheelColumn` không sửa dòng nào.
 //
 //  ⚠️ Component tự dựng ở đây CHỈ DÙNG API iOS 16. Draft ship iOS 26.5, nên rất
 //     dễ lỡ tay dùng `scrollTargetBehavior` / `.scrollPosition` — những thứ
@@ -22,6 +22,9 @@ struct WheelPickerLabScreen: View {
   /// `WeightTableWheelSheet`.
   @State private var weightTenths = 600
 
+  /// Ba Int rời, không phải `Date` — lý do ở `DateWheelData`.
+  @State private var eventDate = WheelDate(day: 11, month: 1, year: 2026)
+
   @State private var presented: Sheet?
 
   /// Chiều cao ĐO ĐƯỢC của sheet đang mở — xem `.sheet` ở cuối `body`.
@@ -37,6 +40,8 @@ struct WheelPickerLabScreen: View {
     case birthYearCollection
     case weightTable
     case weightCollection
+    case eventDateTable
+    case eventDateCollection
 
     var id: String { rawValue }
   }
@@ -105,11 +110,20 @@ struct WheelPickerLabScreen: View {
       }
 
       Section {
-        Text("Ngày sinh — 3 cột phụ thuộc nhau")
+        row("UITableView tự dựng", valueText: eventDate.text) { presented = .eventDateTable }
+        row("UICollectionView tự dựng", valueText: eventDate.text) { presented = .eventDateCollection }
       } header: {
-        Text("Chưa làm")
+        Text("3 cột — ngày sự kiện")
+      } footer: {
+        Text(
+          """
+          Ràng buộc đổi CHẤT so với ca cân nặng: ở đó hai cột luôn đủ hàng, chỉ \
+          giá trị bị kẹp. Ở đây SỐ HÀNG của cột ngày co dãn theo tháng và năm \
+          (28/29/30/31), nên mảng nguồn ngắn lại ngay dưới chân bánh xe. Thử \
+          chọn 31/01 rồi kéo tháng sang 02.
+          """
+        )
       }
-      .foregroundStyle(.tertiary)
     }
     .navigationTitle("Wheel Picker Toolbox")
     .navigationBarTitleDisplayMode(.inline)
@@ -226,6 +240,10 @@ struct WheelPickerLabScreen: View {
       WeightTableWheelSheet(tenths: $weightTenths)
     case .weightCollection:
       WeightCollectionWheelSheet(tenths: $weightTenths)
+    case .eventDateTable:
+      EventDateTableWheelSheet(date: $eventDate)
+    case .eventDateCollection:
+      EventDateCollectionWheelSheet(date: $eventDate)
     }
   }
 }
