@@ -29,7 +29,7 @@ struct FABSeparateDialogScreen: View {
   // Khoảng hở giữa đáy dialog và đỉnh FAB.
   private let gap: CGFloat = 16
 
-  private let spring = Animation.spring(duration: 0.3, bounce: 0.4)
+  private let spring = Animation.spring(duration: 0.4, bounce: 0.4)
 
   var body: some View {
     ZStack(alignment: .bottomTrailing) {
@@ -49,26 +49,64 @@ struct FABSeparateDialogScreen: View {
 
   // MARK: - Dialog: view riêng, không dính gì tới FAB
 
-  @ViewBuilder
+  // Ở đây KHÔNG dùng `if isOpen` + .transition, dù đó là cách "đúng bài" cho
+  // chuyện view xuất hiện/biến mất. Đã thử hai biến thể, cả hai đều vướng.
+  //
+  // ❌ Biến thể 1 — .transition đặt TRƯỚC .padding:
+  //
+  //      @ViewBuilder
+  //      private var dialog: some View {
+  //        if isOpen {
+  //          RoundedRectangle(cornerRadius: panelCorner)
+  //            .fill(Color(white: 0.11))
+  //            .frame(width: panelWidth, height: panelHeight)
+  //            .shadow(color: .black.opacity(0.18), radius: 12, y: 6)
+  //            .transition(
+  //              .scale(scale: 0.6, anchor: .bottomTrailing)
+  //                .combined(with: .opacity)
+  //            )
+  //            .padding(.trailing, fabTrailing)
+  //            .padding(.bottom, fabBottom + fabSize + gap)
+  //        }
+  //      }
+  //
+  //    Anchor thì đúng, nhưng animation CHỈ CHẠY MỘT CHIỀU. Đo bằng video
+  //    (bề rộng vệt tối trên một dòng quét ngang qua thân dialog, px):
+  //
+  //      mở   : 792 → 828 → 860 → 866 → 862 → 857 → 852 → 850 → 849
+  //      đóng : 849 → 0        (hai frame liền nhau, không giá trị trung gian)
+  //
+  //    Hỏng nửa vời như vậy khó phát hiện hơn hỏng hẳn — mở thì đẹp nên dễ
+  //    tưởng là xong.
+  //
+  // ❌ Biến thể 2 — .transition đặt SAU .padding (đổi chỗ hai modifier trên):
+  //
+  //    Chiều đóng chạy lại được (đo: 900 → 715 → 0), nhưng ANCHOR SAI. Lúc này
+  //    view mà transition ôm lấy đã bao gồm cả padding — mà padding dưới ở đây
+  //    là fabBottom + fabSize + gap, tức kéo dài xuống tận đáy màn hình. Góc
+  //    .bottomTrailing của cái khung đó nằm ở góc màn hình, ngay cạnh FAB, nên
+  //    panel co về phía nút thay vì về góc của chính nó. Đưa .padding ra ngoài
+  //    khối `if` cũng không cứu được: khung vẫn tính cả padding.
+  //
+  // ✅ Cách đang dùng — scaleEffect gắn THẲNG lên panel, TRƯỚC padding:
+  //
+  //    • anchor tính theo bounds của chính panel → góc dưới-phải của nó đứng
+  //      yên khi phóng to, đúng như video mẫu
+  //    • không phải transition mà chỉ là nội suy hai Double (scale và opacity)
+  //      nên hai chiều chạy như nhau, không phụ thuộc việc SwiftUI có chịu giữ
+  //      view lại trong lúc gỡ hay không
+  //    • đổi lại: view luôn tồn tại trong cây, nên cần .allowsHitTesting(isOpen)
+  //      để lúc ẩn nó không nuốt chạm của người dùng
   private var dialog: some View {
-    if isOpen {
-      RoundedRectangle(cornerRadius: panelCorner)
-        .fill(Color(white: 0.11))
-        .frame(width: panelWidth, height: panelHeight)
-        .shadow(color: .black.opacity(0.18), radius: 12, y: 6)
-        .padding(.trailing, fabTrailing)
-        .padding(.bottom, fabBottom + fabSize + gap)
-        // THỨ TỰ QUAN TRỌNG: .transition phải nằm NGOÀI CÙNG, sau .padding.
-        //
-        // Đặt nó TRƯỚC hai .padding thì animation chỉ chạy một chiều — mở
-        // thì đẹp, đóng thì tắt phụt. Đo trên video (bề rộng vệt tối trên
-        // một dòng quét ngang qua thân dialog, px):
-        // anchor: .bottomTrailing làm nó "mọc lên từ nút" thay vì phình từ tâm.
-        .transition(
-          .scale(scale: 0.6, anchor: .bottomTrailing)
-            .combined(with: .opacity)
-        )
-    }
+    RoundedRectangle(cornerRadius: panelCorner)
+      .fill(Color(white: 0.11))
+      .frame(width: panelWidth, height: panelHeight)
+      .shadow(color: .black.opacity(0.18), radius: 12, y: 6)
+      .scaleEffect(isOpen ? 1 : 0.3, anchor: .bottomTrailing)
+      .opacity(isOpen ? 1 : 0)
+      .allowsHitTesting(isOpen)
+      .padding(.trailing, fabTrailing)
+      .padding(.bottom, fabBottom + fabSize + gap)
   }
 
   // MARK: - FAB đứng yên, chỉ xoay dấu +
@@ -83,7 +121,7 @@ struct FABSeparateDialogScreen: View {
         Image(systemName: "plus")
           .font(.title2.weight(.semibold))
           .foregroundStyle(.white)
-          .rotationEffect(.degrees(isOpen ? 45 : 0))
+          .rotationEffect(.degrees(isOpen ? 225 : 0))
       }
       .shadow(color: .black.opacity(0.18), radius: 10, y: 4)
       .padding(.trailing, fabTrailing)
@@ -100,7 +138,7 @@ struct FABSeparateDialogScreen: View {
   // MARK: -
 
   private var caption: some View {
-    Text("Dialog là view riêng, bật ra bằng transition scale(anchor: .bottomTrailing).\nFAB đứng yên, dấu + xoay 45° thành ×.")
+    Text("Dialog là view riêng, bật ra bằng transition scale(anchor: .bottomTrailing).\nFAB đứng yên, dấu + xoay 225° thành ×.")
       .font(.caption)
       .foregroundStyle(.secondary)
       .padding()
