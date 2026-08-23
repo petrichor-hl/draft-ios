@@ -49,22 +49,13 @@ struct LearnAnimation: View {
         Text("Đi theo thứ tự 1 → 4. Mỗi màn có phần footer giải thích ngay dưới demo.")
       }
 
-      // Đủ 11 nhóm chủ đề trong tài liệu Animations của Apple.
-      // Hiện mới là placeholder liệt kê symbol.
       Section {
-        ForEach(AnimationTopic.allCases) { topic in
-          Button {
-            coordinator.push(.animationTopic(topic))
-          } label: {
-            Text(topic.title)
-              .font(.subheadline)
-              .padding(.vertical, 2)
-          }
+        Button {
+          coordinator.push(.animationTopics)
+        } label: {
+          LabRow(title: "Topics",
+                 subtitle: "11 nhóm chủ đề trong tài liệu Animations của Apple")
         }
-      } header: {
-        Text("Topics")
-      } footer: {
-        Text("developer.apple.com/documentation/swiftui/animations")
       }
 
       Section {

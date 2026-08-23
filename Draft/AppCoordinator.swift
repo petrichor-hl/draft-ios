@@ -53,6 +53,7 @@ enum AppRoute: Hashable {
     case animationCurves
     case animationTransitions
     case animationPhaseKeyframe
+    case animationTopics
     case animationTopic(AnimationTopic)
     case fabExpand
     case fabSeparateDialog
@@ -137,6 +138,8 @@ extension AppRoute: View {
             AnimationTransitionsScreen()
         case .animationPhaseKeyframe:
             AnimationPhaseKeyframeScreen()
+        case .animationTopics:
+            AnimationTopicsScreen()
         case .animationTopic(let topic):
             AnimationTopicScreen(topic: topic)
         case .fabExpand:
