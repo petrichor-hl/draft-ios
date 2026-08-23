@@ -129,6 +129,12 @@ struct AppendixView: View {
             } label: {
                 Text("Haptics Lab")
             }
+
+            Button {
+                coordinator.push(.fixedSize)
+            } label: {
+                Text(".fixedSize() — cần học")
+            }
         }
         .navigationTitle("Appendix")
         .toolbar {

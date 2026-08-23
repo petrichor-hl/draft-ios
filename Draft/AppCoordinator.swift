@@ -60,6 +60,7 @@ enum AppRoute: Hashable {
     case stagger
     case swipeToConfirm
     case kavsoftSlideToConfirm
+    case fixedSize
     case lineHeightExact
     case observationLab
     case languagePicker
@@ -152,6 +153,8 @@ extension AppRoute: View {
             SwipeToConfirm()
         case .kavsoftSlideToConfirm:
             Kavsoft_SlideToConfirm()
+        case .fixedSize:
+            FixedSizeScreen()
         case .lineHeightExact:
             LineHeightExactScreen()
         case .observationLab:
