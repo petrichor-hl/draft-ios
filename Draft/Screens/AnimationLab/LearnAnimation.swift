@@ -83,6 +83,13 @@ struct LearnAnimation: View {
         }
 
         Button {
+          coordinator.push(.stagger)
+        } label: {
+          LabRow(title: "Stagger",
+                 subtitle: "Xếp hàng bằng .delay(index × nhịp) — tách từ màn FAB")
+        }
+
+        Button {
           coordinator.push(.swipeToConfirm)
         } label: {
           LabRow(title: "Swipe to Confirm",
