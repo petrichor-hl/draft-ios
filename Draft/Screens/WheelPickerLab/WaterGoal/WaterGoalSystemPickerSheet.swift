@@ -163,7 +163,3 @@ struct WaterGoalSystemPickerSheet: View {
     }
   }
 }
-
-#Preview {
-  WaterGoalSystemPickerSheet(valueMl: .constant(2500))
-}

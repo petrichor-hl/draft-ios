@@ -96,6 +96,9 @@ struct WaterGoalTableWheelSheet: View {
         .font(.system(size: 11))
         .foregroundStyle(.tertiary)
         .multilineTextAlignment(.center)
+        // Lý do đầy đủ ở `WaterGoalCollectionWheelSheet`: nội dung sheet luôn
+        // hụt đúng phần safe area đáy, và view co giãn nhất gánh chỗ hụt.
+        .fixedSize(horizontal: false, vertical: true)
 
       HStack(spacing: 12) {
         probeButton("Min") { selectedIndex = 0 }

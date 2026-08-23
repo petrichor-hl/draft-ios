@@ -60,7 +60,9 @@ struct TableWheelMetrics {
 struct TableWheelPicker: View {
   var values: [String]
   @Binding var selectedIndex: Int
-  var unitLabel: String
+  /// Bỏ trống cho cột TRẦN (năm sinh chẳng hạn). Plinth vẫn vẽ, vì nó là
+  /// vạch chỉ chỗ đang chọn chứ không phải nền cho chữ đơn vị.
+  var unitLabel: String = ""
   var metrics: TableWheelMetrics = .default
 
   var body: some View {

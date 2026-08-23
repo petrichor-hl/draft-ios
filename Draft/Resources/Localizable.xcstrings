@@ -259,7 +259,13 @@
         }
       }
     },
+    "1 cột — chiều cao" : {
+
+    },
     "1 cột — mục tiêu nước uống" : {
+
+    },
+    "1 cột trần — năm sinh" : {
 
     },
     "1 ft → canonical" : {
@@ -817,6 +823,9 @@
         }
       }
     },
+    "Bước 1cm, từ 120 đến 220 — 101 hàng thay vì 17. Ca để xem việc tái dùng cell có thật sự cần không: cuộn một mạch hết dải mà không giật thì cả hai bản đang làm đúng việc." : {
+
+    },
     "Bước 2: canonical → miles" : {
       "localizations" : {
         "en" : {
@@ -979,7 +988,7 @@
     "Chỉ rung khi TĂNG. Closure nhận (old, new) và trả về SensoryFeedback? — trả nil là không rung. Bấm giảm để nghe sự im lặng." : {
 
     },
-    "Chiều cao — 1 cột, cm" : {
+    "Chọn năm sinh" : {
 
     },
     "Chọn ngôn ngữ" : {
@@ -1162,6 +1171,9 @@
 
     },
     "Điểm" : {
+
+    },
+    "Điều chỉnh chiều cao" : {
 
     },
     "Điều chỉnh mục tiêu nước uống" : {
@@ -1602,6 +1614,9 @@
     "Không có action button" : {
 
     },
+    "Không có nhãn đơn vị, chỉ còn cột số — chỗ nhìn rõ nhất phần nén khoảng cách của bản collection. Cận trên là năm hiện tại, tính lúc chạy chứ không viết cứng." : {
+
+    },
     "Không có trigger, PhaseAnimator quay vòng liên tục — dùng cho loading indicator, chấm \"đang gõ\", icon nhấp nháy. Ba chấm ở đây dùng chung một cặp phase [false, true], chỉ khác nhau ở .delay theo index." : {
 
     },
@@ -1835,9 +1850,6 @@
 
     },
     "Năm cú success cách nhau 120ms. Vì mỗi cú kéo dài hơn khoảng cách đó, chúng đè lên nhau thành một mớ ù ù vô nghĩa — người dùng không đếm được đã có mấy sự kiện.\n\nKết luận: Notification chỉ dành cho KẾT QUẢ CUỐI của một tác vụ. Thao tác lặp lại nhiều lần thì dùng Selection hoặc Impact." : {
-
-    },
-    "Năm sinh — 1 cột trần" : {
 
     },
     "Native, 0 dependency — chỉ inline" : {
