@@ -3,8 +3,14 @@
 //  Draft
 //
 //  Kho wheel picker. Đi từ ca đơn giản nhất — MỘT cột, bước không đều, có nhãn
-//  đơn vị — rồi hai cột (cân nặng) và ba cột (ngày sự kiện), tất cả trên cùng
-//  một viên gạch `TableWheelColumn` / `CollectionWheelColumn` không sửa dòng nào.
+//  đơn vị — rồi hai cột (cân nặng, khoảng tuổi) và ba cột (ngày sự kiện), tất cả
+//  trên cùng một viên gạch `TableWheelColumn` / `CollectionWheelColumn` không
+//  sửa dòng nào.
+//
+//  Mọi ca đều mở bằng `.sheet` với detent đo được, TRỪ khoảng tuổi — ca đó đẩy
+//  sang màn hình mới, và chỗ đó là cố ý: `Spacer` bị cấm trong sheet vì phá
+//  phép đo (xem `heightReader`) nhưng lại cần thiết ở màn đẩy. Cùng một nội
+//  dung, hai ràng buộc bố cục ngược nhau.
 //
 //  ⚠️ Component tự dựng ở đây CHỈ DÙNG API iOS 16. Draft ship iOS 26.5, nên rất
 //     dễ lỡ tay dùng `scrollTargetBehavior` / `.scrollPosition` — những thứ
@@ -24,6 +30,10 @@ struct WheelPickerLabScreen: View {
 
   /// Ba Int rời, không phải `Date` — lý do ở `DateWheelData`.
   @State private var eventDate = WheelDate(day: 11, month: 1, year: 2026)
+
+  /// `ClosedRange` chứ không phải hai Int rời — kiểu tự từ chối khoảng lộn
+  /// ngược. Lý do ở `AgeRangeTableWheelScreen`.
+  @State private var ageRange = 25...45
 
   @State private var presented: Sheet?
 
@@ -124,6 +134,40 @@ struct WheelPickerLabScreen: View {
           """
         )
       }
+
+      Section {
+        // `NavigationLink` chứ không phải `row(...)`: ca này ĐẨY sang màn hình
+        // khác thay vì mở sheet — xem khối 5 ở `AgeRangeTableWheelScreen`.
+        //
+        // Dùng bản nhận thẳng destination view, không phải `push(_ route:)` của
+        // `AppCoordinator`: hai màn kia cần một `Binding` vào `ageRange`, mà
+        // `AppRoute` là `Hashable` nên không mang binding theo được. Đổi lại,
+        // chevron mà `List` tự thêm hoá ra tiện — nó là dấu hiệu duy nhất trên
+        // màn này phân biệt hàng ĐẨY với hàng MỞ SHEET.
+        NavigationLink {
+          AgeRangeTableWheelScreen(range: $ageRange)
+        } label: {
+          rowLabel("UITableView tự dựng", valueText: ageRangeText)
+        }
+
+        NavigationLink {
+          AgeRangeCollectionWheelScreen(range: $ageRange)
+        } label: {
+          rowLabel("UICollectionView tự dựng", valueText: ageRangeText)
+        }
+      } header: {
+        Text("2 cột — khoảng tuổi")
+      } footer: {
+        Text(
+          """
+          Ràng buộc không kẹp về một HẰNG SỐ như ca cân nặng mà theo giá trị \
+          cột kia, và vượt qua thì ĐÙN cột kia đi chứ không ghì cột đang kéo \
+          lại. Nhờ vậy cú sửa rơi vào cột đang đứng yên — một đường vá khác hẳn \
+          phần còn lại của kho. Canonical là ClosedRange, nên khoảng lộn ngược \
+          không phải hiển thị xấu mà là crash.
+          """
+        )
+      }
     }
     .navigationTitle("Wheel Picker Toolbox")
     .navigationBarTitleDisplayMode(.inline)
@@ -192,6 +236,10 @@ struct WheelPickerLabScreen: View {
     "\(weightTenths / 10).\(weightTenths % 10) kg"
   }
 
+  private var ageRangeText: String {
+    "\(ageRange.lowerBound) – \(ageRange.upperBound) tuổi"
+  }
+
   private func row(
     _ title: String,
     value: Int,
@@ -207,15 +255,22 @@ struct WheelPickerLabScreen: View {
     action: @escaping () -> Void
   ) -> some View {
     Button(action: action) {
-      HStack {
-        Text(title)
-          .foregroundStyle(.primary)
-        Spacer()
-        // `Text(verbatim:)` chứ không nội suy: `Text("\(2500)")` bị format theo
-        // locale và ra "2.500".
-        Text(verbatim: valueText)
-          .foregroundStyle(.secondary)
-      }
+      rowLabel(title, valueText: valueText)
+    }
+  }
+
+  /// Phần nhìn thấy của một hàng, tách khỏi `row` vì ca khoảng tuổi ĐẨY sang
+  /// màn hình khác thay vì mở sheet — nó cần đúng cái nhãn này nhưng nằm trong
+  /// `NavigationLink`, không phải `Button`.
+  private func rowLabel(_ title: String, valueText: String) -> some View {
+    HStack {
+      Text(title)
+        .foregroundStyle(.primary)
+      Spacer()
+      // `Text(verbatim:)` chứ không nội suy: `Text("\(2500)")` bị format theo
+      // locale và ra "2.500".
+      Text(verbatim: valueText)
+        .foregroundStyle(.secondary)
     }
   }
 
