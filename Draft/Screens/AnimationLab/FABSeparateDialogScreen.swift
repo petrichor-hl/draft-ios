@@ -9,7 +9,7 @@
 //    • màn này        — hai view riêng. FAB đứng yên và chỉ xoay dấu +
 //                       thành ×; dialog bật ra phía trên nó.
 //
-//  Bước 1 — dialog rỗng, chưa có nút bên trong.
+//  Bước 2 — bốn hàng nội dung.
 //
 
 import SwiftUI
@@ -19,8 +19,8 @@ struct FABSeparateDialogScreen: View {
 
   private let fabSize: CGFloat = 65
   private let panelWidth: CGFloat = 300
-  private let panelHeight: CGFloat = 345
   private let panelCorner: CGFloat = 26
+  private let rowIcon: CGFloat = 44
 
   // Lề của FAB, đo từ video bản gốc.
   private let fabTrailing: CGFloat = 30
@@ -30,6 +30,15 @@ struct FABSeparateDialogScreen: View {
   private let gap: CGFloat = 16
 
   private let spring = Animation.spring(duration: 0.4, bounce: 0.4)
+
+  /// Đóng nhanh hơn mở. Dùng .speed() thay vì khai một spring thứ hai để
+  /// đường cong và độ nảy vẫn là một, chỉ khác tốc độ chạy — sửa `spring`
+  /// là cả hai chiều đổi theo. 1.4 tương đương duration 0.4 → 0.29s.
+  ///
+  /// Cùng nguyên tắc với PressScaleStyle ở cuối file: mở/nhấn thì thong thả,
+  /// đóng/nhả thì dứt khoát. Mở là lúc người dùng cần kịp thấy cái gì vừa
+  /// hiện ra; đóng thì họ đã quyết xong rồi, kéo dài chỉ thành chờ đợi.
+  private let closeSpeed: Double = 1.4
 
   var body: some View {
     ZStack(alignment: .bottomTrailing) {
@@ -98,15 +107,59 @@ struct FABSeparateDialogScreen: View {
   //    • đổi lại: view luôn tồn tại trong cây, nên cần .allowsHitTesting(isOpen)
   //      để lúc ẩn nó không nuốt chạm của người dùng
   private var dialog: some View {
-    RoundedRectangle(cornerRadius: panelCorner)
-      .fill(Color(white: 0.11))
-      .frame(width: panelWidth, height: panelHeight)
-      .shadow(color: .black.opacity(0.18), radius: 12, y: 6)
-      .scaleEffect(isOpen ? 1 : 0.3, anchor: .bottomTrailing)
-      .opacity(isOpen ? 1 : 0)
-      .allowsHitTesting(isOpen)
-      .padding(.trailing, fabTrailing)
-      .padding(.bottom, fabBottom + fabSize + gap)
+    VStack(spacing: 0) {
+      row("Cân nặng", "55 kg", icons: ["scalemass.fill"])
+      row("Vận động", "23 kcal", icons: ["dumbbell.fill"])
+      row("Nước", "250 ml", icons: ["drop.fill"])
+      row("Bữa ăn", "còn 1000 kcal", icons: ["keyboard.fill", "camera.fill"])
+    }
+    .padding(20)
+    // Chỉ khoá bề ngang; chiều cao do nội dung quyết định. Làm được vì
+    // scaleEffect chỉ phóng to KẾT QUẢ ĐÃ RENDER, không nội suy frame —
+    // khác FABExpandScreen, nơi chiều cao chính là thứ đang được animate.
+    // ZStack căn .bottomTrailing nên panel cao lên là nở LÊN TRÊN, đáy đứng yên.
+    .frame(width: panelWidth)
+    .background(
+      RoundedRectangle(cornerRadius: panelCorner)
+        .fill(Color(white: 0.11))
+    )
+    .shadow(color: .black.opacity(0.18), radius: 12, y: 6)
+    .opacity(isOpen ? 1 : 0)
+    .scaleEffect(isOpen ? 1 : 0.2, anchor: .bottomTrailing)
+    .allowsHitTesting(isOpen)
+    .padding(.trailing, fabTrailing)
+    .padding(.bottom, fabBottom + fabSize + gap)
+  }
+
+  // Một hàng: tiêu đề + giá trị bên trái, một hoặc hai nút tròn bên phải.
+  private func row(_ title: String, _ value: String, icons: [String]) -> some View {
+    HStack(spacing: 10) {
+      VStack(alignment: .leading, spacing: 2) {
+        Text(title)
+          .font(.headline)
+          .foregroundStyle(.white)
+        Text(value)
+          .font(.subheadline)
+          .foregroundStyle(.white.opacity(0.55))
+      }
+
+      Spacer(minLength: 8)
+
+      ForEach(icons, id: \.self) { name in
+        Button {
+          // Chưa nối hành động — màn này chỉ để mổ xẻ animation.
+        } label: {
+          Image(systemName: name)
+            .font(.system(size: 17, weight: .semibold))
+            .foregroundStyle(.white)
+            .frame(width: rowIcon, height: rowIcon)
+            .background(Circle().fill(Color(white: 0.22)))
+        }
+        // Dùng lại đúng hiệu ứng nhấn của FAB cho nhất quán.
+        .buttonStyle(PressScaleStyle())
+      }
+    }
+    .padding(.vertical, 14)
   }
 
   // MARK: - FAB đứng yên, chỉ xoay dấu +
@@ -121,8 +174,6 @@ struct FABSeparateDialogScreen: View {
         .fill(Color(white: 0.11))
         .frame(width: fabSize, height: fabSize)
         .overlay {
-          // + xoay 45° thành ×. Không đổi icon, không crossfade — chỉ là một
-          // Angle chạy từ 0 tới 45, nên nó nảy theo đúng spring bên trên.
           Image(systemName: "plus")
             .font(.title2.weight(.semibold))
             .foregroundStyle(.white)
@@ -136,7 +187,7 @@ struct FABSeparateDialogScreen: View {
   }
 
   private func toggle() {
-    withAnimation(spring) {
+    withAnimation(isOpen ? spring.speed(closeSpeed) : spring) {
       isOpen.toggle()
     }
   }
@@ -156,8 +207,8 @@ struct FABSeparateDialogScreen: View {
 
 struct PressScaleStyle: ButtonStyle {
   var pressedScale: CGFloat = 0.8
-  var pressIn: Animation = .spring(duration: 0.2, bounce: 0)
-  var pressOut: Animation = .spring(duration: 0.12, bounce: 0.3)
+  var pressIn: Animation = Animation.spring(duration: 0.2, bounce: 0)
+  var pressOut: Animation = Animation.spring(duration: 0.12, bounce: 0.3)
 
   func makeBody(configuration: Configuration) -> some View {
     configuration.label
