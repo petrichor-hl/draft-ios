@@ -48,6 +48,15 @@
         }
       }
     },
+    ".fixedSize()" : {
+
+    },
+    ".fixedSize() — cần học" : {
+
+    },
+    ".fixedSize(horizontal:vertical:)" : {
+
+    },
     ".formatted(.dateTime.locale(locale))" : {
 
     },
@@ -249,6 +258,9 @@
           }
         }
       }
+    },
+    "1 cột — mục tiêu nước uống" : {
+
     },
     "1 ft → canonical" : {
 
@@ -692,6 +704,9 @@
     "Ba dòng đầu chồng khít lên nhau: .snappy CHÍNH LÀ spring(duration: 0.5, bounce: 0.15). Tương tự .smooth = bounce 0, .bouncy = bounce 0.3. Cả ba đều nhận (duration:) và (duration:extraBounce:).\n\nNhưng duration của spring KHÔNG phải \"chạy xong sau ngần ấy giây\" như timing curve. Apple gọi nó là perceptual duration — thời gian cảm nhận được là đã tới nơi. Với bounce > 0, phần nảy dư vẫn còn lắc thêm sau mốc đó (chính vì vậy withAnimation(completion:) mới cần phân biệt .logicallyComplete với .removed).\n\nCách nhớ: timing curve có duration + đường cong. Spring có duration + độ nảy. Cùng một núm \"bao lâu\", khác cái núm thứ hai." : {
 
     },
+    "Ba nút này đổi selectedIndex từ SwiftUI. Bánh xe phải tự trượt theo — đó là chiều \"đi vào\" do updateUIView lo." : {
+
+    },
     "Ba preset Apple khuyến nghị dùng làm mặc định: \n- smooth (không nảy), \n- snappy (nảy nhẹ, dứt khoát — hợp tap/toggle), \n- bouncy (nảy rõ, vui).\n\nƯu thế thật sự của spring nằm ở chỗ nó GIỮ VẬN TỐC: nếu bạn đổi đích giữa chừng (kéo, thả, đổi ý), spring nối tiếp mượt còn timing curve thì khựng lại rồi chạy đoạn mới." : {
 
     },
@@ -818,6 +833,9 @@
         }
       }
     },
+    "Bước 250ml, từ 2000 đến 6000. Hai hàng cùng một dữ liệu — mở lần lượt rồi vuốt để so cảm giác cuộn, không chỉ so ảnh." : {
+
+    },
     "C. Notification" : {
 
     },
@@ -855,10 +873,16 @@
     "Cảm giác y hệt F1. Nhưng để làm được, ViewModel phải phơi ra hai property tồn tại CHỈ ĐỂ làm trigger: milestone (đếm mốc) và outcome (kết quả). Chúng không phục vụ giao diện gì cả.\n\nVà vì .sensoryFeedback chỉ so oldValue != newValue, `milestone` bắt buộc phải là bộ đếm tăng dần — đúng cái bẫy ở màn SensoryFeedback." : {
 
     },
+    "Cân nặng — 2 cột (nguyên . thập phân)" : {
+
+    },
     "canonical = value × coefficient + constant" : {
 
     },
     "Canonical Value" : {
+
+    },
+    "Cập nhật" : {
 
     },
     "Chạm khắp vùng xanh — sát mép trên, sát mép dưới, giữa. Bật/tắt toggle để so.\n\nGenerator được tạo bằng init(style:view:) với chính view này làm mốc, nên toạ độ truyền vào impactOccurred(at:) mới có ý nghĩa. Dùng init(style:) thường rồi gọi at: là vô nghĩa." : {
@@ -955,6 +979,9 @@
     "Chỉ rung khi TĂNG. Closure nhận (old, new) và trả về SensoryFeedback? — trả nil là không rung. Bấm giảm để nghe sự im lặng." : {
 
     },
+    "Chiều cao — 1 cột, cm" : {
+
+    },
     "Chọn ngôn ngữ" : {
       "localizations" : {
         "en" : {
@@ -980,7 +1007,13 @@
     "Chưa có sự kiện nào" : {
 
     },
+    "Chưa dựng demo — mở file để xem danh sách câu hỏi cần trả lời." : {
+
+    },
     "Chưa dựng demo cho chủ đề này." : {
+
+    },
+    "Chưa làm" : {
 
     },
     "Chưa rung lần nào — engine đang lạnh" : {
@@ -1116,6 +1149,9 @@
     "dd/MM/yyyy HH:mm" : {
 
     },
+    "DEBUG — thử updateUIView" : {
+
+    },
     "developer.apple.com/documentation/swiftui/animations" : {
 
     },
@@ -1126,6 +1162,9 @@
 
     },
     "Điểm" : {
+
+    },
+    "Điều chỉnh mục tiêu nước uống" : {
 
     },
     "Định nghĩa" : {
@@ -1731,6 +1770,9 @@
     "minute" : {
 
     },
+    "ml" : {
+
+    },
     "Mở A" : {
 
     },
@@ -1795,6 +1837,9 @@
     "Năm cú success cách nhau 120ms. Vì mỗi cú kéo dài hơn khoảng cách đó, chúng đè lên nhau thành một mớ ù ù vô nghĩa — người dùng không đếm được đã có mấy sự kiện.\n\nKết luận: Notification chỉ dành cho KẾT QUẢ CUỐI của một tác vụ. Thao tác lặp lại nhiều lần thì dùng Selection hoặc Impact." : {
 
     },
+    "Năm sinh — 1 cột trần" : {
+
+    },
     "Native, 0 dependency — chỉ inline" : {
       "localizations" : {
         "en" : {
@@ -1812,6 +1857,9 @@
       }
     },
     "Nền tảng" : {
+
+    },
+    "Ngày sinh — 3 cột phụ thuộc nhau" : {
 
     },
     "Ngoài view" : {
@@ -2406,6 +2454,9 @@
           }
         }
       }
+    },
+    "Wheel Picker Toolbox" : {
+
     },
     "withAnimation + completion" : {
 
