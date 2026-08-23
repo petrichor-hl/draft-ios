@@ -84,6 +84,7 @@ enum AppRoute: Hashable {
     case hapticsOutsideView
     case hapticsCore
     case hapticsRealWorld
+    case wheelPickerLab
 }
 
 extension AppRoute: View {
@@ -199,6 +200,8 @@ extension AppRoute: View {
             OutsideViewScreen()
         case .hapticsCore:
             CoreHapticsScreen()
+        case .wheelPickerLab:
+            WheelPickerLabScreen()
         case .hapticsRealWorld:
             RealWorldScreen()
         }
