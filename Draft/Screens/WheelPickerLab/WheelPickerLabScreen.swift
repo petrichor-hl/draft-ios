@@ -36,6 +36,7 @@ struct WheelPickerLabScreen: View {
     case birthYearTable
     case birthYearCollection
     case weightTable
+    case weightCollection
 
     var id: String { rawValue }
   }
@@ -89,6 +90,7 @@ struct WheelPickerLabScreen: View {
 
       Section {
         row("UITableView tự dựng", valueText: weightText) { presented = .weightTable }
+        row("UICollectionView tự dựng", valueText: weightText) { presented = .weightCollection }
       } header: {
         Text("2 cột — cân nặng")
       } footer: {
@@ -103,7 +105,6 @@ struct WheelPickerLabScreen: View {
       }
 
       Section {
-        Text("Cân nặng — bản collection và đối chứng Picker hệ thống")
         Text("Ngày sinh — 3 cột phụ thuộc nhau")
       } header: {
         Text("Chưa làm")
@@ -223,6 +224,8 @@ struct WheelPickerLabScreen: View {
       BirthYearCollectionWheelSheet(year: $birthYear)
     case .weightTable:
       WeightTableWheelSheet(tenths: $weightTenths)
+    case .weightCollection:
+      WeightCollectionWheelSheet(tenths: $weightTenths)
     }
   }
 }
