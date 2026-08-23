@@ -40,6 +40,10 @@ struct FABSeparateDialogScreen: View {
   /// hiện ra; đóng thì họ đã quyết xong rồi, kéo dài chỉ thành chờ đợi.
   private let closeSpeed: Double = 1.4
 
+  /// Mỗi hàng trôi lên một đoạn ngắn khi hiện ra, hàng sau trễ hơn hàng trước.
+  private let rowSlide: CGFloat = 14
+  private let rowStagger: Double = 0.05
+
   var body: some View {
     ZStack(alignment: .bottomTrailing) {
       Color.black
@@ -108,12 +112,12 @@ struct FABSeparateDialogScreen: View {
   //      để lúc ẩn nó không nuốt chạm của người dùng
   private var dialog: some View {
     VStack(spacing: 0) {
-      row("Cân nặng", "55 kg", icons: ["scalemass.fill"])
-      row("Vận động", "23 kcal", icons: ["dumbbell.fill"])
-      row("Nước", "250 ml", icons: ["drop.fill"])
-      row("Bữa ăn", "còn 1000 kcal", icons: ["keyboard.fill", "camera.fill"])
+      row("Cân nặng", "55 kg", icons: ["scalemass.fill"], index: 3)
+      row("Vận động", "23 kcal", icons: ["dumbbell.fill"], index: 2)
+      row("Nước", "250 ml", icons: ["drop.fill"], index: 1)
+      row("Bữa ăn", "còn 1000 kcal", icons: ["keyboard.fill", "camera.fill"], index: 0)
     }
-    .padding(20)
+    .padding(24)
     // Chỉ khoá bề ngang; chiều cao do nội dung quyết định. Làm được vì
     // scaleEffect chỉ phóng to KẾT QUẢ ĐÃ RENDER, không nội suy frame —
     // khác FABExpandScreen, nơi chiều cao chính là thứ đang được animate.
@@ -132,7 +136,7 @@ struct FABSeparateDialogScreen: View {
   }
 
   // Một hàng: tiêu đề + giá trị bên trái, một hoặc hai nút tròn bên phải.
-  private func row(_ title: String, _ value: String, icons: [String]) -> some View {
+  private func row(_ title: String, _ value: String, icons: [String], index: Int) -> some View {
     HStack(spacing: 10) {
       VStack(alignment: .leading, spacing: 2) {
         Text(title)
@@ -160,6 +164,20 @@ struct FABSeparateDialogScreen: View {
       }
     }
     .padding(.vertical, 14)
+    // .offset chỉ dịch lúc VẼ, không đụng tới layout — nên panel không bị
+    // co giãn theo, chiều cao (vốn do nội dung quyết định) vẫn đứng yên.
+    .offset(y: isOpen ? 0 : rowSlide)
+    .opacity(isOpen ? 1 : 0)
+    .animation(rowAnimation(index), value: isOpen)
+  }
+
+  /// Mở: các hàng lần lượt trôi lên, hàng dưới trễ hơn hàng trên.
+  /// Đóng: tất cả đi cùng lúc và nhanh hơn — xếp hàng lúc đóng chỉ làm
+  /// người dùng phải chờ thêm.
+  private func rowAnimation(_ index: Int) -> Animation {
+    isOpen
+      ? spring.delay(Double(index) * rowStagger)
+      : spring.speed(closeSpeed)
   }
 
   // MARK: - FAB đứng yên, chỉ xoay dấu +
@@ -195,11 +213,11 @@ struct FABSeparateDialogScreen: View {
   // MARK: -
 
   private var caption: some View {
-    Text("Dialog là view riêng, bật ra bằng transition scale(anchor: .bottomTrailing).\nFAB đứng yên, dấu + xoay 225° thành ×.")
+    Text("Dialog là view riêng, scale từ góc dưới-phải của chính nó.\nFAB đứng yên, dấu + xoay thành ×. Mỗi hàng trôi lên, lệch nhịp nhau.")
       .font(.caption)
       .foregroundStyle(.secondary)
       .padding()
-      .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
   }
 }
 
