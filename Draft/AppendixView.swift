@@ -141,6 +141,12 @@ struct AppendixView: View {
             } label: {
                 Text(".fixedSize() — cần học")
             }
+
+            Button {
+                coordinator.push(.flowRow)
+            } label: {
+                Text("FlowRow — chip tự xuống dòng")
+            }
         }
         .navigationTitle("Appendix")
         .toolbar {

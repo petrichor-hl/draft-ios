@@ -85,6 +85,7 @@ enum AppRoute: Hashable {
     case hapticsCore
     case hapticsRealWorld
     case wheelPickerLab
+    case flowRow
 }
 
 extension AppRoute: View {
@@ -204,6 +205,8 @@ extension AppRoute: View {
             WheelPickerLabScreen()
         case .hapticsRealWorld:
             RealWorldScreen()
+        case .flowRow:
+            FlowRowScreen()
         }
     }
 }
