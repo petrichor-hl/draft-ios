@@ -87,6 +87,8 @@ enum AppRoute: Hashable {
     case wheelPickerLab
     case flowRow
     case accordion
+    case accordionBuiltIn
+    case accordionSingle
     case kavsoftSwipeActionsScrollView
     case calendar
     case logger
@@ -222,7 +224,11 @@ extension AppRoute: View {
         case .flowRow:
             FlowRowScreen()
         case .accordion:
-            AccordionScreen()
+            AccordionLab()
+        case .accordionBuiltIn:
+            DisclosureGroupScreen()
+        case .accordionSingle:
+            SingleAccordionScreen()
         case .kavsoftSwipeActionsScrollView:
             Kavsoft_SwipeActionsForScrollView()
         case .calendar:

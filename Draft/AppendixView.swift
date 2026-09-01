@@ -157,7 +157,7 @@ struct AppendixView: View {
             Button {
                 coordinator.push(.accordion)
             } label: {
-                Text("Accordion")
+                Text("Accordion Lab")
             }
 
             Button {

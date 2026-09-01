@@ -104,6 +104,9 @@
         }
       }
     },
+    "@State, if, withAnimation — có công tắc tắt từng thứ" : {
+
+    },
     "%@%@" : {
       "localizations" : {
         "vi" : {
@@ -230,6 +233,9 @@
     "0. Permission" : {
 
     },
+    "1 · DisclosureGroup" : {
+
+    },
     "1 · Gõ số & quan sát canonical" : {
       "localizations" : {
         "en" : {
@@ -314,6 +320,9 @@
     "1. Chồng nhau" : {
 
     },
+    "1. DisclosureGroup" : {
+
+    },
     "1. Hai .sheet chồng lên cùng một view" : {
 
     },
@@ -327,6 +336,15 @@
 
     },
     "1. UIImagePickerController ⭐️" : {
+
+    },
+    "1a · Tự giữ state" : {
+
+    },
+    "1b · State ở ngoài — isExpanded:" : {
+
+    },
+    "1c · Label tuỳ biến" : {
 
     },
     "2 · baseUnit() — đơn vị gốc (canonical)" : {
@@ -361,6 +379,9 @@
         }
       }
     },
+    "2 · Một cái đơn lẻ" : {
+
+    },
     "2️⃣ Append" : {
 
     },
@@ -386,6 +407,9 @@
 
     },
     "2. Hai .sheet ở hai view anh em" : {
+
+    },
+    "2. Một cái đơn lẻ" : {
 
     },
     "2. Session & Preview" : {
@@ -463,6 +487,9 @@
     "3. Core Haptics" : {
 
     },
+    "3. Cụm mở tự do" : {
+
+    },
     "3. Một .sheet(item:) duy nhất" : {
 
     },
@@ -506,6 +533,9 @@
           }
         }
       }
+    },
+    "4. Cụm single-open" : {
+
     },
     "4. Điều khiển" : {
 
@@ -564,6 +594,9 @@
 
     },
     "5 style + intensity — style chốt ở init" : {
+
+    },
+    "5. Đổi lớp áo" : {
 
     },
     "5. Một .sheet + một .fullScreenCover" : {
@@ -724,6 +757,15 @@
         }
       }
     },
+    "Accordion Item #1" : {
+
+    },
+    "Accordion Item #2" : {
+
+    },
+    "Accordion Lab" : {
+
+    },
     "activeSheet" : {
 
     },
@@ -792,6 +834,12 @@
     "Bấm nút này rồi bấm NGAY ô \"Lạnh\" ở trên — nó sẽ rung dứt khoát như ô Ấm, vì cùng dùng chung coldGenerator và engine vừa được đánh thức.\n\nLàm lại: bấm nút này, đếm thầm 5 giây, rồi mới bấm ô \"Lạnh\" — độ trễ quay lại. Đó là lúc cửa sổ giữ nóng đã hết hạn." : {
 
     },
+    "Bấm thẳng vào header thì DisclosureGroup tự gói animation. Đổi state từ bên ngoài thì không ai gói giùm — đó là khác biệt đáng nhớ nhất ở màn này." : {
+
+    },
+    "Bấm vào header để mở. Rồi tắt từng công tắc bên dưới và bấm lại — mỗi công tắc tương ứng một modifier mà người mới hay bỏ quên." : {
+
+    },
     "Bắn .success 5 lần liên tiếp" : {
 
     },
@@ -802,6 +850,9 @@
 
     },
     "Bản nháp của bạn an toàn" : {
+
+    },
+    "Bản tự giữ state, bản isExpanded:, và label tuỳ biến" : {
 
     },
     "Baseline" : {
@@ -861,6 +912,9 @@
         }
       }
     },
+    "Body hiện ra nguyên khối ngay từ frame đầu, trong khi khung vẫn đang giãn. Đây là mặc định NẾU bạn viết .transition(.identity)." : {
+
+    },
     "Bool: gán true" : {
 
     },
@@ -917,7 +971,13 @@
     "Cách gắn" : {
 
     },
+    "Cách nhìn rõ nhất mọi thứ ở trên: chậm lại rồi tắt clipShape, sẽ thấy hẳn chữ nằm ngoài viền trong lúc khung co." : {
+
+    },
     "Cách thử: chờ ô trên báo \"đã nguội\", bấm ô Lạnh — cú rung đến hơi trễ so với lúc ngón nhấc. Chờ nguội lại, bấm ô Ấm — rung khớp đúng khoảnh khắc nhấc ngón.\n\nCả hai ô dùng CHUNG một loại gesture và cùng bắn ở touch-up, nên khác biệt duy nhất là dòng prepare(). Khoảng 80–150ms giữa lúc ngón chạm và lúc nhấc chính là cửa sổ để engine kịp khởi động.\n\nBấm ô Lạnh HAI lần liên tiếp thì lần hai cũng dứt khoát — vì cú rung thứ nhất đã đánh thức engine. Đó không phải lỗi demo, đó chính là cơ chế đang chạy." : {
+
+    },
+    "Calendar" : {
 
     },
     "CalorieCard — đọc todayCalories" : {
@@ -1079,6 +1139,15 @@
     "Chưa có sự kiện nào" : {
 
     },
+    "Chưa dựng — chevron ↔ +/−, trái ↔ phải" : {
+
+    },
+    "Chưa dựng — state leo lên cha, ID?" : {
+
+    },
+    "Chưa dựng — xếp lại là xong, bẫy ở identity" : {
+
+    },
     "Chưa dựng demo — mở file để xem danh sách câu hỏi cần trả lời." : {
 
     },
@@ -1095,6 +1164,12 @@
 
     },
     "Chụp ảnh trong ~40 dòng, không cần AVFoundation" : {
+
+    },
+    "clipShape — cắt phần tràn" : {
+
+    },
+    "clipShape tắt" : {
 
     },
     "Clone từ BitePal — số đo lấy từ video gốc" : {
@@ -1323,6 +1398,9 @@
     "Đóng sheet" : {
 
     },
+    "Đóng/mở #2 từ bên ngoài" : {
+
+    },
     "Double Sheet Lab" : {
 
     },
@@ -1504,6 +1582,9 @@
     "Hàng %lld" : {
 
     },
+    "Hàng có sẵn" : {
+
+    },
     "Haptic chỉ hoạt động trên iPhone thật. Simulator, iPad, Low Power Mode đều im lặng." : {
 
     },
@@ -1616,6 +1697,9 @@
     "Kéo chậm qua 20 nấc: từng cú tách nhẹ ghép lại thành cảm giác BÁNH RĂNG, giống vặn núm cơ. Đây mới là thứ class này được sinh ra để làm.\n\nĐể ý nấc ĐẦU hơi trễ, các nấc sau khớp hoàn hảo — chính chuỗi rung đã tự giữ engine nóng, đúng cơ chế bạn đo ở màn A. Muốn nấc đầu cũng khớp thì gọi prepare() lúc gesture bắt đầu." : {
 
     },
+    "kéo chậm ra ~1.5s" : {
+
+    },
     "Kéo duration lên 4–5 giây rồi bấm Toggle. Ở tốc độ thường (0.6s) mắt không phân biệt nổi, cả bốn ô trông y như nhau.\n\nRanh giới: giữa hai giá trị có tồn tại \"giá trị ở giữa\" không?\n\n✅ 28.4pt là một cỡ chữ hợp lệ → nội suy được, chữ lớn dần từng frame.\n\n❌ Không có kiểu chữ nào nửa serif nửa sans, cũng không có chuỗi nào nằm giữa \"Xin chào\" và \"Tạm biệt\". Không nội suy được, SwiftUI CHỒNG MỜ ảnh cũ với ảnh mới trong đúng khoảng thời gian đó — chạy chậm sẽ thấy rõ hai chữ đè lên nhau.\n\nNên phát biểu cho đủ: animation là nội suy giá trị; chỗ nào không nội suy được thì mặc định lùi về crossfade. contentTransition (bài 3) chính là chỗ bạn chọn hiệu ứng thay cho cái crossfade mặc định đó.\n\nCái conform Animatable là các đại lượng số — CGFloat, Double, CGSize, CGPoint, Angle, Color, EdgeInsets, UnitPoint. Kiểu chữ, chuỗi, Bool, Image, enum thì không." : {
 
     },
@@ -1701,6 +1785,9 @@
     "Khoảng tuổi" : {
 
     },
+    "Không chỉ mất phần giãn — chevron cũng nhảy 180° tức thì, và transition chọn kiểu gì cũng vô nghĩa." : {
+
+    },
     "Không có `if` thì không có transition" : {
 
     },
@@ -1720,6 +1807,9 @@
 
     },
     "km" : {
+
+    },
+    "Label tuỳ biến" : {
 
     },
     "Lam Tran" : {
@@ -1812,6 +1902,12 @@
       }
     },
     "Localize Datetime" : {
+
+    },
+    "Logger" : {
+
+    },
+    "Lúc ĐÓNG lại: khung co ngay còn chữ thì fade từ từ, nên chữ tràn ra ngoài viền. Bootstrap giấu chỗ này bằng overflow: hidden." : {
 
     },
     "Lý do nó tồn tại: hai cách trên đòi bạn phải sở hữu ĐOẠN CODE ĐỔI STATE (withAnimation) hoặc VIEW BỊ ĐỔI (.animation(value:)). Với Toggle, Slider, Picker, TextField thì việc ghi state xảy ra BÊN TRONG control của SwiftUI — không có chỗ nào cho bạn đặt withAnimation. Gắn vào binding là cách chen vào giữa.\n\nCơ chế: `$x.animation(.bouncy)` trả về một Binding mới, setter của nó chính là withAnimation(.bouncy) { x = newValue }. Nên nó lan ra TOÀN BỘ view phụ thuộc x, giống hệt cách 1 — khác cách 2 vốn chỉ ảnh hưởng đúng một view." : {
@@ -1943,6 +2039,9 @@
 
     },
     "MovieFileOutput, thêm audio input, gián đoạn cuộc gọi" : {
+
+    },
+    "Mục 3–5 dựng dần, mỗi mục một màn riêng." : {
 
     },
     "Multi-cam, depth, Live Photo, Camera Control, nhiệt độ máy" : {
@@ -2378,6 +2477,12 @@
     "SwiftUI iOS 17+ — khai báo theo state" : {
 
     },
+    "Swipe Actions (ScrollView)" : {
+
+    },
+    "Swipe Actions for ScrollView (Kavsoft)" : {
+
+    },
     "Swipe to confirm" : {
       "localizations" : {
         "es" : {
@@ -2463,6 +2568,12 @@
     "Toast Lab" : {
 
     },
+    "tốc độ co giãn" : {
+
+    },
+    "TODO" : {
+
+    },
     "TODO — bước 4" : {
 
     },
@@ -2487,7 +2598,16 @@
     "Transaction chảy xuống TOÀN BỘ cây view bên dưới chỗ state đổi. Muốn một view nào đó đứng yên tuyệt đối thì gắn .animation(nil, value:) — hữu ích khi một phần UI (badge, số liệu) không nên trượt theo phần còn lại." : {
 
     },
+    "transition" : {
+
+    },
     "Transition" : {
+
+    },
+    "transition = none" : {
+
+    },
+    "transition của body" : {
 
     },
     "Transitions" : {
@@ -2517,6 +2637,9 @@
           }
         }
       }
+    },
+    "Tự dựng" : {
+
     },
     "Tự vẽ sóng: intensity × sharpness × duration" : {
 
@@ -2611,7 +2734,13 @@
     "Wheel Picker Toolbox" : {
 
     },
+    "withAnimation — gói chỗ đổi state" : {
+
+    },
     "withAnimation + completion" : {
+
+    },
+    "withAnimation tắt" : {
 
     },
     "withAnimation vs .animation(value:) — animate GIÁ TRỊ" : {
