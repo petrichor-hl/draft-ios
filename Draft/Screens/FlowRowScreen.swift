@@ -276,7 +276,7 @@ struct FlowRowScreen: View {
             Chip(title: filter)
           }
         }
-        .frame(width: width, alignment: .leading)
+        .frame(width: width)
         .padding(.vertical, 12)
         .background(Color(uiColor: .secondarySystemBackground))
 
