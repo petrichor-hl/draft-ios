@@ -153,6 +153,30 @@ struct AppendixView: View {
             } label: {
                 Text("FlowRow — chip tự xuống dòng")
             }
+
+            Button {
+                coordinator.push(.accordion)
+            } label: {
+                Text("Accordion")
+            }
+
+            Button {
+                coordinator.push(.kavsoftSwipeActionsScrollView)
+            } label: {
+                Text("Swipe Actions for ScrollView (Kavsoft)")
+            }
+
+            Button {
+                coordinator.push(.calendar)
+            } label: {
+                Text("Calendar")
+            }
+
+            Button {
+                coordinator.push(.logger)
+            } label: {
+                Text("Logger")
+            }
         }
         .navigationTitle("Appendix")
         .toolbar {

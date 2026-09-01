@@ -86,6 +86,10 @@ enum AppRoute: Hashable {
     case hapticsRealWorld
     case wheelPickerLab
     case flowRow
+    case accordion
+    case kavsoftSwipeActionsScrollView
+    case calendar
+    case logger
     case cameraLab
     case cameraPermission
     case cameraImagePicker
@@ -217,6 +221,14 @@ extension AppRoute: View {
             RealWorldScreen()
         case .flowRow:
             FlowRowScreen()
+        case .accordion:
+            AccordionScreen()
+        case .kavsoftSwipeActionsScrollView:
+            Kavsoft_SwipeActionsForScrollView()
+        case .calendar:
+            CalendarScreen()
+        case .logger:
+            LoggerScreen()
         case .cameraLab:
             CameraLab()
         case .cameraPermission:
