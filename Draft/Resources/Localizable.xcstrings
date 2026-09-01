@@ -227,6 +227,9 @@
     "0 °C → canonical" : {
 
     },
+    "0. Permission" : {
+
+    },
     "1 · Gõ số & quan sát canonical" : {
       "localizations" : {
         "en" : {
@@ -314,10 +317,16 @@
     "1. Hai .sheet chồng lên cùng một view" : {
 
     },
+    "1. ImagePicker" : {
+
+    },
     "1. SensoryFeedback ⭐️" : {
 
     },
     "1. Text" : {
+
+    },
+    "1. UIImagePickerController ⭐️" : {
 
     },
     "2 · baseUnit() — đơn vị gốc (canonical)" : {
@@ -358,6 +367,9 @@
     "2 cột — cân nặng" : {
 
     },
+    "2 cột — khoảng tuổi" : {
+
+    },
     "2️⃣ RemoveLast" : {
 
     },
@@ -374,6 +386,9 @@
 
     },
     "2. Hai .sheet ở hai view anh em" : {
+
+    },
+    "2. Session & Preview" : {
 
     },
     "3 · Canonical value = quy về base unit" : {
@@ -442,6 +457,9 @@
     "3. .sheet(item:)" : {
 
     },
+    "3. Chụp ảnh" : {
+
+    },
     "3. Core Haptics" : {
 
     },
@@ -488,6 +506,12 @@
           }
         }
       }
+    },
+    "4. Điều khiển" : {
+
+    },
+    "4. Điều khiển camera" : {
+
     },
     "4. Hai .fullScreenCover" : {
 
@@ -545,6 +569,9 @@
     "5. Một .sheet + một .fullScreenCover" : {
 
     },
+    "5. Quay video" : {
+
+    },
     "5. sheet + cover" : {
 
     },
@@ -586,6 +613,12 @@
     "6. Đảo thứ tự: cover trước, sheet sau" : {
 
     },
+    "6. Quét mã" : {
+
+    },
+    "6. Quét QR / barcode" : {
+
+    },
     "7 · Cộng & so sánh khác đơn vị" : {
       "localizations" : {
         "en" : {
@@ -601,6 +634,15 @@
           }
         }
       }
+    },
+    "7. Xử lý frame" : {
+
+    },
+    "7. Xử lý từng frame" : {
+
+    },
+    "8. Nâng cao" : {
+
     },
     "11 nhóm chủ đề trong tài liệu Animations của Apple" : {
 
@@ -709,6 +751,15 @@
           }
         }
       }
+    },
+    "AVCaptureMetadataOutput — dùng session rẻ nhất" : {
+
+    },
+    "AVCapturePhotoOutput, delegate, orientation, lưu Photos" : {
+
+    },
+    "AVFoundation — tự viết UI" : {
+
     },
     "B. Impact" : {
 
@@ -888,6 +939,12 @@
     "Cảm giác y hệt F1. Nhưng để làm được, ViewModel phải phơi ra hai property tồn tại CHỈ ĐỂ làm trigger: milestone (đếm mốc) và outcome (kết quả). Chúng không phục vụ giao diện gì cả.\n\nVà vì .sensoryFeedback chỉ so oldValue != newValue, `milestone` bắt buộc phải là bộ đếm tăng dần — đúng cái bẫy ở màn SensoryFeedback." : {
 
     },
+    "Camera Lab" : {
+
+    },
+    "Căn hàng" : {
+
+    },
     "Cân nặng hiện tại" : {
 
     },
@@ -1028,10 +1085,16 @@
     "Chưa dựng demo cho chủ đề này." : {
 
     },
+    "Chưa làm" : {
+
+    },
     "Chưa rung lần nào — engine đang lạnh" : {
 
     },
     "Chúng trả về Animation mới nên nối chuỗi được: .easeInOut(duration: 0.3).delay(0.1).speed(2). Lưu ý .speed(2) tương đương chia đôi duration, và autoreverses: true nghĩa là mỗi lượt lặp gồm đi + về." : {
+
+    },
+    "Chụp ảnh trong ~40 dòng, không cần AVFoundation" : {
 
     },
     "Clone từ BitePal — số đo lấy từ video gốc" : {
@@ -1046,6 +1109,9 @@
           }
         }
       }
+    },
+    "CMSampleBuffer, filter Core Image, Vision realtime" : {
+
     },
     "Có action button" : {
 
@@ -1167,6 +1233,9 @@
     "developer.apple.com/documentation/swiftui/animations" : {
 
     },
+    "Device → Input → Session → PreviewLayer, chưa chụp" : {
+
+    },
     "Đi theo thứ tự 1 → 4. Mỗi màn có phần footer giải thích ngay dưới demo." : {
 
     },
@@ -1208,6 +1277,9 @@
 
     },
     "Đối chứng: Picker hệ thống" : {
+
+    },
+    "Đổi ống kính, flash/torch, zoom, tap-to-focus, xoay máy" : {
 
     },
     "Đổi state trần (không animation)" : {
@@ -1343,6 +1415,12 @@
 
     },
     "Fixed Height Bottom Sheet" : {
+
+    },
+    "FlowRow" : {
+
+    },
+    "FlowRow — chip tự xuống dòng" : {
 
     },
     "Foundation KHÔNG đổi km→miles trực tiếp. Nó đi 2 bước: về mét (canonical) rồi ra miles. Mét là điểm trung chuyển chung." : {
@@ -1482,6 +1560,9 @@
     "hour" : {
 
     },
+    "HStack không xuống dòng được — thiếu chỗ thì nó bóp con lại. FlowRow hết chỗ thì mở hàng mới, nên số phần tử mỗi hàng đổi theo bề rộng." : {
+
+    },
     "Image from Gallery" : {
       "localizations" : {
         "es" : {
@@ -1542,6 +1623,9 @@
 
     },
     "Kéo qua từng nấc" : {
+
+    },
+    "Kéo slider xuống hẹp để thấy chỗ đáng nhìn nhất: chip cuối cùng rơi xuống hàng mới, và CHIỀU CAO của cả khối đổi theo. Chiều cao đó là thứ sizeThatFits phải trả lời đúng — sai là khối dưới nó bị chèn." : {
 
     },
     "Kéo thumb qua ngưỡng để xác nhận — DragGesture + offset" : {
@@ -1612,6 +1696,9 @@
       }
     },
     "Khác anchor thì có thoát được không?" : {
+
+    },
+    "Khoảng tuổi" : {
 
     },
     "Không có `if` thì không có transition" : {
@@ -1855,6 +1942,15 @@
     "Một instance dùng chung cho cả ba — khác Impact, ở đây kiểu là tham số của method.\n\nBấm .error rồi bấm .success ngay sau để nghe rõ: mỗi loại là một CHUỖI nhịp có tiết tấu riêng, không phải một cú tách đơn lẻ như Impact." : {
 
     },
+    "MovieFileOutput, thêm audio input, gián đoạn cuộc gọi" : {
+
+    },
+    "Multi-cam, depth, Live Photo, Camera Control, nhiệt độ máy" : {
+
+    },
+    "Mượn UI của Apple" : {
+
+    },
     "Năm cú success cách nhau 120ms. Vì mỗi cú kéo dài hơn khoảng cách đó, chúng đè lên nhau thành một mớ ù ù vô nghĩa — người dùng không đếm được đã có mấy sự kiện.\n\nKết luận: Notification chỉ dành cho KẾT QUẢ CUỐI của một tác vụ. Thao tác lặp lại nhiều lần thì dùng Selection hoặc Impact." : {
 
     },
@@ -1966,6 +2062,9 @@
     "Notification" : {
 
     },
+    "NSCameraUsageDescription, authorizationStatus, mở Settings" : {
+
+    },
     "Nút 1: A nhảy tức thì, B vẫn mượt → .animation(_:value:) không cần ai cho phép.\nNút 2: A bò chậm 1.5 giây, còn B vẫn snappy → animation gắn tại view GHI ĐÈ transaction từ withAnimation." : {
 
     },
@@ -2035,6 +2134,33 @@
     "Pause → Play" : {
 
     },
+    "Phần 0 — quyền camera & quyền lưu ảnh." : {
+
+    },
+    "Phần 1 — UIImagePickerController bọc trong SwiftUI." : {
+
+    },
+    "Phần 2 — AVCaptureSession + preview layer." : {
+
+    },
+    "Phần 3 — AVCapturePhotoOutput và lưu ảnh." : {
+
+    },
+    "Phần 4 — đổi ống kính, flash, zoom, focus, xoay." : {
+
+    },
+    "Phần 5 — AVCaptureMovieFileOutput." : {
+
+    },
+    "Phần 6 — AVCaptureMetadataOutput." : {
+
+    },
+    "Phần 7 — sample buffer, Core Image, Vision." : {
+
+    },
+    "Phần 8 — multi-cam, depth, Live Photo, Camera Control." : {
+
+    },
     "Phase & Keyframe" : {
 
     },
@@ -2057,6 +2183,9 @@
 
     },
     "Ràng buộc đổi CHẤT so với ca cân nặng: ở đó hai cột luôn đủ hàng, chỉ giá trị bị kẹp. Ở đây SỐ HÀNG của cột ngày co dãn theo tháng và năm (28/29/30/31), nên mảng nguồn ngắn lại ngay dưới chân bánh xe. Thử chọn 31/01 rồi kéo tháng sang 02." : {
+
+    },
+    "Ràng buộc không kẹp về một HẰNG SỐ như ca cân nặng mà theo giá trị cột kia, và vượt qua thì ĐÙN cột kia đi chứ không ghì cột đang kéo lại. Nhờ vậy cú sửa rơi vào cột đang đứng yên — một đường vá khác hẳn phần còn lại của kho. Canonical là ClosedRange, nên khoảng lộn ngược không phải hiển thị xấu mà là crash." : {
 
     },
     "Real World" : {
@@ -2199,6 +2328,9 @@
 
     },
     "Side Menu Lab" : {
+
+    },
+    "Simulator không có camera: isSourceTypeAvailable(.camera) trả về false, AVCaptureDevice.default(...) trả về nil. Phải chạy trên iPhone thật." : {
 
     },
     "Slide to Confirm (Kavsoft)" : {

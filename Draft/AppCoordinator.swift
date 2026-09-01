@@ -86,6 +86,16 @@ enum AppRoute: Hashable {
     case hapticsRealWorld
     case wheelPickerLab
     case flowRow
+    case cameraLab
+    case cameraPermission
+    case cameraImagePicker
+    case cameraSessionPreview
+    case cameraPhotoCapture
+    case cameraControls
+    case cameraVideoRecording
+    case cameraMetadataScan
+    case cameraVideoDataOutput
+    case cameraAdvanced
 }
 
 extension AppRoute: View {
@@ -207,6 +217,26 @@ extension AppRoute: View {
             RealWorldScreen()
         case .flowRow:
             FlowRowScreen()
+        case .cameraLab:
+            CameraLab()
+        case .cameraPermission:
+            CameraPermissionScreen()
+        case .cameraImagePicker:
+            ImagePickerCameraScreen()
+        case .cameraSessionPreview:
+            SessionPreviewScreen()
+        case .cameraPhotoCapture:
+            PhotoCaptureScreen()
+        case .cameraControls:
+            CameraControlsScreen()
+        case .cameraVideoRecording:
+            VideoRecordingScreen()
+        case .cameraMetadataScan:
+            MetadataScanScreen()
+        case .cameraVideoDataOutput:
+            VideoDataOutputScreen()
+        case .cameraAdvanced:
+            AdvancedCaptureScreen()
         }
     }
 }

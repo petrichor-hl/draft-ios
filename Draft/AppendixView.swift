@@ -131,6 +131,12 @@ struct AppendixView: View {
             }
 
             Button {
+                coordinator.push(.cameraLab)
+            } label: {
+                Text("Camera Lab")
+            }
+
+            Button {
                 coordinator.push(.wheelPickerLab)
             } label: {
                 Text("Wheel Picker Toolbox")
