@@ -17,53 +17,53 @@ struct MonthGrid: View {
   /// (dùng `MonthCalendar.startOfMonth(for:)`).
   let month: Date
 
-  // Phép tính tháng nằm ở MonthCalendar vì màn hình cũng cần chúng
-  // để tính chiều cao thẻ — không còn là chuyện riêng của lưới nữa.
-  private var daysInMonth: Int { MonthCalendar.daysInMonth(of: month) }
-  private var leadingBlanks: Int { MonthCalendar.leadingBlanks(of: month) }
+  /// Các ô của tháng: nil = ô trống đầu tháng, còn lại là số ngày.
+  ///
+  /// Dựng SẴN thành mảng thay vì để ForEach hỏi leadingBlanks/daysInMonth ở
+  /// từng ô. Trước đây `index < leadingBlanks` chạy trong closure nên
+  /// leadingBlanks — vốn là một phép Calendar — bị gọi lại hơn 40 lần MỖI FRAME,
+  /// nhân với số trang LazyHStack đang dựng. Giờ chỉ 2 lần cho cả lưới.
+  private var cells: [Int?] {
+    let blanks = [Int?](repeating: nil, count: MonthCalendar.leadingBlanks(of: month))
+    return blanks + (1...MonthCalendar.daysInMonth(of: month)).map { Optional($0) }
+  }
 
-  private func isToday(_ day: Int) -> Bool {
+  /// Ngày nào trong tháng này là hôm nay, nil nếu hôm nay không thuộc tháng.
+  ///
+  /// Thay cho isToday(day) gọi ở từng ô: hỏi Calendar MỘT lần cho cả lưới rồi
+  /// so số nguyên, thay vì dựng Date + isDate(_:inSameDayAs:) cho từng ngày.
+  private var todayDay: Int? {
     let calendar = MonthCalendar.calendar
-    // day - 1 vì month đã là ngày 1 rồi
-    let date = calendar.date(byAdding: .day, value: day - 1, to: month)!
-    return calendar.isDate(date, inSameDayAs: Date())
+    let now = Date()
+    guard calendar.isDate(month, equalTo: now, toGranularity: .month) else { return nil }
+    return calendar.component(.day, from: now)
   }
 
   var body: some View {
+    // Đọc một lần rồi truyền vào closure. Để nguyên `todayDay` trong closure là
+    // nó lại thành một phép Calendar cho mỗi ô.
+    let todayDay = todayDay
+
     LazyVGrid(columns: MonthCalendar.columns, spacing: MonthCalendar.rowSpacing) {
-      ForEach(0..<(leadingBlanks + daysInMonth), id: \.self) { index in
-        if index < leadingBlanks {
-          // Ô trống phải TỒN TẠI, không được bỏ qua bằng if:
+      ForEach(Array(cells.enumerated()), id: \.offset) { _, day in
+        if let day {
+          Text("\(day)")
+            .foregroundStyle(day == todayDay ? Color.white : Color.primary)
+            .frame(maxWidth: .infinity, minHeight: MonthCalendar.cellHeight)
+            .background {
+              if day == todayDay {
+                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                  .fill(.tint)
+                  .frame(width: MonthCalendar.cellHeight, height: MonthCalendar.cellHeight)
+              }
+            }
+        } else {
+          // Ô trống phải TỒN TẠI, không được bỏ qua:
           // LazyVGrid xếp theo thứ tự phần tử, thiếu một ô là cả tháng dịch trái.
           Color.clear
             .frame(maxWidth: .infinity, minHeight: MonthCalendar.cellHeight)
-        } else {
-          let day = index - leadingBlanks + 1
-          Text("\(day)")
-            .frame(maxWidth: .infinity, minHeight: MonthCalendar.cellHeight)
-            .background {
-              if isToday(day) {
-                Circle().fill(.orange.opacity(0.35))
-              }
-            }
         }
       }
     }
-    // Không đặt .frame chiều cao ở đây: để lưới giữ kích thước TỰ NHIÊN của nó.
-    // Đề nghị cho nó một khung thấp hơn thì LazyVGrid sẽ nén hàng lại cho vừa,
-    // và hàng của tháng 6 hàng sẽ không thẳng với tháng 5 hàng lúc lật trang.
-    // Việc khoá/cắt là của bên phân trang.
   }
-}
-
-#Preview("Tháng hiện tại") {
-  MonthGrid(month: MonthCalendar.startOfMonth(for: Date()))
-}
-
-#Preview("Aug 2026 — 6 hàng") {
-  MonthGrid(month: MonthCalendar.calendar.date(from: DateComponents(year: 2026, month: 8))!)
-}
-
-#Preview("Feb 2021 — 4 hàng") {
-  MonthGrid(month: MonthCalendar.calendar.date(from: DateComponents(year: 2021, month: 2))!)
 }

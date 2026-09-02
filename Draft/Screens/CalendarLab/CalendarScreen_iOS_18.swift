@@ -107,16 +107,20 @@ struct CalendarScreen_iOS_18: View {
       // Nối hai chiều với scrolledMonth: đọc để cuộn, ghi khi người dùng vuốt.
       .scrollPosition(id: $scrolledMonth)
       .scrollIndicators(.hidden)
-      // BẮT BUỘC: ScrollView tham lam chiều dọc — không chặn thì nó ăn hết chỗ
-      // trống rồi căn giữa lưới, và .frame của MonthGrid không cản được.
+      // Chặn chiều cao là BẮT BUỘC: ScrollView tham lam chiều dọc, không chặn thì
+      // nó ăn hết chỗ trống rồi căn giữa lưới, .frame của MonthGrid không cản được.
+      // Ở đây khoá CỐ ĐỊNH 6 hàng, không bao giờ đổi.
       //
-      // Chiều cao theo ĐÚNG tháng đang mở, nên thẻ co giãn 4-6 hàng.
-      // Trang cao hơn khung sẽ bị cắt trong lúc trượt rồi khung đuổi theo sau —
-      // app tham chiếu cũng vậy: giữa chừng lật sang August mới thấy 5 hàng.
-      .frame(height: MonthCalendar.gridHeight(of: displayedMonth))
-      // Trang luôn cao 6 hàng còn khung chỉ 4-6 hàng, nên phần dư phải cắt.
-      // Cùng bài học với SingleAccordionScreen: khung co ngay, nội dung theo sau,
-      // không cắt thì nó tràn ra ngoài viền thẻ.
+      // Quan trọng: KHÔNG animate frame của chính ScrollView. Lúc rubber-band ở
+      // biên, nó liên tục tính lại offset theo bounds + contentSize; nếu bounds
+      // cũng đang đổi từng frame thì layout của toàn bộ trang (kể cả
+      // containerRelativeFrame) phải chạy lại mỗi frame, và hai vòng lặp đánh
+      // nhau -> giật. Vuốt vào giữa dải thì không lộ, chỉ biên mới lộ.
+      .frame(height: MonthCalendar.maxGridHeight)
+      // Khung NGOÀI mới là thứ co giãn theo tháng. ScrollView bên trong vẫn cao
+      // 6 hàng và tràn xuống dưới, phần dư do clipShape cắt.
+      // Cùng bài học với SingleAccordionScreen: khung co ngay, nội dung theo sau.
+      .frame(height: MonthCalendar.gridHeight(of: displayedMonth), alignment: .top)
       .clipShape(.rect)
       // Vì sao không dùng .animation(.snappy, value:) ở đây: mọi cập nhật do
       // CUỘN sinh ra đều mang transaction có cờ "tắt animation", và cờ đó thắng
@@ -126,17 +130,16 @@ struct CalendarScreen_iOS_18: View {
       .onChange(of: scrolledMonth) { _, newMonth in
         // nil = đang ở giữa hai trang, chưa chốt tháng nào -> giữ nguyên
         guard let newMonth else { return }
-
         withAnimation(.snappy) {
           displayedMonth = newMonth
         }
       }
     }
-    .padding(24)
+    .padding(20)
     .background(Color(.white), in: .rect(cornerRadius: 30))
     .padding(16)
     .frame(maxHeight: .infinity, alignment: .top)
-    .background(Color(red: 0.99, green: 0.95, blue: 0.86))
+    .background(Color(.secondarySystemBackground))
     .navigationTitle("Calendar (iOS 18)")
     .navigationBarTitleDisplayMode(.inline)
   }

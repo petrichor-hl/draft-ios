@@ -98,8 +98,16 @@ enum MonthCalendar {
   /// Đây LÀ giới hạn 12 tháng — không dựng trang nào ngoài mảng này,
   /// nên không cần kiểm tra biên ở chỗ nào khác nữa.
   /// Khoảng -11...0 chứ không phải -12...0: cửa sổ tính cả tháng hiện tại.
-  static var recentMonths: [Date] {
+  ///
+  /// `let` chứ không phải `var`: computed var thì mỗi lần đọc là 12 phép cộng
+  /// tháng qua Calendar. Mà `private let months = MonthCalendar.recentMonths`
+  /// trong View được tính lại mỗi lần struct View được khởi tạo — tức là mỗi
+  /// frame trong lúc cuộn. Đây là một trong hai chỗ gây lag khi vuốt.
+  ///
+  /// Đánh đổi: tính một lần cho cả vòng đời app, nên nếu app mở qua giao thừa
+  /// sang tháng mới thì danh sách cũ. Chấp nhận được cho lab.
+  static let recentMonths: [Date] = {
     let thisMonth = startOfMonth(for: Date())
     return (-11...0).map { calendar.date(byAdding: .month, value: $0, to: thisMonth)! }
-  }
+  }()
 }
