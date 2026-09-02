@@ -42,14 +42,30 @@ struct AccordionLab: View {
           )
         }
 
-        LabRow(title: "3. Cụm mở tự do", subtitle: "Chưa dựng — xếp lại là xong, bẫy ở identity")
-        LabRow(title: "4. Cụm single-open", subtitle: "Chưa dựng — state leo lên cha, ID?")
+        Button {
+          coordinator.push(.accordionMultiExpand)
+        } label: {
+          LabRow(
+            title: "3. Cụm mở tự do (multi-expand)",
+            subtitle: "Xếp lại là xong — nhưng @State dính vào identity của ForEach"
+          )
+        }
+
+        Button {
+          coordinator.push(.accordionSingleOpen)
+        } label: {
+          LabRow(
+            title: "4. Cụm single-open",
+            subtitle: "Một biến Panel.ID? ở cha — hai cái cùng mở là không biểu diễn được"
+          )
+        }
+
       }
 
       Section {
         LabRow(title: "5. Đổi lớp áo", subtitle: "Chưa dựng — chevron ↔ +/−, trái ↔ phải")
       } footer: {
-        Text("Mục 3–5 dựng dần, mỗi mục một màn riêng.")
+        Text("Mục 5 dựng sau.")
       }
     }
     .navigationTitle("Accordion Lab")

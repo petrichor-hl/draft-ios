@@ -89,6 +89,8 @@ enum AppRoute: Hashable {
     case accordion
     case accordionBuiltIn
     case accordionSingle
+    case accordionMultiExpand
+    case accordionSingleOpen
     case kavsoftSwipeActionsScrollView
     case calendar
     case logger
@@ -229,6 +231,10 @@ extension AppRoute: View {
             DisclosureGroupScreen()
         case .accordionSingle:
             SingleAccordionScreen()
+        case .accordionMultiExpand:
+            MultiExpandAccordionScreen()
+        case .accordionSingleOpen:
+            SingleOpenAccordionScreen()
         case .kavsoftSwipeActionsScrollView:
             Kavsoft_SwipeActionsForScrollView()
         case .calendar:

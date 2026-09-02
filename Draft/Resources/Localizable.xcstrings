@@ -447,6 +447,9 @@
         }
       }
     },
+    "3 · Multi-expand" : {
+
+    },
     "3 cột — ngày sự kiện" : {
 
     },
@@ -487,7 +490,7 @@
     "3. Core Haptics" : {
 
     },
-    "3. Cụm mở tự do" : {
+    "3. Cụm mở tự do (multi-expand)" : {
 
     },
     "3. Một .sheet(item:) duy nhất" : {
@@ -516,6 +519,9 @@
       }
     },
     "4 · km → canonical → miles" : {
+
+    },
+    "4 · Single-open" : {
 
     },
     "4️⃣ Meal mới, y hệt" : {
@@ -849,6 +855,9 @@
     "Bắn 3 cái liên tiếp (cách nhau 1s)" : {
 
     },
+    "Bản DisclosureGroup" : {
+
+    },
     "Bản nháp của bạn an toàn" : {
 
     },
@@ -894,6 +903,12 @@
 
     },
     "Binding trần" : {
+
+    },
+    "Binding tự chế: get so sánh, set gán id. Không cần @State nào cho từng row, và single-open có ngay bằng đồ có sẵn." : {
+
+    },
+    "Bỏ Optional đi: `expandedID: Panel.ID`. Lúc đó nil không tồn tại, bấm lại vào mục đang mở thì phép gán không đổi gì. Không cần cờ nào canh — lại là chuyện chọn kiểu dữ liệu, không phải thêm logic." : {
 
     },
     "body chạy: %lld lần" : {
@@ -975,6 +990,9 @@
 
     },
     "Cách thử: chờ ô trên báo \"đã nguội\", bấm ô Lạnh — cú rung đến hơi trễ so với lúc ngón nhấc. Chờ nguội lại, bấm ô Ấm — rung khớp đúng khoảnh khắc nhấc ngón.\n\nCả hai ô dùng CHUNG một loại gesture và cùng bắn ở touch-up, nên khác biệt duy nhất là dòng prepare(). Khoảng 80–150ms giữa lúc ngón chạm và lúc nhấc chính là cửa sổ để engine kịp khởi động.\n\nBấm ô Lạnh HAI lần liên tiếp thì lần hai cũng dứt khoát — vì cú rung thứ nhất đã đánh thức engine. Đó không phải lỗi demo, đó chính là cơ chế đang chạy." : {
+
+    },
+    "Cái xẹp xuống và cái giãn ra nằm trong cùng một withAnimation, vì cùng đọc một biến. Ở mục 3 mỗi row có transaction riêng nên không có chuyện đó." : {
 
     },
     "Calendar" : {
@@ -1133,6 +1151,9 @@
     "Chọn quả" : {
 
     },
+    "Chọn theo id thì sao" : {
+
+    },
     "chưa chạy" : {
 
     },
@@ -1140,12 +1161,6 @@
 
     },
     "Chưa dựng — chevron ↔ +/−, trái ↔ phải" : {
-
-    },
-    "Chưa dựng — state leo lên cha, ID?" : {
-
-    },
-    "Chưa dựng — xếp lại là xong, bẫy ở identity" : {
 
     },
     "Chưa dựng demo — mở file để xem danh sách câu hỏi cần trả lời." : {
@@ -1266,6 +1281,12 @@
     "Cửa sổ giữ nóng" : {
 
     },
+    "Cùng hành vi, nhưng bằng DisclosureGroup có sẵn" : {
+
+    },
+    "Cũng mở #2 rồi xoá mục đầu, nhưng lần này #2 vẫn mở. Identity đi theo dữ liệu nên @State bám đúng row của nó." : {
+
+    },
     "Curves" : {
 
     },
@@ -1351,6 +1372,9 @@
     "Đo độ trễ Taptic Engine bằng ngón tay" : {
 
     },
+    "Đổi `Panel.ID?` thành `Set<Panel.ID>`: isExpanded là `ids.contains(id)`, bấm thì insert/remove. Vẫn một biến ở cha, nhưng chứa được nhiều — đó chính là khác biệt giữa mục 3 và mục 4, nằm gọn trong kiểu dữ liệu." : {
+
+    },
     "Đối chứng: Picker hệ thống" : {
 
     },
@@ -1396,6 +1420,12 @@
 
     },
     "Đóng sheet" : {
+
+    },
+    "Đóng tất cả" : {
+
+    },
+    "Đóng tất cả bị giật" : {
 
     },
     "Đóng/mở #2 từ bên ngoài" : {
@@ -1579,6 +1609,9 @@
     "Hai loại khác nhau có thành hai kênh độc lập?" : {
 
     },
+    "Hai row animate cùng nhịp" : {
+
+    },
     "Hàng %lld" : {
 
     },
@@ -1642,6 +1675,12 @@
 
     },
     "HStack không xuống dòng được — thiếu chỗ thì nó bóp con lại. FlowRow hết chỗ thì mở hàng mới, nên số phần tử mỗi hàng đổi theo bề rộng." : {
+
+    },
+    "identity" : {
+
+    },
+    "identity của ForEach" : {
 
     },
     "Image from Gallery" : {
@@ -1783,6 +1822,9 @@
 
     },
     "Khoảng tuổi" : {
+
+    },
+    "Khôi phục" : {
 
     },
     "Không chỉ mất phần giãn — chevron cũng nhảy 180° tức thì, và transition chọn kiểu gì cũng vô nghĩa." : {
@@ -2001,10 +2043,16 @@
     "Mở cover, 1,5s sau mở sheet" : {
 
     },
+    "Mở một mục thì mục đang mở tự xẹp. Không có dòng code nào đi đóng nó — nó đóng vì `expandedID` không còn trỏ vào nó nữa." : {
+
+    },
     "Mở sheet rồi show snackbar" : {
 
     },
     "Mở sheet, 1,5s sau mở cover" : {
+
+    },
+    "Mở vài mục cùng lúc — không mục nào đóng mục nào, vì mỗi row tự giữ state riêng. Phần đáng học nằm ở hai nút bên dưới." : {
 
     },
     "Mỗi 20% một cú impact, kết thúc bằng notification .success hoặc .error (hỏng ngẫu nhiên 1/3 số lần để bạn nghe được cả hai).\n\nToàn bộ lệnh haptic nằm trong UploadTask — view không biết haptic tồn tại. Đây là tách lớp đúng: ai biết \"chuyện gì vừa xảy ra\" thì người đó phát tín hiệu." : {
@@ -2032,6 +2080,9 @@
     "month" : {
 
     },
+    "Một biến Panel.ID? ở cha — hai cái cùng mở là không biểu diễn được" : {
+
+    },
     "Một cú đơn lẻ" : {
 
     },
@@ -2041,10 +2092,16 @@
     "MovieFileOutput, thêm audio input, gián đoạn cuộc gọi" : {
 
     },
-    "Mục 3–5 dựng dần, mỗi mục một màn riêng." : {
+    "Mục 5 dựng sau." : {
 
     },
     "Multi-cam, depth, Live Photo, Camera Control, nhiệt độ máy" : {
+
+    },
+    "Muốn LUÔN có đúng một mục mở?" : {
+
+    },
+    "Muốn multi-expand mà cha vẫn giữ state?" : {
 
     },
     "Mượn UI của Apple" : {
@@ -2531,6 +2588,9 @@
         }
       }
     },
+    "Theo ĐÚNG thứ tự: chọn identity = vị trí TRƯỚC, rồi mở mục #2, rồi bấm Xoá mục đầu. Cái đang mở hoá ra là #3 — trạng thái mở ở lại VỊ TRÍ cũ, còn nội dung đã tụt lên một bậc." : {
+
+    },
     "Thông báo" : {
       "localizations" : {
         "en" : {
@@ -2546,6 +2606,9 @@
           }
         }
       }
+    },
+    "Thử cái bẫy" : {
+
     },
     "Thứ tự" : {
 
@@ -2641,6 +2704,9 @@
     "Tự dựng" : {
 
     },
+    "Tự dựng — AccordionRow bản controlled" : {
+
+    },
     "Tự vẽ sóng: intensity × sharpness × duration" : {
 
     },
@@ -2671,7 +2737,16 @@
     "UnitTemperature" : {
 
     },
+    "Vì gạt cái Picker cũng làm mất trạng thái mở: hai nhánh của switch là hai cây view khác nhau, nên @State bị dựng lại từ đầu. Cùng một nguyên nhân với cái bẫy ở trên." : {
+
+    },
+    "Vì nó không đóng gì cả — nó vứt cả cụm đi dựng lại. Đây là dấu hiệu state nằm sai chỗ, và là lý do mục 4 tồn tại." : {
+
+    },
     "Vì sao không được lặp" : {
+
+    },
+    "Vì sao phải chọn identity trước" : {
 
     },
     "vi_VN" : {
@@ -2755,6 +2830,9 @@
     "Xếp hàng bằng .delay(index × nhịp) — tách từ màn FAB" : {
 
     },
+    "Xếp lại là xong — nhưng @State dính vào identity của ForEach" : {
+
+    },
     "Xin chào" : {
 
     },
@@ -2762,6 +2840,9 @@
 
     },
     "Xoá chấm" : {
+
+    },
+    "Xoá mục đầu" : {
 
     },
     "xong" : {
