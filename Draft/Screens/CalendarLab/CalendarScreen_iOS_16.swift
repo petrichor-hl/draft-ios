@@ -15,7 +15,13 @@ import SwiftUI
 struct CalendarScreen_iOS_16: View {
   private let months = MonthCalendar.recentMonths
 
+  /// Trang đang mở. Khác bản iOS 18: selection của TabView KHÔNG optional,
+  /// nó chỉ đổi khi trang đã chốt, không có trạng thái "đang ở giữa hai trang".
+  /// Nên ở đây không cần thêm một biến displayedMonth nữa.
   @State private var selectedMonth = MonthCalendar.recentMonths.last!
+
+  /// Chiều cao khung ngoài. Giữ riêng để animate được — xem onChange bên dưới.
+  @State private var gridHeight = MonthCalendar.gridHeight(of: MonthCalendar.recentMonths.last!)
 
   // Không cần tính biên: months CHÍNH LÀ giới hạn, chỉ cần xem đang ở đâu trong mảng.
   private var canGoBack: Bool { selectedMonth > months.first! }
@@ -69,8 +75,42 @@ struct CalendarScreen_iOS_16: View {
         }
       }
 
-      // TODO: thay bằng TabView .page
-      MonthGrid(month: selectedMonth)
+      TabView(selection: $selectedMonth) {
+        ForEach(months, id: \.self) { month in
+          MonthGrid(month: month)
+            // Mọi trang cao BẰNG NHAU (6 hàng), neo lên đỉnh. Không ép thì TabView
+            // đưa cả khung cho trang và lưới bị căn giữa; hai tháng khác số hàng
+            // sẽ không thẳng hàng nhau lúc lật.
+            .frame(height: MonthCalendar.maxGridHeight, alignment: .top)
+            // .tag phải CÙNG KIỂU với selection (Date), nếu không TabView im lặng
+            // không nhận ra trang nào đang mở — không lỗi biên dịch, chỉ là không chạy.
+            .tag(month)
+        }
+      }
+      // .never = ẩn hàng chấm trắng mặc định của page style
+      .tabViewStyle(.page(indexDisplayMode: .never))
+      // TabView KHÔNG tự co theo nội dung — đây là khác biệt lớn nhất so với
+      // ScrollView. Không cho chiều cao thì nó ăn hết chỗ trống.
+      // Và giống bản iOS 18: khoá CỐ ĐỊNH 6 hàng, đừng animate frame của chính
+      // TabView — nó tự quản lý layout bên trong, đổi bounds từng frame là giật.
+      .frame(height: MonthCalendar.maxGridHeight)
+      // Khung NGOÀI mới co giãn theo tháng; phần dư của TabView do clipShape cắt.
+      .frame(height: gridHeight, alignment: .top)
+      .clipShape(.rect)
+      // Vuốt tay ghi thẳng vào selection trong transaction của TabView, mà
+      // transaction đó tắt animation — nên .animation(_:value:) sẽ không ăn.
+      // withAnimation trong onChange mở transaction mới, phủ chung cho cả nút
+      // lẫn ngón tay.
+      //
+      // ĐỪNG sửa warning "onChange(of:perform:) was deprecated in iOS 17".
+      // Bản một tham số này là bản DUY NHẤT chạy được trên iOS 16; bản hai tham
+      // số (oldValue, newValue) mới là iOS 17+. Warning chỉ hiện vì project build
+      // ở 18.6 — typecheck riêng file này với target iOS 16 thì sạch.
+      .onChange(of: selectedMonth) { newMonth in
+        withAnimation(.snappy) {
+          gridHeight = MonthCalendar.gridHeight(of: newMonth)
+        }
+      }
     }
     .padding(24)
     .background(Color(.white), in: .rect(cornerRadius: 30))
