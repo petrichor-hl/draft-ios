@@ -92,7 +92,9 @@ enum AppRoute: Hashable {
     case accordionMultiExpand
     case accordionSingleOpen
     case kavsoftSwipeActionsScrollView
+    case calendarLab
     case calendar
+    case calendariOS18
     case logger
     case cameraLab
     case cameraPermission
@@ -237,8 +239,12 @@ extension AppRoute: View {
             SingleOpenAccordionScreen()
         case .kavsoftSwipeActionsScrollView:
             Kavsoft_SwipeActionsForScrollView()
+        case .calendarLab:
+            CalendarLab()
         case .calendar:
-            CalendarScreen()
+            CalendarScreen_iOS_16()
+        case .calendariOS18:
+            CalendarScreen_iOS_18()
         case .logger:
             LoggerScreen()
         case .cameraLab:

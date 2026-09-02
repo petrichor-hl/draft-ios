@@ -167,9 +167,9 @@ struct AppendixView: View {
             }
 
             Button {
-                coordinator.push(.calendar)
+                coordinator.push(.calendarLab)
             } label: {
-                Text("Calendar")
+                Text("Calendar Lab")
             }
 
             Button {

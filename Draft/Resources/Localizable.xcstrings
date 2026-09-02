@@ -995,7 +995,13 @@
     "Cái xẹp xuống và cái giãn ra nằm trong cùng một withAnimation, vì cùng đọc một biến. Ở mục 3 mỗi row có transaction riêng nên không có chuyện đó." : {
 
     },
-    "Calendar" : {
+    "Calendar (iOS 16)" : {
+
+    },
+    "Calendar (iOS 18)" : {
+
+    },
+    "Calendar Lab" : {
 
     },
     "CalorieCard — đọc todayCalories" : {
@@ -2315,6 +2321,9 @@
 
     },
     "Phần 8 — multi-cam, depth, Live Photo, Camera Control." : {
+
+    },
+    "Phân trang tháng" : {
 
     },
     "Phase & Keyframe" : {
