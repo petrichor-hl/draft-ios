@@ -90,7 +90,11 @@ struct CalendarScreen: View {
     // Chặn ở đây chứ không chỉ dựa vào .disabled() ngoài UI: swipe hay deep link
     // sau này sẽ gọi thẳng hàm này mà không đi qua Button.
     guard allowedMonths.contains(monthIndex(of: target)) else { return }
-    anchorDate = target
+    // Số hàng đổi theo tháng (4-6) nên chiều cao thẻ nhảy.
+    // withAnimation cho SwiftUI nội suy giữa chiều cao cũ và mới.
+    withAnimation(.snappy) {
+      anchorDate = target
+    }
   }
 
   var body: some View {
