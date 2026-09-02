@@ -147,6 +147,10 @@ struct CalendarScreen: View {
       }
     }
     .padding(24)
+    .background(Color(.white), in: .rect(cornerRadius: 30))
+    .padding(16)
+    .frame(maxHeight: .infinity, alignment: .top)
+    .background(Color(red: 0.99, green: 0.95, blue: 0.86))
     .navigationTitle("Calendar")
     .navigationBarTitleDisplayMode(.inline)
   }
