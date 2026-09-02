@@ -32,8 +32,8 @@ struct CalendarScreen: View {
 
 
   // Single source of truth.
-  // Tháng đang hiển thị. Bước 4 sẽ đổi thành @State để bấm ‹ › được.
-  let anchorDate = Date()
+  // Tháng đang hiển thị. Đổi biến này là cả lịch tính lại theo.
+  @State private var anchorDate = Date()
 
   // Ngày 1 của tháng chứa anchorDate — mọi phép tính bên dưới đều neo vào đây.
   //
@@ -68,11 +68,37 @@ struct CalendarScreen: View {
     return calendar.isDate(date, inSameDayAs: Date())
   }
 
+  // Cộng tháng vào firstDateOfMonth chứ KHÔNG vào anchorDate.
+  func changeMonth(by value: Int) {
+    anchorDate = calendar.date(byAdding: .month, value: value, to: firstDateOfMonth)!
+  }
+
   var body: some View {
-    let _ = print("daysInMonth = \(daysInMonth)")
-    let _ = print("leadingBlanks = \(leadingBlanks)")
-    
     VStack(spacing: 0) {
+      HStack {
+        // .month(.wide) = tên tháng đầy đủ. Tự dịch theo locale:
+        // "September 2026" / "tháng 9 năm 2026" / "septiembre de 2026"
+        Text(anchorDate.formatted(.dateTime.month(.wide).year()))
+          .font(.title2.bold())
+
+        Spacer()
+
+        Button {
+          changeMonth(by: -1)
+        } label: {
+          Image(systemName: "chevron.left")
+            .frame(width: 44, height: 44)
+        }
+
+        Button {
+          changeMonth(by: 1)
+        } label: {
+          Image(systemName: "chevron.right")
+            .frame(width: 44, height: 44)
+        }
+      }
+      .tint(Color.red)
+
       HStack(spacing: 0) {
         ForEach(Array(weekdaySymbols.enumerated()), id: \.offset) { _, symbol in
           Text(symbol)
