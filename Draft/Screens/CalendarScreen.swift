@@ -68,9 +68,29 @@ struct CalendarScreen: View {
     return calendar.isDate(date, inSameDayAs: Date())
   }
 
+  // Chỉ số tháng tuyệt đối: year * 12 + (month - 1).
+  // Quy về Int để so sánh/đếm bằng số học, khỏi lôi Date ra so.
+  func monthIndex(of date: Date) -> Int {
+    let components = calendar.dateComponents([.year, .month], from: date)
+    return components.year! * 12 + (components.month! - 1)
+  }
+
+  // Cửa sổ 12 tháng tính CẢ tháng hiện tại, nên là -11 chứ không phải -12.
+  var allowedMonths: ClosedRange<Int> {
+    let currentMonth = monthIndex(of: Date())
+    return (currentMonth - 11)...currentMonth
+  }
+
+  var canGoBack: Bool { monthIndex(of: anchorDate) > allowedMonths.lowerBound }
+  var canGoForward: Bool { monthIndex(of: anchorDate) < allowedMonths.upperBound }
+
   // Cộng tháng vào firstDateOfMonth chứ KHÔNG vào anchorDate.
   func changeMonth(by value: Int) {
-    anchorDate = calendar.date(byAdding: .month, value: value, to: firstDateOfMonth)!
+    let target = calendar.date(byAdding: .month, value: value, to: firstDateOfMonth)!
+    // Chặn ở đây chứ không chỉ dựa vào .disabled() ngoài UI: swipe hay deep link
+    // sau này sẽ gọi thẳng hàm này mà không đi qua Button.
+    guard allowedMonths.contains(monthIndex(of: target)) else { return }
+    anchorDate = target
   }
 
   var body: some View {
@@ -89,6 +109,7 @@ struct CalendarScreen: View {
           Image(systemName: "chevron.left")
             .frame(width: 44, height: 44)
         }
+        .disabled(!canGoBack)
 
         Button {
           changeMonth(by: 1)
@@ -96,6 +117,7 @@ struct CalendarScreen: View {
           Image(systemName: "chevron.right")
             .frame(width: 44, height: 44)
         }
+        .disabled(!canGoForward)
       }
       .tint(Color.red)
 
@@ -124,6 +146,7 @@ struct CalendarScreen: View {
         }
       }
     }
+    .padding(24)
     .navigationTitle("Calendar")
     .navigationBarTitleDisplayMode(.inline)
   }
