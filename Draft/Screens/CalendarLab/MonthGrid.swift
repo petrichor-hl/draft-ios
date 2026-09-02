@@ -17,19 +17,10 @@ struct MonthGrid: View {
   /// (dùng `MonthCalendar.startOfMonth(for:)`).
   let month: Date
 
-  // 28/29/30/31 — Calendar tự biết năm nhuận, đừng tự tra bảng
-  private var daysInMonth: Int {
-    MonthCalendar.calendar.range(of: .day, in: .month, for: month)!.count
-  }
-
-  /// "Số ô trống trước ngày 1", hay "ngày 1 nằm ở cột thứ mấy (đếm từ 0)".
-  /// +7 trước khi % 7 vì Swift giữ dấu của số bị chia: -1 % 7 == -1, không phải 6.
-  private var leadingBlanks: Int {
-    let calendar = MonthCalendar.calendar
-    // weekday là địa chỉ tuyệt đối của ngày 1. Cố định: CN=1, T2=2, … T7=7
-    let weekday = calendar.component(.weekday, from: month)
-    return (weekday - calendar.firstWeekday + 7) % 7
-  }
+  // Phép tính tháng nằm ở MonthCalendar vì màn hình cũng cần chúng
+  // để tính chiều cao thẻ — không còn là chuyện riêng của lưới nữa.
+  private var daysInMonth: Int { MonthCalendar.daysInMonth(of: month) }
+  private var leadingBlanks: Int { MonthCalendar.leadingBlanks(of: month) }
 
   private func isToday(_ day: Int) -> Bool {
     let calendar = MonthCalendar.calendar
@@ -39,17 +30,17 @@ struct MonthGrid: View {
   }
 
   var body: some View {
-    LazyVGrid(columns: MonthCalendar.columns) {
+    LazyVGrid(columns: MonthCalendar.columns, spacing: MonthCalendar.rowSpacing) {
       ForEach(0..<(leadingBlanks + daysInMonth), id: \.self) { index in
         if index < leadingBlanks {
           // Ô trống phải TỒN TẠI, không được bỏ qua bằng if:
           // LazyVGrid xếp theo thứ tự phần tử, thiếu một ô là cả tháng dịch trái.
           Color.clear
-            .frame(maxWidth: .infinity, minHeight: 44)
+            .frame(maxWidth: .infinity, minHeight: MonthCalendar.cellHeight)
         } else {
           let day = index - leadingBlanks + 1
           Text("\(day)")
-            .frame(maxWidth: .infinity, minHeight: 44)
+            .frame(maxWidth: .infinity, minHeight: MonthCalendar.cellHeight)
             .background {
               if isToday(day) {
                 Circle().fill(.orange.opacity(0.35))
@@ -58,6 +49,10 @@ struct MonthGrid: View {
         }
       }
     }
+    // Không đặt .frame chiều cao ở đây: để lưới giữ kích thước TỰ NHIÊN của nó.
+    // Đề nghị cho nó một khung thấp hơn thì LazyVGrid sẽ nén hàng lại cho vừa,
+    // và hàng của tháng 6 hàng sẽ không thẳng với tháng 5 hàng lúc lật trang.
+    // Việc khoá/cắt là của bên phân trang.
   }
 }
 
