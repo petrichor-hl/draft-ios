@@ -112,11 +112,11 @@ struct CalendarScreen_iOS_16: View {
         }
       }
     }
-    .padding(24)
+    .padding(20)
     .background(Color(.white), in: .rect(cornerRadius: 30))
     .padding(16)
     .frame(maxHeight: .infinity, alignment: .top)
-    .background(Color(red: 0.99, green: 0.95, blue: 0.86))
+    .background(Color(.secondarySystemBackground))
     .navigationTitle("Calendar (iOS 16)")
     .navigationBarTitleDisplayMode(.inline)
   }
