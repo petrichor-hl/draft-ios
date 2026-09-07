@@ -15,22 +15,24 @@ import SwiftUI
 struct CalendarScreen_iOS_16: View {
   private let months = MonthCalendar.recentMonths
 
-  /// Trang đang mở. Khác bản iOS 18: selection của TabView KHÔNG optional,
-  /// nó chỉ đổi khi trang đã chốt, không có trạng thái "đang ở giữa hai trang".
-  /// Nên ở đây không cần thêm một biến displayedMonth nữa.
+  /// Trang đang mở — chỉ dùng để nối với selection của TabView.
+  /// Khác bản iOS 18: không optional, TabView chỉ đổi selection khi trang đã chốt
+  /// chứ không có trạng thái "đang ở giữa hai trang".
   @State private var selectedMonth = MonthCalendar.recentMonths.last!
 
-  /// Chiều cao khung ngoài. Giữ riêng để animate được — xem onChange bên dưới.
-  @State private var gridHeight = MonthCalendar.gridHeight(of: MonthCalendar.recentMonths.last!)
+  /// Tháng đang HIỂN THỊ — tiêu đề, nút và chiều cao thẻ đều đọc biến này.
+  /// Tách khỏi selectedMonth để phần hiển thị đổi có animation, còn phần phân
+  /// trang thì không dính animation của mình. Cùng mô hình với bản iOS 18.
+  @State private var displayedMonth = MonthCalendar.recentMonths.last!
 
   // Không cần tính biên: months CHÍNH LÀ giới hạn, chỉ cần xem đang ở đâu trong mảng.
-  private var canGoBack: Bool { selectedMonth > months.first! }
-  private var canGoForward: Bool { selectedMonth < months.last! }
+  private var canGoBack: Bool { displayedMonth > months.first! }
+  private var canGoForward: Bool { displayedMonth < months.last! }
 
   /// Chặn ở đây chứ không chỉ dựa vào .disabled() ngoài UI:
   /// vuốt tay và deep link sau này gọi thẳng hàm này, không đi qua Button.
   private func changeMonth(by value: Int) {
-    guard let current = months.firstIndex(of: selectedMonth) else { return }
+    guard let current = months.firstIndex(of: displayedMonth) else { return }
     let target = current + value
     guard months.indices.contains(target) else { return }
 
@@ -44,8 +46,9 @@ struct CalendarScreen_iOS_16: View {
       HStack {
         // .month(.wide) = tên tháng đầy đủ. Tự dịch theo locale:
         // "September 2026" / "tháng 9 năm 2026" / "septiembre de 2026"
-        Text(selectedMonth.formatted(.dateTime.month(.wide).year()))
+        Text(displayedMonth.formatted(.dateTime.month(.wide).year()))
           .font(.title2.bold())
+          .animation(.none)
 
         Spacer()
 
@@ -89,26 +92,16 @@ struct CalendarScreen_iOS_16: View {
       }
       // .never = ẩn hàng chấm trắng mặc định của page style
       .tabViewStyle(.page(indexDisplayMode: .never))
-      // TabView KHÔNG tự co theo nội dung — đây là khác biệt lớn nhất so với
-      // ScrollView. Không cho chiều cao thì nó ăn hết chỗ trống.
-      // Và giống bản iOS 18: khoá CỐ ĐỊNH 6 hàng, đừng animate frame của chính
-      // TabView — nó tự quản lý layout bên trong, đổi bounds từng frame là giật.
       .frame(height: MonthCalendar.maxGridHeight)
-      // Khung NGOÀI mới co giãn theo tháng; phần dư của TabView do clipShape cắt.
-      .frame(height: gridHeight, alignment: .top)
+      .frame(height: MonthCalendar.gridHeight(of: displayedMonth), alignment: .top)
       .clipShape(.rect)
-      // Vuốt tay ghi thẳng vào selection trong transaction của TabView, mà
-      // transaction đó tắt animation — nên .animation(_:value:) sẽ không ăn.
-      // withAnimation trong onChange mở transaction mới, phủ chung cho cả nút
-      // lẫn ngón tay.
-      //
       // ĐỪNG sửa warning "onChange(of:perform:) was deprecated in iOS 17".
       // Bản một tham số này là bản DUY NHẤT chạy được trên iOS 16; bản hai tham
       // số (oldValue, newValue) mới là iOS 17+. Warning chỉ hiện vì project build
       // ở 18.6 — typecheck riêng file này với target iOS 16 thì sạch.
       .onChange(of: selectedMonth) { newMonth in
-        withAnimation(.snappy) {
-          gridHeight = MonthCalendar.gridHeight(of: newMonth)
+        withAnimation(.linear(duration: 0.2)) {
+          displayedMonth = newMonth
         }
       }
     }

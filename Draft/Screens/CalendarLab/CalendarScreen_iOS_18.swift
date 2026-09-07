@@ -55,6 +55,7 @@ struct CalendarScreen_iOS_18: View {
         // "September 2026" / "tháng 9 năm 2026" / "septiembre de 2026"
         Text(displayedMonth.formatted(.dateTime.month(.wide).year()))
           .font(.title2.bold())
+          .animation(.none)
 
         Spacer()
 
@@ -93,8 +94,6 @@ struct CalendarScreen_iOS_18: View {
               // Mỗi trang rộng đúng bằng container. Thiếu dòng này thì trang chỉ
               // rộng bằng nội dung và paging không có mốc để snap.
               .containerRelativeFrame(.horizontal)
-              // Mọi trang cao BẰNG NHAU (6 hàng) để hàng của hai tháng thẳng nhau
-              // lúc lật. Khung ngoài mới là thứ co giãn theo tháng.
               .frame(height: MonthCalendar.maxGridHeight, alignment: .top)
           }
         }
@@ -107,30 +106,15 @@ struct CalendarScreen_iOS_18: View {
       // Nối hai chiều với scrolledMonth: đọc để cuộn, ghi khi người dùng vuốt.
       .scrollPosition(id: $scrolledMonth)
       .scrollIndicators(.hidden)
-      // Chặn chiều cao là BẮT BUỘC: ScrollView tham lam chiều dọc, không chặn thì
-      // nó ăn hết chỗ trống rồi căn giữa lưới, .frame của MonthGrid không cản được.
-      // Ở đây khoá CỐ ĐỊNH 6 hàng, không bao giờ đổi.
-      //
-      // Quan trọng: KHÔNG animate frame của chính ScrollView. Lúc rubber-band ở
-      // biên, nó liên tục tính lại offset theo bounds + contentSize; nếu bounds
-      // cũng đang đổi từng frame thì layout của toàn bộ trang (kể cả
-      // containerRelativeFrame) phải chạy lại mỗi frame, và hai vòng lặp đánh
-      // nhau -> giật. Vuốt vào giữa dải thì không lộ, chỉ biên mới lộ.
-      .frame(height: MonthCalendar.maxGridHeight)
       // Khung NGOÀI mới là thứ co giãn theo tháng. ScrollView bên trong vẫn cao
       // 6 hàng và tràn xuống dưới, phần dư do clipShape cắt.
       // Cùng bài học với SingleAccordionScreen: khung co ngay, nội dung theo sau.
       .frame(height: MonthCalendar.gridHeight(of: displayedMonth), alignment: .top)
       .clipShape(.rect)
-      // Vì sao không dùng .animation(.snappy, value:) ở đây: mọi cập nhật do
-      // CUỘN sinh ra đều mang transaction có cờ "tắt animation", và cờ đó thắng
-      // — bấm nút thì mượt, vuốt tay thì chiều cao nhảy phựt.
-      // withAnimation trong onChange mở một transaction MỚI nên thoát được cờ đó,
-      // và phủ chung cho cả hai đường vào (nút lẫn ngón tay).
       .onChange(of: scrolledMonth) { _, newMonth in
         // nil = đang ở giữa hai trang, chưa chốt tháng nào -> giữ nguyên
         guard let newMonth else { return }
-        withAnimation(.snappy) {
+        withAnimation(.linear(duration: 0.2)) {
           displayedMonth = newMonth
         }
       }
