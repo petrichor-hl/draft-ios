@@ -263,7 +263,9 @@ struct FlowRowScreen: View {
     "Design System",
     "C++",
     "Swift",
-    "Java"
+    "Java",
+    "Laptop",
+    "Mouse"
   ]
 
   var body: some View {
@@ -288,8 +290,6 @@ struct FlowRowScreen: View {
         .background(Color(uiColor: .secondarySystemBackground))
 
         VStack(alignment: .leading, spacing: 8) {
-          // `Text(verbatim:)` chứ không nội suy: nội suy Int bị format theo
-          // locale, 340 thành "340" ở en nhưng "340" / "3 40" tuỳ nơi khác.
           Text(verbatim: "Bề rộng khung: \(Int(width))pt")
             .font(.subheadline)
           Slider(value: $width, in: 120...360)
