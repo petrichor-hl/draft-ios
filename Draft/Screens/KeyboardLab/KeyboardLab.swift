@@ -39,6 +39,13 @@ struct KeyboardLab: View {
         LabRow(title: "Layout Guide ⭐️",
                subtitle: "keyboardLayoutGuide — bar rời, dừng êm - Giống Zalo")
       }
+
+      Button {
+        coordinator.push(.keyboardToolbarDone)
+      } label: {
+        LabRow(title: "Toolbar Done",
+               subtitle: "Nút Xong trên thanh phím, dùng chung cho nhiều ô")
+      }
     }
     .navigationTitle("Keyboard Lab")
   }
