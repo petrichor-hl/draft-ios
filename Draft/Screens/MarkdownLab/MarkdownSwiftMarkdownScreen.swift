@@ -25,7 +25,7 @@ import Markdown
 
 struct MarkdownSwiftMarkdownScreen: View {
   // Parse 1 lần: String → cây AST.
-  private let document = Document(parsing: markdownSamplesFull)
+  private let document = Markdown.Document(parsing: markdownSamplesFull)
 
   var body: some View {
     ScrollView {
@@ -44,7 +44,7 @@ private struct MarkdownBlock: View {
 
   var body: some View {
     switch markup {
-    case is Document:
+    case is Markdown.Document:
       // Gốc: xếp các block con theo chiều dọc.
       VStack(alignment: .leading, spacing: 12) {
         children
