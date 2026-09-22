@@ -45,7 +45,14 @@ struct ScrollViewLab: View {
         coordinator.push(.scrollViewCappedHeight)
       } label: {
         LabRow(title: "5. Cap 400pt",
-               subtitle: "Khung co theo content — vì sao maxHeight không ăn")
+               subtitle: "Khung co theo content, chặn trên ở 400")
+      }
+
+      Button {
+        coordinator.push(.scrollViewMaxHeight)
+      } label: {
+        LabRow(title: "6. maxHeight 400pt",
+               subtitle: "Khung vẫn 400pt dù content chỉ 60pt — không co theo content")
       }
     }
     .navigationTitle("ScrollView Lab")
