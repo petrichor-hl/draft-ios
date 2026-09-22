@@ -234,7 +234,7 @@ struct FlowRow: Layout {
 
 struct FlowRowScreen: View {
   /// Bề rộng khung, chỉnh được để thấy các chip tự chia lại hàng.
-  @State private var width: CGFloat = 340
+  @State private var width: CGFloat = 280
   @State private var alignment: RowAlignment = .leading
 
   private enum RowAlignment: String, CaseIterable, Identifiable {
@@ -254,9 +254,16 @@ struct FlowRowScreen: View {
   private let filters = [
     "Price: High to Low",
     "Avg rating: 4+",
-    "Free breakfast",
+    "Breakfast",
     "Free cancellation",
-    "£50 pn"
+    "Eggs",
+    "£50 pn",
+    "Freemium",
+    "Netflix",
+    "Design System",
+    "C++",
+    "Swift",
+    "Java"
   ]
 
   var body: some View {
