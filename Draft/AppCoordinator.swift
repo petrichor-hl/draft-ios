@@ -38,6 +38,7 @@ enum AppRoute: Hashable {
     case fixedHeightBottomSheet
     case dynamicHeightBottomSheet
     case dynamicHeightBottomSheetiOS18
+    case textFieldInSheet
     case localizeDaytime
     case canonicalValue
     case fullScreenCover
@@ -136,6 +137,8 @@ extension AppRoute: View {
             DynamicHeightBottomSheet_iOS_16()
         case .dynamicHeightBottomSheetiOS18:
             DynamicHeightBottomSheet_iOS_18()
+        case .textFieldInSheet:
+            TextFieldInSheet()
         case .localizeDaytime:
             LocalizeDatetime()
         case .canonicalValue:

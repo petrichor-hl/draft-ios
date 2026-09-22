@@ -34,6 +34,13 @@ struct BottomSheetLab: View {
           LabRow(title: "3. Dynamic Height (iOS 18+)",
                  subtitle: "Cùng kết quả nhưng đo bằng onGeometryChange, không cần view phụ")
         }
+
+        Button {
+          coordinator.push(.textFieldInSheet)
+        } label: {
+          LabRow(title: "4. TextField trong sheet",
+                 subtitle: "Bàn phím đẩy sheet lên, và tự co sheet nếu không còn đủ chỗ")
+        }
       }
 
       Section(".fullScreenCover") {
