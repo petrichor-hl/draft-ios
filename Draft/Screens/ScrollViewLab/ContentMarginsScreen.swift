@@ -1,5 +1,5 @@
 //
-//  ContentMarginsPlaygroundView.swift
+//  ContentMarginsScreen.swift
 //  Draft
 //
 
@@ -9,7 +9,7 @@ import SwiftUI
 /// Drag the slider to change the inset value, pick which edges it applies
 /// to, and switch `placement` to compare how margins affect the scrollable
 /// content versus the scroll indicators.
-struct ContentMarginsPlaygroundView: View {
+struct ContentMarginsScreen: View {
     @State private var margin: CGFloat = 0
     @State private var edgesOption: MarginEdgesOption = .all
     @State private var placementOption: MarginPlacementOption = .scrollContent
@@ -155,6 +155,6 @@ private enum MarginPlacementOption: String, CaseIterable, Identifiable {
 
 #Preview {
     NavigationStack {
-        ContentMarginsPlaygroundView()
+        ContentMarginsScreen()
     }
 }

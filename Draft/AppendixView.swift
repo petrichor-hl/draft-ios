@@ -11,15 +11,9 @@ struct AppendixView: View {
     var body: some View {
         List {
             Button {
-                coordinator.push(.scrollViewSafeArea)
+                coordinator.push(.scrollViewLab)
             } label: {
-                Text("ScrollView & Safe Area")
-            }
-
-            Button {
-                coordinator.push(.contentMarginsPlayground)
-            } label: {
-                Text("contentMargins Playground")
+                Text("ScrollView Lab")
             }
 
             Button {
@@ -158,12 +152,6 @@ struct AppendixView: View {
                 coordinator.push(.accordion)
             } label: {
                 Text("Accordion Lab")
-            }
-
-            Button {
-                coordinator.push(.kavsoftSwipeActionsScrollView)
-            } label: {
-                Text("Swipe Actions for ScrollView (Kavsoft)")
             }
 
             Button {

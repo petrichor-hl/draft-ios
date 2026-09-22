@@ -1,11 +1,11 @@
 //
-//  ScrollViewSafeAreaView.swift
+//  ScrollViewSafeAreaScreen.swift
 //  Draft
 //
 
 import SwiftUI
 
-struct ScrollViewSafeAreaView: View {
+struct ScrollViewSafeAreaScreen: View {
   
   @Environment(AppCoordinator.self) private var coordinator
   
@@ -16,7 +16,7 @@ struct ScrollViewSafeAreaView: View {
             ForEach(0..<30) { index in
               RoundedRectangle(cornerRadius: 12)
                 .fill(Color.blue)
-                .frame(height: 60)
+                .frame(height: 100)
                 .overlay(
                   Text("Row \(index)")
                     .foregroundStyle(.white)
@@ -40,5 +40,6 @@ struct ScrollViewSafeAreaView: View {
 }
 
 #Preview {
-  ScrollViewSafeAreaView()
+  ScrollViewSafeAreaScreen()
+    .environment(AppCoordinator())
 }

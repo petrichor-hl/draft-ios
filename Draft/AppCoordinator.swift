@@ -28,8 +28,10 @@ class AppCoordinator {
 }
 
 enum AppRoute: Hashable {
+    case scrollViewLab
     case scrollViewSafeArea
-    case contentMarginsPlayground
+    case scrollViewContentMargins
+    case scrollViewSwipeActions
     case fixedHeightBottomSheet
     case dynamicHeightBottomSheet
     case dynamicHeightBottomSheetiOS18
@@ -91,7 +93,6 @@ enum AppRoute: Hashable {
     case accordionSingle
     case accordionMultiExpand
     case accordionSingleOpen
-    case kavsoftSwipeActionsScrollView
     case calendarLab
     case calendar
     case calendariOS18
@@ -111,10 +112,14 @@ enum AppRoute: Hashable {
 extension AppRoute: View {
     var body: some View {
         switch self {
+        case .scrollViewLab:
+            ScrollViewLab()
         case .scrollViewSafeArea:
-            ScrollViewSafeAreaView()
-        case .contentMarginsPlayground:
-            ContentMarginsPlaygroundView()
+            ScrollViewSafeAreaScreen()
+        case .scrollViewContentMargins:
+            ContentMarginsScreen()
+        case .scrollViewSwipeActions:
+            Kavsoft_SwipeActionsForScrollView()
         case .fixedHeightBottomSheet:
             FixedHeightBottomSheet()
         case .dynamicHeightBottomSheet:
@@ -237,8 +242,6 @@ extension AppRoute: View {
             MultiExpandAccordionScreen()
         case .accordionSingleOpen:
             SingleOpenAccordionScreen()
-        case .kavsoftSwipeActionsScrollView:
-            Kavsoft_SwipeActionsForScrollView()
         case .calendarLab:
             CalendarLab()
         case .calendar:
