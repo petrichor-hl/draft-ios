@@ -32,6 +32,9 @@ enum AppRoute: Hashable {
     case scrollViewSafeArea
     case scrollViewContentMargins
     case scrollViewSwipeActions
+    case scrollViewFixedHeight
+    case scrollViewCappedHeight
+    case bottomSheetLab
     case fixedHeightBottomSheet
     case dynamicHeightBottomSheet
     case dynamicHeightBottomSheetiOS18
@@ -45,6 +48,7 @@ enum AppRoute: Hashable {
     case keyboardTracking
     case keyboardAccessory
     case keyboardLayoutGuide
+    case keyboardToolbarDone
     case sideMenuLab
     case markdownLab
     case markdownText
@@ -120,6 +124,12 @@ extension AppRoute: View {
             ContentMarginsScreen()
         case .scrollViewSwipeActions:
             Kavsoft_SwipeActionsForScrollView()
+        case .scrollViewFixedHeight:
+            FixedHeightScrollScreen()
+        case .scrollViewCappedHeight:
+            CappedHeightScrollScreen()
+        case .bottomSheetLab:
+            BottomSheetLab()
         case .fixedHeightBottomSheet:
             FixedHeightBottomSheet()
         case .dynamicHeightBottomSheet:
@@ -146,6 +156,8 @@ extension AppRoute: View {
             AccessoryScreen()
         case .keyboardLayoutGuide:
             KeyboardLayoutGuideScreen()
+        case .keyboardToolbarDone:
+            ToolbarDoneScreen()
         case .sideMenuLab:
             SideMenuLab()
         case .markdownLab:

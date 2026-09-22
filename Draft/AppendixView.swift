@@ -17,21 +17,9 @@ struct AppendixView: View {
             }
 
             Button {
-                coordinator.push(.fixedHeightBottomSheet)
+                coordinator.push(.bottomSheetLab)
             } label: {
-                Text("Fixed Height Bottom Sheet")
-            }
-
-            Button {
-                coordinator.push(.dynamicHeightBottomSheet)
-            } label: {
-                Text("Dynamic Height Bottom Sheet iOS 16+")
-            }
-
-            Button {
-                coordinator.push(.dynamicHeightBottomSheetiOS18)
-            } label: {
-                Text("Dynamic Height Bottom Sheet iOS 18+")
+                Text("Bottom Sheet Lab")
             }
 
             Button {
