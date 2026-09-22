@@ -44,7 +44,7 @@ struct ScrollViewLab: View {
       Button {
         coordinator.push(.scrollViewCappedHeight)
       } label: {
-        LabRow(title: "5. Cap 500pt",
+        LabRow(title: "5. Cap 400pt",
                subtitle: "Khung co theo content — vì sao maxHeight không ăn")
       }
     }

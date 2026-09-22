@@ -42,7 +42,7 @@ struct FixedHeightScrollScreen: View {
       }
       .scrollBounceBehavior(.basedOnSize, axes: .vertical)
       .frame(height: boxHeight)
-      .border(.red)
+      .border(.red, width: 1)
 
       VStack(alignment: .leading, spacing: 8) {
         Stepper("Số row: \(rowCount)", value: $rowCount, in: 1...20)
