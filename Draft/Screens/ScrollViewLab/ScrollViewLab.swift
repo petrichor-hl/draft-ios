@@ -54,6 +54,13 @@ struct ScrollViewLab: View {
         LabRow(title: "6. maxHeight 400pt",
                subtitle: "Khung vẫn 400pt dù content chỉ 60pt — không co theo content")
       }
+
+      Button {
+        coordinator.push(.scrollViewMaxHeightInSheet)
+      } label: {
+        LabRow(title: "7. maxHeight trong sheet",
+               subtitle: "Bàn phím co sheet, khung tụt xuống dưới 400")
+      }
     }
     .navigationTitle("ScrollView Lab")
   }

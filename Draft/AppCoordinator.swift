@@ -35,6 +35,7 @@ enum AppRoute: Hashable {
     case scrollViewFixedHeight
     case scrollViewCappedHeight
     case scrollViewMaxHeight
+    case scrollViewMaxHeightInSheet
     case bottomSheetLab
     case fixedHeightBottomSheet
     case dynamicHeightBottomSheet
@@ -132,6 +133,8 @@ extension AppRoute: View {
             CappedHeightScrollScreen()
         case .scrollViewMaxHeight:
             MaxHeightScrollScreen()
+        case .scrollViewMaxHeightInSheet:
+            MaxHeightInSheetScreen()
         case .bottomSheetLab:
             BottomSheetLab()
         case .fixedHeightBottomSheet:
