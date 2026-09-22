@@ -33,6 +33,20 @@ struct ScrollViewLab: View {
         LabRow(title: "3. Swipe Actions (Kavsoft)",
                subtitle: "ScrollView không có swipeActions như List — tự dựng lại")
       }
+
+      Button {
+        coordinator.push(.scrollViewFixedHeight)
+      } label: {
+        LabRow(title: "4. Fixed 400pt",
+               subtitle: "Khung luôn cao 400 — content ngắn thì dư chỗ trống")
+      }
+
+      Button {
+        coordinator.push(.scrollViewCappedHeight)
+      } label: {
+        LabRow(title: "5. Cap 500pt",
+               subtitle: "Khung co theo content — vì sao maxHeight không ăn")
+      }
     }
     .navigationTitle("ScrollView Lab")
   }
