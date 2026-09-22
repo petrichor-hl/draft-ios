@@ -35,12 +35,6 @@ struct AppendixView: View {
             }
 
             Button {
-                coordinator.push(.fullScreenCover)
-            } label: {
-                Text("Full-Screen Cover")
-            }
-
-            Button {
                 coordinator.push(.learnVideo)
             } label: {
                 Text("Learn VideoPlayer")

@@ -2,8 +2,8 @@
 //  BottomSheetLab.swift
 //  Draft
 //
-//  Menu các thí nghiệm quanh bottom sheet: detent cố định, và detent
-//  co theo chiều cao content ở hai thế hệ API đo kích thước.
+//  Menu các thí nghiệm quanh hai API trình bày modal: sheet (detent cố
+//  định, detent co theo content) và fullScreenCover.
 //
 
 import SwiftUI
@@ -13,25 +13,36 @@ struct BottomSheetLab: View {
 
   var body: some View {
     List {
-      Button {
-        coordinator.push(.fixedHeightBottomSheet)
-      } label: {
-        LabRow(title: "1. Fixed Height",
-               subtitle: "presentationDetents([.height(600)]) — sheet luôn cao 600")
+      Section(".sheet") {
+        Button {
+          coordinator.push(.fixedHeightBottomSheet)
+        } label: {
+          LabRow(title: "1. Fixed Height",
+                 subtitle: "presentationDetents([.height(600)]) — sheet luôn cao 600")
+        }
+
+        Button {
+          coordinator.push(.dynamicHeightBottomSheet)
+        } label: {
+          LabRow(title: "2. Dynamic Height (iOS 16+)",
+                 subtitle: "Đo content bằng GeometryReader trong background rồi đẩy vào detent")
+        }
+
+        Button {
+          coordinator.push(.dynamicHeightBottomSheetiOS18)
+        } label: {
+          LabRow(title: "3. Dynamic Height (iOS 18+)",
+                 subtitle: "Cùng kết quả nhưng đo bằng onGeometryChange, không cần view phụ")
+        }
       }
 
-      Button {
-        coordinator.push(.dynamicHeightBottomSheet)
-      } label: {
-        LabRow(title: "2. Dynamic Height (iOS 16+)",
-               subtitle: "Đo content bằng GeometryReader trong background rồi đẩy vào detent")
-      }
-
-      Button {
-        coordinator.push(.dynamicHeightBottomSheetiOS18)
-      } label: {
-        LabRow(title: "3. Dynamic Height (iOS 18+)",
-               subtitle: "Cùng kết quả nhưng đo bằng onGeometryChange, không cần view phụ")
+      Section(".fullScreenCover") {
+        Button {
+          coordinator.push(.fullScreenCover)
+        } label: {
+          LabRow(title: "1. Cover cơ bản",
+                 subtitle: "Phủ hết màn, không có detent hay drag để đóng — tự dựng nút Close")
+        }
       }
     }
     .navigationTitle("Bottom Sheet Lab")
