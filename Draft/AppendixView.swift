@@ -23,6 +23,12 @@ struct AppendixView: View {
             }
 
             Button {
+                coordinator.push(.keyboardLab)
+            } label: {
+                Text("Keyboard Lab")
+            }
+
+            Button {
                 coordinator.push(.localizeDaytime)
             } label: {
                 Text("Localize Datetime")
@@ -44,12 +50,6 @@ struct AppendixView: View {
                 coordinator.push(.learnPhotoPicker)
             } label: {
                 Text("Learn PhotoPicker")
-            }
-
-            Button {
-                coordinator.push(.keyboardLab)
-            } label: {
-                Text("Keyboard Lab")
             }
 
             Button {
