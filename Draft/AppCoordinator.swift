@@ -124,6 +124,12 @@ enum AppRoute: Hashable {
     case chartByScale
     case chartAxisCustom
     case chartAnnotationRule
+    case chartHelloSwiftCharts
+    case chartCupertinoDetails
+    case chartLocationsToggle
+    case chartLocationDetails
+    case chartRaiseTheBar
+    case chartLocationDetailsBarMark
     case chartTypes
     case chartColumn
     case chartBar
@@ -332,6 +338,18 @@ extension AppRoute: View {
             AxisCustomScreen()
         case .chartAnnotationRule:
             AnnotationRuleScreen()
+        case .chartHelloSwiftCharts:
+            HelloSwiftCharts()
+        case .chartCupertinoDetails:
+            CupertinoDetails()
+        case .chartLocationsToggle:
+            LocationsToggle()
+        case .chartLocationDetails:
+            LocationDetails()
+        case .chartRaiseTheBar:
+            RaiseTheBar()
+        case .chartLocationDetailsBarMark:
+            LocationDetailsBarMark()
         case .chartTypes:
             ChartTypesLab()
         case .chartColumn:
