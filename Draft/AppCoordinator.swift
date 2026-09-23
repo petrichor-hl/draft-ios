@@ -119,7 +119,20 @@ enum AppRoute: Hashable {
     case chartLab
     case chartBasics
     case chartAnatomy
+    case chartDataTypeAxis
+    case chartModifierLayers
+    case chartByScale
+    case chartAxisCustom
+    case chartAnnotationRule
     case chartTypes
+    case chartColumn
+    case chartBar
+    case chartLine
+    case chartArea
+    case chartPoint
+    case chartPieDonut
+    case chartRange
+    case chartHeatmap
     case chartInteraction
     case chartToolbox
 }
@@ -309,8 +322,34 @@ extension AppRoute: View {
             ChartBasicsLab()
         case .chartAnatomy:
             ChartAnatomyScreen()
+        case .chartDataTypeAxis:
+            DataTypeAxisScreen()
+        case .chartModifierLayers:
+            ModifierLayersScreen()
+        case .chartByScale:
+            ByScaleScreen()
+        case .chartAxisCustom:
+            AxisCustomScreen()
+        case .chartAnnotationRule:
+            AnnotationRuleScreen()
         case .chartTypes:
             ChartTypesLab()
+        case .chartColumn:
+            ColumnChartScreen()
+        case .chartBar:
+            BarChartScreen()
+        case .chartLine:
+            LineChartScreen()
+        case .chartArea:
+            AreaChartScreen()
+        case .chartPoint:
+            PointChartScreen()
+        case .chartPieDonut:
+            PieDonutScreen()
+        case .chartRange:
+            RangeChartScreen()
+        case .chartHeatmap:
+            HeatmapScreen()
         case .chartInteraction:
             ChartInteractionLab()
         case .chartToolbox:

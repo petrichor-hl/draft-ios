@@ -14,15 +14,15 @@ struct DailySteps: Identifiable {
   let steps: Int
 }
 
+private let week: [DailySteps] = [
+  .init(day: "T2", steps: 6200),
+  .init(day: "T3", steps: 8100),
+  .init(day: "T4", steps: 4300),
+  .init(day: "T5", steps: 9500),
+  .init(day: "T6", steps: 7200),
+]
+
 struct ChartAnatomyScreen: View {
-  private let week: [DailySteps] = [
-    .init(day: "T2", steps: 6200),
-    .init(day: "T3", steps: 8100),
-    .init(day: "T4", steps: 4300),
-    .init(day: "T5", steps: 9500),
-    .init(day: "T6", steps: 7200),
-  ]
-  
   var body: some View {
     List {
       Section {
@@ -41,6 +41,18 @@ struct ChartAnatomyScreen: View {
       
       Section {
         Chart(week) { item in
+          BarMark(
+            x: .value("Bước", item.steps),
+            y: .value("Thứ", item.day)
+          )
+        }
+        .frame(height: 240)
+      }
+      
+      Divider()
+      
+      Section {
+        Chart(week) { item in
           LineMark(
             x: .value("Thứ", item.day),
             y: .value("Bước", item.steps)
@@ -50,6 +62,8 @@ struct ChartAnatomyScreen: View {
       } header: {
         Text("LineMark")
       }
+      
+      Divider()
       
       Section {
         Chart(week) { item in
