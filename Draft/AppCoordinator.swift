@@ -114,6 +114,8 @@ enum AppRoute: Hashable {
     case cameraMetadataScan
     case cameraVideoDataOutput
     case cameraAdvanced
+    case menuLab
+    case menuWithLabeledContent
 }
 
 extension AppRoute: View {
@@ -291,6 +293,10 @@ extension AppRoute: View {
             VideoDataOutputScreen()
         case .cameraAdvanced:
             AdvancedCaptureScreen()
+        case .menuLab:
+            MenuLab()
+        case .menuWithLabeledContent:
+            MenuWithLabeledContent()
         }
     }
 }

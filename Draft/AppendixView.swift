@@ -53,12 +53,6 @@ struct AppendixView: View {
             }
 
             Button {
-                coordinator.push(.sideMenuLab)
-            } label: {
-                Text("Side Menu Lab")
-            }
-
-            Button {
                 coordinator.push(.markdownLab)
             } label: {
                 Text("Markdown Lab")
@@ -140,6 +134,12 @@ struct AppendixView: View {
                 coordinator.push(.calendarLab)
             } label: {
                 Text("Calendar Lab")
+            }
+
+            Button {
+                coordinator.push(.menuLab)
+            } label: {
+                Text("Menu Lab")
             }
 
             Button {
