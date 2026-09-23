@@ -116,6 +116,11 @@ enum AppRoute: Hashable {
     case cameraAdvanced
     case menuLab
     case menuWithLabeledContent
+    case chartLab
+    case chartBasics
+    case chartTypes
+    case chartInteraction
+    case chartToolbox
 }
 
 extension AppRoute: View {
@@ -297,6 +302,16 @@ extension AppRoute: View {
             MenuLab()
         case .menuWithLabeledContent:
             MenuWithLabeledContent()
+        case .chartLab:
+            ChartLab()
+        case .chartBasics:
+            ChartBasicsLab()
+        case .chartTypes:
+            ChartTypesLab()
+        case .chartInteraction:
+            ChartInteractionLab()
+        case .chartToolbox:
+            ChartToolbox()
         }
     }
 }

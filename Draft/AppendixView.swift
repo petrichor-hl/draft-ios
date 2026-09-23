@@ -143,6 +143,12 @@ struct AppendixView: View {
             }
 
             Button {
+                coordinator.push(.chartLab)
+            } label: {
+                Text("Chart Lab")
+            }
+
+            Button {
                 coordinator.push(.logger)
             } label: {
                 Text("Logger")
