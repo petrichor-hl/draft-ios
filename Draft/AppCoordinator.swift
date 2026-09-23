@@ -118,6 +118,7 @@ enum AppRoute: Hashable {
     case menuWithLabeledContent
     case chartLab
     case chartBasics
+    case chartAnatomy
     case chartTypes
     case chartInteraction
     case chartToolbox
@@ -306,6 +307,8 @@ extension AppRoute: View {
             ChartLab()
         case .chartBasics:
             ChartBasicsLab()
+        case .chartAnatomy:
+            ChartAnatomyScreen()
         case .chartTypes:
             ChartTypesLab()
         case .chartInteraction:
