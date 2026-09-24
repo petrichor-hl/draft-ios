@@ -529,8 +529,26 @@ struct GarminHeartRateScreen: View {
             )
             .foregroundStyle(.clear)
           }
-          
+
+          if let selectedSample {
+            RuleMark(x: .value("Chọn", selectedSample.time))
+              .foregroundStyle(.secondary)
+              .lineStyle(StrokeStyle(lineWidth: 1, dash: [3, 3]))
+              .annotation(
+                position: .top,
+                overflowResolution: .init(x: .fit, y: .disabled)
+              ) {
+                Text("\(selectedSample.bpm) BPM")
+                  .font(.caption2.bold())
+                  .foregroundStyle(.white)
+                  .padding(.horizontal, 8)
+                  .padding(.vertical, 4)
+                  .background(.pink, in: Capsule())
+                  .fixedSize()
+              }
+          }
         }
+        .chartXSelection(value: $selectedTime)
         .chartXScale(domain: dayRange)
         .chartXAxis {
           AxisMarks(values: .stride(by: .hour, count: 6)) { _ in
@@ -596,7 +614,7 @@ struct GarminHeartRateScreen: View {
       } header: {
         Text("5 — y hệt 4 nhưng bỏ values: zoneBoundaries")
       } footer: {
-        Text("Màu không đổi — mốc và miền là hai việc rời nhau, gradient chỉ phụ thuộc miền. Nhưng lưới về mặc định 75/100/125/150/175, không còn trùng biên zone, nên mất cách kiểm chứng bằng mắt: ở chart 4 chỉ cần nhìn đường lưới là biết màu đổi có đúng ngưỡng hay không.")
+        Text("Màu không đổi — mốc và miền là hai việc rời nhau, gradient chỉ phụ thuộc miền. Nhưng lưới về mặc định 75/100/125/150/175, không còn trùng biên zone, nên mất cách kiểm chứng bằng mắt: ở chart 4 chỉ cần nhìn đường lưới là biết màu đổi có đúng ngưỡng hay không. Selection giữ nguyên để chạm giữ vẫn đọc được giá trị — dùng chung selectedTime với chart 4 nên chọn ở đây thì bên kia cũng đổi theo.")
       }
       
       
