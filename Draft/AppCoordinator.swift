@@ -136,6 +136,7 @@ enum AppRoute: Hashable {
     case chartColumn
     case chartBar
     case chartLine
+    case chartInterpolation
     case chartArea
     case chartPoint
     case chartPieDonut
@@ -365,6 +366,8 @@ extension AppRoute: View {
             BarChartScreen()
         case .chartLine:
             LineChartScreen()
+        case .chartInterpolation:
+            LineInterpolationScreen()
         case .chartArea:
             AreaChartScreen()
         case .chartPoint:

@@ -1,5 +1,5 @@
 //
-//  InterpolationScreen.swift
+//  LineInterpolationScreen.swift
 //  Draft
 //
 //  Phần mở rộng của Types #4 — Line. Tách ra màn riêng vì LineChartScreen đã
@@ -55,7 +55,7 @@ private let interpolations: [(name: String, method: InterpolationMethod)] = [
   ("stepEnd", .stepEnd),
 ]
 
-struct InterpolationScreen: View {
+struct LineInterpolationScreen: View {
   var body: some View {
     List {
       ForEach(interpolations, id: \.name) { item in
@@ -93,6 +93,6 @@ struct InterpolationScreen: View {
 
 #Preview {
   NavigationStack {
-    InterpolationScreen()
+    LineInterpolationScreen()
   }
 }
