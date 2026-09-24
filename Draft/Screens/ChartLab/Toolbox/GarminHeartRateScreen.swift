@@ -612,9 +612,9 @@ struct GarminHeartRateScreen: View {
         .frame(height: 240)
         .padding(.top, 40)
       } header: {
-        Text("5 — LineMark trong suốt, overlay tắt, có chartXSelection")
+        Text("5 — LineMark trong suốt, tắt Canvas, giữ chartXSelection")
       } footer: {
-        Text("Canvas đã tắt nên chart trống — chỉ còn LineMark trong suốt. CHẠM GIỮ để xem selection có chạy không: nếu có thì .clear không chặn gì cả, và thủ phạm ở chart 4 chỉ có thể là Canvas nằm đè lên.")
+        Text("Chart trống trơn vì không còn gì để nhìn, nhưng CHẠM GIỮ vẫn hiện nhãn BPM. Nghĩa là .clear KHÔNG chặn selection — Charts vẫn coi mark vô hình là thứ để nhắm tới. Nhờ vậy loại được một nghi phạm, và chỉ đúng thủ phạm ở chart 4: Canvas nằm đè lên nuốt mất touch.")
       }
       
       
