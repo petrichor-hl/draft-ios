@@ -14,12 +14,34 @@
 //  Kèm .lineStyle(StrokeStyle(dash:)) cho nét đứt và .annotation để gắn
 //  nhãn cho chính đường đó.
 //
-//  CẦN ĐO:
-//    1. RuleMark có ăn vào domain không? RectangleMark thì CÓ — đo ở màn
-//       Vùng nền, vùng 15.000–20.000 kéo trục lên 20.000.
-//    2. RuleMark(x:) trên band scale rơi vào TÂM dải hay MÉP dải? Vùng nền
-//       đã cho thấy .value("Từ", "T3") trỏ vào tâm.
-//    3. Gắn được annotation lên RuleMark không, và nhãn neo vào đâu?
+//  ĐÃ ĐO trên simulator.
+//
+//  RuleMark ĂN VÀO DOMAIN, y như RectangleMark. Một ngưỡng đặt ở 400 trong
+//  khi dữ liệu cao nhất 190 kéo trục lên 0–400 và nén đường nhịp tim xuống
+//  nửa dưới khung. Hệ quả: đặt ngưỡng cao — "nhịp tối đa 220", "hạn mức 10
+//  triệu" — là tự bóp bẹp biểu đồ. Muốn tránh thì khoá chartYScale trước,
+//  khi đó RuleMark ngoài miền bị cắt thay vì kéo giãn trục.
+//
+//  Hai mark này cư xử giống nhau vì cùng một họ: mark KHÔNG thuộc điểm dữ
+//  liệu nào, nhưng vẫn được tính vào miền như một điểm thật.
+//
+//  ANNOTATION GẮN ĐƯỢC, nhưng `position` mang HAI NGHĨA tuỳ hướng của mark:
+//
+//    RuleMark(y:) — đường NGANG, không có đầu trên hay đầu dưới. position chỉ
+//      quyết định nhãn nằm TRÊN hay DƯỚI đường; vị trí theo chiều ngang phải
+//      nói riêng bằng alignment (.leading dồn về mép trái).
+//
+//    RuleMark(x:) — đường DỌC, có đầu trên thật. position: .top neo đúng vào
+//      đó, không cần alignment. Toolbox/Garmin dùng đúng cách này cho nhãn
+//      BPM khi chạm giữ.
+//
+//  Annotation của RuleMark KHÔNG nới domain, khác annotation của BarMark ở
+//  Basics #6 — có lẽ vì nhãn nằm đè lên vùng vẽ chứ không đòi chỗ bên ngoài.
+//
+//  BAND SCALE: .value("Mốc", "T4") trỏ vào TÂM dải, không phải mép — đường
+//  cắt đôi cột T4. Giống RectangleMark ở màn Vùng nền. Cột, đường và nhãn
+//  trục đều quy về cùng một điểm. (Section đo việc này đã xoá sau khi có kết
+//  luận; ba section còn lại đều dùng trục thời gian.)
 //
 
 import Charts
@@ -79,6 +101,13 @@ private let samples: [HeartSample] = {
 
 private let segmented = splitSegments(samples, gap: 5 * 60)
 
+/// Chia Int nên cắt phần dư — đủ dùng cho một đường tham chiếu.
+private let averageBPM = samples.map(\.bpm).reduce(0, +) / samples.count
+
+/// Mốc 12 giờ, dùng cho RuleMark dọc ở section E.
+private let noon = Calendar.current.date(byAdding: .hour, value: 12, to: day)!
+
+
 struct RuleMarkScreen: View {
   var body: some View {
     List {
@@ -112,6 +141,130 @@ struct RuleMarkScreen: View {
       } footer: {
         Text("Đường dọc xám ở 00 giờ.")
       }
+
+      Section {
+        Chart {
+          ForEach(segmented) { sample in
+            LineMark(
+              x: .value("Giờ", sample.time),
+              y: .value("BPM", sample.bpm),
+              series: .value("Đoạn", sample.segment)
+            )
+            .foregroundStyle(.pink.opacity(0.5))
+          }
+
+          RuleMark(y: .value("Trung bình", averageBPM))
+            .foregroundStyle(.indigo)
+            .lineStyle(StrokeStyle(lineWidth: 1, dash: [4, 4]))
+        }
+        .chartXScale(domain: dayRange)
+        .chartYAxis {
+          AxisMarks(position: .leading)
+        }
+        .frame(height: 240)
+      } header: {
+        Text("B — RuleMark(y:) đường trung bình")
+      } footer: {
+        Text("Đường tím nằm ở \(averageBPM) BPM, trung bình của cả 360 mẫu. Nó chạy suốt chiều rộng kể cả quãng không có dữ liệu — vì không thuộc phần tử nào nên cũng không dừng ở đâu cả.")
+      }
+
+      Section {
+        Chart {
+          ForEach(segmented) { sample in
+            LineMark(
+              x: .value("Giờ", sample.time),
+              y: .value("BPM", sample.bpm),
+              series: .value("Đoạn", sample.segment)
+            )
+            .foregroundStyle(.pink.opacity(0.5))
+          }
+
+          RuleMark(y: .value("Ngưỡng", 400))
+            .foregroundStyle(.red)
+            .lineStyle(StrokeStyle(lineWidth: 1, dash: [4, 4]))
+        }
+        .chartXScale(domain: dayRange)
+        .chartYAxis {
+          AxisMarks(position: .leading)
+        }
+        .frame(height: 240)
+      } header: {
+        Text("C — RuleMark(y:) ở 400, ngoài tầm dữ liệu")
+      } footer: {
+        Text("Dữ liệu cao nhất chỉ 190. Trục Y có nới lên 400 để chứa đường này không? RectangleMark ở màn Vùng nền thì CÓ — vùng 15.000–20.000 kéo trục lên 20.000 và bóp bẹp mọi cột.")
+      }
+
+      Section {
+        Chart {
+          ForEach(segmented) { sample in
+            LineMark(
+              x: .value("Giờ", sample.time),
+              y: .value("BPM", sample.bpm),
+              series: .value("Đoạn", sample.segment)
+            )
+            .foregroundStyle(.pink.opacity(0.5))
+          }
+
+          RuleMark(y: .value("Trung bình", averageBPM))
+            .foregroundStyle(.indigo)
+            .lineStyle(StrokeStyle(lineWidth: 1, dash: [4, 4]))
+            .annotation(position: .top, alignment: .trailing) {
+              Text("Trung bình \(averageBPM)")
+                .font(.caption2.bold())
+                .foregroundStyle(.white)
+                .padding(.horizontal, 6)
+                .padding(.vertical, 3)
+                .background(.indigo, in: Capsule())
+                .fixedSize()
+            }
+        }
+        .chartXScale(domain: dayRange)
+        .chartYAxis {
+          AxisMarks(position: .leading)
+        }
+        .frame(height: 240)
+      } header: {
+        Text("D — annotation trên RuleMark(y:), position: .bottom")
+      } footer: {
+        Text("Đường NGANG không có đầu trên hay đầu dưới, nên position chỉ quyết định nhãn nằm TRÊN hay DƯỚI đường; vị trí theo chiều ngang phải nói riêng bằng alignment. Ở đây .bottom đặt nhãn dưới đường, .leading dồn về mép trái.")
+      }
+
+      Section {
+        Chart {
+          ForEach(segmented) { sample in
+            LineMark(
+              x: .value("Giờ", sample.time),
+              y: .value("BPM", sample.bpm),
+              series: .value("Đoạn", sample.segment)
+            )
+            .foregroundStyle(.pink.opacity(0.5))
+          }
+
+          RuleMark(x: .value("Mốc", noon))
+            .foregroundStyle(.indigo)
+            .lineStyle(StrokeStyle(lineWidth: 1, dash: [4, 4]))
+            .annotation(position: .top) {
+              Text("Giữa trưa")
+                .font(.caption2.bold())
+                .foregroundStyle(.white)
+                .padding(.horizontal, 6)
+                .padding(.vertical, 3)
+                .background(.indigo, in: Capsule())
+                .fixedSize()
+            }
+        }
+        .chartXScale(domain: dayRange)
+        .chartYAxis {
+          AxisMarks(position: .leading)
+        }
+        .frame(height: 240)
+        .padding(.top, 40)
+      } header: {
+        Text("E — annotation trên RuleMark(x:), position: .top")
+      } footer: {
+        Text("Đường DỌC có đầu trên thật, nên .top neo nhãn đúng vào đó và không cần alignment. Đặt cạnh D để thấy cùng một tham số position mang hai nghĩa khác nhau, tuỳ mark là đường ngang hay đường dọc.")
+      }
+
     }
     .navigationTitle("RuleMark")
     .navigationBarTitleDisplayMode(.inline)
