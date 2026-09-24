@@ -57,11 +57,12 @@
 //  đổi. Phát hiện bằng cách so mtime của binary với file nguồn; chữa bằng
 //  xcodebuild clean.
 //
-//  CHART 5 — bỏ chartYAxis, giữ nguyên chartYScale. Màu không đổi, xác nhận
-//  trang trí và miền là hai việc rời nhau. Nhưng mốc về mặc định 75/100/125/
-//  150/175 nên mất khả năng tự kiểm chứng: ở chart 4, lưới nằm đúng biên zone
-//  nên nhìn là biết màu đổi có đúng chỗ không. Giữ AxisMarks(values:) không
-//  phải để đẹp mà để mốc trục và ngưỡng màu nói cùng một ngôn ngữ.
+//  CHART 5 — giữ chartYAxis nhưng bỏ values: zoneBoundaries. Màu không đổi,
+//  xác nhận MỐC và MIỀN là hai việc rời nhau: gradient chỉ phụ thuộc miền.
+//  Nhưng mốc về mặc định 75/100/125/150/175 nên mất khả năng tự kiểm chứng —
+//  ở chart 4, lưới nằm đúng biên zone nên nhìn là biết màu đổi có đúng chỗ.
+//  Giữ AxisMarks(values:) không phải để đẹp mà để mốc trục và ngưỡng màu nói
+//  cùng một ngôn ngữ.
 //
 //  CÒN LẠI để giống ảnh Garmin: nền tối, và dãy chấm tròn trên trục X — chờ
 //  mục AxisValueLabel + ViewBuilder trong TODO của Basics #5.
@@ -529,9 +530,9 @@ struct GarminHeartRateScreen: View {
         }
         .frame(height: 240)
       } header: {
-        Text("5 — y hệt 4 nhưng BỎ chartYAxis")
+        Text("5 — giữ chartYAxis, bỏ values: zoneBoundaries")
       } footer: {
-        Text("Màu không đổi vì miền vẫn khoá — bỏ chartYAxis chỉ đụng phần TRANG TRÍ, không đụng MIỀN. Nhưng mốc về mặc định 75/100/125/150/175, chẳng liên quan gì tới zone, nên mất luôn khả năng kiểm chứng bằng mắt: ở chart 4 nhìn đường lưới là biết màu đổi đúng chỗ hay chưa.")
+        Text("Trục Y vẫn bên trái và màu vẫn đúng — miền không đổi thì gradient không đổi. Nhưng mốc về mặc định 75/100/125/150/175, không còn trùng biên zone, nên mất cách kiểm chứng bằng mắt: ở chart 4 chỉ cần nhìn đường lưới là biết màu đổi có đúng ngưỡng hay không.")
       }
     }
     .navigationTitle("Garmin — Nhịp tim")

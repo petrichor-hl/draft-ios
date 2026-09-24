@@ -47,8 +47,18 @@
 //  foregroundStyle: LinearGradient theo chiều dọc. Đường giữ nguyên một
 //  mạch và gradient phủ lên nó — xanh ở vùng thấp, đỏ ở đỉnh.
 //
-//  Đánh đổi: màu bám VỊ TRÍ trên khung chứ không bám GIÁ TRỊ. Đổi
-//  chartYScale thì cùng một nhịp tim rơi vào độ cao khác và đổi màu theo.
+//  ĐÁNH ĐỔI, và chỗ này ban đầu tôi viết SAI. Màu không bám "vị trí trên
+//  khung" — nó bám VỊ TRÍ TRONG BOUNDING BOX CỦA CHÍNH MARK ĐÓ.
+//
+//  Chart ở đây chỉ có MỘT series nên bounding box gần trùng toàn bộ dữ liệu,
+//  và hai cách nói cho ra cùng kết quả. Thêm series thứ hai là lộ ngay: đo ở
+//  màn Toolbox / Garmin, đoạn nhịp tim buổi sáng cao vỏn vẹn 58–72 BPM mà vẫn
+//  trải trọn năm màu trong đúng 14 nhịp đó, trong khi đáng lẽ phải xanh dương
+//  toàn bộ vì nằm dưới ngưỡng 95.
+//
+//  Hệ quả: cách này chỉ dùng được khi chart có một series duy nhất. Muốn màu
+//  bám giá trị thật thì phải cắt đoạn theo ngưỡng rồi tô màu cứng, hoặc bỏ
+//  hẳn LineMark mà tự vẽ bằng Canvas — cả hai đều làm ở màn Garmin.
 //
 //  Ngoài lề, sửa lại kết luận ở D/E: thang màu KHÔNG luôn kéo về 0. Với dữ
 //  liệu 58–181 thì Charts chọn 50–200. Nó lấy mốc tròn quanh dữ liệu chứ
