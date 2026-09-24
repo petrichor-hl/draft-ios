@@ -44,9 +44,15 @@ struct ChartBasicsLab: View {
         }
 
         Button {
-          coordinator.push(.chartAnnotationRule)
+          coordinator.push(.chartAnnotation)
         } label: {
-          ChartLabRow(title: "6. Annotation & RuleMark", subtitle: "Nhãn đầu cột, đường trung bình, vùng nền")
+          ChartLabRow(title: "6. Annotation", subtitle: "Cửa thoát duy nhất để đưa View vào trong Chart")
+        }
+
+        Button {
+          coordinator.push(.chartRuleMark)
+        } label: {
+          ChartLabRow(title: "7. RuleMark & vùng nền", subtitle: "Đường trung bình, ngưỡng, vùng giá trị mục tiêu")
         }
       }
     }
