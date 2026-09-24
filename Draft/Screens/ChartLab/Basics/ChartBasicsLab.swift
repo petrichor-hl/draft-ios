@@ -50,9 +50,15 @@ struct ChartBasicsLab: View {
         }
 
         Button {
+          coordinator.push(.chartBackgroundRegion)
+        } label: {
+          ChartLabRow(title: "7. Vùng nền", subtitle: "RectangleMark làm dải mục tiêu, vùng cảnh báo")
+        }
+
+        Button {
           coordinator.push(.chartRuleMark)
         } label: {
-          ChartLabRow(title: "7. RuleMark & vùng nền", subtitle: "Đường trung bình, ngưỡng, vùng giá trị mục tiêu")
+          ChartLabRow(title: "8. RuleMark", subtitle: "Đường trung bình, ngưỡng, mốc thời gian")
         }
       }
     }
