@@ -9,7 +9,8 @@
 //
 //  Cái bẫy để dành cho Garmin: dữ liệu khuyết vài giờ thì LineMark NỐI
 //  THẲNG qua khoảng trống, không tự đứt. Muốn đứt đoạn phải tách segment
-//  bằng tham số series:. Dựng cặp đối chứng có/không tách để thấy rõ.
+//  bằng tham số series:. Năm section đi từ cái bẫy tới trục hoàn chỉnh
+//  của Garmin.
 //
 //  ĐÃ ĐO trên simulator, 360 mẫu — một mẫu mỗi phút, khuyết hẳn 09:00–15:00.
 //
@@ -32,10 +33,29 @@
 //  khác hẳn foregroundStyle(by:). Charts phân biệt rõ scale nào để vẽ chú
 //  giải, scale nào chỉ để nhóm điểm.
 //
-//  TRỤC X 06/09/12/15 giờ là Charts tự chọn, không có modifier nào. Nó tự
-//  chọn bước 3 giờ theo miền dữ liệu và bề rộng khung, tự bỏ nhãn 18 giờ
-//  vì sát mép, tự viết "06 giờ" theo locale Việt. Garmin cần bước 4 giờ và
-//  trọn 24 giờ bất kể dữ liệu nằm đâu — thứ phải nói rõ ở Basics #5.
+//  TRỤC X — miền và mốc là HAI việc rời nhau, đo bằng C, D, E:
+//
+//    A, B  không modifier      06 / 09 / 12 / 15
+//    C     chartXScale         00 / 06 / 12 / 18
+//    D     AxisMarks 4 giờ     06 / 10 / 14
+//    E     cả hai              00 / 04 / 08 / 12 / 16 / 20
+//
+//  D là section đắt nhất. .stride(by: .hour, count: 4) KHÔNG có nghĩa là
+//  "chia 4 giờ kể từ nửa đêm" — nó chia 4 giờ trong MIỀN HIỆN CÓ, mà miền
+//  vẫn là 06–18 do Charts tự suy từ dữ liệu. Bước đúng, điểm neo sai.
+//
+//  Điểm neo đến từ miền, và AxisMarks không đụng tới miền. Nên hai modifier
+//  này không thay thế nhau, cũng không cái nào bao cái nào:
+//    chartXScale(domain:)  trục bắt đầu và kết thúc ở đâu
+//    AxisMarks(values:)    trong khoảng đó thì vẽ nhãn ở những điểm nào
+//
+//  C cũng cho thấy bước chia là HỆ QUẢ của miền: không đụng gì tới mốc mà
+//  Charts vẫn tự đổi từ 3 giờ sang 6 giờ khi miền rộng gấp đôi.
+//
+//  Nhãn cuối bị lược ở mọi bản — miền kéo tới 24 giờ nhưng nhãn dừng ở 20.
+//  Garmin hiện "00 giờ" ở cả hai đầu; chưa làm được, để Basics #5.
+//
+//  "06 giờ" là locale Việt, không có dòng format nào.
 //
 
 import Charts
@@ -47,6 +67,11 @@ struct HeartSample: Identifiable {
   let bpm: Int
   var segment = 0
 }
+
+private let day = Calendar.current.date(from: DateComponents(year: 2026, month: 9, day: 23))!
+
+/// Trọn một ngày, để trục X luôn trải 24 giờ dù dữ liệu chỉ nằm ở vài khung giờ.
+private let dayRange = day...Calendar.current.date(byAdding: .day, value: 1, to: day)!
 
 /// Duyệt theo thứ tự thời gian, gặp khoảng trống lớn hơn `gap` thì mở đoạn mới.
 /// Ngưỡng chỉnh theo tần suất đo thật của thiết bị.
@@ -67,7 +92,6 @@ private func splitSegments(_ samples: [HeartSample], gap: TimeInterval) -> [Hear
 
 private let samples: [HeartSample] = {
   let calendar = Calendar.current
-  let day = calendar.date(from: DateComponents(year: 2026, month: 9, day: 23))!
 
   func at(_ minute: Int) -> Date {
     calendar.date(byAdding: .minute, value: minute, to: day)!
@@ -112,7 +136,7 @@ private let segmented = splitSegments(
 struct LineChartScreen: View {
   var body: some View {
     List {
-      Section("A — LineMark thường") {
+      Section {
         Chart(samples) { sample in
           LineMark(
             x: .value("Giờ", sample.time),
@@ -121,6 +145,10 @@ struct LineChartScreen: View {
           .foregroundStyle(.pink)
         }
         .frame(height: 200)
+      } header: {
+        Text("A — LineMark thường")
+      } footer: {
+        Text("Sáu tiếng khuyết biến thành một đoạn thẳng dốc đều. Chart không im lặng như BarMark mà bịa ra dữ liệu chưa từng tồn tại.")
       }
 
       Section {
@@ -137,6 +165,62 @@ struct LineChartScreen: View {
         Text("B — tách series, tự tìm chỗ đứt")
       } footer: {
         Text("Ngưỡng 5 phút: mẫu cách nhau một phút, nên năm phút không có gì là coi như tháo đồng hồ. Chạy được với mọi bộ dữ liệu, kể cả nhiều khoảng trống rải rác.")
+      }
+
+      Section {
+        Chart(segmented) { sample in
+          LineMark(
+            x: .value("Giờ", sample.time),
+            y: .value("BPM", sample.bpm),
+            series: .value("Đoạn", sample.segment)
+          )
+          .foregroundStyle(.pink)
+        }
+        .chartXScale(domain: dayRange)
+        .frame(height: 200)
+      } header: {
+        Text("C — chartXScale trọn 24 giờ")
+      } footer: {
+        Text("Chỉ khai MIỀN, không đụng tới mốc. Nhưng miền rộng ra 24 giờ khiến Charts tự đổi bước chia từ 3 giờ sang 6 giờ, ra đúng 00/06/12/18 như Apple Health.")
+      }
+
+      Section {
+        Chart(segmented) { sample in
+          LineMark(
+            x: .value("Giờ", sample.time),
+            y: .value("BPM", sample.bpm),
+            series: .value("Đoạn", sample.segment)
+          )
+          .foregroundStyle(.pink)
+        }
+        .chartXAxis {
+          AxisMarks(values: .stride(by: .hour, count: 4))
+        }
+        .frame(height: 200)
+      } header: {
+        Text("D — chỉ AxisMarks, bước 4 giờ")
+      } footer: {
+        Text("Bước đúng 4 giờ nhưng ĐIỂM NEO sai: mốc rơi vào 06/10/14 vì miền vẫn là 06–18 do Charts tự suy. AxisMarks chia trong miền hiện có, không tự neo về nửa đêm.")
+      }
+
+      Section {
+        Chart(segmented) { sample in
+          LineMark(
+            x: .value("Giờ", sample.time),
+            y: .value("BPM", sample.bpm),
+            series: .value("Đoạn", sample.segment)
+          )
+          .foregroundStyle(.pink)
+        }
+        .chartXScale(domain: dayRange)
+        .chartXAxis {
+          AxisMarks(values: .stride(by: .hour, count: 4))
+        }
+        .frame(height: 200)
+      } header: {
+        Text("E — chartXScale + AxisMarks, như Garmin")
+      } footer: {
+        Text("Miền và mốc là hai việc riêng: chartXScale kéo trục trải trọn 24 giờ, AxisMarks đặt nhãn mỗi 4 giờ. Thiếu cái nào cũng không ra được trục của Garmin.")
       }
     }
   }
