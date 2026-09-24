@@ -35,18 +35,28 @@ struct ChartTypesLab: View {
         }
       }
 
-      Section("Đường và vùng") {
+      Section("Đường") {
         Button {
           coordinator.push(.chartLine)
         } label: {
           ChartLabRow(title: "4. Line",
-                      subtitle: "interpolationMethod, nét đứt, tách segment khi khuyết dữ liệu")
+                      subtitle: "Tách segment khi khuyết dữ liệu, miền và mốc của trục")
         }
 
         Button {
+          coordinator.push(.chartInterpolation)
+        } label: {
+          ChartLabRow(title: "5. interpolationMethod",
+                      subtitle: "Chín kiểu đoạn nối: thẳng, cong, bậc thang")
+        }
+
+      }
+
+      Section("Vùng") {
+        Button {
           coordinator.push(.chartArea)
         } label: {
-          ChartLabRow(title: "5. Area",
+          ChartLabRow(title: "6. Area",
                       subtitle: "Gradient xuống đáy, dải min–max, stacked area")
         }
       }
@@ -55,21 +65,21 @@ struct ChartTypesLab: View {
         Button {
           coordinator.push(.chartPoint)
         } label: {
-          ChartLabRow(title: "6. Point / Scatter",
+          ChartLabRow(title: "7. Point / Scatter",
                       subtitle: "Hai trục đều liên tục — symbol và symbolSize theo nhóm")
         }
 
         Button {
           coordinator.push(.chartPieDonut)
         } label: {
-          ChartLabRow(title: "7. Pie / Donut",
+          ChartLabRow(title: "8. Pie / Donut",
                       subtitle: "SectorMark — mark duy nhất dùng toạ độ cực")
         }
 
         Button {
           coordinator.push(.chartHeatmap)
         } label: {
-          ChartLabRow(title: "8. Heatmap",
+          ChartLabRow(title: "9. Heatmap",
                       subtitle: "RectangleMark + color scale liên tục")
         }
       }
