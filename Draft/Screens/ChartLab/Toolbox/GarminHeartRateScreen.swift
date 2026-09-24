@@ -42,12 +42,26 @@
 //  độ tính từ mép VÙNG VẼ. Trục Y bên trái chiếm chỗ nên đường lệch đúng bề
 //  rộng đó — phải cộng origin của proxy.plotFrame.
 //
-//  Giá phải trả: đường nằm ngoài tầm hiểu của Charts. VoiceOver theo điểm thì
-//  mất chắc chắn. Còn chartXSelection thì CHƯA KIỂM LẠI — lần thử đầu kết luận
-//  là mất, nhưng lúc đó chỉ chạm nhanh, mà API này đòi CHẠM GIỮ.
+//  CÁCH 4 GIỮ ĐƯỢC chartXSelection, với một điều kiện: Canvas che touch nên
+//  overlay phải .allowsHitTesting(false). Vậy nó thắng cả ba cách còn lại về
+//  mọi mặt trừ độ phức tạp — màu mượt, bám giá trị, và vẫn chọn được. Riêng
+//  VoiceOver theo điểm thì vẫn mất, vì đường không còn là mark.
 //
-//  CHART 6 — chartXSelection trên bản LineMark thường thì chạy, với hai điều
-//  kiện đáng nhớ:
+//  VỊ TRÍ CỦA .allowsHitTesting(false) QUAN TRỌNG. Nó không có khái niệm "chỉ
+//  tắt cho lớp phủ": đặt SAU dấu đóng của chartOverlay là chặn cả cây view bên
+//  dưới, kể cả chính Chart, và chart điếc hoàn toàn với mọi cử chỉ. Phải đặt
+//  BÊN TRONG closure, lên riêng GeometryReader. Sai một cấp thụt lề là mất
+//  trắng tương tác mà không có lỗi biên dịch nào.
+//
+//  BA LẦN THỬ SELECTION ĐỀU TRƯỢT vì cùng một lý do: chạm nhanh thay vì CHẠM
+//  GIỮ. Đó là sai lầm về CÁCH ĐO, không phải về code, và nó suýt khiến một kết
+//  luận sai được ghi vào file. Chuỗi loại biến về sau mới gỡ ra được:
+//    chart 6  LineMark thường          → chạy, nhưng phải chạm giữ
+//    chart 5  LineMark .clear, no Canvas → vẫn chạy, nên .clear vô can
+//    chart 4  có Canvas                → chạy nốt, sau khi sửa allowsHitTesting
+//
+//  BA ĐIỀU VỀ chartXSelection, đo trên bản LineMark thường (section đó đã xoá
+//  sau khi lấy được kết luận):
 //
 //    - Phải CHẠM GIỮ, chạm nhanh không ăn. Giống hệt Apple Health, và có lý do:
 //      chart nằm trong List nên chạm-rồi-kéo vốn thuộc về cuộn trang, giữ một
@@ -301,16 +315,16 @@ private let zonedPoints = zoned(segmented)
 struct GarminHeartRateScreen: View {
   /// chartXSelection trả về giá trị trên TRỤC X, không phải điểm dữ liệu.
   @State private var selectedTime: Date?
-
+  
   /// Nên phải tự tìm mẫu gần nhất với mốc thời gian đã chọn.
   private var selectedSample: HeartSample? {
     guard let selectedTime else { return nil }
     return segmented.min {
       abs($0.time.timeIntervalSince(selectedTime))
-        < abs($1.time.timeIntervalSince(selectedTime))
+      < abs($1.time.timeIntervalSince(selectedTime))
     }
   }
-
+  
   var body: some View {
     List {
       Section {
@@ -414,7 +428,26 @@ struct GarminHeartRateScreen: View {
             )
             .foregroundStyle(.clear)
           }
+          
+          if let selectedSample {
+            RuleMark(x: .value("Chọn", selectedSample.time))
+              .foregroundStyle(.secondary)
+              .lineStyle(StrokeStyle(lineWidth: 1, dash: [3, 3]))
+              .annotation(
+                position: .top,
+                overflowResolution: .init(x: .fit, y: .disabled)
+              ) {
+                Text("\(selectedSample.bpm) BPM")
+                  .font(.caption2.bold())
+                  .foregroundStyle(.white)
+                  .padding(.horizontal, 8)
+                  .padding(.vertical, 4)
+                  .background(.pink, in: Capsule())
+                  .fixedSize()
+              }
+          }
         }
+        .chartXSelection(value: $selectedTime)
         .chartXScale(domain: dayRange)
         .chartXAxis {
           AxisMarks(values: .stride(by: .hour, count: 6)) { _ in
@@ -476,14 +509,16 @@ struct GarminHeartRateScreen: View {
               }
             }
           }
+          .allowsHitTesting(false)
         }
         .frame(height: 240)
+        .padding(.top, 40)
       } header: {
-        Text("4 — Chart giữ trục, Canvas tự vẽ đường")
+        Text("4 — Canvas tự vẽ, cộng chartXSelection")
       } footer: {
-        Text("ĐÚNG và MƯỢT. Shading tô theo toạ độ tuyệt đối nên màu vừa bám giá trị vừa nội suy liên tục. Phải cộng origin của plotFrame vì chartOverlay phủ cả trục trong khi proxy.position tính từ mép vùng vẽ. CHƯA KIỂM LẠI: lần thử selection trên bản Canvas chỉ chạm nhanh, mà chartXSelection đòi chạm GIỮ — nên chưa kết luận được cách này có mất tương tác hay không.")
+        Text("ĐÚNG và MƯỢT. Shading tô theo toạ độ tuyệt đối nên màu vừa bám giá trị vừa nội suy liên tục. Phải cộng origin của plotFrame vì chartOverlay phủ cả trục trong khi proxy.position tính từ mép vùng vẽ. Và VẪN CHỌN ĐƯỢC. Canvas che touch, nên overlay phải .allowsHitTesting(false) — đặt BÊN TRONG closure của chartOverlay, lên riêng GeometryReader. Đặt sau dấu đóng là chặn luôn cả Chart, chart điếc hoàn toàn.")
       }
-
+      
       Section {
         Chart {
           ForEach(segmented) { sample in
@@ -494,7 +529,26 @@ struct GarminHeartRateScreen: View {
             )
             .foregroundStyle(.clear)
           }
+          
+          if let selectedSample {
+            RuleMark(x: .value("Chọn", selectedSample.time))
+              .foregroundStyle(.secondary)
+              .lineStyle(StrokeStyle(lineWidth: 1, dash: [3, 3]))
+              .annotation(
+                position: .top,
+                overflowResolution: .init(x: .fit, y: .disabled)
+              ) {
+                Text("\(selectedSample.bpm) BPM")
+                  .font(.caption2.bold())
+                  .foregroundStyle(.white)
+                  .padding(.horizontal, 8)
+                  .padding(.vertical, 4)
+                  .background(.pink, in: Capsule())
+                  .fixedSize()
+              }
+          }
         }
+        .chartXSelection(value: $selectedTime)
         .chartXScale(domain: dayRange)
         .chartXAxis {
           AxisMarks(values: .stride(by: .hour, count: 6)) { _ in
@@ -553,61 +607,17 @@ struct GarminHeartRateScreen: View {
               }
             }
           }
+          .allowsTightening(false)
         }
         .frame(height: 240)
+        .padding(.top, 40)
       } header: {
-        Text("5 — giữ chartYAxis, bỏ values: zoneBoundaries")
+        Text("5 — LineMark trong suốt, overlay tắt, có chartXSelection")
       } footer: {
-        Text("Trục Y vẫn bên trái và màu vẫn đúng — miền không đổi thì gradient không đổi. Nhưng mốc về mặc định 75/100/125/150/175, không còn trùng biên zone, nên mất cách kiểm chứng bằng mắt: ở chart 4 chỉ cần nhìn đường lưới là biết màu đổi có đúng ngưỡng hay không.")
+        Text("Canvas đã tắt nên chart trống — chỉ còn LineMark trong suốt. CHẠM GIỮ để xem selection có chạy không: nếu có thì .clear không chặn gì cả, và thủ phạm ở chart 4 chỉ có thể là Canvas nằm đè lên.")
       }
-
-
-      Section {
-        Chart {
-          ForEach(segmented) { sample in
-            LineMark(
-              x: .value("Giờ", sample.time),
-              y: .value("BPM", sample.bpm),
-              series: .value("Đoạn", sample.segment)
-            )
-            .foregroundStyle(.pink)
-          }
-
-          if let selectedSample {
-            RuleMark(x: .value("Chọn", selectedSample.time))
-              .foregroundStyle(.secondary)
-              .lineStyle(StrokeStyle(lineWidth: 1, dash: [3, 3]))
-              .annotation(
-                position: .top,
-                overflowResolution: .init(x: .fit, y: .disabled)
-              ) {
-                Text("\(selectedSample.bpm) BPM")
-                  .font(.caption2.bold())
-                  .foregroundStyle(.white)
-                  .padding(.horizontal, 8)
-                  .padding(.vertical, 4)
-                  .background(.pink, in: Capsule())
-                  .fixedSize()
-              }
-          }
-        }
-        .chartXSelection(value: $selectedTime)
-        .chartXScale(domain: dayRange)
-        .chartXAxis {
-          AxisMarks(values: .stride(by: .hour, count: 6)) { _ in
-            AxisValueLabel()
-          }
-        }
-        .chartYAxis {
-          AxisMarks(position: .leading)
-        }
-        .frame(height: 240)
-        .padding(.top, 50)
-      } header: {
-        Text("6 — clone chart 1, thêm chartXSelection")
-      } footer: {
-        Text("CHẠY, nhưng phải CHẠM GIỮ mới hiện — chạm nhanh không ăn, y hệt Apple Health. Chart nằm trong List nên chạm-rồi-kéo thuộc về cuộn trang; giữ một nhịp mới chuyển thành scrubbing. Nhãn phải tự tô màu đặc: .regularMaterial cho ra nền tối mà Text dùng màu chữ mặc định thì không đọc được.")
-      }
+      
+      
     }
     .navigationTitle("Garmin — Nhịp tim")
     .navigationBarTitleDisplayMode(.inline)
