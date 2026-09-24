@@ -50,6 +50,60 @@
 //  Nhãn sát mép xử lý không nhất quán: ở đây bị rút gọn thành "…", còn ở
 //  LineChartScreen thì biến mất hẳn. Tuỳ còn bao nhiêu chỗ trống.
 //
+//
+//  ════════════════════════════════════════════════════════════════════
+//  TODO — CÁC THAM SỐ CỦA AxisValueLabel
+//  Đọc từ Charts.swiftinterface của iOS 27 SDK.
+//  Làm dần, mỗi lần một hai mục, mỗi mục một section đối chứng.
+//  ════════════════════════════════════════════════════════════════════
+//
+//  [x] horizontalSpacing: CGFloat?   khoảng hở giữa nhãn và vùng vẽ
+//                                    ĐÃ THỬ ở màn RuleMark: 12 là vừa mắt.
+//                                    Cần đo: nó co vùng vẽ hay chỉ dịch chữ?
+//
+//  [ ] verticalSpacing: CGFloat?     như trên nhưng theo chiều dọc — chắc
+//                                    dành cho trục X
+//
+//  [ ] centered: Bool?               nhãn căn giữa dải hay căn vào mốc?
+//                                    Trên band scale chắc có khác biệt rõ,
+//                                    trên trục liên tục thì chưa chắc
+//
+//  [ ] anchor: UnitPoint?            điểm neo của nhãn, .top/.leading/...
+//                                    Khác gì centered?
+//
+//  [ ] multiLabelAlignment: Alignment?   khi một mốc có nhiều dòng nhãn
+//                                        thì các dòng căn theo gì
+//
+//  [ ] offsetsMarks: Bool?           nhãn có đẩy mark dịch đi không.
+//                                    Nghi là thứ quyết định chuyện trục Y
+//                                    bị co lại khi nới horizontalSpacing
+//
+//  [ ] orientation: AxisValueLabelOrientation
+//                                    .automatic / .horizontal / .vertical
+//                                    / .verticalReversed
+//                                    Dùng khi nhãn dài, xoay đứng cho đỡ
+//                                    chật. Đo xem nó có tự chừa chỗ không
+//
+//  [ ] collisionResolution: AxisValueLabelCollisionResolution
+//                                    .automatic / .greedy / .truncate
+//                                    / .disabled
+//                                    và .greedy(priority:minimumSpacing:)
+//                                    ĐÂY LÀ MỤC ĐÁNG GIÁ NHẤT: nó giải
+//                                    thích vì sao nhãn cuối lúc thì rút
+//                                    gọn thành "…", lúc thì biến mất hẳn.
+//                                    .disabled chắc ép hiện đủ mọi nhãn —
+//                                    nếu đúng thì đây là cách làm trục
+//                                    hiện "00 giờ" ở CẢ HAI đầu.
+//
+//  [ ] format: FormatStyle           định dạng nhãn, vd .dateTime.hour()
+//                                    Thay cho việc để Charts tự chọn
+//
+//  [ ] AxisValueLabel("chuỗi")       nhãn cố định, không theo giá trị
+//
+//  [ ] AxisValueLabel { ... }        content là ViewBuilder — vẽ nhãn
+//                                    bằng View bất kỳ. Đây là cách dựng
+//                                    dãy chấm tròn thay cho chữ.
+//
 
 import Charts
 import SwiftUI
