@@ -43,9 +43,41 @@
 //  quy tắc màn 3). Dải xanh → lục → vàng → cam → đỏ chính là bảng màu
 //  Garmin dùng cho zone nhịp tim; đây là mảnh màu cần cho Toolbox.
 //
+//  F — tô màu cho LineMark bằng cách đưa thẳng một ShapeStyle CỨNG vào
+//  foregroundStyle: LinearGradient theo chiều dọc. Đường giữ nguyên một
+//  mạch và gradient phủ lên nó — xanh ở vùng thấp, đỏ ở đỉnh.
+//
+//  Đánh đổi: màu bám VỊ TRÍ trên khung chứ không bám GIÁ TRỊ. Đổi
+//  chartYScale thì cùng một nhịp tim rơi vào độ cao khác và đổi màu theo.
+//
+//  Ngoài lề, sửa lại kết luận ở D/E: thang màu KHÔNG luôn kéo về 0. Với dữ
+//  liệu 58–181 thì Charts chọn 50–200. Nó lấy mốc tròn quanh dữ liệu chứ
+//  không cố định gồm 0.
+//
 
 import Charts
 import SwiftUI
+
+private let day = Calendar.current.date(from: DateComponents(year: 2026, month: 9, day: 23))!
+
+struct BPMPoint: Identifiable {
+  let id = UUID()
+  let time: Date
+  let bpm: Int
+}
+
+// Nhịp tim theo giờ, 04 giờ tới 23 giờ — dải rộng để thấy màu chạy
+private let bpmCurve: [BPMPoint] = [
+  58, 62, 68, 75, 82, 78, 74, 80, 85, 79,
+  76, 95, 165, 181, 120, 88, 82, 75, 68, 62,
+]
+.enumerated()
+.map { offset, bpm in
+  BPMPoint(
+    time: Calendar.current.date(byAdding: .hour, value: offset + 4, to: day)!,
+    bpm: bpm
+  )
+}
 
 struct StepEntry: Identifiable {
   let id = UUID()
@@ -131,6 +163,27 @@ struct ByScaleScreen: View {
           )
         )
         .frame(height: 240)
+      }
+
+      Section {
+        Chart(bpmCurve) { point in
+          LineMark(
+            x: .value("Giờ", point.time),
+            y: .value("BPM", point.bpm)
+          )
+          .foregroundStyle(
+            LinearGradient(
+              colors: [.blue, .green, .yellow, .orange, .red],
+              startPoint: .bottom,
+              endPoint: .top
+            )
+          )
+        }
+        .frame(height: 240)
+      } header: {
+        Text("F — LineMark tô LinearGradient")
+      } footer: {
+        Text("foregroundStyle KHÔNG có by: nên không sinh scale, không tách series, đường vẫn liền. Màu đến từ VỊ TRÍ trên khung chứ không từ giá trị — đổi chartYScale là màu đổi theo.")
       }
     }
   }
