@@ -11,10 +11,36 @@
       "shouldTranslate" : false
     },
     ".%@" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : ".%@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : ".%@"
+          }
+        }
+      }
     },
     ".asymmetric(insertion:removal:) cho phép vào một kiểu, ra một kiểu. Rất hay dùng: trượt vào từ dưới, mờ dần khi ra — vì người dùng không cần thấy đường đi của thứ sắp biến mất." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : ".asymmetric(insertion:removal:) lets a view come in one way and go out another. A very common pairing: slide in from the bottom, fade out — because the user doesn’t need to see the path of something that’s about to disappear."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : ".asymmetric(insertion:removal:) permite entrar de una forma y salir de otra. Muy habitual: entra deslizándose desde abajo y se desvanece al salir — porque quien usa la app no necesita ver el recorrido de algo que está a punto de desaparecer."
+          }
+        }
+      }
     },
     ".dateTime tuỳ biến" : {
       "localizations" : {
@@ -49,16 +75,29 @@
       }
     },
     ".fixedSize()" : {
-
+      "shouldTranslate" : false
     },
     ".fixedSize() — cần học" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : ".fixedSize() — worth learning"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : ".fixedSize() — hay que aprenderlo"
+          }
+        }
+      }
     },
     ".fixedSize(horizontal:vertical:)" : {
-
+      "shouldTranslate" : false
     },
     ".formatted(.dateTime.locale(locale))" : {
-
+      "shouldTranslate" : false
     },
     ".formatted() (dùng Locale.current ⚠️)" : {
       "localizations" : {
@@ -74,19 +113,33 @@
             "value" : ".formatted() (usa Locale.current ⚠️)"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
+    },
+    ".fullScreenCover" : {
+
     },
     ".lineHeight(.exact(points: %lld))" : {
-
+      "shouldTranslate" : false
     },
     ".lineHeight(.exact) - iOS 26" : {
-
+      "shouldTranslate" : false
     },
     ".relative(.named)" : {
+      "shouldTranslate" : false
+    },
+    ".sheet" : {
 
     },
     "“%@”" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "“%@”"
+          }
+        }
+      }
     },
     "@Observable — track từng property" : {
       "localizations" : {
@@ -105,10 +158,29 @@
       }
     },
     "@State, if, withAnimation — có công tắc tắt từng thứ" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "@State, if, withAnimation — with toggles to turn each one off"
+          }
+        }
+      }
     },
     "%@%@" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "%1$@%2$@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "%1$@%2$@"
+          }
+        },
         "vi" : {
           "stringUnit" : {
             "state" : "new",
@@ -118,10 +190,36 @@
       }
     },
     "%lld" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "%lld"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "%lld"
+          }
+        }
+      }
     },
     "%lld pt" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "%lld pt"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "%lld pt"
+          }
+        }
+      }
     },
     "•" : {
       "shouldTranslate" : false
@@ -143,13 +241,34 @@
       }
     },
     "`JumpValues` là một struct thường, mỗi property là một track riêng biệt và CHẠY ĐỘC LẬP: yOffset chỉ có 2 mốc, còn squash có 5 mốc trong cùng khoảng thời gian. Đó là điều PhaseAnimator không làm được.\n\nBốn loại mốc: LinearKeyframe (đều), CubicKeyframe (bézier, nối mượt với mốc kề bên), SpringKeyframe (vật lý), MoveKeyframe (nhảy tức thì, không nội suy).\n\n`duration` của mỗi keyframe là thời gian ĐI TỚI mốc đó, tính từ mốc trước — không phải mốc thời gian tuyệt đối." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "`JumpValues` is an ordinary struct, and every property is a separate track that RUNS INDEPENDENTLY: yOffset has only 2 keyframes, while squash has 5 in the same span of time. That is the thing PhaseAnimator can’t do.\n\nFour kinds of keyframe: LinearKeyframe (even), CubicKeyframe (bézier, joining smoothly with the keyframes next to it), SpringKeyframe (physics), MoveKeyframe (jumps instantly, no interpolation).\n\nEach keyframe’s `duration` is the time it takes to GET TO that keyframe, counted from the previous one — not an absolute point in time."
+          }
+        }
+      }
     },
     "°C" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "°C"
+          }
+        }
+      }
     },
     "°F" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "°F"
+          }
+        }
+      }
     },
     "→ Canonical (base = mét)" : {
       "localizations" : {
@@ -199,17 +318,59 @@
         }
       }
     },
-    "+ 7" : {
+    "↑%lld" : {
 
+    },
+    "+ 7" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "+ 7"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "+ 7"
+          }
+        }
+      }
     },
     "+100 kcal" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "+100 kcal"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "+100 kcal"
+          }
+        }
+      }
     },
     "+250 ml" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "+250 ml"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "+250 ml"
+          }
+        }
+      }
     },
     "$isOn.animation(.bouncy)" : {
-
+      "shouldTranslate" : false
     },
     "0 · Canonical value là gì?" : {
       "localizations" : {
@@ -228,13 +389,52 @@
       }
     },
     "0 °C → canonical" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "0 °C → canonical"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "0 °C → canónico"
+          }
+        }
+      }
     },
     "0. Permission" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "0. Permission"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "0. Permisos"
+          }
+        }
+      }
     },
     "1 · DisclosureGroup" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1 · DisclosureGroup"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1 · DisclosureGroup"
+          }
+        }
+      }
     },
     "1 · Gõ số & quan sát canonical" : {
       "localizations" : {
@@ -269,28 +469,132 @@
       }
     },
     "1 cột — chiều cao" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1 column — height"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1 columna — altura"
+          }
+        }
+      }
     },
     "1 cột — mục tiêu nước uống" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1 column — water goal"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1 columna — objetivo de agua"
+          }
+        }
+      }
     },
     "1 cột trần — năm sinh" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1 bare column — birth year"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1 columna a secas — año de nacimiento"
+          }
+        }
+      }
     },
     "1 ft → canonical" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1 ft → canonical"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1 ft → canónico"
+          }
+        }
+      }
     },
     "1 kg → canonical" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1 kg → canonical"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1 kg → canónico"
+          }
+        }
+      }
     },
     "1 km → canonical" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1 km → canonical"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1 km → canónico"
+          }
+        }
+      }
     },
     "1 km + 300 m" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1 km + 300 m"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1 km + 300 m"
+          }
+        }
+      }
     },
     "1 km > 900 m ?" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1 km > 900 m?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "¿1 km > 900 m?"
+          }
+        }
+      }
     },
     "1️⃣ Meal mới, giá trị khác" : {
       "localizations" : {
@@ -309,43 +613,236 @@
       }
     },
     "1 mile → canonical" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1 mile → canonical"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1 milla → canónico"
+          }
+        }
+      }
     },
     "1 pound → canonical" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1 pound → canonical"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1 libra → canónico"
+          }
+        }
+      }
+    },
+    "1. Basics" : {
 
     },
     "1. Basics ⭐️" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1. Basics ⭐️"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1. Conceptos básicos ⭐️"
+          }
+        }
+      }
     },
     "1. Chồng nhau" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1. Stacked"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1. Apilados"
+          }
+        }
+      }
+    },
+    "1. Column" : {
+
+    },
+    "1. Cover cơ bản" : {
+
+    },
+    "1. Cupertino Details" : {
 
     },
     "1. DisclosureGroup" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1. DisclosureGroup"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1. DisclosureGroup"
+          }
+        }
+      }
+    },
+    "1. Fixed Height" : {
+
+    },
+    "1. Giải phẫu một Chart" : {
 
     },
     "1. Hai .sheet chồng lên cùng một view" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1. Two .sheet modifiers stacked on the same view"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1. Dos .sheet apilados sobre la misma vista"
+          }
+        }
+      }
     },
     "1. ImagePicker" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1. ImagePicker"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1. ImagePicker"
+          }
+        }
+      }
+    },
+    "1. Location Details — BarMark" : {
+
+    },
+    "1. Safe Area" : {
 
     },
     "1. SensoryFeedback ⭐️" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1. SensoryFeedback ⭐️"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1. SensoryFeedback ⭐️"
+          }
+        }
+      }
     },
     "1. Text" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1. Text"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1. Text"
+          }
+        }
+      }
     },
     "1. UIImagePickerController ⭐️" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1. UIImagePickerController ⭐️"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1. UIImagePickerController ⭐️"
+          }
+        }
+      }
     },
     "1a · Tự giữ state" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1a · Keeps its own state"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1a · Mantiene su propio estado"
+          }
+        }
+      }
     },
     "1b · State ở ngoài — isExpanded:" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1b · State lives outside — isExpanded:"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1b · El estado vive fuera — isExpanded:"
+          }
+        }
+      }
     },
     "1c · Label tuỳ biến" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1c · Custom label"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1c · Label personalizado"
+          }
+        }
+      }
     },
     "2 · baseUnit() — đơn vị gốc (canonical)" : {
       "localizations" : {
@@ -380,40 +877,214 @@
       }
     },
     "2 · Một cái đơn lẻ" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "2 · A single one"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "2 · Uno solo"
+          }
+        }
+      }
     },
     "2️⃣ Append" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "2️⃣ Append"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "2️⃣ Append"
+          }
+        }
+      }
     },
     "2 cột — cân nặng" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "2 columns — weight"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "2 columnas — peso"
+          }
+        }
+      }
     },
     "2 cột — khoảng tuổi" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "2 columns — age range"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "2 columnas — rango de edad"
+          }
+        }
+      }
     },
     "2️⃣ RemoveLast" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "2️⃣ RemoveLast"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "2️⃣ RemoveLast"
+          }
+        }
+      }
     },
     "2. Anh em" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "2. Siblings"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "2. Vistas hermanas"
+          }
+        }
+      }
     },
     "2. AttributedString" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "2. AttributedString"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "2. AttributedString"
+          }
+        }
+      }
+    },
+    "2. Bar ngang" : {
+
+    },
+    "2. Các loại chart" : {
+
+    },
+    "2. contentMargins" : {
 
     },
     "2. Curves" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "2. Curves"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "2. Curvas"
+          }
+        }
+      }
+    },
+    "2. Dynamic Height (iOS 16+)" : {
 
     },
     "2. Feedback Generator" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "2. Feedback Generator"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "2. Feedback Generator"
+          }
+        }
+      }
     },
     "2. Hai .sheet ở hai view anh em" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "2. Two .sheet modifiers on two sibling views"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "2. Dos .sheet en dos vistas hermanas"
+          }
+        }
+      }
+    },
+    "2. Kiểu dữ liệu → loại trục" : {
+
+    },
+    "2. Locations Toggle" : {
 
     },
     "2. Một cái đơn lẻ" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "2. A single one"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "2. Uno solo"
+          }
+        }
+      }
     },
     "2. Session & Preview" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "2. Session & Preview"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "2. Session & Preview"
+          }
+        }
+      }
     },
     "3 · Canonical value = quy về base unit" : {
       "localizations" : {
@@ -448,16 +1119,68 @@
       }
     },
     "3 · Multi-expand" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "3 · Multi-expand"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "3 · Multi-expand"
+          }
+        }
+      }
     },
     "3 cột — ngày sự kiện" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "3 columns — event date"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "3 columnas — fecha del evento"
+          }
+        }
+      }
     },
     "3 loại" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "3 types"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "3 tipos"
+          }
+        }
+      }
     },
     "3 loại — kéo dài, có tiết tấu, dễ chồng nhau" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "3 types — long, rhythmic, and prone to overlapping"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "3 tipos — largos, rítmicos y fáciles de solapar"
+          }
+        }
+      }
     },
     "3️⃣ Mảng mới, khác" : {
       "localizations" : {
@@ -476,30 +1199,165 @@
       }
     },
     "3 sải → canonical" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "3 sải → canonical"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "3 sải → canónico"
+          }
+        }
+      }
     },
     "3 sải → km" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "3 sải → km"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "3 sải → km"
+          }
+        }
+      }
     },
     "3. .sheet(item:)" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "3. .sheet(item:)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "3. .sheet(item:)"
+          }
+        }
+      }
     },
     "3. Chụp ảnh" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "3. Photo capture"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "3. Captura de fotos"
+          }
+        }
+      }
     },
     "3. Core Haptics" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "3. Core Haptics"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "3. Core Haptics"
+          }
+        }
+      }
     },
     "3. Cụm mở tự do (multi-expand)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "3. Free-opening group (multi-expand)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "3. Grupo de apertura libre (multi-expand)"
+          }
+        }
+      }
+    },
+    "3. Dynamic Height (iOS 18+)" : {
+
+    },
+    "3. Location Details" : {
+
+    },
+    "3. Modifier hai tầng" : {
 
     },
     "3. Một .sheet(item:) duy nhất" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "3. A single .sheet(item:)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "3. Un único .sheet(item:)"
+          }
+        }
+      }
+    },
+    "3. Range" : {
 
     },
     "3. swift-markdown" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "3. swift-markdown"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "3. swift-markdown"
+          }
+        }
+      }
+    },
+    "3. Swipe Actions (Kavsoft)" : {
 
     },
     "3. Transitions" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "3. Transitions"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "3. Transiciones"
+          }
+        }
+      }
+    },
+    "3. Tương tác" : {
 
     },
     "4 · Ép locale tường minh (độc lập với toggle)" : {
@@ -519,10 +1377,36 @@
       }
     },
     "4 · km → canonical → miles" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "4 · km → canonical → miles"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "4 · km → canónico → millas"
+          }
+        }
+      }
     },
     "4 · Single-open" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "4 · Single-open"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "4 · Single-open"
+          }
+        }
+      }
     },
     "4️⃣ Meal mới, y hệt" : {
       "localizations" : {
@@ -540,29 +1424,106 @@
         }
       }
     },
-    "4. Cụm single-open" : {
+    "4. `by:` và scale" : {
 
+    },
+    "4. Cụm single-open" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "4. Single-open group"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "4. Grupo single-open"
+          }
+        }
+      }
     },
     "4. Điều khiển" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "4. Controls"
+          }
+        }
+      }
     },
     "4. Điều khiển camera" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "4. Camera controls"
+          }
+        }
+      }
+    },
+    "4. Fixed 400pt" : {
 
     },
     "4. Hai .fullScreenCover" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "4. Two .fullScreenCover modifiers"
+          }
+        }
+      }
     },
     "4. Hai fullScreenCover" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "4. Two fullScreenCovers"
+          }
+        }
+      }
+    },
+    "4. Line" : {
 
     },
     "4. Phase & Keyframe" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "4. Phase & Keyframe"
+          }
+        }
+      }
     },
     "4. Real World" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "4. Real World"
+          }
+        }
+      }
+    },
+    "4. TextField trong sheet" : {
+
+    },
+    "4. Toolbox" : {
 
     },
     "5 · coefficient & constant" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "5 · coefficient & constant"
+          }
+        }
+      }
     },
     "5 · Tương đối (relative)" : {
       "localizations" : {
@@ -597,21 +1558,72 @@
       }
     },
     "5 style" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "5 styles"
+          }
+        }
+      }
     },
     "5 style + intensity — style chốt ở init" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "5 styles + intensity — the style is locked in at init"
+          }
+        }
+      }
+    },
+    "5. Area" : {
+
+    },
+    "5. Cap 400pt" : {
 
     },
     "5. Đổi lớp áo" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "5. Changing the look"
+          }
+        }
+      }
     },
     "5. Một .sheet + một .fullScreenCover" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "5. One .sheet + one .fullScreenCover"
+          }
+        }
+      }
     },
     "5. Quay video" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "5. Video recording"
+          }
+        }
+      }
     },
     "5. sheet + cover" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "5. sheet + cover"
+          }
+        }
+      }
+    },
+    "5. Trục tay" : {
 
     },
     "6 · Tách thành phần (Calendar)" : {
@@ -646,17 +1658,66 @@
         }
       }
     },
-    "6. Đảo thứ tự" : {
+    "6. Annotation" : {
 
     },
+    "6. Đảo thứ tự" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "6. Reversed order"
+          }
+        }
+      }
+    },
     "6. Đảo thứ tự: cover trước, sheet sau" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "6. Reversed order: cover first, sheet second"
+          }
+        }
+      }
+    },
+    "6. maxHeight 400pt" : {
+
+    },
+    "6. Point / Scatter" : {
 
     },
     "6. Quét mã" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "6. Code scanning"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "6. Escaneo de códigos"
+          }
+        }
+      }
     },
     "6. Quét QR / barcode" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "6. QR / barcode scanning"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "6. Escaneo de QR y códigos de barras"
+          }
+        }
+      }
     },
     "7 · Cộng & so sánh khác đơn vị" : {
       "localizations" : {
@@ -674,71 +1735,269 @@
         }
       }
     },
-    "7. Xử lý frame" : {
+    "7. maxHeight trong sheet" : {
 
     },
+    "7. Pie / Donut" : {
+
+    },
+    "7. Vùng nền" : {
+
+    },
+    "7. Xử lý frame" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "7. Frame processing"
+          }
+        }
+      }
+    },
     "7. Xử lý từng frame" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "7. Per-frame processing"
+          }
+        }
+      }
+    },
+    "8. Heatmap" : {
 
     },
     "8. Nâng cao" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "8. Advanced"
+          }
+        }
+      }
+    },
+    "8. RuleMark" : {
 
     },
     "11 nhóm chủ đề trong tài liệu Animations của Apple" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "11 topic groups in Apple’s Animations documentation"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "11 grupos de temas en la documentación Animations de Apple"
+          }
+        }
+      }
     },
     "① Cách 1 & 2: transaction vs modifier" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "① Approach 1 & 2: transaction vs modifier"
+          }
+        }
+      }
     },
     "① PhaseAnimator(_:trigger:)" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "① PhaseAnimator(_:trigger:)"
+          }
+        }
+      }
     },
     "① Timing curve" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "① Timing curve"
+          }
+        }
+      }
     },
     "① Transition cần một animation đang hiệu lực" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "① A transition needs an animation in effect"
+          }
+        }
+      }
     },
     "② Ba điều dễ vấp" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "② Three common gotchas"
+          }
+        }
+      }
     },
     "② Bỏ trigger đi thì nó lặp mãi" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "② Drop the trigger and it loops forever"
+          }
+        }
+      }
     },
     "② Cách 3: Binding.animation(_:)" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "② Approach 3: Binding.animation(_:)"
+          }
+        }
+      }
     },
     "② Spring preset (iOS 17+)" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "② Spring preset (iOS 17+)"
+          }
+        }
+      }
     },
     "②b Spring cũng có duration" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "②b Spring has a duration too"
+          }
+        }
+      }
     },
     "③ contentTransition" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "③ contentTransition"
+          }
+        }
+      }
     },
     "③ KeyframeAnimator(initialValue:trigger:)" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "③ KeyframeAnimator(initialValue:trigger:)"
+          }
+        }
+      }
     },
     "③ Không phải cái gì cũng nội suy được" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "③ Not everything can be interpolated"
+          }
+        }
+      }
     },
     "③ Modifier" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "③ Modifiers"
+          }
+        }
+      }
     },
     "④ .animation(nil, value:) — miễn trừ" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "④ .animation(nil, value:) — opting out"
+          }
+        }
+      }
     },
     "④ Dùng cái nào" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "④ Which one to use"
+          }
+        }
+      }
     },
     "④ Hai núm vặn của spring" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "④ The two knobs on a spring"
+          }
+        }
+      }
     },
     "⑤ completion (iOS 17+)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "⑤ completion (iOS 17+)"
+          }
+        }
+      }
+    },
+    "A — foregroundStyle TRÊN MARK" : {
+
+    },
+    "A — hằng số, không có scale" : {
+
+    },
+    "A — LabeledContent làm label của submenu" : {
+
+    },
+    "A — LineMark thường" : {
+
+    },
+    "A — mặc định" : {
+
+    },
+    "A — position: .top" : {
+
+    },
+    "A — RuleMark(x:) đánh dấu một mốc" : {
+
+    },
+    "A — vùng nền vẽ TRƯỚC" : {
 
     },
     "A full-screen modal view." : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "A full-screen modal view."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -747,14 +2006,30 @@
         }
       }
     },
-    "A. prepare() & độ trễ ⭐️" : {
+    "A. Fixed 400pt" : {
 
+    },
+    "A. prepare() & độ trễ ⭐️" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "A. prepare() & latency ⭐️"
+          }
+        }
+      }
     },
     "Aa" : {
       "shouldTranslate" : false
     },
     "Accessory" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Accessory"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -764,34 +2039,112 @@
       }
     },
     "Accordion Item #1" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Accordion Item #1"
+          }
+        }
+      }
     },
     "Accordion Item #2" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Accordion Item #2"
+          }
+        }
+      }
     },
     "Accordion Lab" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Accordion Lab"
+          }
+        }
+      }
+    },
+    "Account" : {
 
     },
     "activeSheet" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "activeSheet"
+          }
+        }
+      }
     },
     "Ẩn" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Hide"
+          }
+        }
+      }
     },
     "Ẩn (có animation)" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Hide (with animation)"
+          }
+        }
+      }
     },
     "Ẩn (không animation)" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Hide (no animation)"
+          }
+        }
+      }
     },
     "Animation Basics" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Animation Basics"
+          }
+        }
+      }
     },
     "Animation nhiều chặng, iOS 17+" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Multi-stage animation, iOS 17+"
+          }
+        }
+      }
+    },
+    "Annotation" : {
+
+    },
+    "annotation là modifier của MARK nên gắn được có điều kiện — chỉ ngày nhiều bước nhất mới có nhãn. Closure nhận View bình thường: Label, padding, background, Capsule. NHƯNG chữ bị cắt thành \"9.\" — annotation bị bó chiều rộng theo bề ngang của mark." : {
 
     },
     "Appendix" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Appendix"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -800,26 +2153,105 @@
         }
       }
     },
-    "AVCaptureMetadataOutput — dùng session rẻ nhất" : {
+    "Apple" : {
 
+    },
+    "Area" : {
+
+    },
+    "AVCaptureMetadataOutput — dùng session rẻ nhất" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "AVCaptureMetadataOutput — uses the cheapest session"
+          }
+        }
+      }
     },
     "AVCapturePhotoOutput, delegate, orientation, lưu Photos" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "AVCapturePhotoOutput, delegate, orientation, saving to Photos"
+          }
+        }
+      }
     },
     "AVFoundation — tự viết UI" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "AVFoundation — write your own UI"
+          }
+        }
+      }
+    },
+    "B — chartYScale cắt gốc 0" : {
+
+    },
+    "B — đối chứng: hai Text thường" : {
+
+    },
+    "B — foregroundStyle TRÊN CHART" : {
+
+    },
+    "B — foregroundStyle(by:)" : {
+
+    },
+    "B — position: .overlay" : {
+
+    },
+    "B — tách series, tự tìm chỗ đứt" : {
+
+    },
+    "B — vùng nền vẽ SAU" : {
+
+    },
+    "B. Cap 400pt" : {
 
     },
     "B. Impact" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "B. Impact"
+          }
+        }
+      }
     },
     "Ba dòng đầu chồng khít lên nhau: .snappy CHÍNH LÀ spring(duration: 0.5, bounce: 0.15). Tương tự .smooth = bounce 0, .bouncy = bounce 0.3. Cả ba đều nhận (duration:) và (duration:extraBounce:).\n\nNhưng duration của spring KHÔNG phải \"chạy xong sau ngần ấy giây\" như timing curve. Apple gọi nó là perceptual duration — thời gian cảm nhận được là đã tới nơi. Với bounce > 0, phần nảy dư vẫn còn lắc thêm sau mốc đó (chính vì vậy withAnimation(completion:) mới cần phân biệt .logicallyComplete với .removed).\n\nCách nhớ: timing curve có duration + đường cong. Spring có duration + độ nảy. Cùng một núm \"bao lâu\", khác cái núm thứ hai." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "The first three rows overlap exactly: .snappy IS spring(duration: 0.5, bounce: 0.15). Likewise .smooth = bounce 0, .bouncy = bounce 0.3. All three accept (duration:) and (duration:extraBounce:).\n\nBut a spring’s duration is NOT “done after that many seconds” the way a timing curve’s is. Apple calls it the perceptual duration — the point where it feels like it has arrived. With bounce > 0, the leftover bounce keeps wobbling past that mark (which is exactly why withAnimation(completion:) has to distinguish .logicallyComplete from .removed).\n\nA way to remember it: a timing curve has duration + a curve. A spring has duration + bounce. Same “how long” knob, different second knob."
+          }
+        }
+      }
     },
     "Ba nút này đổi selectedIndex từ SwiftUI. Bánh xe phải tự trượt theo — đó là chiều \"đi vào\" do updateUIView lo." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "These three buttons change selectedIndex from SwiftUI. The wheel has to slide along on its own — that’s the “inbound” direction, handled by updateUIView."
+          }
+        }
+      }
     },
     "Ba preset Apple khuyến nghị dùng làm mặc định: \n- smooth (không nảy), \n- snappy (nảy nhẹ, dứt khoát — hợp tap/toggle), \n- bouncy (nảy rõ, vui).\n\nƯu thế thật sự của spring nằm ở chỗ nó GIỮ VẬN TỐC: nếu bạn đổi đích giữa chừng (kéo, thả, đổi ý), spring nối tiếp mượt còn timing curve thì khựng lại rồi chạy đoạn mới." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "The three presets Apple recommends as defaults: \n- smooth (no bounce), \n- snappy (a light, crisp bounce — good for taps/toggles), \n- bouncy (an obvious, playful bounce).\n\nThe real advantage of a spring is that it PRESERVES VELOCITY: if you change the target midway (a drag, a release, a change of mind), the spring carries on smoothly, while a timing curve stalls and then runs the new leg from scratch."
+          }
+        }
+      }
     },
     "Bấm **+100 kcal** ở mỗi section rồi quan sát WaterCard: màu nền đổi + số lần body tăng = có re-render." : {
       "localizations" : {
@@ -838,34 +2270,119 @@
       }
     },
     "Bấm nút này rồi bấm NGAY ô \"Lạnh\" ở trên — nó sẽ rung dứt khoát như ô Ấm, vì cùng dùng chung coldGenerator và engine vừa được đánh thức.\n\nLàm lại: bấm nút này, đếm thầm 5 giây, rồi mới bấm ô \"Lạnh\" — độ trễ quay lại. Đó là lúc cửa sổ giữ nóng đã hết hạn." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Tap this button, then IMMEDIATELY tap the “Cold” pad above — the haptic lands just as crisply as on the Warm pad, because both share the same coldGenerator and the engine has just been woken up.\n\nTry again: tap this button, count 5 seconds in your head, then tap the “Cold” pad — the delay is back. That’s the moment the keep-warm window expires."
+          }
+        }
+      }
     },
     "Bấm thẳng vào header thì DisclosureGroup tự gói animation. Đổi state từ bên ngoài thì không ai gói giùm — đó là khác biệt đáng nhớ nhất ở màn này." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Tap the header directly and DisclosureGroup wraps the animation for you. Change the state from outside and nobody wraps it for you — that’s the most memorable difference on this screen."
+          }
+        }
+      }
     },
     "Bấm vào header để mở. Rồi tắt từng công tắc bên dưới và bấm lại — mỗi công tắc tương ứng một modifier mà người mới hay bỏ quên." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Tap the header to open it. Then turn off each toggle below and tap again — every toggle stands for a modifier that beginners often forget."
+          }
+        }
+      }
     },
     "Bắn .success 5 lần liên tiếp" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Fire .success 5 times in a row"
+          }
+        }
+      }
     },
     "Bắn 3 cái cùng lúc" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Fire 3 at once"
+          }
+        }
+      }
     },
     "Bắn 3 cái liên tiếp (cách nhau 1s)" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Fire 3 in a row (1s apart)"
+          }
+        }
+      }
     },
     "Bản DisclosureGroup" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "The DisclosureGroup version"
+          }
+        }
+      }
     },
     "Bản nháp của bạn an toàn" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Your draft is safe"
+          }
+        }
+      }
+    },
+    "Bàn phím co sheet, khung tụt xuống dưới 400" : {
+
+    },
+    "Bàn phím đẩy sheet lên, và tự co sheet nếu không còn đủ chỗ" : {
 
     },
     "Bản tự giữ state, bản isExpanded:, và label tuỳ biến" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "One that keeps its own state, one with isExpanded:, and a custom label"
+          }
+        }
+      }
+    },
+    "Bar ngang" : {
+
+    },
+    "BarMark" : {
+
+    },
+    "BarMark bánh bán theo ngày — x là Date với unit: .day" : {
 
     },
     "Baseline" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Baseline"
+          }
+        }
+      }
     },
     "baseUnit() là class method trên Dimension. Canonical value luôn được đo bằng đơn vị này." : {
       "localizations" : {
@@ -882,6 +2399,9 @@
           }
         }
       }
+    },
+    "Basics" : {
+
     },
     "Bắt đầu" : {
       "localizations" : {
@@ -900,16 +2420,47 @@
       }
     },
     "Bẫy: trigger là STATE, không phải EVENT" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Gotcha: the trigger is STATE, not an EVENT"
+          }
+        }
+      }
+    },
+    "Bị hệ thống chặn" : {
 
     },
     "Binding trần" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Bare binding"
+          }
+        }
+      }
     },
     "Binding tự chế: get so sánh, set gán id. Không cần @State nào cho từng row, và single-open có ngay bằng đồ có sẵn." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "A hand-rolled binding: the getter compares, the setter assigns the id. No per-row @State needed, and you get single-open behavior right away out of the box."
+          }
+        }
+      }
     },
     "Bỏ Optional đi: `expandedID: Panel.ID`. Lúc đó nil không tồn tại, bấm lại vào mục đang mở thì phép gán không đổi gì. Không cần cờ nào canh — lại là chuyện chọn kiểu dữ liệu, không phải thêm logic." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Drop the Optional: `expandedID: Panel.ID`. Then nil doesn’t exist, and tapping the item that’s already open assigns the same value and changes nothing. No flag has to stand guard — again it comes down to picking the data type, not adding logic."
+          }
+        }
+      }
     },
     "body chạy: %lld lần" : {
       "localizations" : {
@@ -928,9 +2479,32 @@
       }
     },
     "Body hiện ra nguyên khối ngay từ frame đầu, trong khi khung vẫn đang giãn. Đây là mặc định NẾU bạn viết .transition(.identity)." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "The body shows up all at once on the very first frame, while the frame is still expanding. This is the default IF you write .transition(.identity)."
+          }
+        }
+      }
     },
     "Bool: gán true" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Bool: assign true"
+          }
+        }
+      }
+    },
+    "Bottom Sheet Lab" : {
+
+    },
+    "BPM" : {
+
+    },
+    "Bước" : {
 
     },
     "Bước 1: → canonical (mét)" : {
@@ -950,7 +2524,14 @@
       }
     },
     "Bước 1cm, từ 120 đến 220 — 101 hàng thay vì 17. Ca để xem việc tái dùng cell có thật sự cần không: cuộn một mạch hết dải mà không giật thì cả hai bản đang làm đúng việc." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "1 cm steps, from 120 to 220 — 101 rows instead of 17. This is the case for checking whether cell reuse really matters: if you can scroll the whole range in one go without stuttering, both versions are doing their job."
+          }
+        }
+      }
     },
     "Bước 2: canonical → miles" : {
       "localizations" : {
@@ -969,40 +2550,148 @@
       }
     },
     "Bước 250ml, từ 2000 đến 6000. Hai hàng cùng một dữ liệu — mở lần lượt rồi vuốt để so cảm giác cuộn, không chỉ so ảnh." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "250 ml steps, from 2000 to 6000. Two rows, same data — open them one after the other and swipe to compare how the scrolling feels, not just how it looks."
+          }
+        }
+      }
+    },
+    "Bước đúng 4 giờ nhưng ĐIỂM NEO sai: mốc rơi vào 06/10/14 vì miền vẫn là 06–18 do Charts tự suy. AxisMarks chia trong miền hiện có, không tự neo về nửa đêm." : {
+
+    },
+    "C — AxisMarks liệt kê mốc cụ thể" : {
+
+    },
+    "C — chartXScale trọn 24 giờ" : {
+
+    },
+    "C — opacity TRÊN MARK" : {
+
+    },
+    "C — position: .bottom" : {
+
+    },
+    "C — thêm position(by:)" : {
+
+    },
+    "C — vùng giới hạn theo trục X" : {
 
     },
     "C. Notification" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "C. Notification"
+          }
+        }
+      }
     },
     "Cả 4 màn đều gọi thẳng UIKit, không dùng .sensoryFeedback. Mọi generator đều là @MainActor." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "All 4 screens call UIKit directly instead of using .sensoryFeedback. Every generator is @MainActor."
+          }
+        }
+      }
     },
     "Cả hai đều là animation \"chạy tự động\", không nhận input liên tục. Nếu chuyển động phải bám theo ngón tay người dùng thì vẫn là DragGesture + state, như bài Swipe to Confirm." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Both are “self-running” animations that don’t take continuous input. If the motion has to follow the user’s finger, it’s still DragGesture + state, like in the Swipe to Confirm lesson."
+          }
+        }
+      }
+    },
+    "Các loại chart" : {
 
     },
     "Cách đúng — enum quyết định sheet nào đang mở" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "The right way — an enum decides which sheet is open"
+          }
+        }
+      }
     },
     "Cách gắn" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "How it’s attached"
+          }
+        }
+      }
     },
     "Cách nhìn rõ nhất mọi thứ ở trên: chậm lại rồi tắt clipShape, sẽ thấy hẳn chữ nằm ngoài viền trong lúc khung co." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "The clearest way to see everything above: slow it down, then turn clipShape off — you’ll plainly see the text sitting outside the border while the frame shrinks."
+          }
+        }
+      }
     },
     "Cách thử: chờ ô trên báo \"đã nguội\", bấm ô Lạnh — cú rung đến hơi trễ so với lúc ngón nhấc. Chờ nguội lại, bấm ô Ấm — rung khớp đúng khoảnh khắc nhấc ngón.\n\nCả hai ô dùng CHUNG một loại gesture và cùng bắn ở touch-up, nên khác biệt duy nhất là dòng prepare(). Khoảng 80–150ms giữa lúc ngón chạm và lúc nhấc chính là cửa sổ để engine kịp khởi động.\n\nBấm ô Lạnh HAI lần liên tiếp thì lần hai cũng dứt khoát — vì cú rung thứ nhất đã đánh thức engine. Đó không phải lỗi demo, đó chính là cơ chế đang chạy." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "How to try it: wait until the row above reports “cooled down,” then tap the Cold pad — the haptic arrives a little late compared to the moment your finger lifts. Wait for it to cool down again, then tap the Warm pad — the haptic lands exactly at the moment you lift off.\n\nBoth pads use THE SAME kind of gesture and both fire on touch-up, so the only difference is the prepare() line. The 80–150 ms between your finger touching down and lifting off is exactly the window the engine needs to spin up.\n\nTap the Cold pad TWICE in a row and the second one is crisp too — because the first haptic already woke the engine up. That’s not a bug in the demo, that’s the mechanism at work."
+          }
+        }
+      }
     },
     "Cái xẹp xuống và cái giãn ra nằm trong cùng một withAnimation, vì cùng đọc một biến. Ở mục 3 mỗi row có transaction riêng nên không có chuyện đó." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "The one collapsing and the one expanding sit inside the same withAnimation, because they both read the same variable. In item 3 each row has its own transaction, so that never happens there."
+          }
+        }
+      }
     },
     "Calendar (iOS 16)" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Calendar (iOS 16)"
+          }
+        }
+      }
     },
     "Calendar (iOS 18)" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Calendar (iOS 18)"
+          }
+        }
+      }
     },
     "Calendar Lab" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Calendar Lab"
+          }
+        }
+      }
     },
     "CalorieCard — đọc todayCalories" : {
       "localizations" : {
@@ -1021,31 +2710,115 @@
       }
     },
     "Cảm giác y hệt F1. Nhưng để làm được, ViewModel phải phơi ra hai property tồn tại CHỈ ĐỂ làm trigger: milestone (đếm mốc) và outcome (kết quả). Chúng không phục vụ giao diện gì cả.\n\nVà vì .sensoryFeedback chỉ so oldValue != newValue, `milestone` bắt buộc phải là bộ đếm tăng dần — đúng cái bẫy ở màn SensoryFeedback." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Feels exactly like F1. But to pull it off, the ViewModel has to expose two properties that exist ONLY to serve as triggers: milestone (the milestone counter) and outcome (the result). They don’t serve the UI at all.\n\nAnd because .sensoryFeedback only compares oldValue != newValue, `milestone` has to be an ever-increasing counter — exactly the gotcha from the SensoryFeedback screen."
+          }
+        }
+      }
+    },
+    "Camera" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Camera"
+          }
+        }
+      }
     },
     "Camera Lab" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Camera Lab"
+          }
+        }
+      }
     },
     "Căn hàng" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Row alignment"
+          }
+        }
+      }
     },
     "Cân nặng hiện tại" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Current Weight"
+          }
+        }
+      }
     },
     "canonical = value × coefficient + constant" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "canonical = value × coefficient + constant"
+          }
+        }
+      }
     },
     "Canonical Value" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Canonical Value"
+          }
+        }
+      }
     },
     "Cập nhật" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Update"
+          }
+        }
+      }
+    },
+    "Case mới của hệ điều hành." : {
+
+    },
+    "CHẠM CAP" : {
+
+    },
+    "Chạm chọn điểm, cuộn ngang, snap từng trang" : {
+
+    },
+    "Chạm để bật bàn phím" : {
 
     },
     "Chạm khắp vùng xanh — sát mép trên, sát mép dưới, giữa. Bật/tắt toggle để so.\n\nGenerator được tạo bằng init(style:view:) với chính view này làm mốc, nên toạ độ truyền vào impactOccurred(at:) mới có ý nghĩa. Dùng init(style:) thường rồi gọi at: là vô nghĩa." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Tap all over the blue area — right at the top edge, right at the bottom edge, in the middle. Turn the toggle on and off to compare.\n\nThe generator is created with init(style:view:) using this very view as its reference, which is what makes the coordinates you pass to impactOccurred(at:) meaningful. Using the plain init(style:) and then calling at: is pointless."
+          }
+        }
+      }
     },
     "Change Square Size" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Change Square Size"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1054,17 +2827,57 @@
         }
       }
     },
-    "Chạy — haptic qua .sensoryFeedback" : {
+    "Chart dựng lại từ app thật: Apple Health, Garmin Connect" : {
 
+    },
+    "Chart Lab" : {
+
+    },
+    "Chart, Mark, PlottableValue — kiểu dữ liệu quyết định loại trục" : {
+
+    },
+    "chartYScale cắt gốc 0, AxisMarks chọn mốc và định dạng nhãn" : {
+
+    },
+    "Chạy — haptic qua .sensoryFeedback" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Run — haptic via .sensoryFeedback"
+          }
+        }
+      }
     },
     "Chạy — haptic trong ViewModel" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Run — haptic in the ViewModel"
+          }
+        }
+      }
     },
     "Chạy tới" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Run forward"
+          }
+        }
+      }
     },
     "Chạy về" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Run back"
+          }
+        }
+      }
     },
     "Chế độ tối" : {
       "localizations" : {
@@ -1081,6 +2894,9 @@
           }
         }
       }
+    },
+    "Chevron cũng đổi chỗ: iOS 18 để bên trái, từ 26 chuyển sang phải. Riêng dòng phụ thì phải tới 27 mới có." : {
+
     },
     "Chỉ cần khai báo coefficient (quan hệ với đơn vị gốc), đơn vị mới lập tức đổi qua lại được với MỌI đơn vị length khác — nhờ đi qua canonical." : {
       "localizations" : {
@@ -1099,9 +2915,26 @@
       }
     },
     "Chỉ có một biến, nên không thể rơi vào trạng thái hai sheet cùng bật." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "There’s only one variable, so you can’t end up in a state where both sheets are on."
+          }
+        }
+      }
     },
     "Chỉ có nghĩa khi bắn liên tục" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Only makes sense when fired repeatedly"
+          }
+        }
+      }
+    },
+    "Chỉ gặp ở mức readWrite, không gặp với addOnly." : {
 
     },
     "Chỉ giờ" : {
@@ -1120,23 +2953,74 @@
         }
       }
     },
-    "Chỉ mở A" : {
+    "Chỉ iOS 27 mới vẽ phần value thành dòng nhỏ. iOS 18 và 26 nhận đúng đoạn code này nhưng vứt luôn chữ \"Pro\", không báo lỗi gì." : {
 
+    },
+    "Chỉ khai MIỀN, không đụng tới mốc. Nhưng miền rộng ra 24 giờ khiến Charts tự đổi bước chia từ 3 giờ sang 6 giờ, ra đúng 00/06/12/18 như Apple Health." : {
+
+    },
+    "Chỉ mở A" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Open A only"
+          }
+        }
+      }
     },
     "Chỉ mở B" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Open B only"
+          }
+        }
+      }
     },
     "Chỉ mở cover" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Open the cover only"
+          }
+        }
+      }
     },
     "Chỉ mở sheet" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Open the sheet only"
+          }
+        }
+      }
     },
     "Chỉ rung khi TĂNG. Closure nhận (old, new) và trả về SensoryFeedback? — trả nil là không rung. Bấm giảm để nghe sự im lặng." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Only fires a haptic when the value GOES UP. The closure receives (old, new) and returns SensoryFeedback? — returning nil means no haptic. Tap decrement to feel the silence."
+          }
+        }
+      }
+    },
+    "Chỉnh edges & placement để thấy lề tác động lên content vs indicator" : {
 
     },
     "Chọn năm sinh" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Choose Birth Year"
+          }
+        }
+      }
     },
     "Chọn ngôn ngữ" : {
       "localizations" : {
@@ -1155,49 +3039,162 @@
       }
     },
     "Chọn quả" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Choose Fruit"
+          }
+        }
+      }
     },
     "Chọn theo id thì sao" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "What about choosing by id"
+          }
+        }
+      }
     },
     "chưa chạy" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Not started"
+          }
+        }
+      }
+    },
+    "Chưa có màn nào" : {
 
     },
     "Chưa có sự kiện nào" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "No events yet"
+          }
+        }
+      }
     },
     "Chưa dựng — chevron ↔ +/−, trái ↔ phải" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Not built yet — chevron ↔ +/−, left ↔ right"
+          }
+        }
+      }
     },
     "Chưa dựng demo — mở file để xem danh sách câu hỏi cần trả lời." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "No demo built yet — open the file to see the list of questions to answer."
+          }
+        }
+      }
     },
     "Chưa dựng demo cho chủ đề này." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "No demo built for this topic yet."
+          }
+        }
+      }
+    },
+    "Chưa hỏi" : {
 
     },
     "Chưa làm" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Not Built Yet"
+          }
+        }
+      }
     },
     "Chưa rung lần nào — engine đang lạnh" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "No haptic fired yet — the engine is cold"
+          }
+        }
+      }
     },
     "Chúng trả về Animation mới nên nối chuỗi được: .easeInOut(duration: 0.3).delay(0.1).speed(2). Lưu ý .speed(2) tương đương chia đôi duration, và autoreverses: true nghĩa là mỗi lượt lặp gồm đi + về." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "They return a new Animation, so you can chain them: .easeInOut(duration: 0.3).delay(0.1).speed(2). Note that .speed(2) is the same as halving the duration, and autoreverses: true means each repeat is one trip out plus one trip back."
+          }
+        }
+      }
     },
     "Chụp ảnh trong ~40 dòng, không cần AVFoundation" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Take photos in ~40 lines, no AVFoundation needed"
+          }
+        }
+      }
+    },
+    "City" : {
 
     },
     "clipShape — cắt phần tràn" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "clipShape — clip the overflow"
+          }
+        }
+      }
     },
     "clipShape tắt" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "clipShape off"
+          }
+        }
+      }
     },
     "Clone từ BitePal — số đo lấy từ video gốc" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Cloned from BitePal — measurements taken from the original video"
+          }
+        }
+      }
     },
     "Close" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Close"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1207,22 +3204,78 @@
       }
     },
     "CMSampleBuffer, filter Core Image, Vision realtime" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "CMSampleBuffer, Core Image filters, real-time Vision"
+          }
+        }
+      }
     },
     "Có action button" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "With an action button"
+          }
+        }
+      }
     },
     "Cơ bản" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Basics"
+          }
+        }
+      }
     },
     "Có điều kiện" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Conditional"
+          }
+        }
+      }
+    },
+    "CO THEO CONTENT" : {
+
+    },
+    "Có vị trí trống cho T4" : {
 
     },
     "Cold vs Warm" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Cold vs Warm"
+          }
+        }
+      }
+    },
+    "Column" : {
+
+    },
+    "Column, Bar, Line, Area, Point, Pie, Range, Heatmap" : {
+
+    },
+    "Còn lại" : {
 
     },
     "Confirmed" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Confirmed"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1247,11 +3300,35 @@
         }
       }
     },
+    "content %lldpt / khung %lldpt" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "content %1$lldpt / khung %2$lldpt"
+          }
+        }
+      }
+    },
     "Content dài (2 dòng)" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Long content (2 lines)"
+          }
+        }
+      }
     },
     "contentMargins Playground" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "contentMargins Playground"
+          }
+        }
+      }
     },
     "converter.baseUnitValue(fromValue:) trả về giá trị canonical trực tiếp, không cần tạo Measurement." : {
       "localizations" : {
@@ -1270,88 +3347,363 @@
       }
     },
     "Core Haptics" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Core Haptics"
+          }
+        }
+      }
+    },
+    "Cột dọc: category ở trục X, stacked vs grouped" : {
 
     },
     "Counter: tapCount += 1" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Counter: tapCount += 1"
+          }
+        }
+      }
     },
     "Cover %@" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Cover %@"
+          }
+        }
+      }
     },
     "Cover có đi chung cửa với sheet không?" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Does a cover go through the same door as a sheet?"
+          }
+        }
+      }
     },
     "Cross-platform. Apple không công bố chúng map xuống generator nào trên iOS — bạn khai báo ý nghĩa, hệ thống chọn cảm giác. Dùng khi bạn chỉ biết 'chuyện gì vừa xảy ra' chứ chưa quyết cảm giác." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Cross-platform. Apple doesn’t document which generator they map down to on iOS — you declare the meaning, and the system picks the feel. Use them when all you know is “what just happened” and you haven’t decided on a feel yet."
+          }
+        }
+      }
     },
     "Cửa sổ giữ nóng" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Keep-warm window"
+          }
+        }
+      }
+    },
+    "Cửa thoát duy nhất để đưa View vào trong Chart" : {
 
     },
     "Cùng hành vi, nhưng bằng DisclosureGroup có sẵn" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Same behavior, but with the built-in DisclosureGroup"
+          }
+        }
+      }
+    },
+    "Cùng kết quả nhưng đo bằng onGeometryChange, không cần view phụ" : {
 
     },
     "Cũng mở #2 rồi xoá mục đầu, nhưng lần này #2 vẫn mở. Identity đi theo dữ liệu nên @State bám đúng row của nó." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Again, open #2 and then delete the first item, but this time #2 stays open. Identity follows the data, so @State sticks to its own row."
+          }
+        }
+      }
+    },
+    "Cupertino" : {
+
+    },
+    "Cupertino và San Francisco — bật tắt từng thành phố" : {
 
     },
     "Curves" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Curves"
+          }
+        }
+      }
+    },
+    "D — annotation có điều kiện, View thật" : {
+
+    },
+    "D — by: với giá trị SỐ" : {
+
+    },
+    "D — chỉ AxisMarks, bước 4 giờ" : {
+
+    },
+    "D — lưới dọc nét liền" : {
+
+    },
+    "D — opacity TRÊN CHART" : {
+
+    },
+    "D — vùng nằm ngoài tầm dữ liệu" : {
 
     },
     "D. Selection" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "D. Selection"
+          }
+        }
+      }
+    },
+    "Đã cho phép" : {
+
+    },
+    "Đã đo tay trên simulator" : {
 
     },
     "Đã lưu" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Saved"
+          }
+        }
+      }
     },
     "Đã lưu bữa ăn vào nhật ký" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Meal saved to your log"
+          }
+        }
+      }
     },
     "Đã xoá nguyên liệu" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Ingredient deleted"
+          }
+        }
+      }
     },
     "dampingFraction" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "dampingFraction"
+          }
+        }
+      }
     },
     "Đang bắn…" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Firing…"
+          }
+        }
+      }
+    },
+    "Đang chạy trên" : {
 
     },
     "đang chạy…" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Running…"
+          }
+        }
+      }
+    },
+    "Đang focus" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Currently focused"
+          }
+        }
+      }
+    },
+    "Đảo hai tham số — khi nhãn dài thì phải nằm ngang" : {
+
+    },
+    "Date + unit: .day" : {
+
+    },
+    "Date + unit:, khuyết T4" : {
+
+    },
+    "Date, không unit:" : {
 
     },
     "date: .abbreviated, time: .shortened" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "date: .abbreviated, time: .shortened"
+          }
+        }
+      }
     },
     "date: .complete, time: .omitted" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "date: .complete, time: .omitted"
+          }
+        }
+      }
     },
     "day" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "day"
+          }
+        }
+      }
+    },
+    "Day" : {
+
+    },
+    "Đáy sheet" : {
 
     },
     "dd/MM/yyyy HH:mm" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "dd/MM/yyyy HH:mm"
+          }
+        }
+      }
     },
     "DEBUG — thử updateUIView" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "DEBUG — try updateUIView"
+          }
+        }
+      }
+    },
+    "Đến" : {
+
+    },
+    "Detent .height(600)" : {
 
     },
     "developer.apple.com/documentation/swiftui/animations" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "developer.apple.com/documentation/swiftui/animations"
+          }
+        }
+      }
     },
     "Device → Input → Session → PreviewLayer, chưa chụp" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Device → Input → Session → PreviewLayer, no capture yet"
+          }
+        }
+      }
     },
     "Đi theo thứ tự 1 → 4. Mỗi màn có phần footer giải thích ngay dưới demo." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Go through them in order, 1 → 4. Each screen has a footer with the explanation right below the demo."
+          }
+        }
+      }
     },
     "Dialog là view riêng, scale từ góc dưới-phải của chính nó.\nFAB đứng yên, dấu + xoay thành ×. Mỗi hàng trôi lên, lệch nhịp nhau." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "The dialog is a separate view, scaling from its own bottom-right corner.\nThe FAB stays put; the + rotates into a ×. Each row drifts up, one staggered behind the next."
+          }
+        }
+      }
+    },
+    "Dialog sẽ KHÔNG hiện lại. Phải sang Settings." : {
 
     },
     "Điểm" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Score"
+          }
+        }
+      }
     },
     "Điều chỉnh chiều cao" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Adjust Height"
+          }
+        }
+      }
     },
     "Điều chỉnh mục tiêu nước uống" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Adjust Water Goal"
+          }
+        }
+      }
     },
     "Định nghĩa" : {
       "localizations" : {
@@ -1370,25 +3722,90 @@
       }
     },
     "Định vị" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Positional"
+          }
+        }
+      }
     },
     "Dismiss Sticky" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Dismiss Sticky"
+          }
+        }
+      }
+    },
+    "đo %lldpt → khung %lldpt" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "đo %1$lldpt → khung %2$lldpt"
+          }
+        }
+      }
+    },
+    "Đo content bằng GeometryReader trong background rồi đẩy vào detent" : {
 
     },
     "Đo độ trễ Taptic Engine bằng ngón tay" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Measure Taptic Engine latency with your finger"
+          }
+        }
+      }
+    },
+    "Đoạn" : {
 
     },
     "Đổi `Panel.ID?` thành `Set<Panel.ID>`: isExpanded là `ids.contains(id)`, bấm thì insert/remove. Vẫn một biến ở cha, nhưng chứa được nhiều — đó chính là khác biệt giữa mục 3 và mục 4, nằm gọn trong kiểu dữ liệu." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Change `Panel.ID?` to `Set<Panel.ID>`: isExpanded becomes `ids.contains(id)`, and a tap inserts/removes. Still one variable in the parent, but it can hold several — that’s exactly the difference between item 3 and item 4, and it fits entirely in the data type."
+          }
+        }
+      }
     },
     "Đối chứng: Picker hệ thống" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "For comparison: the system Picker"
+          }
+        }
+      }
     },
     "Đổi ống kính, flash/torch, zoom, tap-to-focus, xoay máy" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Switching lenses, flash/torch, zoom, tap-to-focus, and device rotation"
+          }
+        }
+      }
     },
     "Đổi state trần (không animation)" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Change state bare (no animation)"
+          }
+        }
+      }
     },
     "Đơn vị đích" : {
       "localizations" : {
@@ -1423,28 +3840,84 @@
       }
     },
     "Đóng" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Close"
+          }
+        }
+      }
     },
     "Đóng sheet" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Close the sheet"
+          }
+        }
+      }
     },
     "Đóng tất cả" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Close all"
+          }
+        }
+      }
     },
     "Đóng tất cả bị giật" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "“Close all” jumps"
+          }
+        }
+      }
     },
     "Đóng/mở #2 từ bên ngoài" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Toggle #2 from outside"
+          }
+        }
+      }
     },
     "Double Sheet Lab" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Double Sheet Lab"
+          }
+        }
+      }
     },
     "Đừng đặt trong row của List" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Don’t put it inside a List row"
+          }
+        }
+      }
     },
     "Đừng kỳ vọng rung ở góc trên trái nghe khác hẳn góc dưới phải — phần cứng không định vị được như vậy. at: là thông tin bạn ĐƯA CHO hệ thống để nó tinh chỉnh, không phải lệnh chọn vị trí rung.\n\nVậy vì sao vẫn nên truyền? Vì nó miễn phí, và vì đây là API hướng tới phần cứng tương lai cùng các thiết bị nhiều actuator. Code viết đúng hôm nay thì mai không phải sửa." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Don’t expect a haptic in the top-left corner to feel noticeably different from one in the bottom-right — the hardware can’t position haptics like that. at: is information you HAND TO the system so it can fine-tune the feel, not an instruction picking where the haptic happens.\n\nSo why pass it at all? Because it’s free, and because this is an API aimed at future hardware and at devices with multiple actuators. Code written right today doesn’t need fixing tomorrow."
+          }
+        }
+      }
     },
     "Dựng lại theo tutorial Kavsoft" : {
       "localizations" : {
@@ -1463,78 +3936,285 @@
       }
     },
     "Đúng trường hợp cần test — sheet thứ hai đi đâu?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Exactly the case worth testing — where does the second sheet go?"
+          }
+        }
+      }
+    },
+    "Đường dọc xám ở 00 giờ." : {
+
+    },
+    "Đường liền đổi màu theo zone, trục Y cắt gốc, đứt đoạn khi không đeo" : {
+
+    },
+    "Đường trung bình, ngưỡng, mốc thời gian" : {
+
+    },
+    "Đường và vùng" : {
 
     },
     "duration" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "duration"
+          }
+        }
+      }
     },
     "Dynamic Height Bottom Sheet iOS 16+" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Dynamic Height Bottom Sheet iOS 16+"
+          }
+        }
+      }
     },
     "Dynamic Height Bottom Sheet iOS 18+" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Dynamic Height Bottom Sheet iOS 18+"
+          }
+        }
+      }
+    },
+    "E — bỏ AxisGridLine" : {
+
+    },
+    "E — chartXScale + AxisMarks, như Garmin" : {
+
+    },
+    "E — mark thắng chart" : {
+
+    },
+    "E — thêm .fixedSize()" : {
+
+    },
+    "E — tự chọn dải màu" : {
 
     },
     "E. Định vị (iOS 17.5+)" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "E. Positional haptics (iOS 17.5+)"
+          }
+        }
+      }
     },
     "E1. Chạm định vị" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "E1. Positional taps"
+          }
+        }
+      }
     },
     "E2. UICanvasFeedbackGenerator" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "E2. UICanvasFeedbackGenerator"
+          }
+        }
+      }
     },
     "ease/spring chạy đua song song + delay, repeat, speed" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "ease/spring racing side by side + delay, repeat, speed"
+          }
+        }
+      }
     },
     "Edges" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Edges"
+          }
+        }
+      }
     },
     "EEE, d MMM yyyy" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "EEE, d MMM yyyy"
+          }
+        }
+      }
     },
     "en_US" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "en_US"
+          }
+        }
+      }
     },
     "Engine còn nóng — chờ %@s" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "The engine is still warm — wait %@s"
+          }
+        }
+      }
     },
     "Engine đã nguội — sẵn sàng thử" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "The engine has cooled down — ready to try"
+          }
+        }
+      }
     },
     "English" : {
       "shouldTranslate" : false
     },
-    "F. Bắn ngoài view" : {
+    "F — bỏ AxisTick" : {
 
+    },
+    "F — LineMark tô LinearGradient" : {
+
+    },
+    "F. Bắn ngoài view" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "F. Firing outside the view"
+          }
+        }
+      }
     },
     "F1. Gọi thẳng" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "F1. Calling directly"
+          }
+        }
+      }
     },
     "F2. Bắc cầu qua state" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "F2. Bridging through state"
+          }
+        }
+      }
     },
     "FAB → Dialog" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "FAB → Dialog"
+          }
+        }
+      }
     },
     "FAB + Dialog tách rời" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "FAB + Detached Dialog"
+          }
+        }
+      }
     },
     "FAB đứng yên, + xoay thành ×, dialog bật ra riêng" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "FAB stays put, + rotates into ×, dialog pops out on its own"
+          }
+        }
+      }
     },
     "false" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "false"
+          }
+        }
+      }
     },
     "First View" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "First View"
+          }
+        }
+      }
     },
     "Fixed Height Bottom Sheet" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Fixed Height Bottom Sheet"
+          }
+        }
+      }
     },
     "FlowRow" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "FlowRow"
+          }
+        }
+      }
     },
     "FlowRow — chip tự xuống dòng" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "FlowRow — chips wrap on their own"
+          }
+        }
+      }
+    },
+    "foregroundStyle KHÔNG có by: nên không sinh scale, không tách series, đường vẫn liền. Màu đến từ VỊ TRÍ trên khung chứ không từ giá trị — đổi chartYScale là màu đổi theo." : {
 
     },
     "Foundation KHÔNG đổi km→miles trực tiếp. Nó đi 2 bước: về mét (canonical) rồi ra miles. Mét là điểm trung chuyển chung." : {
@@ -1553,17 +4233,58 @@
         }
       }
     },
+    "Free" : {
+
+    },
     "Full-Screen Cover" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Full-Screen Cover"
+          }
+        }
+      }
+    },
+    "G — bỏ AxisValueLabel" : {
 
     },
     "Gần như không cảm thấy gì, và đó là CHỦ Ý. Đây là haptic nhẹ nhất hệ thống. Dùng nó cho một sự kiện đơn lẻ là dùng sai API." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "You can barely feel a thing, and that’s INTENTIONAL. This is the lightest haptic in the system. Using it for a single standalone event is using the API wrong."
+          }
+        }
+      }
+    },
+    "Garmin — Nhịp tim" : {
 
     },
     "Generator" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Generator"
+          }
+        }
+      }
+    },
+    "Ghép cả hai: miền trọn 24 giờ, mốc mỗi 4 giờ. AxisMarks chọn BƯỚC, miền chọn ĐIỂM NEO — bước 4 giờ neo vào 00:00 nên ra 00/04/08/12/16/20." : {
 
     },
     "Ghép thành chuỗi" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Chained into a sequence"
+          }
+        }
+      }
     },
     "Giá trị" : {
       "localizations" : {
@@ -1597,56 +4318,224 @@
         }
       }
     },
-    "Go back" : {
+    "Giải phẫu một Chart" : {
 
+    },
+    "Giờ" : {
+
+    },
+    "Giới hạn" : {
+
+    },
+    "Giống A, chỉ khai lại AxisGridLine với StrokeStyle không có dash. Không khai values: nên mốc vẫn do Charts tự chọn như A. Phải gọi đủ cả AxisTick và AxisValueLabel — closure này THAY THẾ nội dung mặc định, thiếu cái nào là mất cái đó." : {
+
+    },
+    "Giống D, thêm đúng một dòng. fixedSize() bảo View giữ kích thước tự nhiên, không chịu bó theo bề ngang mark — nhãn hiện đủ chữ và tràn sang hai bên cột." : {
+
+    },
+    "Go back" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Go back"
+          }
+        }
+      }
     },
     "Go to Second View" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Go to Second View"
+          }
+        }
+      }
     },
     "Gọi prepare() ngay bây giờ" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Call prepare() right now"
+          }
+        }
+      }
+    },
+    "Gọi requestAccess sẽ hiện dialog." : {
+
+    },
+    "Gọi requestAuthorization sẽ hiện dialog." : {
+
+    },
+    "Gradient xuống đáy, dải min–max, stacked area" : {
+
+    },
+    "H — trục Y sang trái" : {
 
     },
     "h:mm a" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "h:mm a"
+          }
+        }
+      }
     },
     "Hai cột cuộn rời nhau dưới chung một plinth, nhưng CÓ ràng buộc: chạm trần 200 thì phần lẻ bị kẹp về 0. Phần khó không nằm ở việc sửa state mà ở chỗ bắt bánh xe đi theo khi cú kẹp rơi đúng lúc nó đang trôi. Giá trị lưu là Int phần mười kg, không phải Double." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Two columns scroll independently under one shared plinth, but there IS a constraint: hit the 200 ceiling and the fractional part gets clamped to 0. The hard part isn’t updating the state, it’s making the wheel follow along when the clamp lands right while it’s still coasting. The stored value is an Int in tenths of a kg, not a Double."
+          }
+        }
+      }
     },
     "Hai loại khác nhau có thành hai kênh độc lập?" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Do two different types give you two independent channels?"
+          }
+        }
+      }
+    },
+    "Hai ô, một toolbar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Two fields, one toolbar"
+          }
+        }
+      }
     },
     "Hai row animate cùng nhịp" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Both rows animate in sync"
+          }
+        }
+      }
+    },
+    "Hai thành phố xếp chồng, foregroundStyle(by:) tách màu" : {
+
+    },
+    "Hai trục đều liên tục — symbol và symbolSize theo nhóm" : {
 
     },
     "Hàng %lld" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Row %lld"
+          }
+        }
+      }
     },
     "Hàng có sẵn" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Built-in"
+          }
+        }
+      }
     },
     "Haptic chỉ hoạt động trên iPhone thật. Simulator, iPad, Low Power Mode đều im lặng." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Haptics only work on a real iPhone. The Simulator, iPad, and Low Power Mode are all silent."
+          }
+        }
+      }
     },
     "Haptic sinh ra từ TƯƠNG TÁC trong view (chạm, kéo, chọn) → .sensoryFeedback, khai báo gọn hơn.\n\nHaptic sinh ra từ LOGIC ngoài view (task async, delegate, notification, timer) → generator gọi thẳng. Bắc cầu qua state chỉ tổ đẻ ra property giả và một bẫy đồng bộ." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "A haptic that comes from an INTERACTION inside the view (tap, drag, select) → .sensoryFeedback, which is more compact to declare.\n\nA haptic that comes from LOGIC outside the view (async task, delegate, notification, timer) → call the generator directly. Bridging through state only breeds fake properties and a syncing gotcha."
+          }
+        }
+      }
     },
     "Haptic từ Task async — chỗ modifier bó tay" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Haptics from an async Task — where the modifier gives up"
+          }
+        }
+      }
     },
     "Haptics Lab" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Haptics Lab"
+          }
+        }
+      }
+    },
+    "Heatmap" : {
+
+    },
+    "Hello Swift Charts" : {
 
     },
     "Hello World!" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Hello World!"
+          }
+        }
+      }
     },
     "Hiện" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Show"
+          }
+        }
+      }
     },
     "Hiện (có animation)" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Show (with animation)"
+          }
+        }
+      }
     },
     "Hiện (không animation)" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Show (no animation)"
+          }
+        }
+      }
     },
     "Hiện lưới line height" : {
       "localizations" : {
@@ -1666,6 +4555,12 @@
     },
     "Home / Push-style Side Menu" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Home / Push-style Side Menu"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1675,22 +4570,66 @@
       }
     },
     "hỏng" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Failed"
+          }
+        }
+      }
     },
     "hour" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "hour"
+          }
+        }
+      }
     },
     "HStack không xuống dòng được — thiếu chỗ thì nó bóp con lại. FlowRow hết chỗ thì mở hàng mới, nên số phần tử mỗi hàng đổi theo bề rộng." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "An HStack can’t wrap — when it runs short on room it squeezes its children instead. FlowRow opens a new row when it runs out of room, so the number of items per row changes with the width."
+          }
+        }
+      }
+    },
+    "I — chartXScale trục X" : {
 
     },
     "identity" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "identity"
+          }
+        }
+      }
     },
     "identity của ForEach" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "ForEach identity"
+          }
+        }
+      }
     },
     "Image from Gallery" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Image from Gallery"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1700,13 +4639,34 @@
       }
     },
     "Impact" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Impact"
+          }
+        }
+      }
     },
     "impactOccurred(at:) + UICanvasFeedbackGenerator" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "impactOccurred(at:) + UICanvasFeedbackGenerator"
+          }
+        }
+      }
     },
     "Input" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Input"
+          }
+        }
+      }
     },
     "inputAccessoryView (UIKit) — dính keo" : {
       "localizations" : {
@@ -1725,37 +4685,135 @@
       }
     },
     "insertion ≠ removal" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "insertion ≠ removal"
+          }
+        }
+      }
+    },
+    "Int → linear scale" : {
 
     },
     "intensity" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "intensity"
+          }
+        }
+      }
     },
     "intensity là HỆ SỐ NHÂN lên preset, không phải trục độc lập. Kéo về 0 thì mọi nút bên dưới im hoàn toàn." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "intensity is a MULTIPLIER on the preset, not an independent axis. Drag it down to 0 and every button below goes completely silent."
+          }
+        }
+      }
+    },
+    "interpolationMethod, nét đứt, tách segment khi khuyết dữ liệu" : {
+
+    },
+    "iOS" : {
+
+    },
+    "iOS 18.6" : {
+
+    },
+    "iOS 26.5" : {
+
+    },
+    "iOS 27.0" : {
 
     },
     "iPhone chỉ có MỘT Taptic Engine" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "iPhone has only ONE Taptic Engine"
+          }
+        }
+      }
     },
     "ISO8601DateFormatter" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "ISO8601DateFormatter"
+          }
+        }
+      }
+    },
+    "J — chartXScale + chartXAxis" : {
 
     },
     "Kéo chậm qua 20 nấc: từng cú tách nhẹ ghép lại thành cảm giác BÁNH RĂNG, giống vặn núm cơ. Đây mới là thứ class này được sinh ra để làm.\n\nĐể ý nấc ĐẦU hơi trễ, các nấc sau khớp hoàn hảo — chính chuỗi rung đã tự giữ engine nóng, đúng cơ chế bạn đo ở màn A. Muốn nấc đầu cũng khớp thì gọi prepare() lúc gesture bắt đầu." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Drag slowly through the 20 notches: each light click adds up into a GEAR-like feel, like turning a mechanical knob. This is what the class was made for.\n\nNotice that the FIRST notch lags a little while every notch after it lands perfectly — the stream of haptics keeps the engine warm on its own, exactly the mechanism you measured on screen A. If you want the first notch to land too, call prepare() when the gesture begins."
+          }
+        }
+      }
     },
     "kéo chậm ra ~1.5s" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "drag it slowly out to ~1.5s"
+          }
+        }
+      }
     },
     "Kéo duration lên 4–5 giây rồi bấm Toggle. Ở tốc độ thường (0.6s) mắt không phân biệt nổi, cả bốn ô trông y như nhau.\n\nRanh giới: giữa hai giá trị có tồn tại \"giá trị ở giữa\" không?\n\n✅ 28.4pt là một cỡ chữ hợp lệ → nội suy được, chữ lớn dần từng frame.\n\n❌ Không có kiểu chữ nào nửa serif nửa sans, cũng không có chuỗi nào nằm giữa \"Xin chào\" và \"Tạm biệt\". Không nội suy được, SwiftUI CHỒNG MỜ ảnh cũ với ảnh mới trong đúng khoảng thời gian đó — chạy chậm sẽ thấy rõ hai chữ đè lên nhau.\n\nNên phát biểu cho đủ: animation là nội suy giá trị; chỗ nào không nội suy được thì mặc định lùi về crossfade. contentTransition (bài 3) chính là chỗ bạn chọn hiệu ứng thay cho cái crossfade mặc định đó.\n\nCái conform Animatable là các đại lượng số — CGFloat, Double, CGSize, CGPoint, Angle, Color, EdgeInsets, UnitPoint. Kiểu chữ, chuỗi, Bool, Image, enum thì không." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Drag duration up to 4–5 seconds, then tap Toggle. At normal speed (0.6s) your eye can’t tell them apart — all four cells look identical.\n\nThe dividing line: between two values, does an “in-between value” exist?\n\n✅ 28.4pt is a valid font size → it can be interpolated, and the text grows frame by frame.\n\n❌ There’s no typeface that’s half serif, half sans, and there’s no string that sits between “Hello” and “Goodbye.” There’s nothing to interpolate, so SwiftUI CROSS-FADES the old image with the new one over exactly that stretch of time — run it slowly and you’ll clearly see the two words overlapping.\n\nWorth stating in full: animation is value interpolation; wherever interpolation isn’t possible, it falls back to a crossfade by default. contentTransition (lesson 3) is exactly where you pick an effect to replace that default crossfade.\n\nWhat conforms to Animatable are the numeric quantities — CGFloat, Double, CGSize, CGPoint, Angle, Color, EdgeInsets, UnitPoint. Typefaces, strings, Bool, Image, and enums don’t."
+          }
+        }
+      }
     },
     "Kéo ngón chậm qua các ô. Mỗi lần vượt một vạch lưới là một alignmentOccurred(at:) — cảm giác \"khớp vào lưới\" như khi kéo object trong Keynote. Nhấc ngón ra là pathCompleted(at:), một cú chốt khác hẳn.\n\nClass này (iOS 17.5+) sinh ra riêng cho canvas tự vẽ: nó chỉ có hai khái niệm là CĂN và XONG, không có style hay intensity. Bạn mô tả sự kiện, hệ thống chọn cảm giác." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Drag your finger slowly across the cells. Every time you cross a grid line, that’s one alignmentOccurred(at:) — the “snaps into the grid” feel you get when dragging an object in Keynote. Lifting your finger is pathCompleted(at:), a distinctly different, final-sounding click.\n\nThis class (iOS 17.5+) exists specifically for custom drawing canvases: it only has two concepts, ALIGNED and DONE, with no style or intensity. You describe the event, and the system picks the feel."
+          }
+        }
+      }
     },
     "Kéo qua từng nấc" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Drag through each notch"
+          }
+        }
+      }
     },
     "Kéo slider xuống hẹp để thấy chỗ đáng nhìn nhất: chip cuối cùng rơi xuống hàng mới, và CHIỀU CAO của cả khối đổi theo. Chiều cao đó là thứ sizeThatFits phải trả lời đúng — sai là khối dưới nó bị chèn." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Drag the slider down to a narrow width to see the part worth watching: the last chip drops onto a new row, and the HEIGHT of the whole block changes with it. That height is what sizeThatFits has to answer correctly — get it wrong and the block below gets overlapped."
+          }
+        }
+      }
     },
     "Kéo thumb qua ngưỡng để xác nhận — DragGesture + offset" : {
       "localizations" : {
@@ -1806,7 +4864,14 @@
       }
     },
     "Keyboard Lab" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Keyboard Lab"
+          }
+        }
+      }
     },
     "keyboardLayoutGuide — bar rời, dừng êm - Giống Zalo" : {
       "localizations" : {
@@ -1825,39 +4890,162 @@
       }
     },
     "Khác anchor thì có thoát được không?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Does a different anchor get you around it?"
+          }
+        }
+      }
+    },
+    "Khai cả xStart/xEnd thì vùng co lại thành hình chữ nhật. BẮT BUỘC có chartXScale: thiếu nó thì RectangleMark giới thiệu T3 và T5 trước ForEach, band scale xếp chúng vào hai dải đầu và thứ tự thành T3/T5/T2/T4/T6." : {
+
+    },
+    "Khi content height bên trong ScrollView lớn hơn ScrollView height thì mới scroll được." : {
 
     },
     "Khoảng tuổi" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Age Range"
+          }
+        }
+      }
     },
     "Khôi phục" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Restore"
+          }
+        }
+      }
     },
     "Không chỉ mất phần giãn — chevron cũng nhảy 180° tức thì, và transition chọn kiểu gì cũng vô nghĩa." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "It’s not just the expansion you lose — the chevron also flips 180° instantly, and whichever transition you pick means nothing."
+          }
+        }
+      }
     },
     "Không có `if` thì không có transition" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "No `if`, no transition"
+          }
+        }
+      }
     },
     "Không có action button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Without an action button"
+          }
+        }
+      }
+    },
+    "Không có LabeledContent nào ở đây, nhưng trên **iOS 27** mở ra y hệt A." : {
+
+    },
+    "Không có modifier nào. Trục, khoảng cách, màu, chiều cao cột — Charts tự quyết hết." : {
 
     },
     "Không có nhãn đơn vị, chỉ còn cột số — chỗ nhìn rõ nhất phần nén khoảng cách của bản collection. Cận trên là năm hiện tại, tính lúc chạy chứ không viết cứng." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "No unit label, just a column of numbers — the clearest place to see the row-spacing compression in the collection version. The upper bound is the current year, computed at runtime instead of hard-coded."
+          }
+        }
+      }
     },
     "Không có trigger, PhaseAnimator quay vòng liên tục — dùng cho loading indicator, chấm \"đang gõ\", icon nhấp nháy. Ba chấm ở đây dùng chung một cặp phase [false, true], chỉ khác nhau ở .delay theo index." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "With no trigger, PhaseAnimator loops around continuously — use it for loading indicators, “typing” dots, blinking icons. The three dots here share one pair of phases [false, true] and differ only in the .delay derived from the index."
+          }
+        }
+      }
+    },
+    "Không có vị trí trống cho T4" : {
+
+    },
+    "Không khai x nên vùng trải suốt chiều rộng. Viết trước ForEach nên nằm DƯỚI các cột — đây là vùng mục tiêu 7.000–9.000 bước." : {
+
+    },
+    "Không rõ" : {
+
+    },
+    "KHÔNG SCROLL" : {
 
     },
     "Không thể đồng bộ dữ liệu, vui lòng kiểm tra kết nối mạng của bạn" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Can’t sync your data. Check your network connection."
+          }
+        }
+      }
+    },
+    "Khung co theo content, chặn trên ở 400" : {
+
+    },
+    "Khung luôn cao 400 — content ngắn thì dư chỗ trống" : {
+
+    },
+    "Khung vẫn 400pt dù content chỉ 60pt — không co theo content" : {
 
     },
     "Kịch bản" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Scenarios"
+          }
+        }
+      }
     },
     "km" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "km"
+          }
+        }
+      }
     },
     "Label tuỳ biến" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Custom label"
+          }
+        }
+      }
+    },
+    "LabeledContent - iOS 27" : {
+
+    },
+    "LabeledContent làm label submenu — iOS 18/26/27 vẽ khác nhau" : {
 
     },
     "Lam Tran" : {
@@ -1866,6 +5054,12 @@
     "Language Picker" : {
       "extractionState" : "stale",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Language Picker"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1875,22 +5069,64 @@
       }
     },
     "Layout Guide" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Layout Guide"
+          }
+        }
+      }
     },
     "Layout Guide ⭐️" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Layout Guide ⭐️"
+          }
+        }
+      }
     },
     "Learn Animation" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Learn Animation"
+          }
+        }
+      }
     },
     "Learn Canonical Value" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Learn Canonical Value"
+          }
+        }
+      }
     },
     "Learn PhotoPicker" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Learn PhotoPicker"
+          }
+        }
+      }
     },
     "Learn VideoPlayer" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Learn VideoPlayer"
+          }
+        }
+      }
     },
     "Length có constant = 0 (tuyến tính thuần). Nhiệt độ có constant ≠ 0 (affine): 0°C không phải 0K, mà là 273.15K. constant chính là điểm gốc lệch nhau." : {
       "localizations" : {
@@ -1909,6 +5145,19 @@
       }
     },
     "level" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "level"
+          }
+        }
+      }
+    },
+    "LineMark" : {
+
+    },
+    "Loại" : {
 
     },
     "Locale đang chọn: %@\nLocale.current: %@" : {
@@ -1923,12 +5172,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Locale seleccionado: %1$@\nLocale.current: %2$@"
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Locale đang chọn: %1$@\nLocale.current: %2$@"
           }
         }
       }
@@ -1950,24 +5193,100 @@
       }
     },
     "Localize Datetime" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Localize Datetime"
+          }
+        }
+      }
     },
     "Logger" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Logger"
+          }
+        }
+      }
     },
     "Lúc ĐÓNG lại: khung co ngay còn chữ thì fade từ từ, nên chữ tràn ra ngoài viền. Bootstrap giấu chỗ này bằng overflow: hidden." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "On the way CLOSED: the frame shrinks immediately while the text fades out slowly, so the text spills outside the border. Bootstrap hides this with overflow: hidden."
+          }
+        }
+      }
+    },
+    "Lưu ảnh được rồi. Vẫn KHÔNG đọc được thư viện." : {
+
+    },
+    "Lưu vào Photos (add-only)" : {
 
     },
     "Lý do nó tồn tại: hai cách trên đòi bạn phải sở hữu ĐOẠN CODE ĐỔI STATE (withAnimation) hoặc VIEW BỊ ĐỔI (.animation(value:)). Với Toggle, Slider, Picker, TextField thì việc ghi state xảy ra BÊN TRONG control của SwiftUI — không có chỗ nào cho bạn đặt withAnimation. Gắn vào binding là cách chen vào giữa.\n\nCơ chế: `$x.animation(.bouncy)` trả về một Binding mới, setter của nó chính là withAnimation(.bouncy) { x = newValue }. Nên nó lan ra TOÀN BỘ view phụ thuộc x, giống hệt cách 1 — khác cách 2 vốn chỉ ảnh hưởng đúng một view." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Why it exists: the two approaches above require you to own either the CODE THAT CHANGES THE STATE (withAnimation) or the VIEW BEING CHANGED (.animation(value:)). With Toggle, Slider, Picker, and TextField, the state write happens INSIDE SwiftUI’s control — there’s nowhere for you to put withAnimation. Attaching it to the binding is how you wedge yourself in between.\n\nHow it works: `$x.animation(.bouncy)` returns a new Binding whose setter is exactly withAnimation(.bouncy) { x = newValue }. So it spreads to EVERY view that depends on x, just like approach 1 — unlike approach 2, which affects exactly one view."
+          }
+        }
+      }
+    },
+    "Mặc định của Swift Charts là bên phải. Đổi sang trái bằng đúng một tham số position:, không đụng gì tới miền hay mốc." : {
 
     },
     "Màn này KHÔNG gắn haptic nào cho Picker. Nhưng cứ quay thử — nó vẫn tách từng nấc.\n\nĐó là UIKit tự bắn selection feedback bên trong. Bài học: các control dựng sẵn đã có haptic riêng, bạn thêm nữa là rung đúp. Chỉ tự gọi khi làm control TỰ VẼ." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "This screen attaches NO haptic to the Picker. But go ahead and spin it — it still clicks at every notch.\n\nThat’s UIKit firing selection feedback internally. The lesson: built-in controls already have their own haptics, so adding more gives you a doubled haptic. Only call it yourself when you build a control you DRAW YOURSELF."
+          }
+        }
+      }
     },
     "Margin" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Margin"
+          }
+        }
+      }
     },
     "Markdown Lab" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Markdown Lab"
+          }
+        }
+      }
+    },
+    "mask() chặn item tràn vào top & bottom safe area" : {
+
+    },
+    "Mất lưới dọc, còn vạch chia và nhãn giờ. Dùng khi muốn nền sạch mà vẫn giữ lưới ngang để đọc giá trị." : {
+
+    },
+    "Mất sạch nhãn giờ, lưới vẫn còn. Trục trở thành mấy đường kẻ vô nghĩa — không ai đọc được biểu đồ đang nói về khoảng thời gian nào." : {
+
+    },
+    "Màu theo nhóm, stacked vs grouped, legend từ đâu ra" : {
+
+    },
+    "maxHeight 400pt" : {
+
+    },
+    "maxHeight trong sheet" : {
 
     },
     "MealCard — đọc lastMeal" : {
@@ -1988,6 +5307,12 @@
     },
     "Media from Gallery" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Media from Gallery"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1998,6 +5323,12 @@
     },
     "Menu" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Menu"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2006,8 +5337,20 @@
         }
       }
     },
+    "Menu của SwiftUI" : {
+
+    },
+    "Menu Lab" : {
+
+    },
     "Message %lld" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Message %lld"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2016,53 +5359,203 @@
         }
       }
     },
-    "mile" : {
+    "MIỀN của trục X. Dữ liệu chỉ từ 4 giờ nên trục tự suy ở A bắt đầu từ đó; khai dayRange thì trục trải trọn ngày và phần rạng sáng hiện ra thành khoảng trống thật." : {
 
+    },
+    "Miền và mốc là hai việc riêng: chartXScale kéo trục trải trọn 24 giờ, AxisMarks đặt nhãn mỗi 4 giờ. Thiếu cái nào cũng không ra được trục của Garmin." : {
+
+    },
+    "mile" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "mile"
+          }
+        }
+      }
     },
     "minute" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "minute"
+          }
+        }
+      }
     },
     "ml" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "ml"
+          }
+        }
+      }
     },
     "Mở A" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Open A"
+          }
+        }
+      }
     },
     "Mở A và B trong cùng một tick" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Open A and B in the same tick"
+          }
+        }
+      }
     },
     "Mở A, 1,5s sau đổi sang B" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Open A, then switch to B 1.5s later"
+          }
+        }
+      }
     },
     "Mở A, 1,5s sau mở B (A vẫn đang present)" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Open A, then B 1.5s later (A is still presented)"
+          }
+        }
+      }
     },
     "Mở B" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Open B"
+          }
+        }
+      }
     },
     "Mở B, 1,5s sau mở A (B vẫn đang present)" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Open B, then A 1.5s later (B is still presented)"
+          }
+        }
+      }
     },
     "Mở cả hai trong cùng một tick" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Open both in the same tick"
+          }
+        }
+      }
     },
     "Mở cover, 1,5s sau mở sheet" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Open the cover, then the sheet 1.5s later"
+          }
+        }
+      }
     },
     "Mở một mục thì mục đang mở tự xẹp. Không có dòng code nào đi đóng nó — nó đóng vì `expandedID` không còn trỏ vào nó nữa." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Open one item and the one that’s already open collapses by itself. No line of code goes and closes it — it closes because `expandedID` no longer points to it."
+          }
+        }
+      }
+    },
+    "Mở session được rồi." : {
+
+    },
+    "Mở Settings" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Open Settings"
+          }
+        }
+      }
+    },
+    "Mở sheet 650pt" : {
 
     },
     "Mở sheet rồi show snackbar" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Open the sheet, then show a snackbar"
+          }
+        }
+      }
     },
     "Mở sheet, 1,5s sau mở cover" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Open the sheet, then the cover 1.5s later"
+          }
+        }
+      }
+    },
+    "Mở sheet, xem viền đỏ đang ở 400pt. Chạm TextField để bật bàn phím rồi nhìn lại viền đỏ." : {
 
     },
+    "Mô tả" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Description"
+          }
+        }
+      }
+    },
     "Mở vài mục cùng lúc — không mục nào đóng mục nào, vì mỗi row tự giữ state riêng. Phần đáng học nằm ở hai nút bên dưới." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Open several items at once — no item closes another, because each row keeps its own state. The part worth learning is in the two buttons below."
+          }
+        }
+      }
+    },
+    "Mốc" : {
 
     },
     "Mỗi 20% một cú impact, kết thúc bằng notification .success hoặc .error (hỏng ngẫu nhiên 1/3 số lần để bạn nghe được cả hai).\n\nToàn bộ lệnh haptic nằm trong UploadTask — view không biết haptic tồn tại. Đây là tách lớp đúng: ai biết \"chuyện gì vừa xảy ra\" thì người đó phát tín hiệu." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "One impact every 20%, ending with a .success or .error notification (it fails at random 1 time in 3 so you get to feel both).\n\nEvery haptic call lives inside UploadTask — the view doesn’t know haptics exist. That’s the right split between layers: whoever knows “what just happened” is the one who fires the signal."
+          }
+        }
+      }
     },
     "Mỗi Dimension (UnitLength, UnitMass, UnitTemperature…) có MỘT đơn vị gốc — baseUnit(). Mọi đơn vị khác quy về đơn vị gốc bằng công thức:" : {
       "localizations" : {
@@ -2081,40 +5574,127 @@
       }
     },
     "Mỗi lần `trigger` đổi giá trị, SwiftUI đi hết một vòng phases rồi dừng lại ở phase đầu tiên. Bạn không tự quản lý state trung gian — chỉ mô tả \"trông như thế nào ở từng chặng\"." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Each time `trigger` changes value, SwiftUI runs through a full round of phases and then stops at the first phase. You don’t manage the intermediate state yourself — you just describe “how it looks at each stage”."
+          }
+        }
+      }
     },
     "month" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "month"
+          }
+        }
+      }
     },
     "Một biến Panel.ID? ở cha — hai cái cùng mở là không biểu diễn được" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "One Panel.ID? variable in the parent — two open at once isn’t even representable"
+          }
+        }
+      }
     },
     "Một cú đơn lẻ" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "A single pulse on its own"
+          }
+        }
+      }
     },
     "Một instance dùng chung cho cả ba — khác Impact, ở đây kiểu là tham số của method.\n\nBấm .error rồi bấm .success ngay sau để nghe rõ: mỗi loại là một CHUỖI nhịp có tiết tấu riêng, không phải một cú tách đơn lẻ như Impact." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "One shared instance for all three — unlike Impact, here the type is a parameter of the method.\n\nTap .error and then .success right after to feel it clearly: each type is a SEQUENCE of beats with its own rhythm, not a single isolated click like Impact."
+          }
+        }
+      }
+    },
+    "Một mảng, ba loại Mark, không modifier nào" : {
 
     },
     "MovieFileOutput, thêm audio input, gián đoạn cuộc gọi" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "MovieFileOutput, adding an audio input, phone call interruptions"
+          }
+        }
+      }
     },
     "Mục 5 dựng sau." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Item 5 will be built later."
+          }
+        }
+      }
     },
     "Multi-cam, depth, Live Photo, Camera Control, nhiệt độ máy" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Multi-cam, depth, Live Photo, Camera Control, device thermal state"
+          }
+        }
+      }
     },
     "Muốn LUÔN có đúng một mục mở?" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Want exactly one item open at ALL times?"
+          }
+        }
+      }
     },
     "Muốn multi-expand mà cha vẫn giữ state?" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Want multi-expand while the parent still keeps the state?"
+          }
+        }
+      }
     },
     "Mượn UI của Apple" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Borrowing Apple’s UI"
+          }
+        }
+      }
     },
     "Năm cú success cách nhau 120ms. Vì mỗi cú kéo dài hơn khoảng cách đó, chúng đè lên nhau thành một mớ ù ù vô nghĩa — người dùng không đếm được đã có mấy sự kiện.\n\nKết luận: Notification chỉ dành cho KẾT QUẢ CUỐI của một tác vụ. Thao tác lặp lại nhiều lần thì dùng Selection hoặc Impact." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Five .success haptics fire 120 ms apart. Because each one lasts longer than that gap, they pile on top of each other into a meaningless buzz — the user can’t count how many events there were.\n\nThe takeaway: Notification is only for the FINAL RESULT of a task. For an action that repeats many times, use Selection or Impact."
+          }
+        }
+      }
     },
     "Native, 0 dependency — chỉ inline" : {
       "localizations" : {
@@ -2133,10 +5713,30 @@
       }
     },
     "Nền tảng" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Fundamentals"
+          }
+        }
+      }
+    },
+    "Ngăn kéo tự dựng" : {
+
+    },
+    "Ngày" : {
 
     },
     "Ngoài view" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Outside the View"
+          }
+        }
+      }
     },
     "Ngôn ngữ" : {
       "localizations" : {
@@ -2170,6 +5770,21 @@
         }
       }
     },
+    "Ngưỡng 5 phút: mẫu cách nhau một phút, nên năm phút không có gì là coi như tháo đồng hồ. Chạy được với mọi bộ dữ liệu, kể cả nhiều khoảng trống rải rác." : {
+
+    },
+    "Nhãn cam là annotation, neo vào ĐÁY CỦA MARK tức mức 0 — ngay dưới chân cột. Nhãn xám T2…T6 là trục X, bị đẩy xuống đáy KHUNG. Charts nới miền xuống −5.000 để chừa chỗ, nên hai hàng cách nhau một quãng lớn." : {
+
+    },
+    "Nhãn đè LÊN cột nên không chiếm thêm chỗ. Chữ đổi sang trắng vì nền cột đậm — annotation không tự biết nó đang nằm trên nền gì." : {
+
+    },
+    "Nhãn nằm trên đầu cột. Để ý cột cao nhất: nhãn có bị đẩy tràn khỏi khung, hay Charts tự chừa chỗ cho nó?" : {
+
+    },
+    "Nhập gì đó" : {
+
+    },
     "Nhập vào" : {
       "localizations" : {
         "en" : {
@@ -2187,16 +5802,43 @@
       }
     },
     "Nhật ký" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Log"
+          }
+        }
+      }
     },
     "Nhảy" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Jump"
+          }
+        }
+      }
     },
     "Nhớ mục ② của bài Basics: Int và String không animate được. .numericText() là cách SwiftUI lách — nó không nội suy con số mà cuộn từng chữ số như đồng hồ cơ. Tương tự .symbolEffect(.replace) morph giữa hai SF Symbol thay vì đổi phựt." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Remember item ② from the Basics lesson: Int and String can’t be animated. .numericText() is SwiftUI’s way around that — it doesn’t interpolate the number, it rolls each digit like a mechanical clock. Likewise, .symbolEffect(.replace) morphs from one SF Symbol into another instead of snapping over."
+          }
+        }
+      }
     },
     "No image selected" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "No image selected"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2207,6 +5849,12 @@
     },
     "No video selected" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "No video selected"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2216,28 +5864,94 @@
       }
     },
     "Nổi trên sheet" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Floating Above a Sheet"
+          }
+        }
+      }
     },
     "NOTE: Not verified yet" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "NOTE: Not verified yet"
+          }
+        }
+      }
     },
     "Notification" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Notification"
+          }
+        }
+      }
     },
     "NSCameraUsageDescription, authorizationStatus, mở Settings" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "NSCameraUsageDescription, authorizationStatus, opening Settings"
+          }
+        }
+      }
     },
     "Nút 1: A nhảy tức thì, B vẫn mượt → .animation(_:value:) không cần ai cho phép.\nNút 2: A bò chậm 1.5 giây, còn B vẫn snappy → animation gắn tại view GHI ĐÈ transaction từ withAnimation." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Button 1: A jumps instantly, B stays smooth → .animation(_:value:) doesn’t need anyone’s permission.\nButton 2: A crawls along for 1.5 seconds while B stays snappy → an animation attached at the view OVERRIDES the transaction from withAnimation."
+          }
+        }
+      }
     },
     "Nút Bool chỉ rung ở lần bấm ĐẦU. SwiftUI so oldValue != newValue, gán lại cùng giá trị thì không có gì đổi. Reset cũng rung, vì false != true — đó là bằng chứng nó so sánh chứ không nhìn 'true nghĩa là xảy ra'." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "The Bool button only fires a haptic on the FIRST tap. SwiftUI compares oldValue != newValue, so assigning the same value again changes nothing. Reset fires a haptic too, because false != true — that’s the proof it compares values instead of reading “true means it happened.”"
+          }
+        }
+      }
     },
     "Nút thứ hai làm banner nhấp nháy xuất hiện/biến mất tức thì, dù .transition vẫn nằm nguyên đó. Transition chỉ MÔ TẢ hình thù của việc vào/ra; ai cấp thời gian cho nó là withAnimation (hoặc .animation(_:value:) đặt ngoài container)." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "The second button makes the banner blink in and out instantly, even though .transition is still sitting right there. A transition only DESCRIBES the shape of coming in and going out; what gives it time is withAnimation (or .animation(_:value:) placed outside the container)."
+          }
+        }
+      }
+    },
+    "Nút Xong trên thanh phím, dùng chung cho nhiều ô" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "A Done button on the keyboard toolbar, shared by several fields"
+          }
+        }
+      }
     },
     "Ở tầng UIKit cả năm nằm chung MỘT enum. Lên SwiftUI, Apple tách thành hai overload: light/medium/heavy thành `weight`, soft/rigid thành `flexibility`. Cùng phần cứng, khác cách gọi tên.\n\nĐối chiếu chéo: mở màn SensoryFeedback, bấm .impact(weight: .heavy) ở intensity 1.00, rồi quay lại đây bấm .heavy ở 1.00 — y hệt nhau." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Down at the UIKit level all five live in ONE enum. Up in SwiftUI, Apple splits them into two overloads: light/medium/heavy become `weight`, soft/rigid become `flexibility`. Same hardware, different names.\n\nCross-check: open the SensoryFeedback screen, tap .impact(weight: .heavy) at intensity 1.00, then come back here and tap .heavy at 1.00 — exactly the same."
+          }
+        }
+      }
     },
     "ObservableObject — track cả object" : {
       "localizations" : {
@@ -2256,10 +5970,24 @@
       }
     },
     "Observation Lab" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Observation Lab"
+          }
+        }
+      }
     },
     "Observation Lab: @Observable vs ObservableObject" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Observation Lab: @Observable vs ObservableObject"
+          }
+        }
+      }
     },
     "Parse được block, nhưng render thì sao?" : {
       "localizations" : {
@@ -2294,88 +6022,303 @@
       }
     },
     "Pause → Play" : {
-
-    },
-    "Phần 0 — quyền camera & quyền lưu ảnh." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Pause → Play"
+          }
+        }
+      }
     },
     "Phần 1 — UIImagePickerController bọc trong SwiftUI." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Part 1 — UIImagePickerController wrapped in SwiftUI."
+          }
+        }
+      }
     },
     "Phần 2 — AVCaptureSession + preview layer." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Part 2 — AVCaptureSession + preview layer."
+          }
+        }
+      }
     },
     "Phần 3 — AVCapturePhotoOutput và lưu ảnh." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Part 3 — AVCapturePhotoOutput and saving photos."
+          }
+        }
+      }
     },
     "Phần 4 — đổi ống kính, flash, zoom, focus, xoay." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Part 4 — switching lenses, flash, zoom, focus, and rotation."
+          }
+        }
+      }
     },
     "Phần 5 — AVCaptureMovieFileOutput." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Part 5 — AVCaptureMovieFileOutput."
+          }
+        }
+      }
     },
     "Phần 6 — AVCaptureMetadataOutput." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Part 6 — AVCaptureMetadataOutput."
+          }
+        }
+      }
     },
     "Phần 7 — sample buffer, Core Image, Vision." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Part 7 — sample buffer, Core Image, Vision."
+          }
+        }
+      }
     },
     "Phần 8 — multi-cam, depth, Live Photo, Camera Control." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Part 8 — multi-cam, depth, Live Photo, Camera Control."
+          }
+        }
+      }
     },
     "Phân trang tháng" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Month Paging"
+          }
+        }
+      }
     },
     "Phase & Keyframe" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Phase & Keyframe"
+          }
+        }
+      }
+    },
+    "Phủ hết màn, không có detent hay drag để đóng — tự dựng nút Close" : {
 
     },
     "Picker, drag-snap, submit form" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Picker, drag-snap, form submission"
+          }
+        }
+      }
+    },
+    "Pie / Donut" : {
 
     },
     "Placement" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Placement"
+          }
+        }
+      }
     },
     "Play → Pause" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Play → Pause"
+          }
+        }
+      }
+    },
+    "Point / Scatter" : {
+
+    },
+    "PointMark" : {
 
     },
     "prepare()" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "prepare()"
+          }
+        }
+      }
     },
     "Present Full-Screen Cover" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Present Full-Screen Cover"
+          }
+        }
+      }
+    },
+    "presentationDetents([.height(600)]) — sheet luôn cao 600" : {
+
+    },
+    "Pro" : {
 
     },
     "Quy tắc chọn" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "How to choose"
+          }
+        }
+      }
+    },
+    "Raise the bar" : {
 
     },
     "Ràng buộc đổi CHẤT so với ca cân nặng: ở đó hai cột luôn đủ hàng, chỉ giá trị bị kẹp. Ở đây SỐ HÀNG của cột ngày co dãn theo tháng và năm (28/29/30/31), nên mảng nguồn ngắn lại ngay dưới chân bánh xe. Thử chọn 31/01 rồi kéo tháng sang 02." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "The constraint is different in KIND from the weight case: there, both columns always have a full set of rows and only the value gets clamped. Here the ROW COUNT of the day column stretches and shrinks with the month and the year (28/29/30/31), so the source array gets shorter right out from under the wheel. Try picking 31/01, then dragging the month over to 02."
+          }
+        }
+      }
     },
     "Ràng buộc không kẹp về một HẰNG SỐ như ca cân nặng mà theo giá trị cột kia, và vượt qua thì ĐÙN cột kia đi chứ không ghì cột đang kéo lại. Nhờ vậy cú sửa rơi vào cột đang đứng yên — một đường vá khác hẳn phần còn lại của kho. Canonical là ClosedRange, nên khoảng lộn ngược không phải hiển thị xấu mà là crash." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "The constraint doesn’t clamp to a CONSTANT the way the weight case does — it clamps against the other column’s value, and when you cross it, it PUSHES the other column along instead of holding back the column you’re dragging. That way the fix lands on the column that’s standing still — a repair path quite unlike the rest of the toolbox. The canonical value is a ClosedRange, so an inverted range isn’t just ugly display, it’s a crash."
+          }
+        }
+      }
+    },
+    "Range" : {
 
     },
     "Real World" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Real World"
+          }
+        }
+      }
+    },
+    "RectangleMark + color scale liên tục" : {
+
+    },
+    "RectangleMark làm dải mục tiêu, vùng cảnh báo" : {
 
     },
     "RelativeDateTimeFormatter" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "RelativeDateTimeFormatter"
+          }
+        }
+      }
     },
     "Reset" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Reset"
+          }
+        }
+      }
     },
     "Reset to 0" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Reset to 0"
+          }
+        }
+      }
     },
     "Reset về false" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Reset to false"
+          }
+        }
+      }
     },
     "response" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "response"
+          }
+        }
+      }
     },
     "response = độ \"cứng\" của lò xo, hiểu nôm na là bao lâu để đi hết một dao động. Nhỏ → nhanh và gắt, lớn → chậm và lười.\n\ndampingFraction = ma sát. 1.0 là tới đích rồi dừng, không nảy (critically damped). Càng nhỏ càng nảy qua nảy lại; thử 0.2 để thấy rõ." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "response = how “stiff” the spring is, roughly how long it takes to get through one oscillation. Smaller → fast and sharp, larger → slow and lazy.\n\ndampingFraction = friction. 1.0 means it reaches the target and stops, no bounce (critically damped). The smaller it gets, the more it bounces back and forth; try 0.2 to see it clearly."
+          }
+        }
+      }
     },
     "Row %lld" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Row %lld"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2383,6 +6326,9 @@
           }
         }
       }
+    },
+    "RuleMark" : {
+
     },
     "safeAreaInset — thanh nhập desync khi kéo" : {
       "localizations" : {
@@ -2400,32 +6346,128 @@
         }
       }
     },
+    "Sales" : {
+
+    },
+    "San Francisco" : {
+
+    },
     "Sân khấu ở màn này lúc đầu nằm trong một row của List và transition lúc CHÈN VÀO bị nuốt mất, dù lúc GỠ RA vẫn chạy. Đo bằng video, mép phải của banner khi hiện ra: trong List là -1 → 716 (một bước), ngoài List là -1 → 301 → 414 → 529 → 609 → 646 → 648. Nay nó nằm ngoài List, gắn bằng .safeAreaInset(edge: .top)." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "The stage on this screen originally sat inside a List row, and the transition on INSERTION got swallowed, even though the one on REMOVAL still ran. Measured off video, the right edge of the banner as it appears: inside a List it’s -1 → 716 (a single step), outside a List it’s -1 → 301 → 414 → 529 → 609 → 646 → 648. It now sits outside the List, attached with .safeAreaInset(edge: .top)."
+          }
+        }
+      }
+    },
+    "Sáu tiếng khuyết biến thành một đoạn thẳng dốc đều. Chart không im lặng như BarMark mà bịa ra dữ liệu chưa từng tồn tại." : {
+
+    },
+    "Screen Time hoặc MDM chặn." : {
+
+    },
+    "Screen Time hoặc MDM chặn. User không tự bật được." : {
+
+    },
+    "SCROLL ĐƯỢC" : {
 
     },
     "ScrollView & Safe Area" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "ScrollView & Safe Area"
+          }
+        }
+      }
+    },
+    "ScrollView không có swipeActions như List — tự dựng lại" : {
+
+    },
+    "ScrollView Lab" : {
 
     },
     "Second View" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Second View"
+          }
+        }
+      }
+    },
+    "SectorMark — mark duy nhất dùng toạ độ cực" : {
 
     },
     "Selection" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Selection"
+          }
+        }
+      }
     },
     "selectionChanged()" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "selectionChanged()"
+          }
+        }
+      }
     },
     "Semantic" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Semantic"
+          }
+        }
+      }
     },
     "SensoryFeedback" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "SensoryFeedback"
+          }
+        }
+      }
+    },
+    "Series gộp hai thành phố — foregroundStyle(by:) sinh legend" : {
+
+    },
+    "Settings" : {
 
     },
     "Sheet %@" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Sheet %@"
+          }
+        }
+      }
     },
     "Show Bottom Sheet" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Show Bottom Sheet"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2435,13 +6477,33 @@
       }
     },
     "Show Error Toast" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Show Error Toast"
+          }
+        }
+      }
     },
     "Show Info Toast" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Show Info Toast"
+          }
+        }
+      }
     },
     "Show Local Video .MOV" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Show Local Video .MOV"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2452,6 +6514,12 @@
     },
     "Show Local Video .mp4" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Show Local Video .mp4"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2462,6 +6530,12 @@
     },
     "Show Local Video .mp4 - But hide the Controls" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Show Local Video .mp4 - But hide the Controls"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2472,6 +6546,12 @@
     },
     "Show Remote Video" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Show Remote Video"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2481,76 +6561,275 @@
       }
     },
     "Show snackbar" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Show snackbar"
+          }
+        }
+      }
     },
     "Show Sticky Toast" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Show Sticky Toast"
+          }
+        }
+      }
     },
     "Show Success Toast" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Show Success Toast"
+          }
+        }
+      }
     },
     "Show Warning Toast" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Show Warning Toast"
+          }
+        }
+      }
+    },
+    "Side Menu" : {
 
     },
     "Side Menu Lab" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Side Menu Lab"
+          }
+        }
+      }
+    },
+    "Sign Out" : {
 
     },
     "Simulator không có camera: isSourceTypeAvailable(.camera) trả về false, AVCaptureDevice.default(...) trả về nil. Phải chạy trên iPhone thật." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "The Simulator has no camera: isSourceTypeAvailable(.camera) returns false and AVCaptureDevice.default(...) returns nil. You have to run this on a real iPhone."
+          }
+        }
+      }
     },
     "Slide to Confirm (Kavsoft)" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Slide to Confirm (Kavsoft)"
+          }
+        }
+      }
     },
     "Slider duration ở thanh dưới chỉ nối vào nhóm này; spring có duration riêng (section ②b).\n\nlinear — tốc độ không đổi suốt quãng đường. Không vật thật nào chuyển động kiểu này, nên mắt đọc ra ngay là \"máy móc\".\n\neaseIn — khởi động chậm rồi nhanh dần, kết thúc ở lúc nhanh nhất. Hợp cho thứ đang RỜI ĐI khỏi màn hình: nó lao đi và biến mất.\n\neaseOut — bắt đầu nhanh rồi hãm dần, dừng êm. Hợp cho thứ đang XUẤT HIỆN: tới ngay trước mắt rồi từ từ đậu lại.\n\neaseInOut — chậm ở CẢ HAI ĐẦU, nhanh ở giữa. Dùng khi điểm đi và điểm đến đều nằm trên màn hình.\n\nVậy khi nào easeInOut, khi nào spring? Spring có đà nên nó VỌT QUA ĐÍCH rồi quay lại. Điều đó chỉ có nghĩa với thứ chuyển động trong không gian (vị trí, kích thước). Với opacity hay màu sắc thì nảy là vô nghĩa — độ mờ 1.05 không tồn tại, màu vọt qua rồi lùi lại trông như lỗi render. Nên: fade và đổi màu → easeInOut; di chuyển và phóng to → spring." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "The duration slider in the bottom bar is wired only to this group; springs have their own duration (section ②b).\n\nlinear — constant speed the whole way. Nothing in the real world moves like this, so your eye reads it as “mechanical” immediately.\n\neaseIn — starts slow and speeds up, ending at its fastest. Good for something that’s LEAVING the screen: it shoots off and is gone.\n\neaseOut — starts fast and eases off, coming to a soft stop. Good for something that’s APPEARING: it arrives right in front of you, then gradually settles into place.\n\neaseInOut — slow at BOTH ENDS, fast in the middle. Use it when the starting point and the destination are both on screen.\n\nSo when do you use easeInOut, and when do you use spring? A spring has momentum, so it OVERSHOOTS THE TARGET and comes back. That only means something for things moving through space (position, size). For opacity or color, a bounce is meaningless — an opacity of 1.05 doesn’t exist, and a color that overshoots and backs off looks like a rendering bug. So: fades and color changes → easeInOut; moves and scale-ups → spring."
+          }
+        }
+      }
     },
     "SnackBar #%lld" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "SnackBar #%lld"
+          }
+        }
+      }
     },
     "SnackBar Lab" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "SnackBar Lab"
+          }
+        }
+      }
     },
     "SnackBar phải nổi trên sheet này" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "The SnackBar has to float above this sheet"
+          }
+        }
+      }
     },
     "Số lần bấm Hoàn tác" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Undo taps"
+          }
+        }
+      }
     },
     "Số lần chạy xong" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Completed runs"
+          }
+        }
+      }
     },
     "Số lần qua vạch" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Grid line crossings"
+          }
+        }
+      }
+    },
+    "Số row: %lld" : {
+
+    },
+    "So với A xem có phân biệt được không. Tick trên iOS vẽ rất mảnh và ngắn nên nhiều khi vô hình." : {
 
     },
     "spring(duration: 0.42, bounce: 0.33)\nĐo từ video gốc — vọt qua đích 5.8% quãng đường." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "spring(duration: 0.42, bounce: 0.33)\nMeasured from the original video — overshoots the target by 5.8% of the distance."
+          }
+        }
+      }
     },
     "Stagger" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Stagger"
+          }
+        }
+      }
     },
     "Sticky • no tap close" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Sticky • no tap close"
+          }
+        }
+      }
+    },
+    "String → band scale" : {
+
+    },
+    "String, Int, Date trên cùng trục X cho ba biểu đồ khác nhau" : {
+
+    },
+    "String, khuyết T4" : {
 
     },
     "style: .medium / .short" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "style: .medium / .short"
+          }
+        }
+      }
     },
     "Sự kiện diễn ra khi nào?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "When does the event take place?"
+          }
+        }
+      }
+    },
+    "Subscription Plan" : {
+
+    },
+    "Subtitle trong Menu" : {
+
+    },
+    "Swift Charts: Raise the bar" : {
 
     },
     "SwiftUI chỉ chạy transition khi IDENTITY của view thay đổi — view mới xuất hiện hoặc view cũ mất đi. Nếu bạn chỉ đổi nội dung (Text(\"A\") → Text(\"B\")) thì view vẫn là chính nó, không có gì để chèn hay gỡ. Muốn ép có transition, gắn .id(value) để mỗi giá trị là một view khác nhau." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "SwiftUI only runs a transition when the view’s IDENTITY changes — a new view appears or an old one goes away. If you only change the content (Text(\"A\") → Text(\"B\")), the view is still itself, so there’s nothing to insert or remove. To force a transition, attach .id(value) so each value is a different view."
+          }
+        }
+      }
     },
     "SwiftUI iOS 17+ — khai báo theo state" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "SwiftUI iOS 17+ — declared in terms of state"
+          }
+        }
+      }
     },
     "Swipe Actions (ScrollView)" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Swipe Actions (ScrollView)"
+          }
+        }
+      }
     },
     "Swipe Actions for ScrollView (Kavsoft)" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Swipe Actions for ScrollView (Kavsoft)"
+          }
+        }
+      }
     },
     "Swipe to confirm" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Swipe to confirm"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2561,6 +6840,12 @@
     },
     "Swipe to Confirm" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Swipe to Confirm"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2570,25 +6855,73 @@
       }
     },
     "Symbol" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Symbol"
+          }
+        }
+      }
     },
     "Symbols" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Symbols"
+          }
+        }
+      }
     },
     "Tạm biệt" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Goodbye"
+          }
+        }
+      }
     },
     "Taptic Engine tự ngủ sau khoảng 1–2 giây không dùng (Apple không công bố con số chính xác). Mốc 3s ở đây là để chắc chắn nó đã ngủ hẳn." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "The Taptic Engine puts itself to sleep after about 1–2 seconds of no use (Apple doesn’t publish the exact number). The 3s mark here is there to make sure it has gone fully to sleep."
+          }
+        }
+      }
     },
     "Thả tim" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Send a heart"
+          }
+        }
+      }
     },
     "Thay thế" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Replacement"
+          }
+        }
+      }
     },
     "The sheet height is the sum of its children's heights." : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "The sheet height is the sum of its children's heights."
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2598,7 +6931,14 @@
       }
     },
     "Theo ĐÚNG thứ tự: chọn identity = vị trí TRƯỚC, rồi mở mục #2, rồi bấm Xoá mục đầu. Cái đang mở hoá ra là #3 — trạng thái mở ở lại VỊ TRÍ cũ, còn nội dung đã tụt lên một bậc." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "In this EXACT order: pick identity = position FIRST, then open item #2, then tap Delete first item. The one still open turns out to be #3 — the open state stays at the old POSITION, while the content has shifted up one slot."
+          }
+        }
+      }
     },
     "Thông báo" : {
       "localizations" : {
@@ -2616,82 +6956,288 @@
         }
       }
     },
-    "Thử cái bẫy" : {
+    "Thứ" : {
 
+    },
+    "Thử cái bẫy" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Try the gotcha"
+          }
+        }
+      }
     },
     "Thứ tự" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Order"
+          }
+        }
+      }
     },
     "Thứ tự modifier hay loại presentation mới quyết định?" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Is it the modifier order or the presentation type that decides?"
+          }
+        }
+      }
     },
     "Thực hành" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Practice"
+          }
+        }
+      }
     },
     "Tiếng Việt" : {
       "shouldTranslate" : false
     },
+    "Tiêu đề" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Title"
+          }
+        }
+      }
+    },
     "Title" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Title"
+          }
+        }
+      }
     },
     "tl.hoanglam174@gmail.com" : {
       "shouldTranslate" : false
     },
     "Toast Lab" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Toast Lab"
+          }
+        }
+      }
     },
     "tốc độ co giãn" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "expand/collapse speed"
+          }
+        }
+      }
     },
     "TODO" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "TODO"
+          }
+        }
+      }
     },
     "TODO — bước 4" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "TODO — step 4"
+          }
+        }
+      }
     },
     "TODO — bước 5" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "TODO — step 5"
+          }
+        }
+      }
     },
     "Toggle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Toggle"
+          }
+        }
+      }
+    },
+    "Toolbar Done" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Toolbar Done"
+          }
+        }
+      }
+    },
+    "Toolbox" : {
 
     },
     "Topics" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Topics"
+          }
+        }
+      }
     },
     "Tracking" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Tracking"
+          }
+        }
+      }
     },
     "Trạng thái" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Status"
+          }
+        }
+      }
     },
     "Trạng thái engine" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Engine status"
+          }
+        }
+      }
     },
     "Transaction chảy xuống TOÀN BỘ cây view bên dưới chỗ state đổi. Muốn một view nào đó đứng yên tuyệt đối thì gắn .animation(nil, value:) — hữu ích khi một phần UI (badge, số liệu) không nên trượt theo phần còn lại." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "The transaction flows down through the ENTIRE view tree below the point where the state changed. If you want one view to hold absolutely still, attach .animation(nil, value:) — handy when some part of the UI (a badge, a number) shouldn’t slide along with the rest."
+          }
+        }
+      }
     },
     "transition" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "transition"
+          }
+        }
+      }
     },
     "Transition" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Transition"
+          }
+        }
+      }
     },
     "transition = none" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "transition = none"
+          }
+        }
+      }
     },
     "transition của body" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "body transition"
+          }
+        }
+      }
     },
     "Transitions" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Transitions"
+          }
+        }
+      }
+    },
+    "Trên mark vs trên chart — đặt nhầm tầng là sai chỗ" : {
 
     },
     "true" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "true"
+          }
+        }
+      }
+    },
+    "Trung bình" : {
 
     },
     "Trước iOS 17 phải tự đoán bằng DispatchQueue.asyncAfter(duration) — sai bét với spring vì spring không có duration cố định. Nay dùng completionCriteria: .logicallyComplete (mặc định, kích hoạt khi giá trị đã tới đích) hoặc .removed (đợi cả phần nảy dư tắt hẳn)." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Before iOS 17 you had to guess for yourself with DispatchQueue.asyncAfter(duration) — completely wrong for springs, because a spring has no fixed duration. Now you use completionCriteria: .logicallyComplete (the default, which fires once the value has reached its target) or .removed (which waits for the leftover bounce to die out entirely)."
+          }
+        }
+      }
+    },
+    "Trượt từ cạnh trái — không dùng Menu của SwiftUI" : {
 
     },
     "Truyền toạ độ (at:)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Pass coordinates (at:)"
+          }
+        }
+      }
+    },
+    "Từ" : {
 
     },
     "Tự đọc chiều cao bàn phím (SwiftUI)" : {
@@ -2711,58 +7257,192 @@
       }
     },
     "Tự dựng" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Build your own"
+          }
+        }
+      }
     },
     "Tự dựng — AccordionRow bản controlled" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Build your own — the controlled AccordionRow"
+          }
+        }
+      }
     },
     "Tự vẽ sóng: intensity × sharpness × duration" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Draw your own waveform: intensity × sharpness × duration"
+          }
+        }
+      }
+    },
+    "Tương tác" : {
 
     },
     "UIKit — prepare(), impact, notification, selection" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "UIKit — prepare(), impact, notification, selection"
+          }
+        }
+      }
     },
     "UINotificationFeedbackGenerator. Ba nhịp có tiết tấu riêng — dùng để báo KẾT QUẢ, không dùng cho thao tác thường." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "UINotificationFeedbackGenerator. Three patterns, each with its own rhythm — use them to report a RESULT, not for everyday actions."
+          }
+        }
+      }
     },
     "UISelectionFeedbackGenerator. Cực nhẹ, thiết kế để bắn liên tục khi người dùng lướt qua từng nấc (Picker, slider có step)." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "UISelectionFeedbackGenerator. Extremely light, designed to be fired repeatedly as the user sweeps through each notch (a Picker, a slider with steps)."
+          }
+        }
+      }
     },
     "UnitArea" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "UnitArea"
+          }
+        }
+      }
     },
     "UnitDuration" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "UnitDuration"
+          }
+        }
+      }
     },
     "UnitLength" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "UnitLength"
+          }
+        }
+      }
     },
     "UnitMass" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "UnitMass"
+          }
+        }
+      }
     },
     "UnitSpeed" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "UnitSpeed"
+          }
+        }
+      }
     },
     "UnitTemperature" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "UnitTemperature"
+          }
+        }
+      }
+    },
+    "User đã từ chối" : {
+
+    },
+    "Vào Settings → Ứng dụng → Draft → Ảnh để bật." : {
 
     },
     "Vì gạt cái Picker cũng làm mất trạng thái mở: hai nhánh của switch là hai cây view khác nhau, nên @State bị dựng lại từ đầu. Cùng một nguyên nhân với cái bẫy ở trên." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Because flipping the Picker also wipes out the open state: the two branches of the switch are two different view trees, so @State gets rebuilt from scratch. Same cause as the gotcha above."
+          }
+        }
+      }
     },
     "Vì nó không đóng gì cả — nó vứt cả cụm đi dựng lại. Đây là dấu hiệu state nằm sai chỗ, và là lý do mục 4 tồn tại." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Because it doesn’t close anything — it throws the whole group away and rebuilds it. That’s a sign the state is in the wrong place, and it’s why item 4 exists."
+          }
+        }
+      }
     },
     "Vì sao không được lặp" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Why you shouldn’t repeat it"
+          }
+        }
+      }
     },
     "Vì sao phải chọn identity trước" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Why you have to pick the identity first"
+          }
+        }
+      }
     },
     "vi_VN" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "vi_VN"
+          }
+        }
+      }
     },
     "Video from Gallery" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Video from Gallery"
+          }
+        },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2772,13 +7452,40 @@
       }
     },
     "View này giữ .sheet A — List bên dưới giữ .sheet B" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "This view holds .sheet A — the List below holds .sheet B"
+          }
+        }
+      }
     },
     "View xuất hiện/biến mất + contentTransition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Views appearing/disappearing + contentTransition"
+          }
+        }
+      }
+    },
+    "Vùng 15.000–20.000 trong khi cột cao nhất chỉ 9.500. Trục Y có nới lên để chứa vùng không? Nếu có thì RectangleMark được tính vào domain như một mark thật, và đặt ngưỡng lớn sẽ bóp bẹp biểu đồ." : {
+
+    },
+    "Vùng nền" : {
 
     },
     "Vuốt/bấm vào List trong lúc snackbar hiển thị để kiểm tra passthrough." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Swipe or tap the List while the snackbar is showing to check passthrough."
+          }
+        }
+      }
     },
     "WaterCard — đọc waterMl" : {
       "localizations" : {
@@ -2797,7 +7504,14 @@
       }
     },
     "weight = nặng/nhẹ, flexibility = cứng/mềm. Hai TRỤC KHÁC NHAU, không phải hai tên gọi của cùng một thang. Kéo intensity về 0 rồi bấm lại để thấy khác biệt." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "weight = heavy/light, flexibility = rigid/soft. TWO DIFFERENT AXES, not two names for the same scale. Drag intensity down to 0, then tap again to feel the difference."
+          }
+        }
+      }
     },
     "WeightsCard — đọc weights" : {
       "localizations" : {
@@ -2816,50 +7530,187 @@
       }
     },
     "Wheel Picker Toolbox" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Wheel Picker Toolbox"
+          }
+        }
+      }
     },
     "withAnimation — gói chỗ đổi state" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "withAnimation — wrap the state change"
+          }
+        }
+      }
     },
     "withAnimation + completion" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "withAnimation + completion"
+          }
+        }
+      }
     },
     "withAnimation tắt" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "withAnimation off"
+          }
+        }
+      }
     },
     "withAnimation vs .animation(value:) — animate GIÁ TRỊ" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "withAnimation vs .animation(value:) — animating the VALUE"
+          }
+        }
+      }
     },
     "withAnimation(.bouncy)" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "withAnimation(.bouncy)"
+          }
+        }
+      }
     },
     "withAnimation(.easeInOut 1.5s)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "withAnimation(.easeInOut 1.5s)"
+          }
+        }
+      }
+    },
+    "WWDC22" : {
 
     },
     "Xếp hàng bằng .delay(index × nhịp) — tách từ màn FAB" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Lining rows up with .delay(index × interval) — split out from the FAB screen"
+          }
+        }
+      }
     },
     "Xếp lại là xong — nhưng @State dính vào identity của ForEach" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Just line them up and you’re done — but @State is tied to the ForEach identity"
+          }
+        }
+      }
     },
     "Xin chào" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Hello"
+          }
+        }
+      }
+    },
+    "Xin quyền camera" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Request camera access"
+          }
+        }
+      }
+    },
+    "Xin quyền lưu ảnh" : {
 
     },
     "Xoá" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Clear"
+          }
+        }
+      }
     },
     "Xoá chấm" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Clear dots"
+          }
+        }
+      }
     },
     "Xoá mục đầu" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Delete first item"
+          }
+        }
+      }
     },
     "xong" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Done"
+          }
+        }
+      }
+    },
+    "Xong" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Done"
+          }
+        }
+      }
+    },
+    "Y hệt A, chỉ đổi thứ tự hai khối. Charts vẽ theo thứ tự khai báo nên vùng giờ ĐÈ LÊN cột. Không có zIndex nào cả." : {
 
     },
     "year" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "year"
+          }
+        }
+      }
+    },
+    "yStart…yEnd — nền móng của chart Apple Health" : {
 
     }
   },
-  "version" : "1.2"
+  "version" : "1.3"
 }

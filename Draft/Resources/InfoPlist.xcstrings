@@ -1,0 +1,67 @@
+{
+  "sourceLanguage" : "vi",
+  "strings" : {
+    "CFBundleName" : {
+      "comment" : "Bundle name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Draft"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "NSCameraUsageDescription" : {
+      "comment" : "Privacy - Camera Usage Description",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Draft uses the camera so you can take photos inside the app."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Draft usa la cámara para que puedas tomar fotos en la app."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Draft dùng camera để bạn chụp ảnh ngay trong app."
+          }
+        }
+      }
+    },
+    "NSPhotoLibraryAddUsageDescription" : {
+      "comment" : "Privacy - Photo Library Additions Usage Description",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Draft saves the photos you take to your library."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Draft guarda en tu fototeca las fotos que tomas."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Draft lưu ảnh bạn vừa chụp vào thư viện."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.3"
+}
