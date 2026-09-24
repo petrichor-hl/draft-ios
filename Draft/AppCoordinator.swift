@@ -141,6 +141,7 @@ enum AppRoute: Hashable {
     case chartHeatmap
     case chartInteraction
     case chartToolbox
+    case chartGarminHeartRate
 }
 
 extension AppRoute: View {
@@ -372,6 +373,8 @@ extension AppRoute: View {
             ChartInteractionLab()
         case .chartToolbox:
             ChartToolbox()
+        case .chartGarminHeartRate:
+            GarminHeartRateScreen()
         }
     }
 }
