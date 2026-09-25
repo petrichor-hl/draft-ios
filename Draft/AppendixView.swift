@@ -149,6 +149,12 @@ struct AppendixView: View {
             }
 
             Button {
+                coordinator.push(.sliderToolbox)
+            } label: {
+                Text("Slider Toolbox")
+            }
+
+            Button {
                 coordinator.push(.logger)
             } label: {
                 Text("Logger")
