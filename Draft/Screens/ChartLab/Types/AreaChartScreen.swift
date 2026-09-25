@@ -31,40 +31,34 @@
 //
 //  NHƯNG VÙNG TÔ TRÀN QUA DẢI NHÃN TRỤC X VÀ ĐÈ LÊN NHÃN. Chart B mất
 //  sạch nhãn ngày, trong khi chart A cùng dữ liệu vẫn còn đủ. Nhãn không
-//  biến mất — chart C chứng minh: cùng miền 250–350, nhưng gradient nhạt
-//  dần về đáy nên nhãn hiện xuyên qua lớp tô.
+//  biến mất, chỉ bị che.
 //
-//  Đây mới là lý do thật của cái gradient trong app Chứng khoán. Không
-//  phải để đẹp: tô đặc thì mất trục.
+//  CHỮA ĐƯỢC, hai cách, chart C và D:
 //
-//  CHỮA ĐƯỢC, hai cách, chart H và I đều giữ màu đặc mà nhãn vẫn đọc:
-//
-//    H  .chartPlotStyle { $0.clipped() } — closure này đưa cho ta VÙNG VẼ
+//    C  .chartPlotStyle { $0.clipped() } — closure này đưa cho ta VÙNG VẼ
 //       dưới dạng một View bình thường, nên .clipped() trên nó cắt mọi
 //       thứ thò ra ngoài. Một dòng, không đụng tới mark.
 //
-//    I  AreaMark(x:yStart:yEnd:) với yStart là cận dưới của miền. Không
+//    D  AreaMark(x:yStart:yEnd:) với yStart là cận dưới của miền. Không
 //       cắt gọt gì, mà chặn từ gốc: vùng tô không còn đi tìm đường gốc
 //       nên không bao giờ xuống quá đáy khung.
 //
-//  H ngắn hơn, NHƯNG CHỈ ĐÚNG VỚI MÀU ĐẶC. Nó cắt HÌNH chứ không sửa
+//  C ngắn hơn, NHƯNG CHỈ ĐÚNG VỚI MÀU ĐẶC. Nó cắt HÌNH chứ không sửa
 //  HỘP BAO của mark: vùng tô vẫn tính là chạy từ đường dữ liệu xuống tận
 //  đường gốc. Mà gradient thì resolve theo hộp bao — nên nấc nhạt rơi
 //  xuống dưới khung, trong khung chỉ còn phần đậm, rồi clipped() cắt đi
 //  đúng cái phần đã nhạt. Kết quả là vùng tô gần như một màu đều.
-//  Hai chart H và I ở đây dùng màu đặc nên không lộ ra; màn Toolbox/
-//  Stocks đổi từ H sang I chính vì chuyện này.
 //
-//  I kéo hộp bao về trùng vùng vẽ nên chữa cả hai chuyện một lượt, không
+//  C và D ở đây tô màu đặc nên không lộ ra. Chỗ lộ ra là chart E: nó có
+//  gradient, nên phải dùng cách D. Màn Toolbox/Stocks cũng đổi từ C sang
+//  D đúng vì chuyện này.
+//
+//  D kéo hộp bao về trùng vùng vẽ nên chữa cả hai chuyện một lượt, không
 //  dựa vào hành vi clip nào, và là cách DUY NHẤT nếu muốn đáy nằm ở một
 //  mức khác — ví dụ tô từ giá tham chiếu lên, phần trên xanh phần dưới
 //  đỏ.
 //
-//  Nên: màu đặc thì tuỳ, có gradient thì I.
-//
-//  Cả hai đều giới hạn ở chuyện tô. Muốn nhãn trục hẳn hoi thì vẫn nên
-//  để gradient tắt dần như chart C và như app Chứng khoán: lúc đó nhãn
-//  nằm TRONG vùng tô mà vẫn đọc được, đỡ tốn một dải trống dưới chart.
+//  Nên: màu đặc thì tuỳ, có gradient thì D.
 //
 //  Và đừng nhét Chart vào closure của chartPlotStyle: closure chạy trong
 //  layout pass, tạo Chart mới bên trong là đệ quy vô hạn rồi tràn stack.
@@ -76,12 +70,12 @@
 //  PHẦN STACKED — dữ liệu thứ hai, lượt truy cập theo tuần chia theo ba
 //  nguồn. Giá cổ phiếu chỉ có một chuỗi nên không chồng được.
 //
-//  Ba section E, F, G đi qua ba giá trị của tham số stacking:, cùng một
+//  Ba section G, H, I đi qua ba giá trị của tham số stacking:, cùng một
 //  bộ dữ liệu, chỉ đổi đúng một chữ. Xem cùng con số kể ba câu chuyện
 //  khác nhau thế nào.
 //
 //  THỨ TỰ CHỒNG CŨNG LẤY TỪ MẢNG, y như BarMark ở màn Column. Đo bằng
-//  cách tạm trỏ chart E vào một mảng xoay thứ tự ba nguồn mỗi tuần một
+//  cách tạm trỏ chart G vào một mảng xoay thứ tự ba nguồn mỗi tuần một
 //  nấc, rồi xoá đi sau khi chụp.
 //
 //  Với cột thì hậu quả là màu nhảy giữa các cột, khó đọc nhưng từng cột
@@ -184,6 +178,7 @@ struct AreaChartScreen: View {
         Text("Giống hệt LineMark, chỉ thêm phần tô từ đường giá xuống ĐƯỜNG GỐC. Mà đường gốc là 0, nên miền trục Y bị kéo về 0 và cả dải giá 259–340 bẹp thành một vệt sát đỉnh. Biến động 30% trong hai tư phiên nhìn như đường thẳng.")
       }
       
+
       Section {
         Chart(prices) { item in
           AreaMark(
@@ -197,14 +192,53 @@ struct AreaChartScreen: View {
       } header: {
         Text("B — chartYScale cắt 0 ra khỏi miền")
       } footer: {
-        Text("Miền 250–350, biến động hiện ra đầy đủ, và phần tô vẫn kín xuống đáy — AreaMark không đòi đường gốc phải nằm trong miền. Nhưng so với chart A thì nhãn ngày ở trục X đâu mất rồi? Vùng tô tràn qua cả dải nhãn và đè lên. Chart C chứng minh nhãn vẫn còn nguyên ở đó, còn H và I là hai cách chữa hẳn.")
+        Text("Miền 250–350, biến động hiện ra đầy đủ, và phần tô vẫn kín xuống đáy — AreaMark không đòi đường gốc phải nằm trong miền. Nhưng so với chart A thì nhãn ngày ở trục X đâu mất rồi? Vùng tô tràn qua cả dải nhãn và đè lên — nhãn không mất, chỉ bị che. Chart C và D ngay sau đây là hai cách chữa.")
       }
       
+
       Section {
         Chart(prices) { item in
           AreaMark(
             x: .value("Ngày", item.day),
             y: .value("Giá", item.close)
+          )
+          .foregroundStyle(.green)
+        }
+        .chartYScale(domain: priceRange)
+        .chartPlotStyle { plotArea in
+          plotArea.clipped()
+        }
+        .frame(height: 220)
+      } header: {
+        Text("C — chữa cách 1: chartPlotStyle { $0.clipped() }")
+      } footer: {
+        Text("Y hệt chart B, màu vẫn đặc, thêm đúng một modifier. chartPlotStyle đưa cho ta VÙNG VẼ như một View bình thường, nên .clipped() trên nó cắt mọi thứ thò ra ngoài. Nhưng nó chỉ cắt HÌNH, không sửa HỘP BAO của mark — vùng tô vẫn tính là xuống tận đường gốc. Màu đặc thì không sao; đổi sang gradient là hỏng, vì gradient resolve theo hộp bao nên nấc nhạt rơi ra ngoài khung. Lúc đó phải dùng cách D. Lưu ý nữa: chỉ được trang trí vùng vẽ trong closure này — nhét một Chart vào đó là đệ quy layout rồi tràn stack, màn Toolbox/Garmin đã dính.")
+      }
+      
+
+      Section {
+        Chart(prices) { item in
+          AreaMark(
+            x: .value("Ngày", item.day),
+            yStart: .value("Đáy", priceRange.lowerBound),
+            yEnd: .value("Giá", item.close)
+          )
+          .foregroundStyle(.green)
+        }
+        .chartYScale(domain: priceRange)
+        .frame(height: 220)
+      } header: {
+        Text("D — chữa cách 2: nói thẳng đáy của vùng tô")
+      } footer: {
+        Text("Không cắt gọt gì cả, mà sửa từ gốc: thay vì để AreaMark tự tìm đường gốc rồi tô xuống tận đó, ta nói luôn yStart là cận dưới của miền, nên vùng tô không bao giờ đi xa hơn đáy khung. Dài hơn cách C một chút nhưng không dựa vào hành vi clip nào — và là cách duy nhất nếu muốn đáy nằm ở mức khác, ví dụ tô từ giá tham chiếu lên.")
+      }
+
+      Section {
+        Chart(prices) { item in
+          AreaMark(
+            x: .value("Ngày", item.day),
+            yStart: .value("Đáy", priceRange.lowerBound),
+            yEnd: .value("Giá", item.close)
           )
           .foregroundStyle(
             .linearGradient(
@@ -226,11 +260,12 @@ struct AreaChartScreen: View {
         }
         .frame(height: 220)
       } header: {
-        Text("C — gradient, và LineMark vẽ đè lên")
+        Text("E — gradient, và LineMark vẽ đè lên")
       } footer: {
-        Text("Nhãn ngày hiện lại rồi — cùng miền như chart B, chỉ khác lớp tô nhạt dần nên nhìn xuyên qua được. Đó mới là lý do thật của cái gradient trong app Chứng khoán: tô đặc thì mất trục. Và Swift Charts không có kiểu \"area có viền\", phải vẽ HAI mark: AreaMark tô gradient rồi LineMark đặt nét sắc lên trên. Gradient ở đây an toàn vì chỉ một chuỗi — thêm chuỗi thứ hai là dính đúng bẫy bounding box ở Basics #4.")
+        Text("Bản Stocks hoàn chỉnh, và nó dùng cách D chứ không phải C — có lý do. Gradient resolve theo HỘP BAO của mark; để AreaMark tự tìm đường gốc thì hộp bao thò xuống tận 0, nấc nhạt rơi ra ngoài khung và trong khung chỉ còn phần đậm, tô ra gần như một màu đều. Neo yStart vào cận dưới của miền thì hộp bao trùng vùng vẽ, gradient mới trải trọn từ đường giá xuống đáy. Ngoài ra Swift Charts không có kiểu \"area có viền\", phải vẽ HAI mark: AreaMark tô gradient rồi LineMark đặt nét sắc lên trên.")
       }
       
+
       Section {
         Chart(prices) { item in
           AreaMark(
@@ -252,10 +287,11 @@ struct AreaChartScreen: View {
         }
         .frame(height: 220)
       } header: {
-        Text("D — AreaMark(x:yStart:yEnd:) dải thấp–cao")
+        Text("F — AreaMark(x:yStart:yEnd:) dải thấp–cao")
       } footer: {
         Text("Hai đầu thay vì một, y như BarMark ở màn Range — nhưng liền mạch chứ không đứt thành từng thanh. Dải mờ là biên độ trong phiên, đường đậm là giá đóng cửa. Dùng khi x liên tục và ta muốn thấy cả mức lẫn độ không chắc chắn: khoảng tin cậy, dự báo, nhiệt độ ngày.")
       }
+
       Section {
         Chart(visits) { item in
           AreaMark(
@@ -267,11 +303,12 @@ struct AreaChartScreen: View {
         .chartForegroundStyleScale(domain: sourceOrder)
         .frame(height: 220)
       } header: {
-        Text("E — nhiều chuỗi cùng x → stacked area")
+        Text("G — nhiều chuỗi cùng x → stacked area")
       } footer: {
         Text("Chồng là mặc định, y như BarMark ở màn Column — không cần tham số gì. Đường viền trên cùng là TỔNG lượt truy cập, mỗi dải là phần đóng góp của một nguồn. Nhưng chỉ dải dưới cùng có đáy phẳng để dóng; hai dải trên bị đáy nhấp nhô của dải dưới đẩy lên đẩy xuống, nên nhìn thì thấy xu hướng chứ đo thì không đo được. Và mảng nguồn BẮT BUỘC phải sắp nhất quán: thứ tự chồng lấy từ thứ tự hàng trong mảng, xáo lên là ba dải luồn xuyên qua nhau thành răng cưa.")
       }
       
+
       Section {
         Chart(visits) { item in
           AreaMark(
@@ -285,11 +322,12 @@ struct AreaChartScreen: View {
         .chartForegroundStyleScale(domain: sourceOrder)
         .frame(height: 220)
       } header: {
-        Text("F — stacking: .unstacked")
+        Text("H — stacking: .unstacked")
       } footer: {
         Text("Ba vùng cùng mọc từ đáy 0 và đè lên nhau, phải hạ opacity mới nhìn xuyên được. Đổi lại mỗi chuỗi có đáy phẳng riêng nên so sánh trực tiếp được: thấy rõ tuần thứ sáu Mạng xã hội gần đuổi kịp Tìm kiếm. Cái mất là TỔNG — không còn đường viền nào cho biết cộng lại bao nhiêu.")
       }
       
+
       Section {
         Chart(visits) { item in
           AreaMark(
@@ -303,46 +341,11 @@ struct AreaChartScreen: View {
         .chartYAxis(.hidden)
         .frame(height: 220)
       } header: {
-        Text("G — stacking: .center, tức streamgraph")
+        Text("I — stacking: .center, tức streamgraph")
       } footer: {
-        Text("Vẫn chồng, nhưng đối xứng quanh trục giữa thay vì mọc từ đáy. Không dải nào bị đường gốc ghìm nên hình dáng từng dải đọc dễ hơn hẳn chart E — cú phình của Mạng xã hội hiện thành một cái bụng rõ rệt. Cái giá phải trả: trục Y mất hết ý nghĩa nên ẩn luôn, chart này chỉ để cảm nhận nhịp chứ không để đọc số.")
+        Text("Vẫn chồng, nhưng đối xứng quanh trục giữa thay vì mọc từ đáy. Không dải nào bị đường gốc ghìm nên hình dáng từng dải đọc dễ hơn hẳn chart G — cú phình của Mạng xã hội hiện thành một cái bụng rõ rệt. Cái giá phải trả: trục Y mất hết ý nghĩa nên ẩn luôn, chart này chỉ để cảm nhận nhịp chứ không để đọc số.")
       }
       
-      Section {
-        Chart(prices) { item in
-          AreaMark(
-            x: .value("Ngày", item.day),
-            y: .value("Giá", item.close)
-          )
-          .foregroundStyle(.green)
-        }
-        .chartYScale(domain: priceRange)
-        .chartPlotStyle { plotArea in
-          plotArea.clipped()
-        }
-        .frame(height: 220)
-      } header: {
-        Text("H — chữa cách 1: chartPlotStyle { $0.clipped() }")
-      } footer: {
-        Text("Y hệt chart B, màu vẫn đặc, thêm đúng một modifier. chartPlotStyle đưa cho ta VÙNG VẼ như một View bình thường, nên .clipped() trên nó cắt mọi thứ thò ra ngoài. Nhưng nó chỉ cắt HÌNH, không sửa HỘP BAO của mark — vùng tô vẫn tính là xuống tận đường gốc. Màu đặc thì không sao; đổi sang gradient là hỏng, vì gradient resolve theo hộp bao nên nấc nhạt rơi ra ngoài khung. Lúc đó phải dùng cách I. Lưu ý nữa: chỉ được trang trí vùng vẽ trong closure này — nhét một Chart vào đó là đệ quy layout rồi tràn stack, màn Toolbox/Garmin đã dính.")
-      }
-      
-      Section {
-        Chart(prices) { item in
-          AreaMark(
-            x: .value("Ngày", item.day),
-            yStart: .value("Đáy", priceRange.lowerBound),
-            yEnd: .value("Giá", item.close)
-          )
-          .foregroundStyle(.green)
-        }
-        .chartYScale(domain: priceRange)
-        .frame(height: 220)
-      } header: {
-        Text("I — chữa cách 2: nói thẳng đáy của vùng tô")
-      } footer: {
-        Text("Không cắt gọt gì cả, mà sửa từ gốc: thay vì để AreaMark tự tìm đường gốc rồi tô xuống tận đó, ta nói luôn yStart là cận dưới của miền, nên vùng tô không bao giờ đi xa hơn đáy khung. Dài hơn cách H một chút nhưng không dựa vào hành vi clip nào — và là cách duy nhất nếu muốn đáy nằm ở mức khác, ví dụ tô từ giá tham chiếu lên.")
-      }
     }
     .navigationTitle("Area")
     .navigationBarTitleDisplayMode(.inline)
