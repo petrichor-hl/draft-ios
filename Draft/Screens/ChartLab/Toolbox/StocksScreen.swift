@@ -14,12 +14,14 @@
 //
 //    1  LineMark trần, không modifier nào — bản Charts tự quyết
 //    2  đủ bộ: miền khít, trục phải, gradient, line đè lên
-//    3  thử riêng environment(colorScheme, .dark), thẻ vẫn trắng
-//    4  environment cộng listRowBackground — bản nền tối đầy đủ
+//    3  chartPlotStyle { $0.clipped() } — vùng tô thôi tràn xuống dải
+//       nhãn trục, sát bản thật hơn
+//    4  thử riêng environment(colorScheme, .dark), thẻ vẫn trắng
+//    5  environment cộng listRowBackground — bản nền tối đầy đủ
 //
-//  Chart 2, 3, 4 dùng CHUNG một View đã tách ra, chỉ khác cái environment
-//  bọc ngoài. Có vậy mới quy được mọi khác biệt trên màn hình về đúng
-//  một nguyên nhân.
+//  Chart 2 tới 5 dùng CHUNG một View đã tách ra, chỉ khác cái bọc ngoài.
+//  Có vậy mới quy được mọi khác biệt trên màn hình về đúng một nguyên
+//  nhân.
 //
 //  ĐÃ ĐO trên simulator.
 //
@@ -46,10 +48,13 @@
 //  Chart 2 giữ nền sáng vì màn này nằm trong List sáng; chart 4 để đó
 //  làm bản tham khảo khi cần dựng đúng bản thật.
 //
-//  NHÃN TRỤC X NHÌN XUYÊN QUA ĐƯỢC vì gradient tắt gần hẳn ở đáy
-//  (opacity 0.01). Đúng cơ chế đã đo ở Types #6: vùng tô tràn qua dải
-//  nhãn và đè lên nó, tô đặc là mất trục. Ở đây ta lợi dụng điều đó thay
-//  vì né nó.
+//  NHÃN TRỤC X Ở CHART 2 NHÌN XUYÊN QUA ĐƯỢC vì gradient tắt gần hẳn ở
+//  đáy (opacity 0.01). Đúng cơ chế đã đo ở Types #6: vùng tô tràn qua
+//  dải nhãn và đè lên nó, tô đặc là mất trục.
+//
+//  Chart 3 chặn hẳn bằng chartPlotStyle { $0.clipped() }, và đó mới là
+//  bố cục của bản thật: nhãn tháng nằm dưới vùng vẽ, không dính màu.
+//  Nhìn xuyên qua được chỉ là may, không phải thiết kế.
 //
 //  DỮ LIỆU PHẢI TẤT ĐỊNH. Dùng Double.random trong mảng let thì mỗi lần
 //  mở app chart lại khác, không đối chiếu với ảnh chụp được. Ở đây tự
@@ -172,10 +177,22 @@ struct StocksScreen: View {
 
       Section {
         priceChart
+          .frame(height: 240)
+          .chartPlotStyle { plotArea in
+            plotArea.clipped()
+          }
+      } header: {
+        Text("3 — chặn vùng tô tràn xuống nhãn trục")
+      } footer: {
+        Text("Chart 2 vẫn để vùng tô phủ qua dải nhãn ngày, chỉ là gradient nhạt tới mức nhìn xuyên qua được. Bản thật thì nhãn nằm hẳn dưới vùng vẽ, không dính màu. chartPlotStyle đưa vùng vẽ ra dưới dạng một View bình thường nên clipped() cắt đúng phần thò xuống — so hai chart sẽ thấy đáy vùng tô ở đây dừng gọn ngay trên hàng nhãn. Types #6 chart H và I đo kỹ hai cách chặn.")
+      }
+
+      Section {
+        priceChart
           .frame(height: 200)
           .environment(\.colorScheme, .dark)
       } header: {
-        Text("3 — thử: chỉ thêm environment(colorScheme, .dark)")
+        Text("4 — thử: chỉ thêm environment(colorScheme, .dark)")
       } footer: {
         Text("Y hệt chart 2, thêm đúng một dòng, và thẻ vẫn trắng. Nhãn trục cùng đường kẻ lưới nhạt hẳn đi tới mức gần đọc không ra — vì chúng dùng màu NGỮ NGHĨA, mà trong chế độ tối màu ngữ nghĩa phải sáng để nổi trên nền tối. Đường giá thì không thấy khác gì: .green là màu hệ thống, có biến thể riêng cho chế độ tối nhưng hai biến thể gần nhau tới mức mắt không phân biệt nổi.")
       }
@@ -185,9 +202,9 @@ struct StocksScreen: View {
           .frame(height: 200)
           .environment(\.colorScheme, .dark)
       } header: {
-        Text("4 — environment cộng listRowBackground")
+        Text("5 — environment cộng listRowBackground")
       } footer: {
-        Text("Thêm nền tối cho thẻ thì nhãn ở chart 3 hiện lại đúng chỗ. Hai thứ này phải đi cùng nhau: environment chỉ đổi cách các màu ngữ nghĩa TỰ TÍNH, nó không tự vẽ nền cho ai. Đổi lại, không phải đi chỉ định foregroundStyle cho từng AxisValueLabel, từng AxisGridLine.")
+        Text("Thêm nền tối cho thẻ thì nhãn ở chart 4 hiện lại đúng chỗ. Hai thứ này phải đi cùng nhau: environment chỉ đổi cách các màu ngữ nghĩa TỰ TÍNH, nó không tự vẽ nền cho ai. Đổi lại, không phải đi chỉ định foregroundStyle cho từng AxisValueLabel, từng AxisGridLine.")
       }
       .listRowBackground(Color(white: 0.11))
     }
