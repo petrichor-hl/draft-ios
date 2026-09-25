@@ -57,6 +57,38 @@
 //
 //  "06 giờ" là locale Việt, không có dòng format nào.
 //
+//
+//  F, G — VẼ ĐƯỜNG BẰNG CANVAS thay vì LineMark, qua chartOverlay và
+//  ChartProxy. Chart chỉ còn giữ trục và miền, mark để .clear.
+//
+//  ĐƯỢC: màu chạy theo ĐỘ CAO trên khung. GraphicsContext.stroke với
+//  .linearGradient tô shading theo TOẠ ĐỘ TUYỆT ĐỐI của canvas, không theo
+//  bounding box của mark — đúng thứ LineMark không cho. Đây là kỹ thuật màn
+//  Toolbox/Garmin dùng để tô màu theo vùng nhịp tim.
+//
+//  MẤT: interpolationMethod. GraphicsContext chỉ biết addLine và addCurve,
+//  không có khái niệm nội suy. F dùng addLine nên gãy khúc; G phải tự viết
+//  monotone cubic Hermite (Fritsch–Carlson) — sáu chục dòng cho thứ LineMark
+//  làm bằng một modifier. Đổi lại G giữ đúng tính chất monotone: cong nhưng
+//  KHÔNG vọt quá giá trị các điểm, điều kiện sống còn với nhịp tim.
+//
+//  BA CÁI BẪY của chartOverlay, cả ba đều trả giá mới biết:
+//
+//    - chartOverlay phủ TOÀN BỘ chart, còn proxy.position trả toạ độ tính từ
+//      mép VÙNG VẼ. Không cộng origin của proxy.plotFrame thì đường lệch
+//      đúng bề rộng trục Y.
+//
+//    - Canvas che touch. Phải .allowsHitTesting(false), và đặt SAU
+//      GeometryReader chứ không phải sau khối if — đặt sai chỗ thì hoặc
+//      không compile, hoặc (như ở Garmin) chặn luôn cả Chart và mất sạch
+//      tương tác mà không có lỗi nào.
+//
+//    - .linearGradient của Shading nhận Gradient trần, không phải
+//      LinearGradient.
+//
+//  Đừng đặt Chart bên trong chartPlotStyle: closure đó chạy trong layout pass
+//  của Chart, tạo Chart mới bên trong là đệ quy vô hạn, tràn stack, crash.
+//  Canvas thì không sao vì nó là view thường.
 
 import Charts
 import SwiftUI
@@ -132,6 +164,91 @@ private let segmented = splitSegments(
   samples,
   gap: 5 * 60 // 5 phút
 )
+
+// MARK: - Section F
+
+/// Bảy điểm, cách nhau ba giờ. Section F vẽ bằng Canvas chứ không bằng
+/// LineMark, nên ít điểm để nhìn rõ từng đoạn — 360 mẫu mỗi phút thì chỉ
+/// thấy một vệt liền.
+private let sparse: [HeartSample] = {
+  let calendar = Calendar.current
+  return [62, 88, 70, 140, 120, 165, 95].enumerated().map { offset, bpm in
+    HeartSample(
+      time: calendar.date(byAdding: .hour, value: offset * 3 + 3, to: day)!,
+      bpm: bpm
+    )
+  }
+}()
+
+/// Dải màu cho section F. Dùng Gradient trần vì GraphicsContext.Shading nhận
+/// kiểu này chứ không phải LinearGradient.
+private let lineGradient = Gradient(colors: [.blue, .green, .yellow, .orange, .red])
+
+/// Nội suy monotone cubic Hermite (Fritsch–Carlson) — đúng thuật toán mà
+/// LineMark dùng cho .monotone, nhưng Canvas thì phải tự viết:
+/// GraphicsContext chỉ có addLine và addCurve, không biết interpolationMethod
+/// là gì.
+///
+/// "Monotone" nghĩa là đường KHÔNG vọt quá giá trị của các điểm. Đó là điều
+/// kiện sống còn với dữ liệu như nhịp tim hay tồn kho — một đường cong vọt
+/// lên trên đỉnh là vẽ ra con số chưa từng đo được.
+///
+/// Ba bước:
+///   1. secants — độ dốc của từng ĐOẠN thẳng nối hai điểm liền nhau
+///   2. slopes  — độ dốc tại MỖI ĐIỂM, lấy trung bình hai secant kề. Nếu hai
+///      secant trái dấu thì điểm đó là cực trị, độ dốc phải bằng 0, nếu không
+///      đường sẽ vọt qua.
+///   3. chuẩn hoá Fritsch–Carlson — ép độ dốc về trong giới hạn để đoạn cong
+///      không vượt khỏi khoảng giữa hai điểm.
+private func monotoneCurve(through points: [CGPoint]) -> Path {
+  var path = Path()
+  guard let first = points.first else { return path }
+  path.move(to: first)
+  guard points.count > 1 else { return path }
+
+  let count = points.count
+  var secants = [CGFloat](repeating: 0, count: count - 1)
+  for index in 0..<(count - 1) {
+    let dx = points[index + 1].x - points[index].x
+    secants[index] = dx == 0 ? 0 : (points[index + 1].y - points[index].y) / dx
+  }
+
+  var slopes = [CGFloat](repeating: 0, count: count)
+  slopes[0] = secants[0]
+  slopes[count - 1] = secants[count - 2]
+  for index in 1..<(count - 1) where secants[index - 1] * secants[index] > 0 {
+    slopes[index] = (secants[index - 1] + secants[index]) / 2
+  }
+
+  // Đoạn phẳng thì hai đầu cũng phải phẳng, nếu không đường sẽ nhấp nhô ở
+  // chỗ đáng lẽ nằm ngang.
+  for index in 0..<(count - 1) where secants[index] == 0 {
+    slopes[index] = 0
+    slopes[index + 1] = 0
+  }
+
+  for index in 0..<(count - 1) where secants[index] != 0 {
+    let a = slopes[index] / secants[index]
+    let b = slopes[index + 1] / secants[index]
+    let magnitude = a * a + b * b
+    guard magnitude > 9 else { continue }
+    let scale = 3 / magnitude.squareRoot()
+    slopes[index] = scale * a * secants[index]
+    slopes[index + 1] = scale * b * secants[index]
+  }
+
+  for index in 0..<(count - 1) {
+    let start = points[index]
+    let end = points[index + 1]
+    let dx = (end.x - start.x) / 3
+    path.addCurve(
+      to: end,
+      control1: CGPoint(x: start.x + dx, y: start.y + slopes[index] * dx),
+      control2: CGPoint(x: end.x - dx, y: end.y - slopes[index + 1] * dx)
+    )
+  }
+  return path
+}
 
 struct LineChartScreen: View {
   var body: some View {
@@ -221,6 +338,124 @@ struct LineChartScreen: View {
         Text("E — chartXScale + AxisMarks, như Garmin")
       } footer: {
         Text("Miền và mốc là hai việc riêng: chartXScale kéo trục trải trọn 24 giờ, AxisMarks đặt nhãn mỗi 4 giờ. Thiếu cái nào cũng không ra được trục của Garmin.")
+      }
+
+      Section {
+        Chart {
+          ForEach(sparse) { point in
+            LineMark(
+              x: .value("Giờ", point.time),
+              y: .value("BPM", point.bpm)
+            )
+            .foregroundStyle(.clear)
+          }
+        }
+        .chartXScale(domain: dayRange)
+        .chartXAxis {
+          AxisMarks(values: .stride(by: .hour, count: 6))
+        }
+        .chartOverlay { proxy in
+          GeometryReader { geometry in
+            // chartOverlay phủ TOÀN BỘ chart, còn proxy.position trả toạ độ
+            // tính từ mép VÙNG VẼ — phải cộng origin của plotFrame, nếu không
+            // đường lệch đúng bề rộng trục Y.
+            if let anchor = proxy.plotFrame {
+              let plot = geometry[anchor]
+
+              Canvas { context, _ in
+                var path = Path()
+                var started = false
+
+                for point in sparse {
+                  guard
+                    let x = proxy.position(forX: point.time),
+                    let y = proxy.position(forY: point.bpm)
+                  else { continue }
+
+                  let location = CGPoint(x: plot.minX + x, y: plot.minY + y)
+                  if started {
+                    path.addLine(to: location)
+                  } else {
+                    path.move(to: location)
+                    started = true
+                  }
+                }
+
+                // Shading trải theo TOẠ ĐỘ TUYỆT ĐỐI của canvas, không theo
+                // bounding box của path — đúng thứ LineMark không cho.
+                context.stroke(
+                  path,
+                  with: .linearGradient(
+                    lineGradient,
+                    startPoint: CGPoint(x: 0, y: plot.maxY),
+                    endPoint: CGPoint(x: 0, y: plot.minY)
+                  ),
+                  lineWidth: 3
+                )
+              }
+            }
+          }
+          // Canvas che touch, tắt hit test để cử chỉ đi xuống tới Chart
+          .allowsHitTesting(false)
+        }
+        .frame(height: 200)
+      } header: {
+        Text("F — chartOverlay, Canvas tự vẽ đường")
+      } footer: {
+        Text("Bảy điểm cho dễ nhìn. Chart chỉ giữ trục và miền, đường do Canvas vẽ qua ChartProxy bằng addLine. Được thứ LineMark không cho: màu chạy theo ĐỘ CAO trên khung, vì shading tô theo toạ độ tuyệt đối chứ không theo bounding box của mark. Đây là kỹ thuật Toolbox/Garmin dùng để tô màu theo vùng nhịp tim.")
+      }
+
+      Section {
+        Chart {
+          ForEach(sparse) { point in
+            LineMark(
+              x: .value("Giờ", point.time),
+              y: .value("BPM", point.bpm)
+            )
+            .foregroundStyle(.clear)
+          }
+        }
+        .chartXScale(domain: dayRange)
+        .chartXAxis {
+          AxisMarks(values: .stride(by: .hour, count: 6))
+        }
+        .chartOverlay { proxy in
+          GeometryReader { geometry in
+            // chartOverlay phủ TOÀN BỘ chart, còn proxy.position trả toạ độ
+            // tính từ mép VÙNG VẼ — phải cộng origin của plotFrame, nếu không
+            // đường lệch đúng bề rộng trục Y.
+            if let anchor = proxy.plotFrame {
+              let plot = geometry[anchor]
+
+              Canvas { context, _ in
+                let locations = sparse.compactMap { point -> CGPoint? in
+                  guard
+                    let x = proxy.position(forX: point.time),
+                    let y = proxy.position(forY: point.bpm)
+                  else { return nil }
+                  return CGPoint(x: plot.minX + x, y: plot.minY + y)
+                }
+
+                context.stroke(
+                  monotoneCurve(through: locations),
+                  with: .linearGradient(
+                    lineGradient,
+                    startPoint: CGPoint(x: 0, y: plot.maxY),
+                    endPoint: CGPoint(x: 0, y: plot.minY)
+                  ),
+                  lineWidth: 3
+                )
+              }
+            }
+          }
+          // Canvas che touch, tắt hit test để cử chỉ đi xuống tới Chart
+          .allowsHitTesting(false)
+        }
+        .frame(height: 200)
+      } header: {
+        Text("G — Canvas vẽ đường cong monotone")
+      } footer: {
+        Text("Y hệt F, chỉ đổi cách dựng Path. Canvas KHÔNG có interpolationMethod — GraphicsContext chỉ biết addLine và addCurve, muốn cong thì phải tự tính điểm điều khiển. Đây là monotone cubic Hermite viết tay, cùng thuật toán với .monotone ở màn 5: đường cong nhưng không vọt quá giá trị của các điểm.")
       }
     }
   }
