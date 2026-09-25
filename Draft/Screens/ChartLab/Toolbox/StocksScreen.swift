@@ -4,7 +4,7 @@
 //
 //  ĐỀ BÀI — dựng lại chart giá cổ phiếu trong app Chứng khoán của iPhone,
 //  tab 1Y. Đó là area chart: LineMark nét sắc đặt trên AreaMark tô
-//  gradient, nền tối, trục Y bên phải, miền khít dữ liệu.
+//  gradient, trục Y bên phải, miền khít dữ liệu.
 //
 //  Khác Garmin ở chỗ Garmin phải đổi màu theo giá trị nên buộc dùng
 //  Canvas. Chart này một màu duy nhất, nên AreaMark thường là đủ — màn
@@ -13,7 +13,7 @@
 //  DỰNG TỪNG LỚP, mỗi chart thêm một thứ, để thấy cái nào đóng góp gì:
 //
 //    1  LineMark trần, không modifier nào — bản Charts tự quyết
-//    2  đủ bộ: nền tối, miền khít, trục phải, gradient, line đè lên
+//    2  đủ bộ: miền khít, trục phải, gradient, line đè lên
 //
 //  ĐÃ ĐO trên simulator.
 //
@@ -21,13 +21,14 @@
 //  cùng một bộ số: chart 1 có 0 trong miền nên cả năm biến động co vào
 //  một phần ba trên của khung, trông như đường gần phẳng; chart 2 lấy
 //  đúng min…max nên nó trải hết chiều cao và mọi nhịp lên xuống hiện ra.
-//  Gradient với nền tối chỉ là lớp sơn thêm vào sau.
+//  Gradient chỉ là lớp sơn thêm vào sau.
 //
-//  NỀN TỐI CHO RIÊNG MỘT KHỐI làm bằng hai thứ đi cùng nhau:
-//  listRowBackground cho cái thẻ, và .environment(\.colorScheme, .dark)
-//  cho Chart. Cái thứ hai mới là mẹo: ép riêng khối đó sang chế độ tối
-//  thì mọi màu ngữ nghĩa bên trong tự lật, nhãn trục thành sáng màu mà
-//  không phải chỉ định foregroundStyle cho từng AxisValueLabel.
+//  Bản thật có nền đen, đã thử rồi bỏ vì màn này nằm trong List sáng.
+//  Cách làm ghi lại phòng khi cần: listRowBackground cho cái thẻ, cộng
+//  .environment(\.colorScheme, .dark) cho Chart — ép riêng khối đó sang
+//  chế độ tối thì mọi màu ngữ nghĩa bên trong tự lật, nhãn trục thành
+//  sáng màu mà không phải chỉ định foregroundStyle cho từng
+//  AxisValueLabel. Đã chạy đúng, chỉ là không dùng.
 //
 //  NHÃN TRỤC X NHÌN XUYÊN QUA ĐƯỢC vì gradient tắt gần hẳn ở đáy
 //  (opacity 0.01). Đúng cơ chế đã đo ở Types #6: vùng tô tràn qua dải
@@ -139,13 +140,11 @@ struct StocksScreen: View {
           }
         }
         .frame(height: 240)
-        .environment(\.colorScheme, .dark)
       } header: {
-        Text("2 — nền tối, miền khít, trục phải, gradient")
+        Text("2 — miền khít, trục phải, gradient")
       } footer: {
-        Text("Bốn thay đổi. chartYScale lấy đúng min…max nên đường giá trải hết chiều cao. Trục sang phải, bốn mốc thôi. AreaMark tô gradient tắt dần, LineMark đè lên lấy nét sắc — Swift Charts không có kiểu area có viền. Và nền tối làm bằng listRowBackground cộng environment(\\.colorScheme, .dark): ép riêng khối này sang chế độ tối thì mọi màu ngữ nghĩa trong đó tự lật, khỏi phải chỉ định màu chữ cho từng nhãn trục.")
+        Text("Ba thay đổi. chartYScale lấy đúng min…max nên đường giá trải hết chiều cao — một mình nó làm nên phần lớn cái dáng Stocks. Trục sang phải, bốn mốc thôi. AreaMark tô gradient tắt dần rồi LineMark đè lên lấy nét sắc, vì Swift Charts không có kiểu area có viền. Nhãn trục X vẫn đọc được vì gradient tắt gần hẳn ở đáy, đúng cơ chế đã đo ở Types #6.")
       }
-      .listRowBackground(Color(white: 0.11))
     }
     .navigationTitle("Stocks — Giá cổ phiếu")
     .navigationBarTitleDisplayMode(.inline)

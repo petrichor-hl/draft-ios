@@ -23,7 +23,7 @@ struct ChartToolbox: View {
         coordinator.push(.chartStocks)
       } label: {
         ChartLabRow(title: "Stocks — Giá cổ phiếu",
-                    subtitle: "Area gradient, nền tối, trục Y bên phải, miền khít dữ liệu")
+                    subtitle: "Area gradient, trục Y bên phải, miền khít dữ liệu")
       }
     }
     .navigationTitle("Toolbox")
