@@ -24,9 +24,14 @@
 //     sau đó. Mốc `anchor` vì thế lấy từ VỊ TRÍ CHẠM chứ không phải từ giá trị
 //     đang có — khác `MacroSplitBar`, nơi chạm không được phép đổi gì.
 //
-//  3. NHÃN PHẢI BIẾT DỪNG Ở MÉP. Nhãn bám tâm thumb, nhưng ở 0% và 100% thì
-//     tâm thumb cách mép chỉ 14pt trong khi nhãn rộng 52 — không kẹp thì nó
-//     thò ra ngoài. Kẹp offset trong `[0, width − labelWidth]`.
+//  3. NHÃN TREO VÀO THUMB, KHÔNG NẰM CẠNH THUMB. Nó là `.overlay` của thumb,
+//     đẩy lên bằng `offset(y:)`, nên đi theo `offset(x:)` của thumb mà không
+//     cần phép tính ngang nào. Hàng vì thế cao đúng 28pt thay vì 58pt, và
+//     `HStack` căn giữa icon theo TRACK — bản trước căn giữa theo cả khối nên
+//     icon bị đẩy lên chừng 15pt so với thanh.
+//
+//     Đổi lại, ở 0% và 100% nhãn thò ra ngoài hai đầu track 12pt — nửa hiệu
+//     52 − 28. Chỗ đó là phần lề của hàng List nên không đụng gì.
 //
 
 import SwiftUI
@@ -70,29 +75,21 @@ struct VolumeSlider: View {
         // Mép TRÁI của thumb. Tâm nằm ở `thumbX + thumbSize / 2`.
         let thumbX = travel * CGFloat(percent) / 100
 
-        VStack(alignment: .leading, spacing: Self.labelGap) {
-          label(thumbX: thumbX, in: width)
+        ZStack(alignment: .leading) {
+          Capsule()
+            .fill(Color.gray.s200)
+            .frame(height: Self.trackHeight)
 
-          ZStack(alignment: .leading) {
-            Capsule()
-              .fill(Color.gray.s200)
-              .frame(height: Self.trackHeight)
-
-            // Phần đã tô dừng ở TÂM thumb, không phải mép trái nó — nếu không
-            // thì ở 100% vẫn hở ra một khoảng 14pt chưa tô.
-            Capsule()
-              .fill(Color.accentColor)
-              .frame(width: thumbX + Self.thumbSize / 2, height: Self.trackHeight)
-
-            thumb.offset(x: thumbX)
-          }
-          .frame(height: Self.thumbSize)
+          // Phần đã tô dừng ở TÂM thumb, không phải mép trái nó — nếu không
+          // thì ở 100% vẫn hở ra một khoảng 14pt chưa tô.
+          Capsule()
+            .fill(Color.accentColor)
+            .frame(width: thumbX + Self.thumbSize / 2, height: Self.trackHeight)
+          thumb.offset(x: thumbX)
         }
-        // Cả dải — kể cả khoảng trống chỗ nhãn — đều nhận touch.
-        .contentShape(.rect)
         .gesture(drag(in: width))
       }
-      .frame(height: Self.labelHeight + Self.labelGap + Self.thumbSize)
+      .frame(height: Self.thumbSize)
     }
   }
 
@@ -130,22 +127,45 @@ struct VolumeSlider: View {
       .frame(width: Self.thumbSize, height: Self.thumbSize)
       .compositingGroup()
       .shadow(color: Color.primary.opacity(0.18), radius: 3, y: 1)
+      // Nhãn TREO VÀO thumb chứ không nằm cạnh nó trong một VStack. Hai cái
+      // được đúng một lúc:
+      //
+      //  · `alignment: .top` tự căn giữa nhãn theo thumb — nhãn rộng 52, thumb
+      //    28, phần thừa chia đều hai bên. Không còn phép tính x nào cho nhãn,
+      //    nên cũng không còn cách nào để nhãn và thumb lệch nhau; nhãn ăn
+      //    thẳng `offset(x:)` mà ZStack đặt lên thumb.
+      //
+      //  · Hàng không còn phải cao 58pt để chừa chỗ cho nhãn. Nhãn nổi ra
+      //    ngoài khung, hàng cao đúng 28pt, nên `HStack` căn giữa icon theo
+      //    track thay vì theo cả khối.
+      .overlay(alignment: .top) {
+        label.offset(y: -(Self.labelHeight + Self.labelGap))
+      }
   }
 
-  private func label(thumbX: CGFloat, in width: CGFloat) -> some View {
+  /// Nhãn không mang `offset(x:)` nào của riêng nó — vị trí ngang do overlay ở
+  /// `thumb` lo.
+  ///
+  /// Bản trước đặt nhãn bằng `.offset(x:)` và dính một cái bẫy đáng nhớ:
+  /// `.offset` dời chỗ VẼ chứ không dời KHUNG LAYOUT, mà `.scaleEffect` lại neo
+  /// theo khung layout — khung đó nằm ở mép trái thanh. Phóng 0.7 quanh một
+  /// điểm xa bên trái thì nhãn bị kéo lệch trái đúng `0.3 × offset`, rồi trượt
+  /// ngang về chỗ trong lúc scale chạy về 1. ĐÃ ĐO trên bản quay: tâm nhãn
+  /// 293 → 317 → 326 trong 0.15s trong khi thumb đứng yên ở 327.
+  ///
+  /// Đặt bằng layout thật thì không còn khoảng cách giữa "chỗ vẽ" và "khung",
+  /// nên anchor đúng ngay từ đầu. `offset(y:)` nằm ngoài view này, cũng nằm
+  /// ngoài vùng `.animation`.
+  private var label: some View {
     Text(verbatim: "\(percent)%")
       .font(.caption.bold())
       .monospacedDigit()
       .foregroundStyle(Color(.systemBackground))
       .frame(width: Self.labelWidth, height: Self.labelHeight)
       .background(Color.primary, in: .capsule)
-      .offset(x: labelX(thumbX: thumbX, in: width))
       .opacity(isDragging ? 1 : 0)
       .scaleEffect(isDragging ? 1 : 0.7, anchor: .bottom)
       .animation(.snappy(duration: 0.2), value: isDragging)
-      // Chiều cao giữ nguyên dù nhãn ẩn: cho nhãn chiếm chỗ hẳn thì lúc hiện
-      // ra thanh không bị đẩy xuống.
-      .frame(maxWidth: .infinity, alignment: .leading)
   }
 
   // MARK: - Kéo
@@ -178,22 +198,7 @@ struct VolumeSlider: View {
     clamped(Int(((x - Self.thumbSize / 2) / travel * 100).rounded()))
   }
 
-  private func labelX(thumbX: CGFloat, in width: CGFloat) -> CGFloat {
-    let centered = thumbX + Self.thumbSize / 2 - Self.labelWidth / 2
-    return min(max(centered, 0), max(width - Self.labelWidth, 0))
-  }
-
   private func clamped(_ value: Int) -> Int {
     min(max(value, 0), 100)
   }
-}
-
-#Preview {
-  @Previewable @State var percent = 60
-
-  VStack(spacing: 24) {
-    VolumeSlider(percent: $percent, icon: .variableValue)
-    VolumeSlider(percent: $percent, icon: .threshold)
-  }
-  .padding()
 }

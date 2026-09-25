@@ -104,8 +104,8 @@ struct SliderToolbox: View {
           width, nên lúc đổi toạ độ chạm về phần trăm phải trừ nửa thumb — \
           thiếu phép trừ đó thì chạm sát mép phải không bao giờ ra 100%.
 
-          Nhãn % chỉ hiện khi ngón tay còn trên thanh, và bị kẹp lại ở hai mép \
-          để không thò ra ngoài.
+          Nhãn % chỉ hiện khi ngón tay còn trên thanh. Nó là overlay của thumb \
+          nên đi theo thumb sẵn, không có phép tính vị trí ngang nào riêng.
           """
         )
       }
