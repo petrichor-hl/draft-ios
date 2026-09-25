@@ -6,12 +6,10 @@
 //    .foregroundStyle(LinearGradient)  gradient mờ dần xuống đáy
 //    AreaMark(yStart:yEnd:)            dải giữa hai đường (min–max)
 //    nhiều AreaMark cùng x             xếp chồng (stacked area)
+//    stacking: .unstacked / .center    chồng đè, và streamgraph
 //
-//  Area luôn cần một mốc gốc để tô tới, nên nó nhạy với .chartYScale hơn
-//  Line: cắt gốc trục thì phần tô cũng bị cắt theo.
-//
-//  Dữ liệu là giá đóng cửa 24 phiên, vì màn này dựng theo chart của app
-//  Chứng khoán — chỗ area chart hay gặp nhất trên iPhone.
+//  Dữ liệu thứ nhất là giá đóng cửa 24 phiên, vì màn này dựng theo chart
+//  của app Chứng khoán — chỗ area chart hay gặp nhất trên iPhone.
 //
 //  CÂU HỎI, và đây là câu đáng tiền nhất của màn:
 //
@@ -43,8 +41,29 @@
 //  KHÔNG CÓ KIỂU "AREA CÓ VIỀN". Phải vẽ hai mark trên cùng bộ dữ liệu,
 //  AreaMark tô rồi LineMark đặt nét lên trên.
 //
-//  CÒN LẠI của màn này: stacked area, và bản clone hẳn chart AAPL với nền
-//  tối, trục bên phải, volume chart ở dưới.
+//  PHẦN STACKED — dữ liệu thứ hai, lượt truy cập theo tuần chia theo ba
+//  nguồn. Giá cổ phiếu chỉ có một chuỗi nên không chồng được.
+//
+//  Ba section E, F, G đi qua ba giá trị của tham số stacking:, cùng một
+//  bộ dữ liệu, chỉ đổi đúng một chữ. Xem cùng con số kể ba câu chuyện
+//  khác nhau thế nào.
+//
+//  THỨ TỰ CHỒNG CŨNG LẤY TỪ MẢNG, y như BarMark ở màn Column. Đo bằng
+//  cách tạm trỏ chart E vào một mảng xoay thứ tự ba nguồn mỗi tuần một
+//  nấc, rồi xoá đi sau khi chụp.
+//
+//  Với cột thì hậu quả là màu nhảy giữa các cột, khó đọc nhưng từng cột
+//  vẫn đúng. Với area thì thành thảm hoạ: mỗi dải là một đường liền nối
+//  các điểm CỦA CHÍNH NÓ, mà vị trí chồng của nó lại nhảy lên nhảy xuống
+//  giữa các tuần, nên ba dải luồn xuyên qua nhau thành một mớ răng cưa.
+//  Đường viền trên cùng cũng hết là tổng: nó chỉ đúng tại các điểm dữ
+//  liệu, còn giữa hai điểm thì nối bừa.
+//
+//  Nên với stacked area, sắp mảng nguồn không phải chuyện thẩm mỹ mà là
+//  điều kiện để chart có nghĩa.
+//
+//  CÒN LẠI của màn này: bản clone hẳn chart AAPL với nền tối, trục bên
+//  phải, volume chart ở dưới.
 //
 
 import Charts
@@ -79,6 +98,34 @@ private let prices: [DailyPrice] = {
       low: close - spread * 0.6,
       high: close + spread * 0.4
     )
+  }
+}()
+
+private struct Visit: Identifiable {
+  let id = UUID()
+  let week: Date
+  let source: String
+  let count: Int
+}
+
+private let sourceOrder = ["Tìm kiếm", "Mạng xã hội", "Trực tiếp"]
+
+/// Mười hai tuần, ba nguồn truy cập. Tìm kiếm lên đều, Trực tiếp gần như
+/// phẳng, còn Mạng xã hội có một cú nhảy vọt giữa kỳ rồi tụt lại — kiểu
+/// một bài viral. Đúng dạng dữ liệu mà stacked area sinh ra để kể.
+private let visits: [Visit] = {
+  let calendar = Calendar.current
+  let weekly: [(Int, Int, Int)] = [
+    (1_200, 300, 500), (1_250, 340, 510), (1_180, 420, 495), (1_300, 560, 520),
+    (1_350, 880, 530), (1_320, 1_240, 515), (1_400, 1_100, 540), (1_460, 760, 555),
+    (1_510, 540, 560), (1_490, 460, 575), (1_560, 430, 590), (1_620, 410, 600),
+  ]
+
+  return weekly.enumerated().flatMap { index, row -> [Visit] in
+    let week = calendar.date(byAdding: .weekOfYear, value: index, to: firstDay)!
+    return zip(sourceOrder, [row.0, row.1, row.2]).map { source, count in
+      Visit(week: week, source: source, count: count)
+    }
   }
 }()
 
@@ -171,6 +218,57 @@ struct AreaChartScreen: View {
         Text("D — AreaMark(x:yStart:yEnd:) dải thấp–cao")
       } footer: {
         Text("Hai đầu thay vì một, y như BarMark ở màn Range — nhưng liền mạch chứ không đứt thành từng thanh. Dải mờ là biên độ trong phiên, đường đậm là giá đóng cửa. Dùng khi x liên tục và ta muốn thấy cả mức lẫn độ không chắc chắn: khoảng tin cậy, dự báo, nhiệt độ ngày.")
+      }
+      Section {
+        Chart(visits) { item in
+          AreaMark(
+            x: .value("Tuần", item.week),
+            y: .value("Lượt", item.count)
+          )
+          .foregroundStyle(by: .value("Nguồn", item.source))
+        }
+        .chartForegroundStyleScale(domain: sourceOrder)
+        .frame(height: 220)
+      } header: {
+        Text("E — nhiều chuỗi cùng x → stacked area")
+      } footer: {
+        Text("Chồng là mặc định, y như BarMark ở màn Column — không cần tham số gì. Đường viền trên cùng là TỔNG lượt truy cập, mỗi dải là phần đóng góp của một nguồn. Nhưng chỉ dải dưới cùng có đáy phẳng để dóng; hai dải trên bị đáy nhấp nhô của dải dưới đẩy lên đẩy xuống, nên nhìn thì thấy xu hướng chứ đo thì không đo được. Và mảng nguồn BẮT BUỘC phải sắp nhất quán: thứ tự chồng lấy từ thứ tự hàng trong mảng, xáo lên là ba dải luồn xuyên qua nhau thành răng cưa.")
+      }
+
+      Section {
+        Chart(visits) { item in
+          AreaMark(
+            x: .value("Tuần", item.week),
+            y: .value("Lượt", item.count),
+            stacking: .unstacked
+          )
+          .foregroundStyle(by: .value("Nguồn", item.source))
+          .opacity(0.45)
+        }
+        .chartForegroundStyleScale(domain: sourceOrder)
+        .frame(height: 220)
+      } header: {
+        Text("F — stacking: .unstacked")
+      } footer: {
+        Text("Ba vùng cùng mọc từ đáy 0 và đè lên nhau, phải hạ opacity mới nhìn xuyên được. Đổi lại mỗi chuỗi có đáy phẳng riêng nên so sánh trực tiếp được: thấy rõ tuần thứ sáu Mạng xã hội gần đuổi kịp Tìm kiếm. Cái mất là TỔNG — không còn đường viền nào cho biết cộng lại bao nhiêu.")
+      }
+
+      Section {
+        Chart(visits) { item in
+          AreaMark(
+            x: .value("Tuần", item.week),
+            y: .value("Lượt", item.count),
+            stacking: .center
+          )
+          .foregroundStyle(by: .value("Nguồn", item.source))
+        }
+        .chartForegroundStyleScale(domain: sourceOrder)
+        .chartYAxis(.hidden)
+        .frame(height: 220)
+      } header: {
+        Text("G — stacking: .center, tức streamgraph")
+      } footer: {
+        Text("Vẫn chồng, nhưng đối xứng quanh trục giữa thay vì mọc từ đáy. Không dải nào bị đường gốc ghìm nên hình dáng từng dải đọc dễ hơn hẳn chart E — cú phình của Mạng xã hội hiện thành một cái bụng rõ rệt. Cái giá phải trả: trục Y mất hết ý nghĩa nên ẩn luôn, chart này chỉ để cảm nhận nhịp chứ không để đọc số.")
       }
     }
     .navigationTitle("Area")

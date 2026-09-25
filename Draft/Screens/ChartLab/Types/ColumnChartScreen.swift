@@ -19,11 +19,10 @@
 //  kênh khác nhau, và chính nó lôi ra cái bẫy lớn nhất của màn này.
 //
 //  THỨ TỰ CHỒNG LẤY TỪ MẢNG, KHÔNG LẤY TỪ SCALE MÀU. Chart A chồng đúng
-//  theo thứ tự các hàng xuất hiện trong mảng: Q1 xanh dương dưới cùng, Q2
-//  xanh lá, Q3 cam. Cùng một màu nhảy lên nhảy xuống giữa các cột, mắt
-//  không lần nổi. Legend thì vẫn một thứ tự cố định vì miền của scale màu
-//  dựng theo LẦN XUẤT HIỆN ĐẦU TIÊN — hai cơ chế khác nhau, và chúng
-//  không buộc phải khớp.
+//  theo thứ tự các hàng xuất hiện trong mảng: Q1 xanh lá dưới cùng, Q2
+//  xanh dương, Q3 cam. Cùng một màu nhảy lên nhảy xuống giữa các cột, mắt
+//  không dóng ngang được. Legend thì vẫn một thứ tự cố định — hai cơ chế
+//  khác nhau, và chúng không buộc phải khớp.
 //
 //  Nên: stacked chỉ đọc được khi mảng nguồn đã sắp nhất quán. Không có
 //  modifier nào sửa hộ, phải sort trước khi đưa vào Chart (chart B).
@@ -36,8 +35,14 @@
 //
 //  GROUPED MIỄN NHIỄM. Chart C vẫn dùng mảng lộn xộn của A mà quý nào
 //  cũng đúng thứ tự Online – Cửa hàng – Đại lý, vì .position(by:) lấy chỗ
-//  từ MIỀN của scale chứ không từ mảng. Một lý do nữa để chọn grouped khi
-//  không kiểm soát được nguồn dữ liệu.
+//  từ MIỀN của một scale dùng chung cho cả chart, chứ không xét từng x
+//  một như stacking. Một lý do nữa để chọn grouped khi không kiểm soát
+//  được nguồn dữ liệu.
+//
+//  Và scale vị trí đó KHÁC scale màu: ghim chartForegroundStyleScale đổi
+//  màu của ba kênh nhưng không đụng gì tới thứ tự nhóm trong chart C —
+//  thứ tự đó vẫn là lần xuất hiện đầu tiên trong mảng. Hai miền riêng,
+//  đặt tên giống nhau trong .value() cũng không gộp chúng lại.
 //
 //  .normalized ĐỔI TRỤC Y SANG THANG 0–100, và KHÔNG tự thêm dấu %. Muốn
 //  có dấu % thì phải tự format nhãn trục.

@@ -57,7 +57,7 @@ struct ChartTypesLab: View {
           coordinator.push(.chartArea)
         } label: {
           ChartLabRow(title: "6. Area",
-                      subtitle: "Gradient xuống đáy, dải min–max, stacked area")
+                      subtitle: "Gradient, dải min–max, stacked và streamgraph")
         }
       }
 

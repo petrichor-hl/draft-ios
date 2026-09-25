@@ -6,8 +6,8 @@
 //  tham số so với ColumnChartScreen, không đổi gì khác.
 //
 //  Khi nào chọn ngang: nhãn category dài (tên món ăn, tên tỉnh) — để dọc
-//  thì nhãn trục X bị xoay nghiêng hoặc cắt cụt. Số lượng hạng mục nhiều
-//  cũng hợp với ngang vì cuộn dọc tự nhiên hơn cuộn ngang.
+//  thì nhãn trục X không đủ chỗ. Số lượng hạng mục nhiều cũng hợp với
+//  ngang vì cuộn dọc tự nhiên hơn cuộn ngang.
 //
 //  ĐÃ ĐO trên simulator.
 //
