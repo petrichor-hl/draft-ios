@@ -14,6 +14,12 @@
 //
 //    1  LineMark trần, không modifier nào — bản Charts tự quyết
 //    2  đủ bộ: miền khít, trục phải, gradient, line đè lên
+//    3  thử riêng environment(colorScheme, .dark), thẻ vẫn trắng
+//    4  environment cộng listRowBackground — bản nền tối đầy đủ
+//
+//  Chart 2, 3, 4 dùng CHUNG một View đã tách ra, chỉ khác cái environment
+//  bọc ngoài. Có vậy mới quy được mọi khác biệt trên màn hình về đúng
+//  một nguyên nhân.
 //
 //  ĐÃ ĐO trên simulator.
 //
@@ -23,12 +29,22 @@
 //  đúng min…max nên nó trải hết chiều cao và mọi nhịp lên xuống hiện ra.
 //  Gradient chỉ là lớp sơn thêm vào sau.
 //
-//  Bản thật có nền đen, đã thử rồi bỏ vì màn này nằm trong List sáng.
-//  Cách làm ghi lại phòng khi cần: listRowBackground cho cái thẻ, cộng
-//  .environment(\.colorScheme, .dark) cho Chart — ép riêng khối đó sang
-//  chế độ tối thì mọi màu ngữ nghĩa bên trong tự lật, nhãn trục thành
-//  sáng màu mà không phải chỉ định foregroundStyle cho từng
-//  AxisValueLabel. Đã chạy đúng, chỉ là không dùng.
+//  environment(colorScheme) CHỈ ĐỔI CÁCH MÀU NGỮ NGHĨA TỰ TÍNH, KHÔNG VẼ
+//  NỀN CHO AI. Chart 3 chứng minh: thêm mỗi dòng đó vào thẻ trắng thì
+//  nhãn trục và đường kẻ lưới nhạt tới mức gần đọc không ra, vì chúng
+//  chuyển sang tông sáng để nổi trên một nền tối không hề tồn tại.
+//
+//  Nên hai thứ phải đi cùng nhau: listRowBackground cho cái thẻ, cộng
+//  environment cho Chart — chart 4. Đổi lại thì không phải đi chỉ định
+//  foregroundStyle cho từng AxisValueLabel, từng AxisGridLine.
+//
+//  Màu cứng không nghe lệnh environment: đường .green ở chart 3 và 4
+//  không thấy khác gì nhau. Đúng ra .green là màu hệ thống nên có biến
+//  thể riêng cho chế độ tối, nhưng hai biến thể gần nhau tới mức mắt
+//  không phân biệt nổi.
+//
+//  Chart 2 giữ nền sáng vì màn này nằm trong List sáng; chart 4 để đó
+//  làm bản tham khảo khi cần dựng đúng bản thật.
 //
 //  NHÃN TRỤC X NHÌN XUYÊN QUA ĐƯỢC vì gradient tắt gần hẳn ở đáy
 //  (opacity 0.01). Đúng cơ chế đã đo ở Types #6: vùng tô tràn qua dải
@@ -95,6 +111,40 @@ private let priceDomain: ClosedRange<Double> = {
 }()
 
 struct StocksScreen: View {
+
+  /// Thân chart 2, tách riêng để chart 3 và 4 dùng lại y nguyên. Cùng một
+  /// View, chỉ khác cái environment bọc ngoài — có vậy mới quy được mọi
+  /// khác biệt trên màn hình về đúng một nguyên nhân.
+  private var priceChart: some View {
+    Chart(bars) { bar in
+      AreaMark(
+        x: .value("Ngày", bar.day),
+        y: .value("Giá", bar.close)
+      )
+      .foregroundStyle(
+        .linearGradient(
+          colors: [.green.opacity(0.35), .green.opacity(0.01)],
+          startPoint: .top,
+          endPoint: .bottom
+        )
+      )
+
+      LineMark(
+        x: .value("Ngày", bar.day),
+        y: .value("Giá", bar.close)
+      )
+      .foregroundStyle(.green)
+      .lineStyle(StrokeStyle(lineWidth: 1.5))
+    }
+    .chartYScale(domain: priceDomain)
+    .chartYAxis {
+      AxisMarks(position: .trailing, values: .automatic(desiredCount: 4)) {
+        AxisGridLine()
+        AxisValueLabel()
+      }
+    }
+  }
+
   var body: some View {
     List {
       Section {
@@ -112,39 +162,34 @@ struct StocksScreen: View {
       }
 
       Section {
-        Chart(bars) { bar in
-          AreaMark(
-            x: .value("Ngày", bar.day),
-            y: .value("Giá", bar.close)
-          )
-          .foregroundStyle(
-            .linearGradient(
-              colors: [.green.opacity(0.35), .green.opacity(0.01)],
-              startPoint: .top,
-              endPoint: .bottom
-            )
-          )
-
-          LineMark(
-            x: .value("Ngày", bar.day),
-            y: .value("Giá", bar.close)
-          )
-          .foregroundStyle(.green)
-          .lineStyle(StrokeStyle(lineWidth: 1.5))
-        }
-        .chartYScale(domain: priceDomain)
-        .chartYAxis {
-          AxisMarks(position: .trailing, values: .automatic(desiredCount: 4)) {
-            AxisGridLine()
-            AxisValueLabel()
-          }
-        }
-        .frame(height: 240)
+        priceChart
+          .frame(height: 240)
       } header: {
         Text("2 — miền khít, trục phải, gradient")
       } footer: {
         Text("Ba thay đổi. chartYScale lấy đúng min…max nên đường giá trải hết chiều cao — một mình nó làm nên phần lớn cái dáng Stocks. Trục sang phải, bốn mốc thôi. AreaMark tô gradient tắt dần rồi LineMark đè lên lấy nét sắc, vì Swift Charts không có kiểu area có viền. Nhãn trục X vẫn đọc được vì gradient tắt gần hẳn ở đáy, đúng cơ chế đã đo ở Types #6.")
       }
+
+      Section {
+        priceChart
+          .frame(height: 200)
+          .environment(\.colorScheme, .dark)
+      } header: {
+        Text("3 — thử: chỉ thêm environment(colorScheme, .dark)")
+      } footer: {
+        Text("Y hệt chart 2, thêm đúng một dòng, và thẻ vẫn trắng. Nhãn trục cùng đường kẻ lưới nhạt hẳn đi tới mức gần đọc không ra — vì chúng dùng màu NGỮ NGHĨA, mà trong chế độ tối màu ngữ nghĩa phải sáng để nổi trên nền tối. Đường giá thì không thấy khác gì: .green là màu hệ thống, có biến thể riêng cho chế độ tối nhưng hai biến thể gần nhau tới mức mắt không phân biệt nổi.")
+      }
+
+      Section {
+        priceChart
+          .frame(height: 200)
+          .environment(\.colorScheme, .dark)
+      } header: {
+        Text("4 — environment cộng listRowBackground")
+      } footer: {
+        Text("Thêm nền tối cho thẻ thì nhãn ở chart 3 hiện lại đúng chỗ. Hai thứ này phải đi cùng nhau: environment chỉ đổi cách các màu ngữ nghĩa TỰ TÍNH, nó không tự vẽ nền cho ai. Đổi lại, không phải đi chỉ định foregroundStyle cho từng AxisValueLabel, từng AxisGridLine.")
+      }
+      .listRowBackground(Color(white: 0.11))
     }
     .navigationTitle("Stocks — Giá cổ phiếu")
     .navigationBarTitleDisplayMode(.inline)
