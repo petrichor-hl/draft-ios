@@ -18,6 +18,13 @@ struct ChartToolbox: View {
         ChartLabRow(title: "Garmin — Nhịp tim",
                     subtitle: "Đường liền đổi màu theo zone, trục Y cắt gốc, đứt đoạn khi không đeo")
       }
+
+      Button {
+        coordinator.push(.chartStocks)
+      } label: {
+        ChartLabRow(title: "Stocks — Giá cổ phiếu",
+                    subtitle: "Area gradient, nền tối, trục Y bên phải, miền khít dữ liệu")
+      }
     }
     .navigationTitle("Toolbox")
   }
