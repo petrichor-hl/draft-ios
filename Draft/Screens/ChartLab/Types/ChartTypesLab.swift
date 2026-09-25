@@ -31,7 +31,7 @@ struct ChartTypesLab: View {
           coordinator.push(.chartRange)
         } label: {
           ChartLabRow(title: "3. Range",
-                      subtitle: "yStart…yEnd — nền móng của chart Apple Health")
+                      subtitle: "yStart…yEnd — thanh không neo vào đường gốc")
         }
       }
 
