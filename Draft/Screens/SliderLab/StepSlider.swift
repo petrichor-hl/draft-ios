@@ -73,11 +73,6 @@ struct StepSlider: View {
       .gesture(drag(travel: travel))
     }
     .frame(height: Self.thumbSize)
-    // Rung nhẹ mỗi lần qua mốc. `value` là Int và chỉ đổi đúng lúc snap, nên
-    // trigger tự khớp mà không cần cờ riêng.
-    //
-    // ⚠️ Simulator không có Taptic Engine — phải cầm iPhone thật mới nghiệm
-    //    thu được, xem Haptics Lab.
     .sensoryFeedback(.selection, trigger: value)
   }
 

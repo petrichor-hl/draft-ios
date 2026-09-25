@@ -192,8 +192,7 @@ struct SliderToolbox: View {
           Mốc không bắt buộc cách đều: vị trí tính theo GIÁ TRỊ, và snap tìm \
           mốc gần nhất cũng theo giá trị chứ không theo pixel.
 
-          Mỗi lần qua mốc có rung .selection, nhưng simulator im — phải cầm \
-          iPhone thật mới nghiệm thu được.
+          Mỗi lần qua mốc có rung .selection.
           """
         )
       }

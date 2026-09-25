@@ -12,9 +12,11 @@
 //  phép đo (xem `heightReader`) nhưng lại cần thiết ở màn đẩy. Cùng một nội
 //  dung, hai ràng buộc bố cục ngược nhau.
 //
-//  ⚠️ Component tự dựng ở đây CHỈ DÙNG API iOS 16. Draft ship iOS 26.5, nên rất
-//     dễ lỡ tay dùng `scrollTargetBehavior` / `.scrollPosition` — những thứ
-//     không tồn tại ở bản thấp và khiến cả kho không mang đi đâu được.
+//  ⚠️ Component tự dựng ở đây CHỈ DÙNG API iOS 16. Target của Draft là 18.6 —
+//     con số 26.5 nhìn thấy trong project settings là mức của PROJECT, target
+//     đè lên nó — nên compiler vẫn nuốt trôi `scrollTargetBehavior` /
+//     `.scrollPosition` (iOS 17+). Lỡ tay dùng thì không có cảnh báo nào, chỉ
+//     là cả kho không mang đi đâu được nữa.
 //
 
 import SwiftUI
