@@ -35,13 +35,13 @@
 //
 //  ĐÃ ĐO trên simulator.
 //
-//  TRỤC Y VẪN CHỨA 0. Section A có dữ liệu nằm gọn trong 57–148 mà trục
-//  vẫn chạy từ 0 lên 150. Swift Charts KHÔNG phân biệt thanh neo với thanh
-//  nổi: hễ là mark số thì kéo miền về 0.
+//  TRỤC Y VẪN CHỨA 0. Section A có dữ liệu nằm gọn trong 32–172 mà trục
+//  vẫn bắt đầu từ 0. Swift Charts KHÔNG phân biệt thanh neo với thanh nổi:
+//  hễ là mark số thì kéo miền về 0.
 //
 //  Với thanh thường thì đó là điều đúng — cắt mất đường gốc là thanh nói
-//  dối về độ dài của chính nó. Với thanh nổi thì chỉ là phí: hơn nửa khung
-//  bỏ trống, mọi khoảng bị ép vào một dải hẹp trên đỉnh. Nên range chart
+//  dối về độ dài của chính nó. Với thanh nổi thì chỉ là phí: cả vùng dưới
+//  giá trị thấp nhất bỏ trống, các khoảng bị ép lên trên. Nên range chart
 //  gần như luôn phải tự đặt chartYScale, khác hẳn mark một giá trị.
 //
 //  .clipShape(Capsule()) DÙNG ĐƯỢC trên ChartContent, không chỉ trên View.
@@ -67,13 +67,26 @@ private struct HourRange: Identifiable {
   let high: Int
 }
 
-/// Tám giờ, mỗi giờ một khoảng nhịp tim thấp nhất – cao nhất.
-/// Buổi sáng yên, giữa buổi có vận động, chiều hạ dần.
+/// Tám giờ từ 6h, mỗi giờ một khoảng nhịp tim thấp nhất – cao nhất.
+///
+/// Cố ý để BỀ RỘNG các dải chênh nhau thật nhiều, vì đó mới là thứ range
+/// chart kể được mà chart một giá trị không kể nổi. Một giờ ngồi yên và
+/// một giờ chạy bộ có thể cùng nhịp trung bình, nhưng dải thì một cái hẹp
+/// bằng ngón tay, một cái trải gần hết khung:
+///
+///   06  vừa ngủ dậy, chưa ra khỏi giường  — dải hẹp
+///   07  ăn sáng, đi lại trong nhà
+///   08  chạy bộ: khởi động rồi lên đỉnh   — rộng nhất, 64–172
+///   09  vừa chạy xong, nhịp còn chưa hạ
+///   10  ngồi làm việc, có lúc rơi tận 32  — thấp nhất ngày
+///   11  họp căng, nhịp vọt lên rồi rơi
+///   12  ăn trưa, đi bộ xuống căng tin
+///   13  nghỉ trưa                          — hẹp nhất, chỉ 8 nhịp
 private let hourly: [HourRange] = {
   let calendar = Calendar.current
   let values: [(low: Int, high: Int)] = [
-    (58, 72), (61, 84), (66, 121), (72, 148),
-    (64, 95), (60, 78), (59, 70), (57, 66),
+    (52, 61), (58, 74), (64, 172), (71, 98),
+    (32, 69), (60, 112), (66, 83), (55, 63),
   ]
 
   return values.enumerated().map { offset, value in
@@ -123,7 +136,7 @@ struct RangeChartScreen: View {
       } header: {
         Text("A — BarMark(x:yStart:yEnd:) thanh nổi")
       } footer: {
-        Text("Mỗi thanh mang đủ hai đầu, không chạm đường gốc nữa. Nhưng dữ liệu chỉ nằm trong 57–148 mà trục Y vẫn chạy từ 0: Swift Charts không phân biệt thanh neo với thanh nổi, hễ là mark số thì kéo miền về 0. Hậu quả là hơn nửa khung bỏ trống, mọi khoảng bị ép vào dải hẹp trên đỉnh — nên range chart gần như luôn phải tự đặt chartYScale.")
+        Text("Mỗi thanh mang đủ hai đầu, không chạm đường gốc nữa. Nhưng dữ liệu chỉ nằm trong 32–172 mà trục Y vẫn chạy từ 0: Swift Charts không phân biệt thanh neo với thanh nổi, hễ là mark số thì kéo miền về 0. Hậu quả là cả vùng dưới giá trị thấp nhất bỏ trống — nên range chart gần như luôn phải tự đặt chartYScale. Để ý bề rộng các dải chênh nhau bao nhiêu: giờ chạy bộ trải 108 nhịp, giờ nghỉ trưa chỉ 8. Đó mới là thứ range chart kể được.")
       }
 
       Section {
