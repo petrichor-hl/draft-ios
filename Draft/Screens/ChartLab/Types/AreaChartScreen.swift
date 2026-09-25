@@ -35,8 +35,29 @@
 //  dần về đáy nên nhãn hiện xuyên qua lớp tô.
 //
 //  Đây mới là lý do thật của cái gradient trong app Chứng khoán. Không
-//  phải để đẹp: tô đặc thì mất trục. Muốn giữ màu đặc thì phải chấp nhận
-//  nhãn nằm chỗ khác.
+//  phải để đẹp: tô đặc thì mất trục.
+//
+//  CHỮA ĐƯỢC, hai cách, chart H và I đều giữ màu đặc mà nhãn vẫn đọc:
+//
+//    H  .chartPlotStyle { $0.clipped() } — closure này đưa cho ta VÙNG VẼ
+//       dưới dạng một View bình thường, nên .clipped() trên nó cắt mọi
+//       thứ thò ra ngoài. Một dòng, không đụng tới mark.
+//
+//    I  AreaMark(x:yStart:yEnd:) với yStart là cận dưới của miền. Không
+//       cắt gọt gì, mà chặn từ gốc: vùng tô không còn đi tìm đường gốc
+//       nên không bao giờ xuống quá đáy khung.
+//
+//  H ngắn hơn. I không dựa vào hành vi clip nào, và là cách DUY NHẤT nếu
+//  muốn đáy nằm ở một mức khác — ví dụ tô từ giá tham chiếu lên, phần
+//  trên xanh phần dưới đỏ.
+//
+//  Cả hai đều giới hạn ở chuyện tô. Muốn nhãn trục hẳn hoi thì vẫn nên
+//  để gradient tắt dần như chart C và như app Chứng khoán: lúc đó nhãn
+//  nằm TRONG vùng tô mà vẫn đọc được, đỡ tốn một dải trống dưới chart.
+//
+//  Và đừng nhét Chart vào closure của chartPlotStyle: closure chạy trong
+//  layout pass, tạo Chart mới bên trong là đệ quy vô hạn rồi tràn stack.
+//  Màn Toolbox/Garmin đã dính một lần.
 //
 //  KHÔNG CÓ KIỂU "AREA CÓ VIỀN". Phải vẽ hai mark trên cùng bộ dữ liệu,
 //  AreaMark tô rồi LineMark đặt nét lên trên.
@@ -89,7 +110,7 @@ private let prices: [DailyPrice] = {
     283, 291, 288, 296, 305, 299, 293, 302,
     314, 322, 317, 311, 325, 334, 330, 340,
   ]
-
+  
   return closes.enumerated().map { index, close in
     let spread = 3 + Double((index * 7) % 9)
     return DailyPrice(
@@ -108,6 +129,11 @@ private struct Visit: Identifiable {
   let count: Int
 }
 
+/// Miền dùng cho chart B trở đi. Cận dưới 250 nằm dưới giá thấp nhất,
+/// nên 0 bị cắt khỏi miền — chính là tình huống sinh ra chuyện vùng tô
+/// tràn qua nhãn trục.
+private let priceRange: ClosedRange<Double> = 250...350
+
 private let sourceOrder = ["Tìm kiếm", "Mạng xã hội", "Trực tiếp"]
 
 /// Mười hai tuần, ba nguồn truy cập. Tìm kiếm lên đều, Trực tiếp gần như
@@ -120,7 +146,7 @@ private let visits: [Visit] = {
     (1_350, 880, 530), (1_320, 1_240, 515), (1_400, 1_100, 540), (1_460, 760, 555),
     (1_510, 540, 560), (1_490, 460, 575), (1_560, 430, 590), (1_620, 410, 600),
   ]
-
+  
   return weekly.enumerated().flatMap { index, row -> [Visit] in
     let week = calendar.date(byAdding: .weekOfYear, value: index, to: firstDay)!
     return zip(sourceOrder, [row.0, row.1, row.2]).map { source, count in
@@ -146,7 +172,7 @@ struct AreaChartScreen: View {
       } footer: {
         Text("Giống hệt LineMark, chỉ thêm phần tô từ đường giá xuống ĐƯỜNG GỐC. Mà đường gốc là 0, nên miền trục Y bị kéo về 0 và cả dải giá 259–340 bẹp thành một vệt sát đỉnh. Biến động 30% trong hai tư phiên nhìn như đường thẳng.")
       }
-
+      
       Section {
         Chart(prices) { item in
           AreaMark(
@@ -155,14 +181,14 @@ struct AreaChartScreen: View {
           )
           .foregroundStyle(.green)
         }
-        .chartYScale(domain: 250...350)
+        .chartYScale(domain: priceRange)
         .frame(height: 220)
       } header: {
         Text("B — chartYScale cắt 0 ra khỏi miền")
       } footer: {
-        Text("Miền 250–350, biến động hiện ra đầy đủ, và phần tô vẫn kín xuống đáy — AreaMark không đòi đường gốc phải nằm trong miền. Nhưng so với chart A thì nhãn ngày ở trục X đâu mất rồi? Vùng tô tràn qua cả dải nhãn và đè lên. Chart C sẽ chứng minh nhãn vẫn còn nguyên ở đó.")
+        Text("Miền 250–350, biến động hiện ra đầy đủ, và phần tô vẫn kín xuống đáy — AreaMark không đòi đường gốc phải nằm trong miền. Nhưng so với chart A thì nhãn ngày ở trục X đâu mất rồi? Vùng tô tràn qua cả dải nhãn và đè lên. Chart C chứng minh nhãn vẫn còn nguyên ở đó, còn H và I là hai cách chữa hẳn.")
       }
-
+      
       Section {
         Chart(prices) { item in
           AreaMark(
@@ -176,14 +202,14 @@ struct AreaChartScreen: View {
               endPoint: .bottom
             )
           )
-
+          
           LineMark(
             x: .value("Ngày", item.day),
             y: .value("Giá", item.close)
           )
           .foregroundStyle(.green)
         }
-        .chartYScale(domain: 250...350)
+        .chartYScale(domain: priceRange)
         .chartYAxis {
           AxisMarks(position: .trailing)
         }
@@ -193,7 +219,7 @@ struct AreaChartScreen: View {
       } footer: {
         Text("Nhãn ngày hiện lại rồi — cùng miền như chart B, chỉ khác lớp tô nhạt dần nên nhìn xuyên qua được. Đó mới là lý do thật của cái gradient trong app Chứng khoán: tô đặc thì mất trục. Và Swift Charts không có kiểu \"area có viền\", phải vẽ HAI mark: AreaMark tô gradient rồi LineMark đặt nét sắc lên trên. Gradient ở đây an toàn vì chỉ một chuỗi — thêm chuỗi thứ hai là dính đúng bẫy bounding box ở Basics #4.")
       }
-
+      
       Section {
         Chart(prices) { item in
           AreaMark(
@@ -202,14 +228,14 @@ struct AreaChartScreen: View {
             yEnd: .value("Cao nhất", item.high)
           )
           .foregroundStyle(.green.opacity(0.25))
-
+          
           LineMark(
             x: .value("Ngày", item.day),
             y: .value("Giá", item.close)
           )
           .foregroundStyle(.green)
         }
-        .chartYScale(domain: 250...350)
+        .chartYScale(domain: priceRange)
         .chartYAxis {
           AxisMarks(position: .trailing)
         }
@@ -234,7 +260,7 @@ struct AreaChartScreen: View {
       } footer: {
         Text("Chồng là mặc định, y như BarMark ở màn Column — không cần tham số gì. Đường viền trên cùng là TỔNG lượt truy cập, mỗi dải là phần đóng góp của một nguồn. Nhưng chỉ dải dưới cùng có đáy phẳng để dóng; hai dải trên bị đáy nhấp nhô của dải dưới đẩy lên đẩy xuống, nên nhìn thì thấy xu hướng chứ đo thì không đo được. Và mảng nguồn BẮT BUỘC phải sắp nhất quán: thứ tự chồng lấy từ thứ tự hàng trong mảng, xáo lên là ba dải luồn xuyên qua nhau thành răng cưa.")
       }
-
+      
       Section {
         Chart(visits) { item in
           AreaMark(
@@ -252,7 +278,7 @@ struct AreaChartScreen: View {
       } footer: {
         Text("Ba vùng cùng mọc từ đáy 0 và đè lên nhau, phải hạ opacity mới nhìn xuyên được. Đổi lại mỗi chuỗi có đáy phẳng riêng nên so sánh trực tiếp được: thấy rõ tuần thứ sáu Mạng xã hội gần đuổi kịp Tìm kiếm. Cái mất là TỔNG — không còn đường viền nào cho biết cộng lại bao nhiêu.")
       }
-
+      
       Section {
         Chart(visits) { item in
           AreaMark(
@@ -269,6 +295,42 @@ struct AreaChartScreen: View {
         Text("G — stacking: .center, tức streamgraph")
       } footer: {
         Text("Vẫn chồng, nhưng đối xứng quanh trục giữa thay vì mọc từ đáy. Không dải nào bị đường gốc ghìm nên hình dáng từng dải đọc dễ hơn hẳn chart E — cú phình của Mạng xã hội hiện thành một cái bụng rõ rệt. Cái giá phải trả: trục Y mất hết ý nghĩa nên ẩn luôn, chart này chỉ để cảm nhận nhịp chứ không để đọc số.")
+      }
+      
+      Section {
+        Chart(prices) { item in
+          AreaMark(
+            x: .value("Ngày", item.day),
+            y: .value("Giá", item.close)
+          )
+          .foregroundStyle(.green)
+        }
+        .chartYScale(domain: priceRange)
+        .chartPlotStyle { plotArea in
+          plotArea.clipped()
+        }
+        .frame(height: 220)
+      } header: {
+        Text("H — chữa cách 1: chartPlotStyle { $0.clipped() }")
+      } footer: {
+        Text("Y hệt chart B, màu vẫn đặc, thêm đúng một modifier. chartPlotStyle đưa cho ta VÙNG VẼ như một View bình thường, nên .clipped() trên nó cắt mọi thứ thò ra ngoài. Lưu ý: chỉ được trang trí vùng vẽ trong closure này — nhét một Chart vào đó là đệ quy layout rồi tràn stack, màn Toolbox/Garmin đã dính.")
+      }
+      
+      Section {
+        Chart(prices) { item in
+          AreaMark(
+            x: .value("Ngày", item.day),
+            yStart: .value("Đáy", priceRange.lowerBound),
+            yEnd: .value("Giá", item.close)
+          )
+          .foregroundStyle(.green)
+        }
+        .chartYScale(domain: priceRange)
+        .frame(height: 220)
+      } header: {
+        Text("I — chữa cách 2: nói thẳng đáy của vùng tô")
+      } footer: {
+        Text("Không cắt gọt gì cả, mà sửa từ gốc: thay vì để AreaMark tự tìm đường gốc rồi tô xuống tận đó, ta nói luôn yStart là cận dưới của miền, nên vùng tô không bao giờ đi xa hơn đáy khung. Dài hơn cách H một chút nhưng không dựa vào hành vi clip nào — và là cách duy nhất nếu muốn đáy nằm ở mức khác, ví dụ tô từ giá tham chiếu lên.")
       }
     }
     .navigationTitle("Area")
