@@ -16,12 +16,10 @@
 //    2  đủ bộ: miền khít, trục phải, gradient, line đè lên
 //    3  chartPlotStyle { $0.clipped() } — vùng tô thôi tràn xuống dải
 //       nhãn trục, sát bản thật hơn
-//    4  thử riêng environment(colorScheme, .dark), thẻ vẫn trắng
-//    5  environment cộng listRowBackground — bản nền tối đầy đủ
+//    4  nền tối: environment cộng listRowBackground
 //
-//  Chart 2 tới 5 dùng CHUNG một View đã tách ra, chỉ khác cái bọc ngoài.
-//  Có vậy mới quy được mọi khác biệt trên màn hình về đúng một nguyên
-//  nhân.
+//  Cả bốn dùng CHUNG một View đã tách ra, chỉ khác cái bọc ngoài. Có vậy
+//  mới quy được mọi khác biệt trên màn hình về đúng một nguyên nhân.
 //
 //  ĐÃ ĐO trên simulator.
 //
@@ -32,21 +30,17 @@
 //  Gradient chỉ là lớp sơn thêm vào sau.
 //
 //  environment(colorScheme) CHỈ ĐỔI CÁCH MÀU NGỮ NGHĨA TỰ TÍNH, KHÔNG VẼ
-//  NỀN CHO AI. Chart 3 chứng minh: thêm mỗi dòng đó vào thẻ trắng thì
+//  NỀN CHO AI. Đo bằng một chart chỉ thêm mỗi dòng đó vào thẻ trắng:
 //  nhãn trục và đường kẻ lưới nhạt tới mức gần đọc không ra, vì chúng
-//  chuyển sang tông sáng để nổi trên một nền tối không hề tồn tại.
+//  chuyển sang tông sáng để nổi trên một nền tối không hề tồn tại. Chart
+//  đó đã xoá sau khi có kết luận; chart 4 là bản đủ cả hai thứ.
 //
-//  Nên hai thứ phải đi cùng nhau: listRowBackground cho cái thẻ, cộng
-//  environment cho Chart — chart 4. Đổi lại thì không phải đi chỉ định
-//  foregroundStyle cho từng AxisValueLabel, từng AxisGridLine.
+//  Màu cứng thì không nghe lệnh environment: đường .green không đổi.
+//  Đúng ra .green là màu hệ thống nên vẫn có biến thể riêng cho chế độ
+//  tối, chỉ là hai biến thể gần nhau tới mức mắt không phân biệt nổi.
 //
-//  Màu cứng không nghe lệnh environment: đường .green ở chart 3 và 4
-//  không thấy khác gì nhau. Đúng ra .green là màu hệ thống nên có biến
-//  thể riêng cho chế độ tối, nhưng hai biến thể gần nhau tới mức mắt
-//  không phân biệt nổi.
-//
-//  Chart 2 giữ nền sáng vì màn này nằm trong List sáng; chart 4 để đó
-//  làm bản tham khảo khi cần dựng đúng bản thật.
+//  Chart 2 và 3 giữ nền sáng vì màn này nằm trong List sáng; chart 4 để
+//  đó làm bản tham khảo khi cần dựng đúng bản thật.
 //
 //  NHÃN TRỤC X Ở CHART 2 NHÌN XUYÊN QUA ĐƯỢC vì gradient tắt gần hẳn ở
 //  đáy (opacity 0.01). Đúng cơ chế đã đo ở Types #6: vùng tô tràn qua
@@ -192,19 +186,9 @@ struct StocksScreen: View {
           .frame(height: 200)
           .environment(\.colorScheme, .dark)
       } header: {
-        Text("4 — thử: chỉ thêm environment(colorScheme, .dark)")
+        Text("4 — nền tối: environment cộng listRowBackground")
       } footer: {
-        Text("Y hệt chart 2, thêm đúng một dòng, và thẻ vẫn trắng. Nhãn trục cùng đường kẻ lưới nhạt hẳn đi tới mức gần đọc không ra — vì chúng dùng màu NGỮ NGHĨA, mà trong chế độ tối màu ngữ nghĩa phải sáng để nổi trên nền tối. Đường giá thì không thấy khác gì: .green là màu hệ thống, có biến thể riêng cho chế độ tối nhưng hai biến thể gần nhau tới mức mắt không phân biệt nổi.")
-      }
-
-      Section {
-        priceChart
-          .frame(height: 200)
-          .environment(\.colorScheme, .dark)
-      } header: {
-        Text("5 — environment cộng listRowBackground")
-      } footer: {
-        Text("Thêm nền tối cho thẻ thì nhãn ở chart 4 hiện lại đúng chỗ. Hai thứ này phải đi cùng nhau: environment chỉ đổi cách các màu ngữ nghĩa TỰ TÍNH, nó không tự vẽ nền cho ai. Đổi lại, không phải đi chỉ định foregroundStyle cho từng AxisValueLabel, từng AxisGridLine.")
+        Text("Bản thật nền đen, đây là cách dựng: listRowBackground cho cái thẻ, cộng environment(colorScheme, .dark) cho Chart. Hai thứ phải đi cùng nhau — environment chỉ đổi cách các màu ngữ nghĩa TỰ TÍNH, nó không tự vẽ nền cho ai, bỏ listRowBackground đi là nhãn trục nhạt tới mức gần đọc không ra trên thẻ trắng. Đổi lại, không phải chỉ định foregroundStyle cho từng AxisValueLabel, từng AxisGridLine.")
       }
       .listRowBackground(Color(white: 0.11))
     }
