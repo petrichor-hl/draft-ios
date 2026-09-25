@@ -14,8 +14,8 @@
 //
 //    1  LineMark trần, không modifier nào — bản Charts tự quyết
 //    2  đủ bộ: miền khít, trục phải, gradient, line đè lên
-//    3  chartPlotStyle { $0.clipped() } — vùng tô thôi tràn xuống dải
-//       nhãn trục, sát bản thật hơn
+//    3  AreaMark(yStart:yEnd:) neo đáy vào cận dưới của miền — vùng tô
+//       thôi tràn xuống dải nhãn, và gradient mới trải đúng
 //    4  nền tối: environment cộng listRowBackground
 //
 //  Cả bốn dùng CHUNG một View đã tách ra, chỉ khác cái bọc ngoài. Có vậy
@@ -46,9 +46,18 @@
 //  đáy (opacity 0.01). Đúng cơ chế đã đo ở Types #6: vùng tô tràn qua
 //  dải nhãn và đè lên nó, tô đặc là mất trục.
 //
-//  Chart 3 chặn hẳn bằng chartPlotStyle { $0.clipped() }, và đó mới là
-//  bố cục của bản thật: nhãn tháng nằm dưới vùng vẽ, không dính màu.
-//  Nhìn xuyên qua được chỉ là may, không phải thiết kế.
+//  Chart 3 chặn hẳn, và đó mới là bố cục của bản thật: nhãn tháng nằm
+//  dưới vùng vẽ, không dính màu. Nhìn xuyên qua được chỉ là may.
+//
+//  CHỌN CÁCH I CHỨ KHÔNG CHỌN CÁCH H. Types #6 đo được hai cách chặn,
+//  clipped() ngắn hơn, nhưng nó chỉ CẮT HÌNH chứ không sửa HỘP BAO của
+//  mark. Vùng tô vẫn chạy từ đường giá xuống tận 0, mà gradient thì
+//  resolve theo hộp bao — nên nấc nhạt rơi ra ngoài khung, trong khung
+//  chỉ còn phần đậm, rồi clipped() cắt đúng cái phần đã nhạt đi.
+//
+//  yStart:yEnd: kéo hộp bao về trùng vùng vẽ, nên chữa cả hai chuyện một
+//  lượt. Với vùng tô màu đặc thì hai cách như nhau; hễ có gradient thì
+//  chỉ cách I đúng.
 //
 //  DỮ LIỆU PHẢI TẤT ĐỊNH. Dùng Double.random trong mảng let thì mỗi lần
 //  mở app chart lại khác, không đối chiếu với ảnh chụp được. Ở đây tự
@@ -170,15 +179,39 @@ struct StocksScreen: View {
       }
 
       Section {
-        priceChart
-          .frame(height: 240)
-          .chartPlotStyle { plotArea in
-            plotArea.clipped()
+        Chart(bars) { bar in
+          AreaMark(
+            x: .value("Ngày", bar.day),
+            yStart: .value("Đáy", priceDomain.lowerBound),
+            yEnd: .value("Giá", bar.close)
+          )
+          .foregroundStyle(
+            .linearGradient(
+              colors: [.green.opacity(0.35), .green.opacity(0.01)],
+              startPoint: .top,
+              endPoint: .bottom
+            )
+          )
+
+          LineMark(
+            x: .value("Ngày", bar.day),
+            y: .value("Giá", bar.close)
+          )
+          .foregroundStyle(.green)
+          .lineStyle(StrokeStyle(lineWidth: 1.5))
+        }
+        .chartYScale(domain: priceDomain)
+        .chartYAxis {
+          AxisMarks(position: .trailing, values: .automatic(desiredCount: 4)) {
+            AxisGridLine()
+            AxisValueLabel()
           }
+        }
+        .frame(height: 240)
       } header: {
-        Text("3 — chặn vùng tô tràn xuống nhãn trục")
+        Text("3 — neo đáy vùng tô vào cận dưới của miền")
       } footer: {
-        Text("Chart 2 vẫn để vùng tô phủ qua dải nhãn ngày, chỉ là gradient nhạt tới mức nhìn xuyên qua được. Bản thật thì nhãn nằm hẳn dưới vùng vẽ, không dính màu. chartPlotStyle đưa vùng vẽ ra dưới dạng một View bình thường nên clipped() cắt đúng phần thò xuống — so hai chart sẽ thấy đáy vùng tô ở đây dừng gọn ngay trên hàng nhãn. Types #6 chart H và I đo kỹ hai cách chặn.")
+        Text("Chart 2 để vùng tô chạy từ đường giá xuống tận đường gốc 0, tức là xuống dưới cả khung. Hai hậu quả: nó phủ qua dải nhãn ngày, và gradient resolve theo HỘP BAO của mark nên nấc nhạt rơi ra ngoài vùng nhìn thấy — trong khung chỉ còn phần đậm. Đổi sang yStart:yEnd: thì hộp bao trùng đúng vùng vẽ: vùng tô dừng ở đáy khung, và gradient trải trọn từ đường giá xuống đáy, đúng cái nhạt dần của bản thật. Cách clipped() ở Types #6 chart H cắt được phần thò ra nhưng không sửa hộp bao, nên gradient vẫn sai.")
       }
 
       Section {

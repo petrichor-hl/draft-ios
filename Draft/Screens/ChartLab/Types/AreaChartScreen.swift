@@ -47,9 +47,20 @@
 //       cắt gọt gì, mà chặn từ gốc: vùng tô không còn đi tìm đường gốc
 //       nên không bao giờ xuống quá đáy khung.
 //
-//  H ngắn hơn. I không dựa vào hành vi clip nào, và là cách DUY NHẤT nếu
-//  muốn đáy nằm ở một mức khác — ví dụ tô từ giá tham chiếu lên, phần
-//  trên xanh phần dưới đỏ.
+//  H ngắn hơn, NHƯNG CHỈ ĐÚNG VỚI MÀU ĐẶC. Nó cắt HÌNH chứ không sửa
+//  HỘP BAO của mark: vùng tô vẫn tính là chạy từ đường dữ liệu xuống tận
+//  đường gốc. Mà gradient thì resolve theo hộp bao — nên nấc nhạt rơi
+//  xuống dưới khung, trong khung chỉ còn phần đậm, rồi clipped() cắt đi
+//  đúng cái phần đã nhạt. Kết quả là vùng tô gần như một màu đều.
+//  Hai chart H và I ở đây dùng màu đặc nên không lộ ra; màn Toolbox/
+//  Stocks đổi từ H sang I chính vì chuyện này.
+//
+//  I kéo hộp bao về trùng vùng vẽ nên chữa cả hai chuyện một lượt, không
+//  dựa vào hành vi clip nào, và là cách DUY NHẤT nếu muốn đáy nằm ở một
+//  mức khác — ví dụ tô từ giá tham chiếu lên, phần trên xanh phần dưới
+//  đỏ.
+//
+//  Nên: màu đặc thì tuỳ, có gradient thì I.
 //
 //  Cả hai đều giới hạn ở chuyện tô. Muốn nhãn trục hẳn hoi thì vẫn nên
 //  để gradient tắt dần như chart C và như app Chứng khoán: lúc đó nhãn
@@ -313,7 +324,7 @@ struct AreaChartScreen: View {
       } header: {
         Text("H — chữa cách 1: chartPlotStyle { $0.clipped() }")
       } footer: {
-        Text("Y hệt chart B, màu vẫn đặc, thêm đúng một modifier. chartPlotStyle đưa cho ta VÙNG VẼ như một View bình thường, nên .clipped() trên nó cắt mọi thứ thò ra ngoài. Lưu ý: chỉ được trang trí vùng vẽ trong closure này — nhét một Chart vào đó là đệ quy layout rồi tràn stack, màn Toolbox/Garmin đã dính.")
+        Text("Y hệt chart B, màu vẫn đặc, thêm đúng một modifier. chartPlotStyle đưa cho ta VÙNG VẼ như một View bình thường, nên .clipped() trên nó cắt mọi thứ thò ra ngoài. Nhưng nó chỉ cắt HÌNH, không sửa HỘP BAO của mark — vùng tô vẫn tính là xuống tận đường gốc. Màu đặc thì không sao; đổi sang gradient là hỏng, vì gradient resolve theo hộp bao nên nấc nhạt rơi ra ngoài khung. Lúc đó phải dùng cách I. Lưu ý nữa: chỉ được trang trí vùng vẽ trong closure này — nhét một Chart vào đó là đệ quy layout rồi tràn stack, màn Toolbox/Garmin đã dính.")
       }
       
       Section {
