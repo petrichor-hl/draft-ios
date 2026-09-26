@@ -12,13 +12,14 @@
 //
 //    1  bản clone
 //    2  nền tối: environment cộng listRowBackground
+//    C  nền tối cộng chartXSelection, đổi xanh lá sang xanh lam khi chọn
 //
-//  Hai chart dùng CHUNG một View đã tách ra, chỉ khác cái bọc ngoài.
+//  Ba chart dùng chung phần vẽ giá; C đổi màu theo giá trị selection.
 //
 //  Trước đây còn hai chart nữa đứng trước: một LineMark trần, và một bản
 //  chưa neo đáy vùng tô. Đã xoá sau khi rút được kết luận bên dưới.
 //
-//  ĐÃ ĐO trên simulator.
+//  Chart 1 và 2 đã đo trên simulator; cử chỉ của C cần đo trên thiết bị.
 //
 //  PHẦN LỚN "DÁNG STOCKS" NẰM Ở MIỀN, không ở màu. Đo bằng cách đặt cạnh
 //  nhau một chart để mặc Charts tự quyết và một chart chỉ khác ở chỗ đặt
@@ -112,31 +113,54 @@ private let priceDomain: ClosedRange<Double> = {
 }()
 
 struct StocksScreen: View {
+  @State private var selectedDate: Date?
 
-  /// Thân chart 2, tách riêng để chart 3 và 4 dùng lại y nguyên. Cùng một
-  /// View, chỉ khác cái environment bọc ngoài — có vậy mới quy được mọi
-  /// khác biệt trên màn hình về đúng một nguyên nhân.
-  private var priceChart: some View {
-    Chart(bars) { bar in
-      AreaMark(
-        x: .value("Ngày", bar.day),
-        yStart: .value("Đáy", priceDomain.lowerBound),
-        yEnd: .value("Giá", bar.close)
-      )
-      .foregroundStyle(
-        .linearGradient(
-          colors: [.green.opacity(0.35), .green.opacity(0.01)],
-          startPoint: .top,
-          endPoint: .bottom
+  /// Selection trả về Date trên trục X, không nhất thiết trùng ngày có dữ liệu.
+  private var selectedBar: StockBar? {
+    guard let selectedDate else { return nil }
+    return bars.min {
+      abs($0.day.timeIntervalSince(selectedDate))
+      < abs($1.day.timeIntervalSince(selectedDate))
+    }
+  }
+
+  /// Chart 1 và 2 giữ màu xanh lá; C truyền màu đang chọn và phiên gần nhất.
+  private func priceChart(color: Color = .green, selectedBar: StockBar? = nil) -> some View {
+    Chart {
+      ForEach(bars) { bar in
+        AreaMark(
+          x: .value("Ngày", bar.day),
+          yStart: .value("Đáy", priceDomain.lowerBound),
+          yEnd: .value("Giá", bar.close)
         )
-      )
+        .foregroundStyle(
+          .linearGradient(
+            colors: [color.opacity(0.35), color.opacity(0.01)],
+            startPoint: .top,
+            endPoint: .bottom
+          )
+        )
 
-      LineMark(
-        x: .value("Ngày", bar.day),
-        y: .value("Giá", bar.close)
-      )
-      .foregroundStyle(.green)
-      .lineStyle(StrokeStyle(lineWidth: 1.5))
+        LineMark(
+          x: .value("Ngày", bar.day),
+          y: .value("Giá", bar.close)
+        )
+        .foregroundStyle(color)
+        .lineStyle(StrokeStyle(lineWidth: 1.5))
+      }
+
+      if let selectedBar {
+        RuleMark(x: .value("Chọn", selectedBar.day))
+          .foregroundStyle(color.opacity(0.8))
+          .lineStyle(StrokeStyle(lineWidth: 1))
+
+        PointMark(
+          x: .value("Ngày", selectedBar.day),
+          y: .value("Giá", selectedBar.close)
+        )
+        .foregroundStyle(color)
+        .symbolSize(100)
+      }
     }
     .chartYScale(domain: priceDomain)
     .chartYAxis {
@@ -150,7 +174,7 @@ struct StocksScreen: View {
   var body: some View {
     List {
       Section {
-        priceChart
+        priceChart()
           .frame(height: 240)
       } header: {
         Text("1 — bản clone")
@@ -159,13 +183,28 @@ struct StocksScreen: View {
       }
 
       Section {
-        priceChart
+        priceChart()
           .frame(height: 200)
           .environment(\.colorScheme, .dark)
       } header: {
         Text("2 — nền tối: environment cộng listRowBackground")
       } footer: {
         Text("Bản thật nền đen, đây là cách dựng: listRowBackground cho cái thẻ, cộng environment(colorScheme, .dark) cho Chart. Hai thứ phải đi cùng nhau — environment chỉ đổi cách các màu ngữ nghĩa TỰ TÍNH, nó không tự vẽ nền cho ai, bỏ listRowBackground đi là nhãn trục nhạt tới mức gần đọc không ra trên thẻ trắng. Đổi lại, không phải chỉ định foregroundStyle cho từng AxisValueLabel, từng AxisGridLine.")
+      }
+      .listRowBackground(Color(white: 0.11))
+
+      Section {
+        priceChart(
+          color: selectedDate == nil ? .green : Color(red: 0.30, green: 0.75, blue: 1),
+          selectedBar: selectedBar
+        )
+        .chartXSelection(value: $selectedDate)
+        .frame(height: 240)
+        .environment(\.colorScheme, .dark)
+      } header: {
+        Text("C — giữ rồi rê để đổi màu")
+      } footer: {
+        Text("Giữ rồi rê ngang: chartXSelection chọn phiên gần nhất, đường giá và vùng tô đổi từ xanh lá sang xanh lam. Thả tay để xem màu có trở lại không.")
       }
       .listRowBackground(Color(white: 0.11))
     }

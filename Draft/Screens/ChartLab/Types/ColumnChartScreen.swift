@@ -169,7 +169,7 @@ struct ColumnChartScreen: View {
           BarMark(
             x: .value("Quý", item.quarter),
             y: .value("Doanh thu", item.revenue),
-            width: .ratio(0.5)
+            width: .ratio(0.5),
           )
           .foregroundStyle(by: .value("Kênh", item.channel))
           .cornerRadius(6)

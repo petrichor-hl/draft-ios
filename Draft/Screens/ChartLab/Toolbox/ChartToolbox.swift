@@ -15,7 +15,7 @@ struct ChartToolbox: View {
       Button {
         coordinator.push(.chartGarminHeartRate)
       } label: {
-        ChartLabRow(title: "Garmin — Nhịp tim",
+        ChartLabRow(title: "Garmin Connect — Nhịp tim",
                     subtitle: "Đường liền đổi màu theo zone, trục Y cắt gốc, đứt đoạn khi không đeo")
       }
 

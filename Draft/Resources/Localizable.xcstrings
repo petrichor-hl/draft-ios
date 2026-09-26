@@ -205,6 +205,9 @@
         }
       }
     },
+    "%lld BPM" : {
+
+    },
     "%lld pt" : {
       "localizations" : {
         "en" : {
@@ -220,6 +223,9 @@
           }
         }
       }
+    },
+    "%lld°" : {
+
     },
     "•" : {
       "shouldTranslate" : false
@@ -419,6 +425,15 @@
           }
         }
       }
+    },
+    "1 — bản clone" : {
+
+    },
+    "1 — LineMark một màu, tách series ở khoảng trống" : {
+
+    },
+    "1 — Thanh chia macro (Dietfit)" : {
+
     },
     "1 · DisclosureGroup" : {
       "localizations" : {
@@ -663,6 +678,9 @@
         }
       }
     },
+    "1. Chạm chọn cột" : {
+
+    },
     "1. Chồng nhau" : {
       "localizations" : {
         "en" : {
@@ -843,6 +861,15 @@
           }
         }
       }
+    },
+    "2 — LinearGradient đặt thẳng lên mark" : {
+
+    },
+    "2 — nền tối: environment cộng listRowBackground" : {
+
+    },
+    "2 — Thanh âm lượng" : {
+
     },
     "2 · baseUnit() — đơn vị gốc (canonical)" : {
       "localizations" : {
@@ -1085,6 +1112,12 @@
           }
         }
       }
+    },
+    "3 — cắt đoạn tại biên zone, mỗi đoạn một màu cứng" : {
+
+    },
+    "3 — Thanh theo mốc, bản hệ thống" : {
+
     },
     "3 · Canonical value = quy về base unit" : {
       "localizations" : {
@@ -1360,6 +1393,12 @@
     "3. Tương tác" : {
 
     },
+    "4 — Canvas tự vẽ, cộng chartXSelection" : {
+
+    },
+    "4 — Thanh theo mốc, tự dựng" : {
+
+    },
     "4 · Ép locale tường minh (độc lập với toggle)" : {
       "localizations" : {
         "en" : {
@@ -1515,6 +1554,9 @@
     "4. Toolbox" : {
 
     },
+    "5 — y hệt 4 nhưng bỏ values: zoneBoundaries" : {
+
+    },
     "5 · coefficient & constant" : {
       "localizations" : {
         "en" : {
@@ -1577,9 +1619,6 @@
         }
       }
     },
-    "5. Area" : {
-
-    },
     "5. Cap 400pt" : {
 
     },
@@ -1592,6 +1631,9 @@
           }
         }
       }
+    },
+    "5. interpolationMethod" : {
+
     },
     "5. Một .sheet + một .fullScreenCover" : {
       "localizations" : {
@@ -1661,6 +1703,9 @@
     "6. Annotation" : {
 
     },
+    "6. Area" : {
+
+    },
     "6. Đảo thứ tự" : {
       "localizations" : {
         "en" : {
@@ -1682,9 +1727,6 @@
       }
     },
     "6. maxHeight 400pt" : {
-
-    },
-    "6. Point / Scatter" : {
 
     },
     "6. Quét mã" : {
@@ -1738,7 +1780,7 @@
     "7. maxHeight trong sheet" : {
 
     },
-    "7. Pie / Donut" : {
+    "7. Point / Scatter" : {
 
     },
     "7. Vùng nền" : {
@@ -1764,9 +1806,6 @@
         }
       }
     },
-    "8. Heatmap" : {
-
-    },
     "8. Nâng cao" : {
       "localizations" : {
         "en" : {
@@ -1777,7 +1816,13 @@
         }
       }
     },
+    "8. Pie / Donut" : {
+
+    },
     "8. RuleMark" : {
+
+    },
+    "9. Heatmap" : {
 
     },
     "11 nhóm chủ đề trong tài liệu Animations của Apple" : {
@@ -1965,6 +2010,21 @@
           }
         }
       }
+    },
+    "A — AreaMark(x:y:) trần" : {
+
+    },
+    "A — ba hàng cùng một x, không nói gì thêm" : {
+
+    },
+    "A — BarMark(x:yStart:yEnd:) thanh nổi" : {
+
+    },
+    "A — chỉ .chartXSelection" : {
+
+    },
+    "A — để dọc, đúng thứ không nên làm" : {
+
     },
     "A — foregroundStyle TRÊN MARK" : {
 
@@ -2159,6 +2219,9 @@
     "Area" : {
 
     },
+    "Area gradient, trục Y bên phải, miền khít dữ liệu" : {
+
+    },
     "AVCaptureMetadataOutput — dùng session rẻ nhất" : {
       "localizations" : {
         "en" : {
@@ -2189,7 +2252,16 @@
         }
       }
     },
+    "B — BarMark(xStart:xEnd:y:) kiểu dự báo 10 ngày" : {
+
+    },
+    "B — chartYScale cắt 0 ra khỏi miền" : {
+
+    },
     "B — chartYScale cắt gốc 0" : {
+
+    },
+    "B — đảo hai tham số" : {
 
     },
     "B — đối chứng: hai Text thường" : {
@@ -2204,7 +2276,16 @@
     "B — position: .overlay" : {
 
     },
+    "B — RuleMark(y:) đường trung bình" : {
+
+    },
     "B — tách series, tự tìm chỗ đứt" : {
+
+    },
+    "B — tap và giữ-rê trong chartGesture" : {
+
+    },
+    "B — vẫn chart A, nhưng sort mảng trước" : {
 
     },
     "B — vùng nền vẽ SAU" : {
@@ -2252,6 +2333,9 @@
           }
         }
       }
+    },
+    "Ba vùng cùng mọc từ đáy 0 và đè lên nhau, phải hạ opacity mới nhìn xuyên được. Đổi lại mỗi chuỗi có đáy phẳng riêng nên so sánh trực tiếp được: thấy rõ tuần thứ sáu Mạng xã hội gần đuổi kịp Tìm kiếm. Cái mất là TỔNG — không còn đường viền nào cho biết cộng lại bao nhiêu." : {
+
     },
     "Bấm **+100 kcal** ở mỗi section rồi quan sát WaterCard: màu nền đổi + số lần body tăng = có re-render." : {
       "localizations" : {
@@ -2355,6 +2439,12 @@
     "Bàn phím đẩy sheet lên, và tự co sheet nếu không còn đủ chỗ" : {
 
     },
+    "Bản Stocks hoàn chỉnh, và nó dùng cách D chứ không phải C — có lý do. Gradient resolve theo HỘP BAO của mark; để AreaMark tự tìm đường gốc thì hộp bao thò xuống tận 0, nấc nhạt rơi ra ngoài khung và trong khung chỉ còn phần đậm, tô ra gần như một màu đều. Neo yStart vào cận dưới của miền thì hộp bao trùng vùng vẽ, gradient mới trải trọn từ đường giá xuống đáy. Ngoài ra Swift Charts không có kiểu \"area có viền\", phải vẽ HAI mark: AreaMark tô gradient rồi LineMark đặt nét sắc lên trên." : {
+
+    },
+    "Bản thật nền đen, đây là cách dựng: listRowBackground cho cái thẻ, cộng environment(colorScheme, .dark) cho Chart. Hai thứ phải đi cùng nhau — environment chỉ đổi cách các màu ngữ nghĩa TỰ TÍNH, nó không tự vẽ nền cho ai, bỏ listRowBackground đi là nhãn trục nhạt tới mức gần đọc không ra trên thẻ trắng. Đổi lại, không phải chỉ định foregroundStyle cho từng AxisValueLabel, từng AxisGridLine." : {
+
+    },
     "Bản tự giữ state, bản isExpanded:, và label tuỳ biến" : {
       "localizations" : {
         "en" : {
@@ -2364,6 +2454,9 @@
           }
         }
       }
+    },
+    "Bảng xếp hạng không cần lưới: người ta đọc con số ở cuối thanh chứ không dóng lên trục. Ẩn trục X rồi gắn annotation .trailing là ra bố cục quen thuộc của Screen Time hay báo cáo chi tiêu. chartXScale phải tự đặt rộng hơn giá trị lớn nhất, nếu không nhãn của thanh dài nhất bị đẩy ra ngoài khung." : {
+
     },
     "Bar ngang" : {
 
@@ -2418,6 +2511,9 @@
           }
         }
       }
+    },
+    "Bảy điểm cho dễ nhìn. Chart chỉ giữ trục và miền, đường do Canvas vẽ qua ChartProxy bằng addLine. Được thứ LineMark không cho: màu chạy theo ĐỘ CAO trên khung, vì shading tô theo toạ độ tuyệt đối chứ không theo bounding box của mark. Đây là kỹ thuật Toolbox/Garmin dùng để tô màu theo vùng nhịp tim." : {
+
     },
     "Bẫy: trigger là STATE, không phải EVENT" : {
       "localizations" : {
@@ -2504,6 +2600,9 @@
     "BPM" : {
 
     },
+    "bước" : {
+
+    },
     "Bước" : {
 
     },
@@ -2562,16 +2661,31 @@
     "Bước đúng 4 giờ nhưng ĐIỂM NEO sai: mốc rơi vào 06/10/14 vì miền vẫn là 06–18 do Charts tự suy. AxisMarks chia trong miền hiện có, không tự neo về nửa đêm." : {
 
     },
+    "C — .position(by:) → grouped" : {
+
+    },
     "C — AxisMarks liệt kê mốc cụ thể" : {
 
     },
     "C — chartXScale trọn 24 giờ" : {
 
     },
+    "C — chartYScale(domain: đã sắp)" : {
+
+    },
+    "C — chữa cách 1: chartPlotStyle { $0.clipped() }" : {
+
+    },
+    "C — giữ rồi rê để đổi màu" : {
+
+    },
     "C — opacity TRÊN MARK" : {
 
     },
     "C — position: .bottom" : {
+
+    },
+    "C — RuleMark(y:) ở 400, ngoài tầm dữ liệu" : {
 
     },
     "C — thêm position(by:)" : {
@@ -2779,6 +2893,9 @@
         }
       }
     },
+    "Cao nhất" : {
+
+    },
     "Cập nhật" : {
       "localizations" : {
         "en" : {
@@ -2793,6 +2910,9 @@
 
     },
     "CHẠM CAP" : {
+
+    },
+    "Chạm chọn cột" : {
 
     },
     "Chạm chọn điểm, cuộn ngang, snap từng trang" : {
@@ -2810,6 +2930,12 @@
           }
         }
       }
+    },
+    "Chạm một lần để chọn ngay; giữ rồi rê ngang để đổi cột. Thử vuốt dọc nhanh trên chart để kiểm tra List còn cuộn được không." : {
+
+    },
+    "Chạm rồi GIỮ một nhịp, sau đó rê ngang: lúc này chắc chắn ăn, đó là cử chỉ mà chartXSelection sinh ra để phục vụ." : {
+
     },
     "Change Square Size" : {
       "localizations" : {
@@ -2836,7 +2962,16 @@
     "Chart, Mark, PlottableValue — kiểu dữ liệu quyết định loại trục" : {
 
     },
+    "Charts CHỒNG chúng lên nhau, không hỏi ai — stacked là mặc định của BarMark. Nhưng nhìn kỹ thứ tự: Q1 xanh lá dưới cùng, Q2 xanh dương, Q3 cam. Chồng theo thứ tự các hàng TRONG MẢNG, mà mảng thì lộn xộn. Cùng một màu nhảy lên nhảy xuống giữa các cột, mắt không dóng ngang được." : {
+
+    },
+    "chartXSelection chỉ ăn chạm giữ — thử thêm tap bằng chartGesture" : {
+
+    },
     "chartYScale cắt gốc 0, AxisMarks chọn mốc và định dạng nhãn" : {
+
+    },
+    "chartYScale lấy đúng min…max nên đường giá trải hết chiều cao — một mình nó làm nên phần lớn cái dáng Stocks. Trục sang phải, bốn mốc. AreaMark tô gradient rồi LineMark đè lên lấy nét sắc, vì Swift Charts không có kiểu area có viền. Và AreaMark dùng dạng yStart:yEnd: neo đáy vào cận dưới của miền: để nó tự tìm đường gốc thì hộp bao thò xuống tận 0, vùng tô phủ qua dải nhãn ngày, mà gradient lại resolve theo hộp bao nên nấc nhạt rơi ra ngoài khung và trong khung chỉ còn phần đậm. Types #6 chart C và D đo kỹ hai cách chặn." : {
 
     },
     "Chạy — haptic qua .sensoryFeedback" : {
@@ -3009,7 +3144,16 @@
         }
       }
     },
+    "Chi tiêu" : {
+
+    },
+    "Chín kiểu đoạn nối: thẳng, cong, bậc thang" : {
+
+    },
     "Chỉnh edges & placement để thấy lề tác động lên content vs indicator" : {
+
+    },
+    "Chọn" : {
 
     },
     "Chọn năm sinh" : {
@@ -3058,6 +3202,12 @@
         }
       }
     },
+    "Chồng là mặc định, y như BarMark ở màn Column — không cần tham số gì. Đường viền trên cùng là TỔNG lượt truy cập, mỗi dải là phần đóng góp của một nguồn. Nhưng chỉ dải dưới cùng có đáy phẳng để dóng; hai dải trên bị đáy nhấp nhô của dải dưới đẩy lên đẩy xuống, nên nhìn thì thấy xu hướng chứ đo thì không đo được. Và mảng nguồn BẮT BUỘC phải sắp nhất quán: thứ tự chồng lấy từ thứ tự hàng trong mảng, xáo lên là ba dải luồn xuyên qua nhau thành răng cưa." : {
+
+    },
+    "Chú ý: chart này dùng lại mảng LỘN XỘN của A, vậy mà quý nào cũng đúng thứ tự Online – Cửa hàng – Đại lý. position(by:) lấy chỗ từ MIỀN của scale chứ không từ mảng, nên miễn nhiễm với cái bẫy ở trên. Chồng để đọc TỔNG, tách để so sánh từng kênh — và tách thì an toàn hơn." : {
+
+    },
     "chưa chạy" : {
       "localizations" : {
         "en" : {
@@ -3067,9 +3217,6 @@
           }
         }
       }
-    },
-    "Chưa có màn nào" : {
-
     },
     "Chưa có sự kiện nào" : {
       "localizations" : {
@@ -3454,16 +3601,28 @@
     "D — annotation có điều kiện, View thật" : {
 
     },
+    "D — annotation trên RuleMark(y:), position: .bottom" : {
+
+    },
+    "D — bỏ trục X, số đặt ở cuối thanh" : {
+
+    },
     "D — by: với giá trị SỐ" : {
 
     },
     "D — chỉ AxisMarks, bước 4 giờ" : {
 
     },
+    "D — chữa cách 2: nói thẳng đáy của vùng tô" : {
+
+    },
     "D — lưới dọc nét liền" : {
 
     },
     "D — opacity TRÊN CHART" : {
+
+    },
+    "D — stacking: .normalized" : {
 
     },
     "D — vùng nằm ngoài tầm dữ liệu" : {
@@ -3601,6 +3760,9 @@
       }
     },
     "Day" : {
+
+    },
+    "Đáy" : {
 
     },
     "Đáy sheet" : {
@@ -3767,6 +3929,9 @@
     "Đoạn" : {
 
     },
+    "Doanh thu" : {
+
+    },
     "Đổi `Panel.ID?` thành `Set<Panel.ID>`: isExpanded là `ids.contains(id)`, bấm thì insert/remove. Vẫn một biến ở cha, nhưng chứa được nhiều — đó chính là khác biệt giữa mục 3 và mục 4, nằm gọn trong kiểu dữ liệu." : {
       "localizations" : {
         "en" : {
@@ -3899,6 +4064,9 @@
         }
       }
     },
+    "Dữ liệu cao nhất chỉ 190. Trục Y có nới lên 400 để chứa đường này không? RectangleMark ở màn Vùng nền thì CÓ — vùng 15.000–20.000 kéo trục lên 20.000 và bóp bẹp mọi cột." : {
+
+    },
     "Đừng đặt trong row của List" : {
       "localizations" : {
         "en" : {
@@ -3935,6 +4103,9 @@
         }
       }
     },
+    "Dựng theo ảnh mẫu: track cắt làm hai mảnh chừa khoảng hở cho thumb, tick ẩn đi khi rơi vào khoảng hở đó, nhãn là bóng thoại có đuôi vẽ bằng Path. So với section trên: Apple vẽ tick NẰM DƯỚI track, ở đây tick nằm ĐÈ LÊN track.\n\nSnap bỏ luôn được biến anchor của món 2 — vị trí ngón tay quyết định tất cả, vì kết quả còn phải đi qua một phép làm tròn về mốc nên lệch vài pt không đổi được gì.\n\nMốc không bắt buộc cách đều: vị trí tính theo GIÁ TRỊ, và snap tìm mốc gần nhất cũng theo giá trị chứ không theo pixel.\n\nMỗi lần qua mốc có rung .selection." : {
+
+    },
     "Đúng trường hợp cần test — sheet thứ hai đi đâu?" : {
       "localizations" : {
         "en" : {
@@ -3945,16 +4116,34 @@
         }
       }
     },
+    "ĐÚNG và MƯỢT. Shading tô theo toạ độ tuyệt đối nên màu vừa bám giá trị vừa nội suy liên tục. Phải cộng origin của plotFrame vì chartOverlay phủ cả trục trong khi proxy.position tính từ mép vùng vẽ. Và VẪN CHỌN ĐƯỢC. Canvas che touch, nên overlay phải .allowsHitTesting(false) — đặt BÊN TRONG closure của chartOverlay, lên riêng GeometryReader. Đặt sau dấu đóng là chặn luôn cả Chart, chart điếc hoàn toàn." : {
+
+    },
+    "ĐÚNG. Màu bám giá trị tuyệt đối, đổi đúng tại đường lưới 113 / 132 / 151 / 170, và đoạn sáng xanh dương toàn bộ. Đổi lại màu chuyển khối, số series tăng theo số lần cắt biên." : {
+
+    },
+    "Đường" : {
+
+    },
+    "Đường DỌC có đầu trên thật, nên .top neo nhãn đúng vào đó và không cần alignment. Đặt cạnh D để thấy cùng một tham số position mang hai nghĩa khác nhau, tuỳ mark là đường ngang hay đường dọc." : {
+
+    },
     "Đường dọc xám ở 00 giờ." : {
 
     },
     "Đường liền đổi màu theo zone, trục Y cắt gốc, đứt đoạn khi không đeo" : {
 
     },
-    "Đường trung bình, ngưỡng, mốc thời gian" : {
+    "Đường liền mạch và đứt đúng chỗ tháo đồng hồ. Trục X trải trọn 24 giờ bước 6 và không còn lưới dọc; trục Y bên trái. Màu chưa nói gì về cường độ." : {
 
     },
-    "Đường và vùng" : {
+    "Đường NGANG không có đầu trên hay đầu dưới, nên position chỉ quyết định nhãn nằm TRÊN hay DƯỚI đường; vị trí theo chiều ngang phải nói riêng bằng alignment. Ở đây .bottom đặt nhãn dưới đường, .leading dồn về mép trái." : {
+
+    },
+    "Đường tím nằm ở %lld BPM, trung bình của cả 360 mẫu. Nó chạy suốt chiều rộng kể cả quãng không có dữ liệu — vì không thuộc phần tử nào nên cũng không dừng ở đâu cả." : {
+
+    },
+    "Đường trung bình, ngưỡng, mốc thời gian" : {
 
     },
     "duration" : {
@@ -3989,10 +4178,16 @@
         }
       }
     },
+    "E — annotation trên RuleMark(x:), position: .top" : {
+
+    },
     "E — bỏ AxisGridLine" : {
 
     },
     "E — chartXScale + AxisMarks, như Garmin" : {
+
+    },
+    "E — gradient, và LineMark vẽ đè lên" : {
 
     },
     "E — mark thắng chart" : {
@@ -4002,6 +4197,9 @@
 
     },
     "E — tự chọn dải màu" : {
+
+    },
+    "E — width: .ratio(0.5) và .cornerRadius(6)" : {
 
     },
     "E. Định vị (iOS 17.5+)" : {
@@ -4097,7 +4295,13 @@
     "English" : {
       "shouldTranslate" : false
     },
+    "F — AreaMark(x:yStart:yEnd:) dải thấp–cao" : {
+
+    },
     "F — bỏ AxisTick" : {
+
+    },
+    "F — chartOverlay, Canvas tự vẽ đường" : {
 
     },
     "F — LineMark tô LinearGradient" : {
@@ -4250,6 +4454,12 @@
     "G — bỏ AxisValueLabel" : {
 
     },
+    "G — Canvas vẽ đường cong monotone" : {
+
+    },
+    "G — nhiều chuỗi cùng x → stacked area" : {
+
+    },
     "Gần như không cảm thấy gì, và đó là CHỦ Ý. Đây là haptic nhẹ nhất hệ thống. Dùng nó cho một sự kiện đơn lẻ là dùng sai API." : {
       "localizations" : {
         "en" : {
@@ -4261,6 +4471,9 @@
       }
     },
     "Garmin — Nhịp tim" : {
+
+    },
+    "Garmin Connect — Nhịp tim" : {
 
     },
     "Generator" : {
@@ -4285,6 +4498,9 @@
           }
         }
       }
+    },
+    "Giá" : {
+
     },
     "Giá trị" : {
       "localizations" : {
@@ -4333,6 +4549,15 @@
     "Giống D, thêm đúng một dòng. fixedSize() bảo View giữ kích thước tự nhiên, không chịu bó theo bề ngang mark — nhãn hiện đủ chữ và tràn sang hai bên cột." : {
 
     },
+    "Giống hệt LineMark, chỉ thêm phần tô từ đường giá xuống ĐƯỜNG GỐC. Mà đường gốc là 0, nên miền trục Y bị kéo về 0 và cả dải giá 259–340 bẹp thành một vệt sát đỉnh. Biến động 30% trong hai tư phiên nhìn như đường thẳng." : {
+
+    },
+    "Giữ rồi rê ngang: chartXSelection chọn phiên gần nhất, đường giá và vùng tô đổi từ xanh lá sang xanh lam. Thả tay để xem màu có trở lại không." : {
+
+    },
+    "Giữa trưa" : {
+
+    },
     "Go back" : {
       "localizations" : {
         "en" : {
@@ -4369,7 +4594,10 @@
     "Gọi requestAuthorization sẽ hiện dialog." : {
 
     },
-    "Gradient xuống đáy, dải min–max, stacked area" : {
+    "Gradient, dải min–max, stacked và streamgraph" : {
+
+    },
+    "H — stacking: .unstacked" : {
 
     },
     "H — trục Y sang trái" : {
@@ -4394,6 +4622,12 @@
           }
         }
       }
+    },
+    "Hai đầu thay vì một, y như BarMark ở màn Range — nhưng liền mạch chứ không đứt thành từng thanh. Dải mờ là biên độ trong phiên, đường đậm là giá đóng cửa. Dùng khi x liên tục và ta muốn thấy cả mức lẫn độ không chắc chắn: khoảng tin cậy, dự báo, nhiệt độ ngày." : {
+
+    },
+    "Hai hàng chung MỘT giá trị, chỉ khác cách vẽ icon. Kéo hàng nào cũng được, hàng kia chạy theo.\n\nChạm đâu nhảy đó rồi kéo bám: startLocation lo cú nhảy, translation lo phần kéo tiếp. Thumb chỉ đi được quãng width − 28 chứ không phải width, nên lúc đổi toạ độ chạm về phần trăm phải trừ nửa thumb — thiếu phép trừ đó thì chạm sát mép phải không bao giờ ra 100%.\n\nNhãn % chỉ hiện khi ngón tay còn trên thanh. Nó là overlay của thumb nên đi theo thumb sẵn, không có phép tính vị trí ngang nào riêng." : {
+
     },
     "Hai loại khác nhau có thành hai kênh độc lập?" : {
       "localizations" : {
@@ -4450,6 +4684,9 @@
           }
         }
       }
+    },
+    "Hạng mục" : {
+
     },
     "Haptic chỉ hoạt động trên iPhone thật. Simulator, iPad, Low Power Mode đều im lặng." : {
       "localizations" : {
@@ -4602,6 +4839,9 @@
     "I — chartXScale trục X" : {
 
     },
+    "I — stacking: .center, tức streamgraph" : {
+
+    },
     "identity" : {
       "localizations" : {
         "en" : {
@@ -4717,7 +4957,7 @@
         }
       }
     },
-    "interpolationMethod, nét đứt, tách segment khi khuyết dữ liệu" : {
+    "interpolationMethod" : {
 
     },
     "iOS" : {
@@ -4753,6 +4993,9 @@
       }
     },
     "J — chartXScale + chartXAxis" : {
+
+    },
+    "Kênh" : {
 
     },
     "Kéo chậm qua 20 nấc: từng cú tách nhẹ ghép lại thành cảm giác BÁNH RĂNG, giống vặn núm cơ. Đây mới là thứ class này được sinh ra để làm.\n\nĐể ý nấc ĐẦU hơi trễ, các nấc sau khớp hoàn hảo — chính chuỗi rung đã tự giữ engine nóng, đúng cơ chế bạn đo ở màn A. Muốn nấc đầu cũng khớp thì gọi prepare() lúc gesture bắt đầu." : {
@@ -4905,6 +5148,9 @@
     "Khi content height bên trong ScrollView lớn hơn ScrollView height thì mới scroll được." : {
 
     },
+    "Khoảng chuyển sang trục X, trục Y thành band scale tên thứ. Cả bảy thanh chung một thang 20–38° nên ngày lạnh nằm lệch trái, ngày nóng lệch phải — đó mới là thứ đáng nhìn, chứ không phải độ dài từng thanh. Thử đổi chartXScale thành 24...35 xem hình đọc khác đi thế nào." : {
+
+    },
     "Khoảng tuổi" : {
       "localizations" : {
         "en" : {
@@ -4924,6 +5170,9 @@
           }
         }
       }
+    },
+    "Không cắt gọt gì cả, mà sửa từ gốc: thay vì để AreaMark tự tìm đường gốc rồi tô xuống tận đó, ta nói luôn yStart là cận dưới của miền, nên vùng tô không bao giờ đi xa hơn đáy khung. Dài hơn cách C một chút nhưng không dựa vào hành vi clip nào — và là cách duy nhất nếu muốn đáy nằm ở mức khác, ví dụ tô từ giá tham chiếu lên." : {
+
     },
     "Không chỉ mất phần giãn — chevron cũng nhảy 180° tức thì, và transition chọn kiểu gì cũng vô nghĩa." : {
       "localizations" : {
@@ -5002,6 +5251,12 @@
           }
         }
       }
+    },
+    "Không thêm modifier nào, chỉ đổi chỗ x và y. Nhãn giờ nằm ngang, dài bao nhiêu cũng đọc được. Thứ tự các dải đúng y thứ tự mảng nguồn — band scale dựng miền theo LẦN XUẤT HIỆN ĐẦU TIÊN, không theo alphabet, không theo giá trị. Mà mảng đang lộn xộn, nên bảng này chưa xếp hạng được." : {
+
+    },
+    "Không thêm modifier nào, chỉ đưa vào mảng đã sắp theo quý rồi theo kênh. Giờ Cửa hàng luôn nằm dưới cùng, cột nào cũng vậy, mắt dóng ngang được. Không có modifier nào sửa hộ việc này — thứ tự chồng chỉ nghe lời mảng nguồn." : {
+
     },
     "Khung co theo content, chặn trên ở 400" : {
 
@@ -5222,6 +5477,9 @@
         }
       }
     },
+    "Lượt" : {
+
+    },
     "Lưu ảnh được rồi. Vẫn KHÔNG đọc được thư viện." : {
 
     },
@@ -5278,6 +5536,9 @@
 
     },
     "Mất sạch nhãn giờ, lưới vẫn còn. Trục trở thành mấy đường kẻ vô nghĩa — không ai đọc được biểu đồ đang nói về khoảng thời gian nào." : {
+
+    },
+    "Màu không đổi — mốc và miền là hai việc rời nhau, gradient chỉ phụ thuộc miền. Nhưng lưới về mặc định 75/100/125/150/175, không còn trùng biên zone, nên mất cách kiểm chứng bằng mắt: ở chart 4 chỉ cần nhìn đường lưới là biết màu đổi có đúng ngưỡng hay không. Selection giữ nguyên để chạm giữ vẫn đọc được giá trị — dùng chung selectedTime với chart 4 nên chọn ở đây thì bên kia cũng đổi theo." : {
 
     },
     "Màu theo nhóm, stacked vs grouped, legend từ đâu ra" : {
@@ -5358,6 +5619,9 @@
           }
         }
       }
+    },
+    "Miền 250–350, biến động hiện ra đầy đủ, và phần tô vẫn kín xuống đáy — AreaMark không đòi đường gốc phải nằm trong miền. Nhưng so với chart A thì nhãn ngày ở trục X đâu mất rồi? Vùng tô tràn qua cả dải nhãn và đè lên — nhãn không mất, chỉ bị che. Chart C và D ngay sau đây là hai cách chữa." : {
+
     },
     "MIỀN của trục X. Dữ liệu chỉ từ 4 giờ nên trục tự suy ở A bắt đầu từ đó; khai dayRange thì trục trải trọn ngày và phần rạng sáng hiện ra thành khoảng trống thật." : {
 
@@ -5557,6 +5821,9 @@
         }
       }
     },
+    "Mọi cột cao bằng nhau, giá trị tuyệt đối biến mất, chỉ còn TỈ TRỌNG: Online nở dần qua bốn quý trong khi Cửa hàng co lại — điều chart A giấu mất vì quý nào cột cũng cao hơn quý trước. Trục Y đổi sang thang 0–100 nhưng KHÔNG tự thêm dấu %, muốn có thì phải tự format nhãn." : {
+
+    },
     "Mỗi Dimension (UnitLength, UnitMass, UnitTemperature…) có MỘT đơn vị gốc — baseUnit(). Mọi đơn vị khác quy về đơn vị gốc bằng công thức:" : {
       "localizations" : {
         "en" : {
@@ -5582,6 +5849,9 @@
           }
         }
       }
+    },
+    "Mỗi thanh mang đủ hai đầu, không chạm đường gốc nữa. Nhưng dữ liệu chỉ nằm trong 32–172 mà trục Y vẫn chạy từ 0: Swift Charts không phân biệt thanh neo với thanh nổi, hễ là mark số thì kéo miền về 0. Hậu quả là cả vùng dưới giá trị thấp nhất bỏ trống — nên range chart gần như luôn phải tự đặt chartYScale. Để ý bề rộng các dải chênh nhau bao nhiêu: giờ chạy bộ trải 108 nhịp, giờ nghỉ trưa chỉ 8. Đó mới là thứ range chart kể được." : {
+
     },
     "month" : {
       "localizations" : {
@@ -5636,6 +5906,9 @@
         }
       }
     },
+    "Mức" : {
+
+    },
     "Mục 5 dựng sau." : {
       "localizations" : {
         "en" : {
@@ -5645,6 +5918,9 @@
           }
         }
       }
+    },
+    "Mục tiêu %lld kcal/ngày. Kéo một trong hai thumb: mỗi thumb chỉ đụng hai macro kề nó, macro còn lại đứng yên và tổng vẫn là 100 — vì thứ bị sửa là BIÊN chứ không phải từng số.\n\nMột DragGesture duy nhất đặt trên cả dải, không phải hai gesture gắn lên hai thumb: khi hai thumb chồng nhau thì hit-test hết phân biệt được. Giá trị mới tính bằng mốc-lúc-bắt-đầu + translation, không cộng dồn vào giá trị hiện tại." : {
+
     },
     "Multi-cam, depth, Live Photo, Camera Control, nhiệt độ máy" : {
       "localizations" : {
@@ -5769,6 +6045,12 @@
           }
         }
       }
+    },
+    "Nguồn" : {
+
+    },
+    "Ngưỡng" : {
+
     },
     "Ngưỡng 5 phút: mẫu cách nhau một phút, nên năm phút không có gì là coi như tháo đồng hồ. Chạy được với mọi bộ dữ liệu, kể cả nhiều khoảng trống rải rác." : {
 
@@ -6199,6 +6481,9 @@
     "Pro" : {
 
     },
+    "Quý" : {
+
+    },
     "Quy tắc chọn" : {
       "localizations" : {
         "en" : {
@@ -6346,6 +6631,9 @@
         }
       }
     },
+    "SAI. Gradient trải theo bounding box của TỪNG mark: đoạn sáng cao vỏn vẹn 58–72 BPM mà vẫn đủ năm màu, đáng lẽ xanh dương toàn bộ vì nằm dưới 95. Chuyển foregroundStyle ra tầng chart cũng không đổi gì." : {
+
+    },
     "Sales" : {
 
     },
@@ -6361,6 +6649,12 @@
           }
         }
       }
+    },
+    "Sắp mảng rồi truyền danh sách tên vào domain. Vì miền dựng theo thứ tự gặp, sort thẳng mảng nguồn cũng ra kết quả y hệt — nhưng nói thẳng domain thì rõ ý hơn, nhìn chart là biết thứ tự do ai quyết, và không vỡ khi tầng dưới đổi cách nạp dữ liệu." : {
+
+    },
+    "Sáu hạng mục, nhãn dài nhất là \"Hoá đơn & tiện ích\". Trục X không đủ chỗ nên Charts cắt cụt bằng dấu ba chấm — không xoay nghiêng, cũng không bỏ bớt nhãn nào. Còn đủ sáu nhãn nhưng ba cái thành \"Sức kh…\", \"Hoá đ…\", \"Mua s…\": biết có sáu hạng mục, không biết hạng mục nào." : {
+
     },
     "Sáu tiếng khuyết biến thành một đoạn thẳng dốc đều. Chart không im lặng như BarMark mà bịa ra dữ liệu chưa từng tồn tại." : {
 
@@ -6647,6 +6941,9 @@
         }
       }
     },
+    "Slider Toolbox" : {
+
+    },
     "SnackBar #%lld" : {
       "localizations" : {
         "en" : {
@@ -6676,6 +6973,9 @@
           }
         }
       }
+    },
+    "Snap là tên của hành vi: giá trị dính vào mốc gần nhất. Mấy chấm trên track gọi là tick.\n\nAPI thật của iOS 26 — SliderTick và SliderTickContentForEach. Con số cạnh nhãn là giá trị THÔ. Thả ở lưng chừng hai mốc thì nó vẫn về đúng mốc, 75.0 rồi 50.0, không có số lẻ: khai báo tick là kéo theo cả snap chứ không chỉ vẽ vạch cho dễ nhắm.\n\nTarget của Draft là iOS 18.6 — mức 26.5 nằm ở project nhưng target đè lên — nên chỗ này phải có rào #available. Nhánh dự phòng dùng step: 25, đúng cách duy nhất để có snap trước iOS 26." : {
+
     },
     "Số lần bấm Hoàn tác" : {
       "localizations" : {
@@ -6742,6 +7042,9 @@
           }
         }
       }
+    },
+    "Stocks — Giá cổ phiếu" : {
+
     },
     "String → band scale" : {
 
@@ -6874,6 +7177,9 @@
         }
       }
     },
+    "Tách segment khi khuyết dữ liệu, miền và mốc của trục" : {
+
+    },
     "Tạm biệt" : {
       "localizations" : {
         "en" : {
@@ -6903,6 +7209,9 @@
           }
         }
       }
+    },
+    "Thấp nhất" : {
+
     },
     "Thay thế" : {
       "localizations" : {
@@ -7085,6 +7394,12 @@
         }
       }
     },
+    "TỔNG" : {
+
+    },
+    "Tổng ba macro phải bằng 100%." : {
+
+    },
     "Toolbar Done" : {
       "localizations" : {
         "en" : {
@@ -7214,6 +7529,9 @@
     "Trung bình" : {
 
     },
+    "Trung bình %lld" : {
+
+    },
     "Trước iOS 17 phải tự đoán bằng DispatchQueue.asyncAfter(duration) — sai bét với spring vì spring không có duration cố định. Nay dùng completionCriteria: .logicallyComplete (mặc định, kích hoạt khi giá trị đã tới đích) hoặc .removed (đợi cả phần nảy dư tắt hẳn)." : {
       "localizations" : {
         "en" : {
@@ -7285,6 +7603,9 @@
           }
         }
       }
+    },
+    "Tuần" : {
+
     },
     "Tương tác" : {
 
@@ -7382,6 +7703,9 @@
     "User đã từ chối" : {
 
     },
+    "Vẫn chồng, nhưng đối xứng quanh trục giữa thay vì mọc từ đáy. Không dải nào bị đường gốc ghìm nên hình dáng từng dải đọc dễ hơn hẳn chart G — cú phình của Mạng xã hội hiện thành một cái bụng rõ rệt. Cái giá phải trả: trục Y mất hết ý nghĩa nên ẩn luôn, chart này chỉ để cảm nhận nhịp chứ không để đọc số." : {
+
+    },
     "Vào Settings → Ứng dụng → Draft → Ảnh để bật." : {
 
     },
@@ -7471,6 +7795,9 @@
         }
       }
     },
+    "Vùng" : {
+
+    },
     "Vùng 15.000–20.000 trong khi cột cao nhất chỉ 9.500. Trục Y có nới lên để chứa vùng không? Nếu có thì RectangleMark được tính vào domain như một mark thật, và đặt ngưỡng lớn sẽ bóp bẹp biểu đồ." : {
 
     },
@@ -7538,6 +7865,9 @@
           }
         }
       }
+    },
+    "width nhận .automatic, .fixed(pt), .ratio(phần của dải) hoặc .inset(pt). .ratio(0.5) cho cột chiếm nửa dải, chừa nửa làm khe. cornerRadius thì bo ĐỈNH cả cột chứ không bo từng khúc: các khúc bên trong vẫn phẳng, không hở khe, chân cột vẫn vuông." : {
+
     },
     "withAnimation — gói chỗ đổi state" : {
       "localizations" : {
@@ -7698,6 +8028,12 @@
     "Y hệt A, chỉ đổi thứ tự hai khối. Charts vẽ theo thứ tự khai báo nên vùng giờ ĐÈ LÊN cột. Không có zIndex nào cả." : {
 
     },
+    "Y hệt chart B, màu vẫn đặc, thêm đúng một modifier. chartPlotStyle đưa cho ta VÙNG VẼ như một View bình thường, nên .clipped() trên nó cắt mọi thứ thò ra ngoài. Nhưng nó chỉ cắt HÌNH, không sửa HỘP BAO của mark — vùng tô vẫn tính là xuống tận đường gốc. Màu đặc thì không sao; đổi sang gradient là hỏng, vì gradient resolve theo hộp bao nên nấc nhạt rơi ra ngoài khung. Lúc đó phải dùng cách D. Lưu ý nữa: chỉ được trang trí vùng vẽ trong closure này — nhét một Chart vào đó là đệ quy layout rồi tràn stack, màn Toolbox/Garmin đã dính." : {
+
+    },
+    "Y hệt F, chỉ đổi cách dựng Path. Canvas KHÔNG có interpolationMethod — GraphicsContext chỉ biết addLine và addCurve, muốn cong thì phải tự tính điểm điều khiển. Đây là monotone cubic Hermite viết tay, cùng thuật toán với .monotone ở màn 5: đường cong nhưng không vọt quá giá trị của các điểm." : {
+
+    },
     "year" : {
       "localizations" : {
         "en" : {
@@ -7708,7 +8044,7 @@
         }
       }
     },
-    "yStart…yEnd — nền móng của chart Apple Health" : {
+    "yStart…yEnd — thanh không neo vào đường gốc" : {
 
     }
   },
