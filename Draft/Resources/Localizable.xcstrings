@@ -2242,6 +2242,9 @@
         }
       }
     },
+    "Average on %@s" : {
+
+    },
     "AVFoundation — tự viết UI" : {
       "localizations" : {
         "en" : {
@@ -3750,6 +3753,9 @@
     "Đáy" : {
 
     },
+    "Day + Location With Most Sales" : {
+
+    },
     "Đáy sheet" : {
 
     },
@@ -4734,9 +4740,6 @@
           }
         }
       }
-    },
-    "Hello, World!" : {
-
     },
     "Hiện" : {
       "localizations" : {
@@ -6631,6 +6634,9 @@
     "SAI. Gradient trải theo bounding box của TỪNG mark: đoạn sáng cao vỏn vẹn 58–72 BPM mà vẫn đủ năm màu, đáng lẽ xanh dương toàn bộ vì nằm dưới 95. Chuyển foregroundStyle ra tầng chart cũng không đổi gì." : {
 
     },
+    "sales" : {
+
+    },
     "Sales" : {
 
     },
@@ -6696,6 +6702,9 @@
 
     },
     "SectorMark và biểu đồ tròn" : {
+
+    },
+    "Selected" : {
 
     },
     "Selection" : {
