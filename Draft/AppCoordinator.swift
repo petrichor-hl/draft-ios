@@ -132,6 +132,9 @@ enum AppRoute: Hashable {
     case chartLocationDetails
     case chartRaiseTheBar
     case chartLocationDetailsBarMark
+    case chartExplorePieChartsAndInteractivity
+    case chartExplorePieCharts
+    case chartInteractivity
     case chartTypes
     case chartColumn
     case chartBar
@@ -143,7 +146,6 @@ enum AppRoute: Hashable {
     case chartRange
     case chartHeatmap
     case chartInteraction
-    case chartTapSelect
     case chartToolbox
     case chartGarminHeartRate
     case chartStocks
@@ -361,6 +363,12 @@ extension AppRoute: View {
             RaiseTheBar()
         case .chartLocationDetailsBarMark:
             LocationDetailsBarMark()
+        case .chartExplorePieChartsAndInteractivity:
+            ExplorePieChartsAndInteractivity()
+        case .chartExplorePieCharts:
+            ExplorePieCharts()
+        case .chartInteractivity:
+            Interactivity()
         case .chartTypes:
             ChartTypesLab()
         case .chartColumn:
@@ -383,8 +391,6 @@ extension AppRoute: View {
             HeatmapScreen()
         case .chartInteraction:
             ChartInteractionLab()
-        case .chartTapSelect:
-            TapToSelectScreen()
         case .chartToolbox:
             ChartToolbox()
         case .chartGarminHeartRate:

@@ -678,9 +678,6 @@
         }
       }
     },
-    "1. Chạm chọn cột" : {
-
-    },
     "1. Chồng nhau" : {
       "localizations" : {
         "en" : {
@@ -721,6 +718,9 @@
           }
         }
       }
+    },
+    "1. Explore Pie Charts" : {
+
     },
     "1. Fixed Height" : {
 
@@ -1074,6 +1074,9 @@
           }
         }
       }
+    },
+    "2. Interactivity" : {
+
     },
     "2. Kiểu dữ liệu → loại trục" : {
 
@@ -2020,9 +2023,6 @@
     "A — BarMark(x:yStart:yEnd:) thanh nổi" : {
 
     },
-    "A — chỉ .chartXSelection" : {
-
-    },
     "A — để dọc, đúng thứ không nên làm" : {
 
     },
@@ -2280,9 +2280,6 @@
 
     },
     "B — tách series, tự tìm chỗ đứt" : {
-
-    },
-    "B — tap và giữ-rê trong chartGesture" : {
 
     },
     "B — vẫn chart A, nhưng sort mảng trước" : {
@@ -2600,9 +2597,6 @@
     "BPM" : {
 
     },
-    "bước" : {
-
-    },
     "Bước" : {
 
     },
@@ -2912,9 +2906,6 @@
     "CHẠM CAP" : {
 
     },
-    "Chạm chọn cột" : {
-
-    },
     "Chạm chọn điểm, cuộn ngang, snap từng trang" : {
 
     },
@@ -2930,12 +2921,6 @@
           }
         }
       }
-    },
-    "Chạm một lần để chọn ngay; giữ rồi rê ngang để đổi cột. Thử vuốt dọc nhanh trên chart để kiểm tra List còn cuộn được không." : {
-
-    },
-    "Chạm rồi GIỮ một nhịp, sau đó rê ngang: lúc này chắc chắn ăn, đó là cử chỉ mà chartXSelection sinh ra để phục vụ." : {
-
     },
     "Change Square Size" : {
       "localizations" : {
@@ -2963,9 +2948,6 @@
 
     },
     "Charts CHỒNG chúng lên nhau, không hỏi ai — stacked là mặc định của BarMark. Nhưng nhìn kỹ thứ tự: Q1 xanh lá dưới cùng, Q2 xanh dương, Q3 cam. Chồng theo thứ tự các hàng TRONG MẢNG, mà mảng thì lộn xộn. Cùng một màu nhảy lên nhảy xuống giữa các cột, mắt không dóng ngang được." : {
-
-    },
-    "chartXSelection chỉ ăn chạm giữ — thử thêm tap bằng chartGesture" : {
 
     },
     "chartYScale cắt gốc 0, AxisMarks chọn mốc và định dạng nhãn" : {
@@ -3217,6 +3199,9 @@
           }
         }
       }
+    },
+    "Chưa có màn nào" : {
+
     },
     "Chưa có sự kiện nào" : {
       "localizations" : {
@@ -4295,6 +4280,12 @@
     "English" : {
       "shouldTranslate" : false
     },
+    "Explore pie charts and interactivity" : {
+
+    },
+    "Explore pie charts and interactivity in Swift Charts" : {
+
+    },
     "F — AreaMark(x:yStart:yEnd:) dải thấp–cao" : {
 
     },
@@ -4743,6 +4734,9 @@
           }
         }
       }
+    },
+    "Hello, World!" : {
+
     },
     "Hiện" : {
       "localizations" : {
@@ -5972,6 +5966,9 @@
         }
       }
     },
+    "Name" : {
+
+    },
     "Native, 0 dependency — chỉ inline" : {
       "localizations" : {
         "en" : {
@@ -6698,6 +6695,9 @@
     "SectorMark — mark duy nhất dùng toạ độ cực" : {
 
     },
+    "SectorMark và biểu đồ tròn" : {
+
+    },
     "Selection" : {
       "localizations" : {
         "en" : {
@@ -7394,9 +7394,6 @@
         }
       }
     },
-    "TỔNG" : {
-
-    },
     "Tổng ba macro phải bằng 100%." : {
 
     },
@@ -7608,6 +7605,9 @@
 
     },
     "Tương tác" : {
+
+    },
+    "Tương tác với Swift Charts" : {
 
     },
     "UIKit — prepare(), impact, notification, selection" : {
@@ -7930,6 +7930,9 @@
       }
     },
     "WWDC22" : {
+
+    },
+    "WWDC23" : {
 
     },
     "Xếp hàng bằng .delay(index × nhịp) — tách từ màn FAB" : {

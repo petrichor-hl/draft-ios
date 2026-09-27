@@ -61,6 +61,15 @@ struct ChartLab: View {
                       subtitle: "Apple")
         }
       }
+
+      Section("WWDC23") {
+        Button {
+          coordinator.push(.chartExplorePieChartsAndInteractivity)
+        } label: {
+          ChartLabRow(title: "Explore pie charts and interactivity in Swift Charts",
+                      subtitle: "Apple")
+        }
+      }
     }
     .navigationTitle("Chart Lab")
   }
