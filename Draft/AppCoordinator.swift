@@ -146,6 +146,7 @@ enum AppRoute: Hashable {
     case chartRange
     case chartHeatmap
     case chartInteraction
+    case chartStepsSelection
     case chartToolbox
     case chartGarminHeartRate
     case chartStocks
@@ -391,6 +392,8 @@ extension AppRoute: View {
             HeatmapScreen()
         case .chartInteraction:
             ChartInteractionLab()
+        case .chartStepsSelection:
+            StepsSelectionScreen()
         case .chartToolbox:
             ChartToolbox()
         case .chartGarminHeartRate:

@@ -14,9 +14,11 @@ struct Interactivity: View {
 
   private var selectedDate: Date? {
     guard let rawSelectedDate else { return nil }
-    return cupertinoData.first {
-      Calendar.current.isDate($0.weekday, inSameDayAs: rawSelectedDate)
-    }?.weekday
+    return seriesData
+      .lazy
+      .flatMap(\.sales)
+      .first { Calendar.current.isDate($0.weekday, inSameDayAs: rawSelectedDate) }?
+      .weekday
   }
 
   private var mostSalesDescription: String {
@@ -29,6 +31,21 @@ struct Interactivity: View {
 
     let weekday = highest.day.formatted(.dateTime.weekday(.wide).locale(Locale(identifier: "en_US")))
     return "\(weekday)s in \(highest.city)"
+  }
+
+  private func selectDate(at x: CGFloat, using proxy: ChartProxy) {
+    guard x >= 0, x <= proxy.plotSize.width,
+          let day = proxy.value(atX: x, as: Date.self),
+          seriesData.contains(where: { series in
+            series.sales.contains {
+              Calendar.current.isDate($0.weekday, inSameDayAs: day)
+            }
+          })
+    else {
+      rawSelectedDate = nil
+      return
+    }
+    proxy.selectXValue(at: x)
   }
 
   private func valueSelectionPopover(for day: Date) -> some View {
@@ -117,6 +134,11 @@ struct Interactivity: View {
         }
       }
       .chartXSelection(value: $rawSelectedDate)
+      .chartGesture { proxy in
+        DragGesture(minimumDistance: 0)
+          .onChanged { selectDate(at: $0.location.x, using: proxy) }
+          .onEnded { selectDate(at: $0.location.x, using: proxy) }
+      }
       .chartForegroundStyleScale([
         "Cupertino": Color.blue,
         "San Francisco": Color.green

@@ -1844,6 +1844,16 @@
         }
       }
     },
+    "21 Sep, %@–%@" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "21 Sep, %1$@–%2$@"
+          }
+        }
+      }
+    },
     "① Cách 1 & 2: transaction vs modifier" : {
       "localizations" : {
         "en" : {
@@ -2214,6 +2224,9 @@
       }
     },
     "Apple" : {
+
+    },
+    "Apple Health — Steps" : {
 
     },
     "Area" : {
@@ -2915,6 +2928,9 @@
     "Chạm để bật bàn phím" : {
 
     },
+    "Chạm hoặc nhấn giữ để chọn; rê để đổi giờ." : {
+
+    },
     "Chạm khắp vùng xanh — sát mép trên, sát mép dưới, giữa. Bật/tắt toggle để so.\n\nGenerator được tạo bằng init(style:view:) với chính view này làm mốc, nên toạ độ truyền vào impactOccurred(at:) mới có ý nghĩa. Dùng init(style:) thường rồi gọi at: là vô nghĩa." : {
       "localizations" : {
         "en" : {
@@ -2951,6 +2967,9 @@
 
     },
     "Charts CHỒNG chúng lên nhau, không hỏi ai — stacked là mặc định của BarMark. Nhưng nhìn kỹ thứ tự: Q1 xanh lá dưới cùng, Q2 xanh dương, Q3 cam. Chồng theo thứ tự các hàng TRONG MẢNG, mà mảng thì lộn xộn. Cùng một màu nhảy lên nhảy xuống giữa các cột, mắt không dóng ngang được." : {
+
+    },
+    "chartXSelection + chartOverlay, chạm hoặc nhấn giữ để chọn" : {
 
     },
     "chartYScale cắt gốc 0, AxisMarks chọn mốc và định dạng nhãn" : {
@@ -3202,9 +3221,6 @@
           }
         }
       }
-    },
-    "Chưa có màn nào" : {
-
     },
     "Chưa có sự kiện nào" : {
       "localizations" : {
@@ -4822,6 +4838,12 @@
           }
         }
       }
+    },
+    "Hour" : {
+
+    },
+    "HOURLY" : {
+
     },
     "HStack không xuống dòng được — thiếu chỗ thì nó bóp con lại. FlowRow hết chỗ thì mở hàng mới, nên số phần tử mỗi hàng đổi theo bề rộng." : {
       "localizations" : {
@@ -6707,6 +6729,9 @@
     "Selected" : {
 
     },
+    "Selected hour" : {
+
+    },
     "Selection" : {
       "localizations" : {
         "en" : {
@@ -7041,6 +7066,12 @@
           }
         }
       }
+    },
+    "steps" : {
+
+    },
+    "Steps" : {
+
     },
     "Sticky • no tap close" : {
       "localizations" : {
@@ -7428,6 +7459,9 @@
           }
         }
       }
+    },
+    "TOTAL" : {
+
     },
     "Tracking" : {
       "localizations" : {
