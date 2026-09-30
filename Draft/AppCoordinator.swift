@@ -148,6 +148,7 @@ enum AppRoute: Hashable {
     case chartInteraction
     case chartStepsSelection
     case chartToolbox
+    case chartAppleHealthSteps
     case chartGarminHeartRate
     case chartStocks
     case sliderToolbox
@@ -396,6 +397,8 @@ extension AppRoute: View {
             StepsSelectionScreen()
         case .chartToolbox:
             ChartToolbox()
+        case .chartAppleHealthSteps:
+            AppleHealthStepsScreen()
         case .chartGarminHeartRate:
             GarminHeartRateScreen()
         case .chartStocks:

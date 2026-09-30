@@ -13,6 +13,13 @@ struct ChartToolbox: View {
   var body: some View {
     List {
       Button {
+        coordinator.push(.chartAppleHealthSteps)
+      } label: {
+        ChartLabRow(title: "Apple Health — Steps",
+                    subtitle: "chartXSelection + chartOverlay, chạm hoặc nhấn giữ để chọn")
+      }
+
+      Button {
         coordinator.push(.chartGarminHeartRate)
       } label: {
         ChartLabRow(title: "Garmin Connect — Nhịp tim",
