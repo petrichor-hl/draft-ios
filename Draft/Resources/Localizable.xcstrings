@@ -6353,6 +6353,7 @@
       }
     },
     "Phần 2 — AVCaptureSession + preview layer." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6505,6 +6506,9 @@
       }
     },
     "presentationDetents([.height(600)]) — sheet luôn cao 600" : {
+
+    },
+    "Print session state" : {
 
     },
     "Pro" : {

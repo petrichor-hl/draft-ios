@@ -9,6 +9,11 @@
 //    2. AVCaptureSession       — tự viết UI, Apple lo pipeline.
 //    3. Xử lý từng frame       — chặn buffer trước khi nó thành ảnh.
 //
+//  Bước tùy chọn sau bài 2. Session & Preview:
+//    - sessionPreset: chọn cấu hình capture, kiểm tra canSetSessionPreset,
+//      thử đổi preset khi preview đang hiển thị.
+//    - Có thể bỏ qua bước này để tiếp tục bài 3. Chụp ảnh.
+//
 //  LƯU Ý: Simulator không có camera — mọi màn từ mục 1 trở đi phải chạy trên iPhone thật.
 //
 
