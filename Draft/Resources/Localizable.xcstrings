@@ -6151,6 +6151,9 @@
         }
       }
     },
+    "No photo yet" : {
+
+    },
     "No video selected" : {
       "localizations" : {
         "en" : {
@@ -6293,6 +6296,9 @@
         }
       }
     },
+    "Open camera" : {
+
+    },
     "Parse được block, nhưng render thì sao?" : {
       "localizations" : {
         "en" : {
@@ -6336,6 +6342,7 @@
       }
     },
     "Phần 1 — UIImagePickerController bọc trong SwiftUI." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -7218,6 +7225,12 @@
       }
     },
     "Tách segment khi khuyết dữ liệu, miền và mốc của trục" : {
+
+    },
+    "Take a photo to preview it here." : {
+
+    },
+    "Take another photo" : {
 
     },
     "Tạm biệt" : {
