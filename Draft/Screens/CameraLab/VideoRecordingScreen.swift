@@ -2,7 +2,7 @@
 //  VideoRecordingScreen.swift
 //  Draft
 //
-//  Phần 5 — Quay video.
+//  Phần 6 — Quay video.
 //
 //  Sẽ học:
 //  - AVCaptureMovieFileOutput: startRecording(to:) ghi thẳng ra file tạm.
@@ -20,9 +20,9 @@ struct VideoRecordingScreen: View {
     ContentUnavailableView(
       "Chưa làm",
       systemImage: "record.circle",
-      description: Text("Phần 5 — AVCaptureMovieFileOutput.")
+      description: Text("Phần 6 — AVCaptureMovieFileOutput.")
     )
-    .navigationTitle("5. Quay video")
+    .navigationTitle("6. Quay video")
     .navigationBarTitleDisplayMode(.inline)
   }
 }

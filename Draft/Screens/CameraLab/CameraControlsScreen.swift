@@ -2,7 +2,7 @@
 //  CameraControlsScreen.swift
 //  Draft
 //
-//  Phần 4 — Những nút mà app camera thật nào cũng có.
+//  Phần 5 — Những nút mà app camera thật nào cũng có.
 //
 //  Sẽ học:
 //  - Đổi trước/sau: gỡ input cũ, thêm input mới trong cùng một beginConfiguration().
@@ -20,9 +20,9 @@ struct CameraControlsScreen: View {
     ContentUnavailableView(
       "Chưa làm",
       systemImage: "slider.horizontal.3",
-      description: Text("Phần 4 — đổi ống kính, flash, zoom, focus, xoay.")
+      description: Text("Phần 5 — đổi ống kính, flash, zoom, focus, xoay.")
     )
-    .navigationTitle("4. Điều khiển")
+    .navigationTitle("5. Điều khiển")
     .navigationBarTitleDisplayMode(.inline)
   }
 }

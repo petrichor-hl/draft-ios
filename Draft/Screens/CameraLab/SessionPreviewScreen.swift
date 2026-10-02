@@ -11,10 +11,7 @@
 //  - startRunning() BLOCK luồng gọi → phải chạy trên session queue riêng, không phải main.
 //  - Vòng đời: chủ động dừng session khi preview biến mất.
 //
-//  Bước tùy chọn sau bài này:
-//  - sessionPreset ảnh hưởng gì tới preview và output, canSetSessionPreset,
-//    đổi preset khi preview đang hiển thị.
-//  - Không yêu cầu bước này để hoàn thành Session & Preview.
+//  sessionPreset được học riêng ở bài 3. Session Preset (tùy chọn).
 //
 
 import SwiftUI
@@ -154,6 +151,21 @@ nonisolated final class CameraSessionController: @unchecked Sendable {
         }
     }
     
+    func changePreset(_ preset: AVCaptureSession.Preset) {
+        sessionQueue.async { [self] in
+            guard session.canSetSessionPreset(preset) else {
+                print("Preset không được hỗ trợ:", preset.rawValue)
+                return
+            }
+
+            session.beginConfiguration()
+            session.sessionPreset = preset
+            session.commitConfiguration()
+
+            print("Preset:", session.sessionPreset.rawValue)
+        }
+    }
+
     func printSessionState() {
         sessionQueue.async { [self] in
             print("isRunning:", session.isRunning)

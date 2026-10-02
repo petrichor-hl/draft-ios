@@ -2,7 +2,7 @@
 //  VideoDataOutputScreen.swift
 //  Draft
 //
-//  Phần 7 — Chặn từng frame trước khi nó thành ảnh.
+//  Phần 8 — Chặn từng frame trước khi nó thành ảnh.
 //
 //  Sẽ học:
 //  - AVCaptureVideoDataOutput + delegate trả CMSampleBuffer trên queue riêng.
@@ -19,9 +19,9 @@ struct VideoDataOutputScreen: View {
     ContentUnavailableView(
       "Chưa làm",
       systemImage: "square.stack.3d.down.right",
-      description: Text("Phần 7 — sample buffer, Core Image, Vision.")
+      description: Text("Phần 8 — sample buffer, Core Image, Vision.")
     )
-    .navigationTitle("7. Xử lý frame")
+    .navigationTitle("8. Xử lý frame")
     .navigationBarTitleDisplayMode(.inline)
   }
 }

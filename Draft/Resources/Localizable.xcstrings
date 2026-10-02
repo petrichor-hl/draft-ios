@@ -1283,6 +1283,7 @@
       }
     },
     "3. Chụp ảnh" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1356,6 +1357,12 @@
       }
     },
     "3. Range" : {
+
+    },
+    "3. Session Preset" : {
+
+    },
+    "3. Session Preset (tùy chọn)" : {
 
     },
     "3. swift-markdown" : {
@@ -1469,6 +1476,9 @@
     "4. `by:` và scale" : {
 
     },
+    "4. Chụp ảnh" : {
+
+    },
     "4. Cụm single-open" : {
       "localizations" : {
         "en" : {
@@ -1486,6 +1496,7 @@
       }
     },
     "4. Điều khiển" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1496,6 +1507,7 @@
       }
     },
     "4. Điều khiển camera" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1555,6 +1567,9 @@
 
     },
     "4. Toolbox" : {
+
+    },
+    "4K" : {
 
     },
     "5 — y hệt 4 nhưng bỏ values: zoneBoundaries" : {
@@ -1625,6 +1640,12 @@
     "5. Cap 400pt" : {
 
     },
+    "5. Điều khiển" : {
+
+    },
+    "5. Điều khiển camera" : {
+
+    },
     "5. Đổi lớp áo" : {
       "localizations" : {
         "en" : {
@@ -1649,6 +1670,7 @@
       }
     },
     "5. Quay video" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1732,7 +1754,11 @@
     "6. maxHeight 400pt" : {
 
     },
+    "6. Quay video" : {
+
+    },
     "6. Quét mã" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1749,6 +1775,7 @@
       }
     },
     "6. Quét QR / barcode" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1786,10 +1813,17 @@
     "7. Point / Scatter" : {
 
     },
+    "7. Quét mã" : {
+
+    },
+    "7. Quét QR / barcode" : {
+
+    },
     "7. Vùng nền" : {
 
     },
     "7. Xử lý frame" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1800,6 +1834,7 @@
       }
     },
     "7. Xử lý từng frame" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1810,6 +1845,7 @@
       }
     },
     "8. Nâng cao" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1825,7 +1861,16 @@
     "8. RuleMark" : {
 
     },
+    "8. Xử lý frame" : {
+
+    },
+    "8. Xử lý từng frame" : {
+
+    },
     "9. Heatmap" : {
+
+    },
+    "9. Nâng cao" : {
 
     },
     "11 nhóm chủ đề trong tài liệu Animations của Apple" : {
@@ -1853,6 +1898,12 @@
           }
         }
       }
+    },
+    "720p" : {
+
+    },
+    "1080p" : {
+
     },
     "① Cách 1 & 2: transaction vs modifier" : {
       "localizations" : {
@@ -2978,6 +3029,9 @@
     "chartYScale lấy đúng min…max nên đường giá trải hết chiều cao — một mình nó làm nên phần lớn cái dáng Stocks. Trục sang phải, bốn mốc. AreaMark tô gradient rồi LineMark đè lên lấy nét sắc, vì Swift Charts không có kiểu area có viền. Và AreaMark dùng dạng yStart:yEnd: neo đáy vào cận dưới của miền: để nó tự tìm đường gốc thì hộp bao thò xuống tận 0, vùng tô phủ qua dải nhãn ngày, mà gradient lại resolve theo hộp bao nên nấc nhạt rơi ra ngoài khung và trong khung chỉ còn phần đậm. Types #6 chart C và D đo kỹ hai cách chặn." : {
 
     },
+    "Chất lượng capture, canSetSessionPreset, đổi preset khi preview chạy" : {
+
+    },
     "Chạy — haptic qua .sensoryFeedback" : {
       "localizations" : {
         "en" : {
@@ -3353,6 +3407,9 @@
           }
         }
       }
+    },
+    "Close camera" : {
+
     },
     "CMSampleBuffer, filter Core Image, Vision realtime" : {
       "localizations" : {
@@ -4803,6 +4860,9 @@
         }
       }
     },
+    "High" : {
+
+    },
     "Home / Push-style Side Menu" : {
       "localizations" : {
         "en" : {
@@ -5486,6 +5546,9 @@
         }
       }
     },
+    "Low" : {
+
+    },
     "Lúc ĐÓNG lại: khung co ngay còn chữ thì fade từ từ, nên chữ tràn ra ngoài viền. Bootstrap giấu chỗ này bằng overflow: hidden." : {
       "localizations" : {
         "en" : {
@@ -5600,6 +5663,9 @@
           }
         }
       }
+    },
+    "Medium" : {
+
     },
     "Menu" : {
       "localizations" : {
@@ -6364,6 +6430,7 @@
       }
     },
     "Phần 3 — AVCapturePhotoOutput và lưu ảnh." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6373,7 +6440,11 @@
         }
       }
     },
+    "Phần 4 — AVCapturePhotoOutput và lưu ảnh." : {
+
+    },
     "Phần 4 — đổi ống kính, flash, zoom, focus, xoay." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6384,6 +6455,7 @@
       }
     },
     "Phần 5 — AVCaptureMovieFileOutput." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6393,7 +6465,11 @@
         }
       }
     },
+    "Phần 5 — đổi ống kính, flash, zoom, focus, xoay." : {
+
+    },
     "Phần 6 — AVCaptureMetadataOutput." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6403,7 +6479,14 @@
         }
       }
     },
+    "Phần 6 — AVCaptureMovieFileOutput." : {
+
+    },
+    "Phần 7 — AVCaptureMetadataOutput." : {
+
+    },
     "Phần 7 — sample buffer, Core Image, Vision." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6414,6 +6497,7 @@
       }
     },
     "Phần 8 — multi-cam, depth, Live Photo, Camera Control." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6422,6 +6506,12 @@
           }
         }
       }
+    },
+    "Phần 8 — sample buffer, Core Image, Vision." : {
+
+    },
+    "Phần 9 — multi-cam, depth, Live Photo, Camera Control." : {
+
     },
     "Phân trang tháng" : {
       "localizations" : {
@@ -6442,6 +6532,9 @@
           }
         }
       }
+    },
+    "Photo" : {
+
     },
     "Phủ hết màn, không có detent hay drag để đóng — tự dựng nút Close" : {
 

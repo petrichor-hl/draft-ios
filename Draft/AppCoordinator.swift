@@ -108,6 +108,7 @@ enum AppRoute: Hashable {
     case cameraPermission
     case cameraImagePicker
     case cameraSessionPreview
+    case cameraSessionPreset
     case cameraPhotoCapture
     case cameraControls
     case cameraVideoRecording
@@ -317,6 +318,8 @@ extension AppRoute: View {
             ImagePickerCameraScreen()
         case .cameraSessionPreview:
             SessionPreviewScreen()
+        case .cameraSessionPreset:
+            SessionPresetScreen()
         case .cameraPhotoCapture:
             PhotoCaptureScreen()
         case .cameraControls:

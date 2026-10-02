@@ -9,10 +9,8 @@
 //    2. AVCaptureSession       — tự viết UI, Apple lo pipeline.
 //    3. Xử lý từng frame       — chặn buffer trước khi nó thành ảnh.
 //
-//  Bước tùy chọn sau bài 2. Session & Preview:
-//    - sessionPreset: chọn cấu hình capture, kiểm tra canSetSessionPreset,
-//      thử đổi preset khi preview đang hiển thị.
-//    - Có thể bỏ qua bước này để tiếp tục bài 3. Chụp ảnh.
+//  Bài 3. Session Preset là bước tùy chọn, có màn hình riêng:
+//    - Có thể bỏ qua bước này để tiếp tục bài 4. Chụp ảnh.
 //
 //  LƯU Ý: Simulator không có camera — mọi màn từ mục 1 trở đi phải chạy trên iPhone thật.
 //
@@ -57,10 +55,19 @@ struct CameraLab: View {
         }
 
         Button {
+          coordinator.push(.cameraSessionPreset)
+        } label: {
+          CameraLabRow(
+            title: "3. Session Preset (tùy chọn)",
+            subtitle: "Chất lượng capture, canSetSessionPreset, đổi preset khi preview chạy"
+          )
+        }
+
+        Button {
           coordinator.push(.cameraPhotoCapture)
         } label: {
           CameraLabRow(
-            title: "3. Chụp ảnh",
+            title: "4. Chụp ảnh",
             subtitle: "AVCapturePhotoOutput, delegate, orientation, lưu Photos"
           )
         }
@@ -69,7 +76,7 @@ struct CameraLab: View {
           coordinator.push(.cameraControls)
         } label: {
           CameraLabRow(
-            title: "4. Điều khiển camera",
+            title: "5. Điều khiển camera",
             subtitle: "Đổi ống kính, flash/torch, zoom, tap-to-focus, xoay máy"
           )
         }
@@ -78,7 +85,7 @@ struct CameraLab: View {
           coordinator.push(.cameraVideoRecording)
         } label: {
           CameraLabRow(
-            title: "5. Quay video",
+            title: "6. Quay video",
             subtitle: "MovieFileOutput, thêm audio input, gián đoạn cuộc gọi"
           )
         }
@@ -87,7 +94,7 @@ struct CameraLab: View {
           coordinator.push(.cameraMetadataScan)
         } label: {
           CameraLabRow(
-            title: "6. Quét QR / barcode",
+            title: "7. Quét QR / barcode",
             subtitle: "AVCaptureMetadataOutput — dùng session rẻ nhất"
           )
         }
@@ -98,7 +105,7 @@ struct CameraLab: View {
           coordinator.push(.cameraVideoDataOutput)
         } label: {
           CameraLabRow(
-            title: "7. Xử lý từng frame",
+            title: "8. Xử lý từng frame",
             subtitle: "CMSampleBuffer, filter Core Image, Vision realtime"
           )
         }
@@ -107,7 +114,7 @@ struct CameraLab: View {
           coordinator.push(.cameraAdvanced)
         } label: {
           CameraLabRow(
-            title: "8. Nâng cao",
+            title: "9. Nâng cao",
             subtitle: "Multi-cam, depth, Live Photo, Camera Control, nhiệt độ máy"
           )
         }
