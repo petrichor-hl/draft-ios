@@ -12,8 +12,6 @@ struct DietfitCameraScreen: View {
     @State private var isPreviewVisible = false
 
     @State private var selectedZoom: Double = 1.0
-    @State private var isChangingZoom = false
-    @State private var isZoomChangeFailed = false
 
     var body: some View {
         VStack(spacing: 16) {
@@ -75,11 +73,6 @@ struct DietfitCameraScreen: View {
             .onDisappear {
                 camera.stop()
             }
-            .alert("Không thể đổi camera", isPresented: $isZoomChangeFailed) {
-                Button("OK", role: .cancel) {}
-            } message: {
-                Text("Hãy kiểm tra quyền camera và thử lại.")
-            }
         }
         .navigationTitle("Dietfit")
         .navigationBarTitleDisplayMode(.inline)
@@ -100,15 +93,7 @@ struct DietfitCameraScreen: View {
                 ForEach([0.5, 1.0], id: \.self) { zoom in
                     Button {
                         guard selectedZoom != zoom else { return }
-                        isChangingZoom = true
-                        Task {
-                            if await camera.changeZoom(zoom) {
-                                selectedZoom = zoom
-                            } else {
-                                isZoomChangeFailed = true
-                            }
-                            isChangingZoom = false
-                        }
+                        selectedZoom = zoom
                     } label: {
                         Text(zoom == 0.5 ? "0.5x" : "1x")
                             .font(.system(size: 16, weight: .semibold))
@@ -121,8 +106,6 @@ struct DietfitCameraScreen: View {
                             .contentShape(.capsule)
                     }
                     .buttonStyle(.plain)
-                    .disabled(isChangingZoom || (zoom == 0.5 && !camera.supportsUltraWide))
-                    .opacity(zoom == 0.5 && !camera.supportsUltraWide ? 0.4 : 1)
                 }
             }
         }

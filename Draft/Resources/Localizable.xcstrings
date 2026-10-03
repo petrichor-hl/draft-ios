@@ -192,6 +192,9 @@
         }
       }
     },
+    "%@x" : {
+
+    },
     "%lld" : {
       "localizations" : {
         "en" : {
@@ -4825,9 +4828,6 @@
         }
       }
     },
-    "Hãy kiểm tra quyền camera và thử lại." : {
-
-    },
     "Heatmap" : {
 
     },
@@ -5352,9 +5352,6 @@
 
     },
     "KHÔNG SCROLL" : {
-
-    },
-    "Không thể đổi camera" : {
 
     },
     "Không thể đồng bộ dữ liệu, vui lòng kiểm tra kết nối mạng của bạn" : {
@@ -6401,9 +6398,6 @@
         }
       }
     },
-    "OK" : {
-
-    },
     "Open camera" : {
 
     },
@@ -6520,9 +6514,6 @@
           }
         }
       }
-    },
-    "Phần 6 — đổi ống kính, flash, zoom, focus, xoay." : {
-
     },
     "Phần 7 — AVCaptureMovieFileOutput." : {
 
