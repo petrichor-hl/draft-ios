@@ -162,7 +162,7 @@ nonisolated final class CameraSessionController: @unchecked Sendable {
                 return
             }
 
-            let device = videoDeviceInput.device
+            let device: AVCaptureDevice = videoDeviceInput.device
 
             do {
                 try device.lockForConfiguration()
@@ -181,6 +181,60 @@ nonisolated final class CameraSessionController: @unchecked Sendable {
                 )
             } catch {
                 print("Unable to configure zoom:", error)
+            }
+        }
+    }
+
+    func switchCamera() async -> Bool {
+        await withCheckedContinuation { continuation in
+            sessionQueue.async { [self] in
+                guard let currentInput = captureSession.inputs
+                    .compactMap({ $0 as? AVCaptureDeviceInput })
+                    .first(where: { $0.device.hasMediaType(.video) })
+                else {
+                    continuation.resume(returning: false)
+                    return
+                }
+
+                let position: AVCaptureDevice.Position =
+                    currentInput.device.position == .back ? .front : .back
+
+                guard let device = AVCaptureDevice.default(
+                    .builtInWideAngleCamera,
+                    for: .video,
+                    position: position
+                ) else {
+                    print("Requested camera is unavailable.")
+                    continuation.resume(returning: false)
+                    return
+                }
+
+                do {
+                    let newInput = try AVCaptureDeviceInput(device: device)
+
+                    // Reset zoom so the new camera and the selector both start at 1x.
+                    try device.lockForConfiguration()
+                    device.videoZoomFactor = 1
+                    device.unlockForConfiguration()
+
+                    captureSession.beginConfiguration()
+                    captureSession.removeInput(currentInput)
+
+                    let canSwitch = captureSession.canAddInput(newInput)
+                    if canSwitch {
+                        captureSession.addInput(newInput)
+                    } else {
+                        // Keep the preview working if the new input is rejected.
+                        captureSession.addInput(currentInput)
+                        print("Unable to add the new camera input.")
+                    }
+
+                    captureSession.commitConfiguration()
+                    continuation.resume(returning: canSwitch)
+                } catch {
+                    print("Unable to switch camera:", error)
+                    continuation.resume(returning: false)
+                }
             }
         }
     }

@@ -8,7 +8,7 @@
 //  - Đổi trước/sau: gỡ input cũ, thêm input mới trong cùng một beginConfiguration().
 //  - flashMode (lúc chụp) khác torchMode (đèn pin bật liên tục).
 //  - Zoom: videoZoomFactor và virtual device (ultra-wide / wide / tele nằm chung một device).
-//  - lockForConfiguration() / unlockForConfiguration() — mọi thay đổi trên device đều cần.
+//  - lockForConfiguration() / unlockForConfiguration() — dùng khi thay đổi cấu hình AVCaptureDevice.
 //  - Tap-to-focus: đổi toạ độ view → toạ độ device bằng captureDevicePointConverted.
 //  - AVCaptureDevice.RotationCoordinator (iOS 17+) thay cho việc tự nghe xoay máy.
 //
@@ -21,6 +21,8 @@ struct CameraControlsScreen: View {
     @State private var isPreviewVisible = false
 
     @State private var selectedZoom: Double = 1.0
+    @State private var isFlashEnabled = false
+    @State private var isSwitchingCamera = false
 
     private let zoomLevels = [1.0, 1.5, 2.0, 3.0]
     private var selectedIndex: Int {
@@ -43,12 +45,22 @@ struct CameraControlsScreen: View {
                     .ignoresSafeArea()
 
                 VStack {
-                    closeButton
-                        .frame(maxWidth: .infinity, alignment: .trailing)
+                    HStack {
+                        flashButton
+                        Spacer()
+                        closeButton
+                    }
 
                     Spacer()
 
-                    zoomSelector
+                    HStack {
+                        galleryButton
+                        Spacer()
+                        zoomSelector
+                            .disabled(isSwitchingCamera)
+                        Spacer()
+                        switchCameraButton
+                    }
                 }
                 .padding()
             }
@@ -74,6 +86,55 @@ struct CameraControlsScreen: View {
                 .background(.regularMaterial, in: .circle)
         }
         .buttonStyle(.plain)
+    }
+
+    private var galleryButton: some View {
+        Button {
+            // TODO: Open the photo library in a later step.
+        } label: {
+            Image(systemName: "photo.fill")
+                .font(.title3)
+                .foregroundStyle(.white)
+                .frame(width: 44, height: 44)
+                .background(.black.opacity(0.35), in: .circle)
+        }
+        .buttonStyle(.plain)
+    }
+
+    private var flashButton: some View {
+        Button {
+            isFlashEnabled.toggle()
+        } label: {
+            Image(systemName: isFlashEnabled ? "bolt.fill" : "bolt.slash.fill")
+                .font(.title3)
+                .foregroundStyle(isFlashEnabled ? Color.yellow : Color.white)
+                .frame(width: 44, height: 44)
+                .background(.black.opacity(0.35), in: .circle)
+        }
+        .buttonStyle(.plain)
+    }
+
+    private var switchCameraButton: some View {
+        Button {
+            isSwitchingCamera = true
+
+            Task {
+                defer { isSwitchingCamera = false }
+
+                if await camera.switchCamera() {
+                    selectedZoom = 1.0
+                }
+            }
+        } label: {
+            Image(systemName: "arrow.triangle.2.circlepath")
+                .font(.title3)
+                .foregroundStyle(.white)
+                .frame(width: 44, height: 44)
+                .background(.black.opacity(0.35), in: .circle)
+        }
+        .buttonStyle(.plain)
+        .disabled(isSwitchingCamera)
+        .accessibilityLabel("Switch camera")
     }
 
     private var zoomSelector: some View {
