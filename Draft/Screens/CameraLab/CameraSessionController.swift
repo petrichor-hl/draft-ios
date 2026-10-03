@@ -166,6 +166,35 @@ nonisolated final class CameraSessionController: NSObject, AVCapturePhotoCapture
         }
     }
     
+    func focus(at point: CGPoint) {
+        sessionQueue.async { [self] in
+            guard captureSession.isRunning,
+                  (0...1).contains(point.x),
+                  (0...1).contains(point.y),
+                  let device = captureSession.inputs
+                    .compactMap({ $0 as? AVCaptureDeviceInput })
+                    .first(where: { $0.device.hasMediaType(.video) })?.device
+            else { return }
+
+            guard device.isFocusPointOfInterestSupported,
+                  device.isFocusModeSupported(.autoFocus)
+            else {
+                print("Tap-to-focus is unavailable on this camera.")
+                return
+            }
+
+            do {
+                try device.lockForConfiguration()
+                defer { device.unlockForConfiguration() }
+
+                device.focusPointOfInterest = point
+                device.focusMode = .autoFocus
+            } catch {
+                print("Unable to configure focus:", error)
+            }
+        }
+    }
+
     func setZoom(_ factor: CGFloat) {
         sessionQueue.async { [self] in
             guard let videoDeviceInput = captureSession.inputs

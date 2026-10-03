@@ -33,6 +33,10 @@ struct CameraControlsScreen: View {
         zoomLevels.firstIndex(of: selectedZoom) ?? 0
     }
     
+    @State private var focusPoint: CGPoint?
+    @State private var focusAnimationTriggerId = UUID()
+    @State private var isFocusFrameVisible = false
+    
     @State private var capturedImage: UIImage?
     
     var body: some View {
@@ -87,8 +91,18 @@ struct CameraControlsScreen: View {
         }
         .fullScreenCover(isPresented: $isPreviewVisible) {
             ZStack() {
-                CameraPreview(session: camera.captureSession)
-                    .ignoresSafeArea()
+                CameraPreview(session: camera.captureSession) { viewPoint, devicePoint in
+                    guard !isSwitchingCamera else { return }
+                    
+                    focusPoint = viewPoint
+                    focusAnimationTriggerId = UUID()
+                    isFocusFrameVisible = true
+                    camera.focus(at: devicePoint)
+                }
+                .overlay {
+                    focusFrame
+                }
+                .ignoresSafeArea()
                 
                 VStack {
                     HStack {
@@ -120,6 +134,11 @@ struct CameraControlsScreen: View {
             }
             .onDisappear {
                 camera.stop()
+                
+                focusPoint = nil
+                isFocusFrameVisible = false
+                
+                selectedFlashMode = .off
                 isTorchEnabled = false
             }
             .alert("Unable to change torch", isPresented: $showsTorchError) {
@@ -130,6 +149,36 @@ struct CameraControlsScreen: View {
         }
         .navigationTitle("6. Điều khiển")
         .navigationBarTitleDisplayMode(.inline)
+    }
+    
+    private var focusFrame: some View {
+        RoundedRectangle(cornerRadius: 20)
+            .stroke(
+                .yellow,
+                style: StrokeStyle(lineWidth: 2, dash: [24, 8])
+            )
+            .frame(width: 80, height: 80)
+            .keyframeAnimator(
+                initialValue: CGFloat(1),
+                trigger: focusAnimationTriggerId
+            ) { content, scale in
+                content.scaleEffect(scale)
+            } keyframes: { _ in
+                MoveKeyframe(1.5)
+                CubicKeyframe(1, duration: 0.25)
+            }
+            .position(focusPoint ?? .zero)
+            .opacity(isFocusFrameVisible ? 1 : 0)
+            .task(id: focusAnimationTriggerId) {
+                guard focusPoint != nil else { return }
+                
+                try? await Task.sleep(for: .seconds(3))
+                guard !Task.isCancelled else { return }
+                
+                withAnimation(.easeOut(duration: 0.4)) {
+                    isFocusFrameVisible = false
+                }
+            }
     }
     
     private var captureButton: some View {
@@ -202,7 +251,7 @@ struct CameraControlsScreen: View {
         .accessibilityLabel("Flash")
         .accessibilityValue(Text(flashPresentation.title))
     }
-
+    
     private var flashPresentation: (symbol: String, title: LocalizedStringKey) {
         switch selectedFlashMode {
         case .off:
@@ -261,6 +310,8 @@ struct CameraControlsScreen: View {
                 
                 if await camera.switchCamera() {
                     selectedZoom = 1.0
+                    focusPoint = nil
+                    isFocusFrameVisible = false
                 }
             }
         } label: {
