@@ -14,26 +14,55 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct CameraControlsScreen: View {
-
+    
     @State private var camera = CameraSessionController()
     @State private var isPreviewVisible = false
-
+    
     @State private var selectedZoom: Double = 1.0
-    @State private var isFlashEnabled = false
+    @State private var selectedFlashMode: AVCaptureDevice.FlashMode = .off
     @State private var isTorchEnabled = false
     @State private var isChangingTorch = false
     @State private var showsTorchError = false
     @State private var isSwitchingCamera = false
-
+    
     private let zoomLevels = [1.0, 1.5, 2.0, 3.0]
     private var selectedIndex: Int {
         zoomLevels.firstIndex(of: selectedZoom) ?? 0
     }
-
+    
+    @State private var capturedImage: UIImage?
+    
     var body: some View {
         VStack(spacing: 16) {
+            Group {
+                if let capturedImage {
+                    Image(uiImage: capturedImage)
+                        .resizable()
+                        .scaledToFit()
+                } else {
+                    VStack(spacing: 12) {
+                        Image(systemName: "camera")
+                            .font(.largeTitle)
+                            .foregroundStyle(.secondary)
+                        
+                        Text("No photo yet")
+                            .font(.headline)
+                        
+                        Text("Take a photo to preview it here.")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                            .multilineTextAlignment(.center)
+                    }
+                    .padding()
+                }
+            }
+            .frame(maxWidth: .infinity)
+            .frame(height: 300)
+            .background(Color(uiColor: .secondarySystemBackground), in: .rect(cornerRadius: 20))
+            
             Button {
                 isPreviewVisible = true
             } label: {
@@ -41,12 +70,26 @@ struct CameraControlsScreen: View {
             }
             .buttonStyle(.borderedProminent)
             .controlSize(.large)
+            
+            Spacer()
+        }
+        .padding()
+        .onAppear {
+            camera.onPhotoCaptured = { data in
+                guard let image = UIImage(data: data) else {
+                    print("Unable to decode photo.")
+                    return
+                }
+                
+                capturedImage = image
+                isPreviewVisible = false
+            }
         }
         .fullScreenCover(isPresented: $isPreviewVisible) {
             ZStack() {
                 CameraPreview(session: camera.captureSession)
                     .ignoresSafeArea()
-
+                
                 VStack {
                     HStack {
                         flashButton
@@ -54,14 +97,17 @@ struct CameraControlsScreen: View {
                         Spacer()
                         closeButton
                     }
-
+                    
                     Spacer()
-
+                    
+                    zoomSelector
+                        .disabled(isSwitchingCamera)
+                        .padding(.bottom, 16)
+                    
                     HStack {
                         galleryButton
                         Spacer()
-                        zoomSelector
-                            .disabled(isSwitchingCamera)
+                        captureButton
                         Spacer()
                         switchCameraButton
                     }
@@ -85,7 +131,25 @@ struct CameraControlsScreen: View {
         .navigationTitle("6. Điều khiển")
         .navigationBarTitleDisplayMode(.inline)
     }
-
+    
+    private var captureButton: some View {
+        Button {
+            camera.capturePhoto(flashMode: selectedFlashMode)
+        } label: {
+            Circle()
+                .fill(.white)
+                .frame(width: 64, height: 64)
+                .padding(5)
+                .overlay {
+                    Circle()
+                        .stroke(.white, lineWidth: 2)
+                }
+                .contentShape(.circle)
+        }
+        .buttonStyle(.plain)
+        .disabled(isSwitchingCamera || isChangingTorch)
+    }
+    
     private var closeButton: some View {
         Button {
             isPreviewVisible = false
@@ -97,7 +161,7 @@ struct CameraControlsScreen: View {
         }
         .buttonStyle(.plain)
     }
-
+    
     private var galleryButton: some View {
         Button {
             // TODO: Open the photo library in a later step.
@@ -110,31 +174,59 @@ struct CameraControlsScreen: View {
         }
         .buttonStyle(.plain)
     }
-
+    
     private var flashButton: some View {
         Button {
-            isFlashEnabled.toggle()
+            switch selectedFlashMode {
+            case .off:
+                selectedFlashMode = .on
+            case .on:
+                selectedFlashMode = .auto
+            case .auto:
+                selectedFlashMode = .off
+            @unknown default:
+                selectedFlashMode = .off
+            }
         } label: {
-            Image(systemName: isFlashEnabled ? "bolt.fill" : "bolt.slash.fill")
-                .font(.title3)
-                .foregroundStyle(isFlashEnabled ? Color.yellow : Color.white)
-                .frame(width: 44, height: 44)
-                .background(.black.opacity(0.35), in: .circle)
+            HStack {
+                Image(systemName: flashPresentation.symbol)
+                    .font(.system(size: 18))
+                Text(flashPresentation.title)
+                    .font(.caption2.weight(.semibold))
+            }
+            .foregroundStyle(selectedFlashMode == .off ? Color.white : Color.yellow)
+            .frame(width: 80, height: 44)
+            .background(.black.opacity(0.35), in: .capsule)
         }
         .buttonStyle(.plain)
+        .accessibilityLabel("Flash")
+        .accessibilityValue(Text(flashPresentation.title))
     }
 
+    private var flashPresentation: (symbol: String, title: LocalizedStringKey) {
+        switch selectedFlashMode {
+        case .off:
+            return ("bolt.slash.fill", "Off")
+        case .on:
+            return ("bolt.fill", "On")
+        case .auto:
+            return ("bolt.badge.a.fill", "Auto")
+        @unknown default:
+            return ("bolt.slash.fill", "Off")
+        }
+    }
+    
     private var torchButton: some View {
         Button {
             isChangingTorch = true
             let shouldEnable = !isTorchEnabled
-
+            
             Task {
                 defer { isChangingTorch = false }
-
+                
                 let succeeded = await camera.setTorchEnabled(shouldEnable)
                 guard isPreviewVisible else { return }
-
+                
                 if succeeded {
                     isTorchEnabled = shouldEnable
                 } else {
@@ -151,14 +243,14 @@ struct CameraControlsScreen: View {
         .buttonStyle(.plain)
         .disabled(isChangingTorch || isSwitchingCamera)
     }
-
+    
     private var switchCameraButton: some View {
         Button {
             isSwitchingCamera = true
-
+            
             Task {
                 defer { isSwitchingCamera = false }
-
+                
                 if isTorchEnabled {
                     guard await camera.setTorchEnabled(false) else {
                         showsTorchError = true
@@ -166,7 +258,7 @@ struct CameraControlsScreen: View {
                     }
                     isTorchEnabled = false
                 }
-
+                
                 if await camera.switchCamera() {
                     selectedZoom = 1.0
                 }
@@ -182,10 +274,10 @@ struct CameraControlsScreen: View {
         .disabled(isSwitchingCamera || isChangingTorch)
         .accessibilityLabel("Switch camera")
     }
-
+    
     private var zoomSelector: some View {
         let segmentWidth: CGFloat = 60
-
+        
         return ZStack(alignment: .leading) {
             Capsule()
                 .fill(.white)
@@ -193,7 +285,7 @@ struct CameraControlsScreen: View {
                 .offset(x: CGFloat(selectedIndex) * segmentWidth)
                 .animation(.snappy(duration: 0.25), value: selectedZoom)
                 .allowsHitTesting(false)
-
+            
             HStack(spacing: 0) {
                 ForEach(zoomLevels, id: \.self) { zoom in
                     Button {
@@ -205,8 +297,8 @@ struct CameraControlsScreen: View {
                             .font(.system(size: 16, weight: .semibold))
                             .foregroundStyle(
                                 selectedZoom == zoom
-                                    ? Color.black
-                                    : Color.white.opacity(0.6)
+                                ? Color.black
+                                : Color.white.opacity(0.6)
                             )
                             .frame(width: segmentWidth, height: 38)
                     }

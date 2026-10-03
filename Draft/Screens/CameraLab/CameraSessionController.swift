@@ -72,7 +72,9 @@ nonisolated final class CameraSessionController: NSObject, AVCapturePhotoCapture
         }
     }
     
-    func capturePhoto() {
+    func capturePhoto(
+        flashMode: AVCaptureDevice.FlashMode = .off
+    ) {
         sessionQueue.async { [self] in
             guard captureSession.isRunning else {
                 print("Camera session is not running.")
@@ -97,8 +99,16 @@ nonisolated final class CameraSessionController: NSObject, AVCapturePhotoCapture
             connection.videoRotationAngle = angle
             connection.isVideoMirrored = rotationCoordinator.device?.position == .front
             
+            guard photoCaptureOutput.supportedFlashModes.contains(flashMode) else {
+                print("Unsupported flash mode:", flashMode)
+                return
+            }
+
+            let settings = AVCapturePhotoSettings()
+            settings.flashMode = flashMode
+
             photoCaptureOutput.capturePhoto(
-                with: AVCapturePhotoSettings(),
+                with: settings,
                 delegate: self
             )
         }

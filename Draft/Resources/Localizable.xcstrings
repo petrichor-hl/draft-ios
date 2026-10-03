@@ -2321,6 +2321,9 @@
         }
       }
     },
+    "Auto" : {
+
+    },
     "Average on %@s" : {
 
     },
@@ -4498,6 +4501,9 @@
         }
       }
     },
+    "Flash" : {
+
+    },
     "FlowRow" : {
       "localizations" : {
         "en" : {
@@ -6400,6 +6406,12 @@
           }
         }
       }
+    },
+    "Off" : {
+
+    },
+    "On" : {
+
     },
     "Open camera" : {
 

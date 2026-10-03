@@ -70,13 +70,6 @@ struct PhotoCaptureScreen: View {
                     return
                 }
                 
-                print("Image orientation:", image.imageOrientation.rawValue)
-                print("Image size:", image.size)
-
-                if let cgImage = image.cgImage {
-                    print("Pixel dimensions:", cgImage.width, cgImage.height)
-                }
-                
                 capturedImage = image
                 isPreviewVisible = false
             }
