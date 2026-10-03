@@ -25,9 +25,3 @@ struct VideoDataOutputScreen: View {
     .navigationBarTitleDisplayMode(.inline)
   }
 }
-
-#Preview {
-  NavigationStack {
-    VideoDataOutputScreen()
-  }
-}

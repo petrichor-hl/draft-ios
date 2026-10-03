@@ -50,9 +50,3 @@ struct BitePalCameraScreen: View {
         .navigationBarTitleDisplayMode(.inline)
     }
 }
-
-#Preview {
-    NavigationStack {
-        BitePalCameraScreen()
-    }
-}

@@ -26,9 +26,3 @@ struct VideoRecordingScreen: View {
     .navigationBarTitleDisplayMode(.inline)
   }
 }
-
-#Preview {
-  NavigationStack {
-    VideoRecordingScreen()
-  }
-}

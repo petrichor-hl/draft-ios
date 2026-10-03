@@ -155,9 +155,16 @@ struct CameraLab: View {
   }
 }
 
-#Preview {
-  NavigationStack {
-    CameraLab()
-      .environment(AppCoordinator())
+
+struct CameraLabRow: View {
+  let title: LocalizedStringKey
+  let subtitle: LocalizedStringKey
+
+  var body: some View {
+    VStack(alignment: .leading, spacing: 2) {
+      Text(title).font(.headline)
+      Text(subtitle).font(.caption).foregroundStyle(.secondary)
+    }
+    .padding(.vertical, 4)
   }
 }

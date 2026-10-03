@@ -26,9 +26,3 @@ struct MetadataScanScreen: View {
     .navigationBarTitleDisplayMode(.inline)
   }
 }
-
-#Preview {
-  NavigationStack {
-    MetadataScanScreen()
-  }
-}

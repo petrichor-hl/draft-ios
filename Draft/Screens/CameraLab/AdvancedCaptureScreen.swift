@@ -26,9 +26,3 @@ struct AdvancedCaptureScreen: View {
     .navigationBarTitleDisplayMode(.inline)
   }
 }
-
-#Preview {
-  NavigationStack {
-    AdvancedCaptureScreen()
-  }
-}

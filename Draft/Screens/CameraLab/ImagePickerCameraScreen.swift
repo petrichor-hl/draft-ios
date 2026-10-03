@@ -23,64 +23,63 @@ struct ImagePickerCameraScreen: View {
     @State private var cameraMessage: String?
     
     var body: some View {
-        ScrollView {
-            VStack(spacing: 24) {
-                Group {
-                    if let capturedImage {
-                        Image(uiImage: capturedImage)
-                            .resizable()
-                            .scaledToFit()
-                    } else {
-                        VStack(spacing: 12) {
-                            Image(systemName: "camera")
-                                .font(.largeTitle)
-                                .foregroundStyle(.secondary)
-                            
-                            Text("No photo yet")
-                                .font(.headline)
-                            
-                            Text("Take a photo to preview it here.")
-                                .font(.subheadline)
-                                .foregroundStyle(.secondary)
-                                .multilineTextAlignment(.center)
-                        }
-                        .padding()
+        VStack(spacing: 24) {
+            Group {
+                if let capturedImage {
+                    Image(uiImage: capturedImage)
+                        .resizable()
+                        .scaledToFit()
+                } else {
+                    VStack(spacing: 12) {
+                        Image(systemName: "camera")
+                            .font(.largeTitle)
+                            .foregroundStyle(.secondary)
+                        
+                        Text("No photo yet")
+                            .font(.headline)
+                        
+                        Text("Take a photo to preview it here.")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                            .multilineTextAlignment(.center)
                     }
-                }
-                .frame(maxWidth: .infinity)
-                .frame(height: 300)
-                .background(Color(uiColor: .secondarySystemBackground))
-                .clipShape(RoundedRectangle(cornerRadius: 20))
-                
-                Button {
-                    guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
-                        cameraMessage = "Camera is currently unavailable."
-                        return
-                    }
-
-                    guard AVCaptureDevice.authorizationStatus(for: .video) == .authorized else {
-                        cameraMessage = "Check camera access in Camera Lab → Permission."
-                        return
-                    }
-
-                    cameraMessage = nil
-                    isCameraPresented = true
-                } label: {
-                    Label(capturedImage == nil ? "Open camera" : "Take another photo", systemImage: "camera")
-                        .frame(maxWidth: .infinity)
-                }
-                .buttonStyle(.borderedProminent)
-                .controlSize(.large)
-                
-                if let cameraMessage {
-                    Text(cameraMessage)
-                        .font(.footnote)
-                        .foregroundStyle(.secondary)
-                        .multilineTextAlignment(.center)
+                    .padding()
                 }
             }
-            .padding()
+            .frame(maxWidth: .infinity)
+            .frame(height: 300)
+            .background(Color(uiColor: .secondarySystemBackground), in: .rect(cornerRadius: 20))
+            
+            Button {
+                guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+                    cameraMessage = "Camera is currently unavailable."
+                    return
+                }
+
+                guard AVCaptureDevice.authorizationStatus(for: .video) == .authorized else {
+                    cameraMessage = "Check camera access in Camera Lab → Permission."
+                    return
+                }
+
+                cameraMessage = nil
+                isCameraPresented = true
+            } label: {
+                Label(capturedImage == nil ? "Open camera" : "Take another photo", systemImage: "camera")
+                    .frame(maxWidth: .infinity)
+            }
+            .buttonStyle(.borderedProminent)
+            .controlSize(.large)
+            
+            if let cameraMessage {
+                Text(cameraMessage)
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.center)
+            }
+            
+            Spacer()
         }
+        .padding()
         .fullScreenCover(isPresented: $isCameraPresented) {
             CameraPicker { image in
                 if let image {
@@ -138,11 +137,5 @@ struct CameraPicker: UIViewControllerRepresentable {
     
     func makeCoordinator() -> Coordinator {
         Coordinator(onFinish: onFinish)
-    }
-}
-
-#Preview {
-    NavigationStack {
-        ImagePickerCameraScreen()
     }
 }

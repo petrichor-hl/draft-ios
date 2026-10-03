@@ -97,9 +97,3 @@ struct SessionPresetScreen: View {
     .navigationBarTitleDisplayMode(.inline)
   }
 }
-
-#Preview {
-  NavigationStack {
-    SessionPresetScreen()
-  }
-}
