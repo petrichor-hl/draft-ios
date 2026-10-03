@@ -132,6 +132,17 @@ nonisolated final class CameraSessionController: @unchecked Sendable {
     
     func stop() {
         sessionQueue.async { [self] in
+            if let device = captureSession.inputs
+                .compactMap({ $0 as? AVCaptureDeviceInput })
+                .first(where: { $0.device.hasMediaType(.video) })?.device,
+               device.hasTorch {
+                do {
+                    _ = try configureTorch(false, on: device)
+                } catch {
+                    print("Unable to turn off torch:", error)
+                }
+            }
+
             if captureSession.isRunning {
                 captureSession.stopRunning()
             }
@@ -183,6 +194,47 @@ nonisolated final class CameraSessionController: @unchecked Sendable {
                 print("Unable to configure zoom:", error)
             }
         }
+    }
+
+    func setTorchEnabled(_ enabled: Bool) async -> Bool {
+        await withCheckedContinuation { continuation in
+            sessionQueue.async { [self] in
+                guard let device = captureSession.inputs
+                    .compactMap({ $0 as? AVCaptureDeviceInput })
+                    .first(where: { $0.device.hasMediaType(.video) })?.device
+                else {
+                    continuation.resume(returning: false)
+                    return
+                }
+
+                do {
+                    let succeeded = try configureTorch(enabled, on: device)
+                    continuation.resume(returning: succeeded)
+                } catch {
+                    print("Unable to configure torch:", error)
+                    continuation.resume(returning: false)
+                }
+            }
+        }
+    }
+
+    // Called only on sessionQueue, including when stopping the session.
+    private func configureTorch(_ enabled: Bool, on device: AVCaptureDevice) throws -> Bool {
+        let mode: AVCaptureDevice.TorchMode = enabled ? .on : .off
+
+        guard device.hasTorch, device.isTorchModeSupported(mode) else {
+            return false
+        }
+
+        try device.lockForConfiguration()
+        defer { device.unlockForConfiguration() }
+
+        guard !enabled || device.isTorchAvailable else {
+            return false
+        }
+
+        device.torchMode = mode
+        return true
     }
 
     func switchCamera() async -> Bool {

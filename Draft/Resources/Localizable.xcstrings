@@ -6362,6 +6362,9 @@
         }
       }
     },
+    "OK" : {
+
+    },
     "ObservableObject — track cả object" : {
       "localizations" : {
         "en" : {
@@ -7443,6 +7446,9 @@
     "Tháng" : {
 
     },
+    "The torch may be unavailable on this camera." : {
+
+    },
     "Theo ĐÚNG thứ tự: chọn identity = vị trí TRƯỚC, rồi mở mục #2, rồi bấm Xoá mục đầu. Cái đang mở hoá ra là #3 — trạng thái mở ở lại VỊ TRÍ cũ, còn nội dung đã tụt lên một bậc." : {
       "localizations" : {
         "en" : {
@@ -7846,6 +7852,9 @@
           }
         }
       }
+    },
+    "Unable to change torch" : {
+
     },
     "UnitArea" : {
       "localizations" : {

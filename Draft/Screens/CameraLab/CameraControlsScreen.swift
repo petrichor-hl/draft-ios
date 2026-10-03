@@ -6,7 +6,7 @@
 //
 //  Sẽ học:
 //  - Đổi trước/sau: gỡ input cũ, thêm input mới trong cùng một beginConfiguration().
-//  - flashMode (lúc chụp) khác torchMode (đèn pin bật liên tục).
+//  - flashMode vs torchMode.
 //  - Zoom: videoZoomFactor và virtual device (ultra-wide / wide / tele nằm chung một device).
 //  - lockForConfiguration() / unlockForConfiguration() — dùng khi thay đổi cấu hình AVCaptureDevice.
 //  - Tap-to-focus: đổi toạ độ view → toạ độ device bằng captureDevicePointConverted.
@@ -22,6 +22,9 @@ struct CameraControlsScreen: View {
 
     @State private var selectedZoom: Double = 1.0
     @State private var isFlashEnabled = false
+    @State private var isTorchEnabled = false
+    @State private var isChangingTorch = false
+    @State private var showsTorchError = false
     @State private var isSwitchingCamera = false
 
     private let zoomLevels = [1.0, 1.5, 2.0, 3.0]
@@ -47,6 +50,7 @@ struct CameraControlsScreen: View {
                 VStack {
                     HStack {
                         flashButton
+                        torchButton
                         Spacer()
                         closeButton
                     }
@@ -70,6 +74,12 @@ struct CameraControlsScreen: View {
             }
             .onDisappear {
                 camera.stop()
+                isTorchEnabled = false
+            }
+            .alert("Unable to change torch", isPresented: $showsTorchError) {
+                Button("OK", role: .cancel) { }
+            } message: {
+                Text("The torch may be unavailable on this camera.")
             }
         }
         .navigationTitle("6. Điều khiển")
@@ -114,12 +124,48 @@ struct CameraControlsScreen: View {
         .buttonStyle(.plain)
     }
 
+    private var torchButton: some View {
+        Button {
+            isChangingTorch = true
+            let shouldEnable = !isTorchEnabled
+
+            Task {
+                defer { isChangingTorch = false }
+
+                let succeeded = await camera.setTorchEnabled(shouldEnable)
+                guard isPreviewVisible else { return }
+
+                if succeeded {
+                    isTorchEnabled = shouldEnable
+                } else {
+                    showsTorchError = true
+                }
+            }
+        } label: {
+            Image(systemName: isTorchEnabled ? "flashlight.on.fill" : "flashlight.off.fill")
+                .font(.title3)
+                .foregroundStyle(isTorchEnabled ? Color.yellow : Color.white)
+                .frame(width: 44, height: 44)
+                .background(.black.opacity(0.35), in: .circle)
+        }
+        .buttonStyle(.plain)
+        .disabled(isChangingTorch || isSwitchingCamera)
+    }
+
     private var switchCameraButton: some View {
         Button {
             isSwitchingCamera = true
 
             Task {
                 defer { isSwitchingCamera = false }
+
+                if isTorchEnabled {
+                    guard await camera.setTorchEnabled(false) else {
+                        showsTorchError = true
+                        return
+                    }
+                    isTorchEnabled = false
+                }
 
                 if await camera.switchCamera() {
                     selectedZoom = 1.0
@@ -133,7 +179,7 @@ struct CameraControlsScreen: View {
                 .background(.black.opacity(0.35), in: .circle)
         }
         .buttonStyle(.plain)
-        .disabled(isSwitchingCamera)
+        .disabled(isSwitchingCamera || isChangingTorch)
         .accessibilityLabel("Switch camera")
     }
 
