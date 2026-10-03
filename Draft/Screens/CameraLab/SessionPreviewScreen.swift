@@ -8,17 +8,18 @@
 //  - Mô hình: AVCaptureDevice → AVCaptureDeviceInput → AVCaptureSession → Output.
 //  - AVCaptureVideoPreviewLayer bọc qua UIViewRepresentable (layer, không phải view).
 //  - beginConfiguration() / commitConfiguration() — đổi cấu hình theo cặp.
+//  - start() cấu hình ở lần đầu rồi chạy session trên sessionQueue.
 //  - startRunning() BLOCK luồng gọi → phải chạy trên session queue riêng, không phải main.
 //  - Vòng đời: chủ động dừng session khi preview biến mất.
 //
 //  sessionPreset được học riêng ở bài 3. Session Preset (tùy chọn).
 //
+//  Official documentation: https://developer.apple.com/documentation/avfoundation/setting-up-a-capture-session
 
 import SwiftUI
 import AVFoundation
 
 struct SessionPreviewScreen: View {
-    //    @Environment(\.scenePhase) private var scenePhase
     
     @State private var camera = CameraSessionController()
     @State private var isPreviewVisible = false
@@ -40,7 +41,7 @@ struct SessionPreviewScreen: View {
         }
         .fullScreenCover(isPresented: $isPreviewVisible) {
             ZStack(alignment: .topTrailing) {
-                CameraPreview(session: camera.session)
+                CameraPreview(session: camera.captureSession)
                     .ignoresSafeArea()
                 
                 Button {
@@ -67,13 +68,6 @@ struct SessionPreviewScreen: View {
             .onDisappear {
                 camera.stop()
             }
-            //            .onChange(of: scenePhase) { _, phase in
-            //                if phase == .active && isPreviewVisible {
-            //                    camera.start()
-            //                } else {
-            //                    camera.stop()
-            //                }
-            //            }
         }
         .navigationTitle("2. Session & Preview")
         .navigationBarTitleDisplayMode(.inline)
@@ -84,36 +78,30 @@ struct SessionPreviewScreen: View {
 
 // @unchecked Sendable means we take responsibility for synchronization ourselves.
 nonisolated final class CameraSessionController: @unchecked Sendable {
-    let session = AVCaptureSession()
+    let captureSession = AVCaptureSession()
     private var isConfigured = false
     
     private let sessionQueue = DispatchQueue(label: "camera.session")
     
-    private func makeCameraInput() throws -> AVCaptureDeviceInput? {
-        guard let device = AVCaptureDevice.default(
+    private func configureSession() -> Bool {
+        captureSession.beginConfiguration()
+        defer { captureSession.commitConfiguration() }
+        
+        let videoDevice = AVCaptureDevice.default(
             .builtInWideAngleCamera,
             for: .video,
             position: .back
-        ) else {
-            return nil
-        }
+        )
         
-        return try AVCaptureDeviceInput(device: device)
-    }
-    
-    private func configureSession() throws -> Bool {
-        guard let input = try makeCameraInput() else {
+        guard
+            let videoDevice,
+            let videoDeviceInput = try? AVCaptureDeviceInput(device: videoDevice),
+            captureSession.canAddInput(videoDeviceInput)
+        else {
             return false
         }
         
-        session.beginConfiguration()
-        defer { session.commitConfiguration() }
-        
-        guard session.canAddInput(input) else {
-            return false
-        }
-        
-        session.addInput(input)
+        captureSession.addInput(videoDeviceInput)
         return true
     }
     
@@ -124,52 +112,48 @@ nonisolated final class CameraSessionController: @unchecked Sendable {
                 return
             }
             
-            do {
-                if !isConfigured {
-                    isConfigured = try configureSession()
-                }
-                
-                guard isConfigured else {
-                    print("Unable to configure the camera session.")
-                    return
-                }
-                
-                if !session.isRunning {
-                    session.startRunning()
-                }
-            } catch {
-                print("Camera setup failed: \(error.localizedDescription)")
+            if !isConfigured {
+                isConfigured = configureSession()
+            }
+            
+            guard isConfigured else {
+                print("Unable to configure the camera session.")
+                return
+            }
+            
+            if !captureSession.isRunning {
+                captureSession.startRunning()
             }
         }
     }
     
     func stop() {
         sessionQueue.async { [self] in
-            if session.isRunning {
-                session.stopRunning()
+            if captureSession.isRunning {
+                captureSession.stopRunning()
             }
         }
     }
     
     func changePreset(_ preset: AVCaptureSession.Preset) {
         sessionQueue.async { [self] in
-            guard session.canSetSessionPreset(preset) else {
+            guard captureSession.canSetSessionPreset(preset) else {
                 print("Preset không được hỗ trợ:", preset.rawValue)
                 return
             }
 
-            session.beginConfiguration()
-            session.sessionPreset = preset
-            session.commitConfiguration()
+            captureSession.beginConfiguration()
+            captureSession.sessionPreset = preset
+            captureSession.commitConfiguration()
 
-            print("Preset:", session.sessionPreset.rawValue)
+            print("Preset:", captureSession.sessionPreset.rawValue)
         }
     }
 
     func printSessionState() {
         sessionQueue.async { [self] in
-            print("isRunning:", session.isRunning)
-            print("isInterrupted:", session.isInterrupted)
+            print("isRunning:", captureSession.isRunning)
+            print("isInterrupted:", captureSession.isInterrupted)
         }
     }
 }

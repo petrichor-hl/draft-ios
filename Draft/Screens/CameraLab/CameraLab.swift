@@ -55,6 +55,15 @@ struct CameraLab: View {
         }
 
         Button {
+          coordinator.push(.cameraUIKitPresentation)
+        } label: {
+          CameraLabRow(
+            title: "UIKit Presentation",
+            subtitle: "overFullScreen, chờ animation hoàn tất rồi start camera"
+          )
+        }
+
+        Button {
           coordinator.push(.cameraSessionPreset)
         } label: {
           CameraLabRow(

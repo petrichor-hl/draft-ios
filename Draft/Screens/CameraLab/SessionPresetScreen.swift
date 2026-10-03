@@ -31,7 +31,7 @@ struct SessionPresetScreen: View {
     .controlSize(.large)
     .fullScreenCover(isPresented: $isPreviewVisible) {
       ZStack(alignment: .topTrailing) {
-        CameraPreview(session: camera.session)
+        CameraPreview(session: camera.captureSession)
           .ignoresSafeArea()
 
         Button {

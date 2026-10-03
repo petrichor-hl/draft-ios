@@ -6365,6 +6365,9 @@
     "Open camera" : {
 
     },
+    "overFullScreen, chờ animation hoàn tất rồi start camera" : {
+
+    },
     "Parse được block, nhưng render thì sao?" : {
       "localizations" : {
         "en" : {
@@ -7772,6 +7775,9 @@
           }
         }
       }
+    },
+    "UIKit Presentation" : {
+
     },
     "UINotificationFeedbackGenerator. Ba nhịp có tiết tấu riêng — dùng để báo KẾT QUẢ, không dùng cho thao tác thường." : {
       "localizations" : {
