@@ -2,7 +2,7 @@
 //  MetadataScanScreen.swift
 //  Draft
 //
-//  Phần 7 — Quét QR / barcode.
+//  Phần 8 — Quét QR / barcode.
 //
 //  Sẽ học:
 //  - AVCaptureMetadataOutput + metadataObjectTypes = [.qr, .ean13, ...].
@@ -20,9 +20,9 @@ struct MetadataScanScreen: View {
     ContentUnavailableView(
       "Chưa làm",
       systemImage: "qrcode.viewfinder",
-      description: Text("Phần 7 — AVCaptureMetadataOutput.")
+      description: Text("Phần 8 — AVCaptureMetadataOutput.")
     )
-    .navigationTitle("7. Quét mã")
+    .navigationTitle("8. Quét mã")
     .navigationBarTitleDisplayMode(.inline)
   }
 }

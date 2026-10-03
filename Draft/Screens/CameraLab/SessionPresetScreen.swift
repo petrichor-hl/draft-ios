@@ -2,7 +2,7 @@
 //  SessionPresetScreen.swift
 //  Draft
 //
-//  Bài 3 — Session Preset (tùy chọn, sau Session & Preview).
+//  Bài 4 — Session Preset (tùy chọn, sau Session & Preview).
 //
 //  Sẽ học:
 //  - sessionPreset cấu hình chất lượng và định dạng capture; mặc định là .high.
@@ -93,7 +93,7 @@ struct SessionPresetScreen: View {
         camera.stop()
       }
     }
-    .navigationTitle("3. Session Preset")
+    .navigationTitle("4. Session Preset")
     .navigationBarTitleDisplayMode(.inline)
   }
 }

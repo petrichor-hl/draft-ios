@@ -2,7 +2,7 @@
 //  PhotoCaptureScreen.swift
 //  Draft
 //
-//  Phần 4 — Bấm nút là ra ảnh.
+//  Phần 5 — Bấm nút là ra ảnh.
 //
 //  Sẽ học:
 //  - AVCapturePhotoOutput gắn vào session ở phần 2.
@@ -19,9 +19,9 @@ struct PhotoCaptureScreen: View {
     ContentUnavailableView(
       "Chưa làm",
       systemImage: "camera.shutter.button",
-      description: Text("Phần 4 — AVCapturePhotoOutput và lưu ảnh.")
+      description: Text("Phần 5 — AVCapturePhotoOutput và lưu ảnh.")
     )
-    .navigationTitle("4. Chụp ảnh")
+    .navigationTitle("5. Chụp ảnh")
     .navigationBarTitleDisplayMode(.inline)
   }
 }

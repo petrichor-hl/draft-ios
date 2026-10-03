@@ -94,6 +94,7 @@ enum AppRoute: Hashable {
     case hapticsCore
     case hapticsRealWorld
     case wheelPickerLab
+    case segmentedControl
     case flowRow
     case accordion
     case accordionBuiltIn
@@ -116,6 +117,8 @@ enum AppRoute: Hashable {
     case cameraMetadataScan
     case cameraVideoDataOutput
     case cameraAdvanced
+    case cameraDietfit
+    case cameraBitePal
     case menuLab
     case menuWithLabeledContent
     case chartLab
@@ -289,6 +292,8 @@ extension AppRoute: View {
             CoreHapticsScreen()
         case .wheelPickerLab:
             WheelPickerLabScreen()
+        case .segmentedControl:
+            SegmentedControlScreen()
         case .hapticsRealWorld:
             RealWorldScreen()
         case .flowRow:
@@ -335,6 +340,10 @@ extension AppRoute: View {
             VideoDataOutputScreen()
         case .cameraAdvanced:
             AdvancedCaptureScreen()
+        case .cameraDietfit:
+            DietfitCameraScreen()
+        case .cameraBitePal:
+            BitePalCameraScreen()
         case .menuLab:
             MenuLab()
         case .menuWithLabeledContent:

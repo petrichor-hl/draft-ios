@@ -9,8 +9,8 @@
 //    2. AVCaptureSession       — tự viết UI, Apple lo pipeline.
 //    3. Xử lý từng frame       — chặn buffer trước khi nó thành ảnh.
 //
-//  Bài 3. Session Preset là bước tùy chọn, có màn hình riêng:
-//    - Có thể bỏ qua bước này để tiếp tục bài 4. Chụp ảnh.
+//  Bài 4. Session Preset là bước tùy chọn, có màn hình riêng:
+//    - Có thể bỏ qua bước này để tiếp tục bài 5. Chụp ảnh.
 //
 //  LƯU Ý: Simulator không có camera — mọi màn từ mục 1 trở đi phải chạy trên iPhone thật.
 //
@@ -58,7 +58,7 @@ struct CameraLab: View {
           coordinator.push(.cameraUIKitPresentation)
         } label: {
           CameraLabRow(
-            title: "UIKit Presentation",
+            title: "3. UIKit Presentation",
             subtitle: "overFullScreen, chờ animation hoàn tất rồi start camera"
           )
         }
@@ -67,7 +67,7 @@ struct CameraLab: View {
           coordinator.push(.cameraSessionPreset)
         } label: {
           CameraLabRow(
-            title: "3. Session Preset (tùy chọn)",
+            title: "4. Session Preset (tùy chọn)",
             subtitle: "Chất lượng capture, canSetSessionPreset, đổi preset khi preview chạy"
           )
         }
@@ -76,7 +76,7 @@ struct CameraLab: View {
           coordinator.push(.cameraPhotoCapture)
         } label: {
           CameraLabRow(
-            title: "4. Chụp ảnh",
+            title: "5. Chụp ảnh",
             subtitle: "AVCapturePhotoOutput, delegate, orientation, lưu Photos"
           )
         }
@@ -85,7 +85,7 @@ struct CameraLab: View {
           coordinator.push(.cameraControls)
         } label: {
           CameraLabRow(
-            title: "5. Điều khiển camera",
+            title: "6. Điều khiển camera",
             subtitle: "Đổi ống kính, flash/torch, zoom, tap-to-focus, xoay máy"
           )
         }
@@ -94,7 +94,7 @@ struct CameraLab: View {
           coordinator.push(.cameraVideoRecording)
         } label: {
           CameraLabRow(
-            title: "6. Quay video",
+            title: "7. Quay video",
             subtitle: "MovieFileOutput, thêm audio input, gián đoạn cuộc gọi"
           )
         }
@@ -103,7 +103,7 @@ struct CameraLab: View {
           coordinator.push(.cameraMetadataScan)
         } label: {
           CameraLabRow(
-            title: "7. Quét QR / barcode",
+            title: "8. Quét QR / barcode",
             subtitle: "AVCaptureMetadataOutput — dùng session rẻ nhất"
           )
         }
@@ -114,7 +114,7 @@ struct CameraLab: View {
           coordinator.push(.cameraVideoDataOutput)
         } label: {
           CameraLabRow(
-            title: "8. Xử lý từng frame",
+            title: "9. Xử lý từng frame",
             subtitle: "CMSampleBuffer, filter Core Image, Vision realtime"
           )
         }
@@ -123,12 +123,32 @@ struct CameraLab: View {
           coordinator.push(.cameraAdvanced)
         } label: {
           CameraLabRow(
-            title: "9. Nâng cao",
+            title: "10. Nâng cao",
             subtitle: "Multi-cam, depth, Live Photo, Camera Control, nhiệt độ máy"
           )
         }
       } footer: {
         Text("Simulator không có camera: isSourceTypeAvailable(.camera) trả về false, AVCaptureDevice.default(...) trả về nil. Phải chạy trên iPhone thật.")
+      }
+
+      Section("Ví dụ thực tế") {
+        Button {
+          coordinator.push(.cameraDietfit)
+        } label: {
+          CameraLabRow(
+            title: "Dietfit",
+            subtitle: "Tham khảo trải nghiệm camera của Dietfit"
+          )
+        }
+
+        Button {
+          coordinator.push(.cameraBitePal)
+        } label: {
+          CameraLabRow(
+            title: "BitePal",
+            subtitle: "Tham khảo trải nghiệm camera của BitePal"
+          )
+        }
       }
     }
     .navigationTitle("Camera Lab")

@@ -141,6 +141,9 @@
         }
       }
     },
+    "@Namespace + matchedGeometryEffect" : {
+
+    },
     "@Observable — track từng property" : {
       "localizations" : {
         "en" : {
@@ -425,6 +428,9 @@
           }
         }
       }
+    },
+    "0.5x" : {
+
     },
     "1 — bản clone" : {
 
@@ -861,6 +867,9 @@
           }
         }
       }
+    },
+    "1x" : {
+
     },
     "2 — LinearGradient đặt thẳng lên mark" : {
 
@@ -1359,12 +1368,6 @@
     "3. Range" : {
 
     },
-    "3. Session Preset" : {
-
-    },
-    "3. Session Preset (tùy chọn)" : {
-
-    },
     "3. swift-markdown" : {
       "localizations" : {
         "en" : {
@@ -1401,6 +1404,9 @@
       }
     },
     "3. Tương tác" : {
+
+    },
+    "3. UIKit Presentation" : {
 
     },
     "4 — Canvas tự vẽ, cộng chartXSelection" : {
@@ -1474,9 +1480,6 @@
       }
     },
     "4. `by:` và scale" : {
-
-    },
-    "4. Chụp ảnh" : {
 
     },
     "4. Cụm single-open" : {
@@ -1563,6 +1566,12 @@
         }
       }
     },
+    "4. Session Preset" : {
+
+    },
+    "4. Session Preset (tùy chọn)" : {
+
+    },
     "4. TextField trong sheet" : {
 
     },
@@ -1640,10 +1649,7 @@
     "5. Cap 400pt" : {
 
     },
-    "5. Điều khiển" : {
-
-    },
-    "5. Điều khiển camera" : {
+    "5. Chụp ảnh" : {
 
     },
     "5. Đổi lớp áo" : {
@@ -1751,10 +1757,13 @@
         }
       }
     },
-    "6. maxHeight 400pt" : {
+    "6. Điều khiển" : {
 
     },
-    "6. Quay video" : {
+    "6. Điều khiển camera" : {
+
+    },
+    "6. maxHeight 400pt" : {
 
     },
     "6. Quét mã" : {
@@ -1813,10 +1822,7 @@
     "7. Point / Scatter" : {
 
     },
-    "7. Quét mã" : {
-
-    },
-    "7. Quét QR / barcode" : {
+    "7. Quay video" : {
 
     },
     "7. Vùng nền" : {
@@ -1858,19 +1864,25 @@
     "8. Pie / Donut" : {
 
     },
+    "8. Quét mã" : {
+
+    },
+    "8. Quét QR / barcode" : {
+
+    },
     "8. RuleMark" : {
-
-    },
-    "8. Xử lý frame" : {
-
-    },
-    "8. Xử lý từng frame" : {
 
     },
     "9. Heatmap" : {
 
     },
-    "9. Nâng cao" : {
+    "9. Xử lý frame" : {
+
+    },
+    "9. Xử lý từng frame" : {
+
+    },
+    "10. Nâng cao" : {
 
     },
     "11 nhóm chủ đề trong tài liệu Animations của Apple" : {
@@ -2612,6 +2624,9 @@
         }
       }
     },
+    "BitePal" : {
+
+    },
     "Bỏ Optional đi: `expandedID: Panel.ID`. Lúc đó nil không tồn tại, bấm lại vào mục đang mở thì phép gán không đổi gì. Không cần cờ nào canh — lại là chuyện chọn kiểu dữ liệu, không phải thêm logic." : {
       "localizations" : {
         "en" : {
@@ -2785,6 +2800,9 @@
         }
       }
     },
+    "Các capsule dùng chung id và namespace để animate giữa hai vị trí." : {
+
+    },
     "Các loại chart" : {
 
     },
@@ -2807,6 +2825,9 @@
           }
         }
       }
+    },
+    "Cách hiện tại — offset + animation" : {
+
     },
     "Cách nhìn rõ nhất mọi thứ ở trên: chậm lại rồi tắt clipShape, sẽ thấy hẳn chữ nằm ngoài viền trong lúc khung co." : {
       "localizations" : {
@@ -3768,6 +3789,9 @@
         }
       }
     },
+    "Đang chọn" : {
+
+    },
     "Đang focus" : {
       "localizations" : {
         "en" : {
@@ -3910,6 +3934,9 @@
           }
         }
       }
+    },
+    "Dietfit" : {
+
     },
     "Điều chỉnh chiều cao" : {
       "localizations" : {
@@ -4798,6 +4825,9 @@
         }
       }
     },
+    "Hãy kiểm tra quyền camera và thử lại." : {
+
+    },
     "Heatmap" : {
 
     },
@@ -5230,6 +5260,9 @@
     "Khoảng chuyển sang trục X, trục Y thành band scale tên thứ. Cả bảy thanh chung một thang 20–38° nên ngày lạnh nằm lệch trái, ngày nóng lệch phải — đó mới là thứ đáng nhìn, chứ không phải độ dài từng thanh. Thử đổi chartXScale thành 24...35 xem hình đọc khác đi thế nào." : {
 
     },
+    "Khoảng thời gian" : {
+
+    },
     "Khoảng tuổi" : {
       "localizations" : {
         "en" : {
@@ -5319,6 +5352,9 @@
 
     },
     "KHÔNG SCROLL" : {
+
+    },
+    "Không thể đổi camera" : {
 
     },
     "Không thể đồng bộ dữ liệu, vui lòng kiểm tra kết nối mạng của bạn" : {
@@ -5958,6 +5994,9 @@
         }
       }
     },
+    "Một capsule làm nền chọn. offset và animation di chuyển nó giữa các mục." : {
+
+    },
     "Một cú đơn lẻ" : {
       "localizations" : {
         "en" : {
@@ -6362,6 +6401,9 @@
         }
       }
     },
+    "OK" : {
+
+    },
     "Open camera" : {
 
     },
@@ -6443,9 +6485,6 @@
         }
       }
     },
-    "Phần 4 — AVCapturePhotoOutput và lưu ảnh." : {
-
-    },
     "Phần 4 — đổi ống kính, flash, zoom, focus, xoay." : {
       "extractionState" : "stale",
       "localizations" : {
@@ -6468,7 +6507,7 @@
         }
       }
     },
-    "Phần 5 — đổi ống kính, flash, zoom, focus, xoay." : {
+    "Phần 5 — AVCapturePhotoOutput và lưu ảnh." : {
 
     },
     "Phần 6 — AVCaptureMetadataOutput." : {
@@ -6482,10 +6521,10 @@
         }
       }
     },
-    "Phần 6 — AVCaptureMovieFileOutput." : {
+    "Phần 6 — đổi ống kính, flash, zoom, focus, xoay." : {
 
     },
-    "Phần 7 — AVCaptureMetadataOutput." : {
+    "Phần 7 — AVCaptureMovieFileOutput." : {
 
     },
     "Phần 7 — sample buffer, Core Image, Vision." : {
@@ -6499,6 +6538,9 @@
         }
       }
     },
+    "Phần 8 — AVCaptureMetadataOutput." : {
+
+    },
     "Phần 8 — multi-cam, depth, Live Photo, Camera Control." : {
       "extractionState" : "stale",
       "localizations" : {
@@ -6510,10 +6552,10 @@
         }
       }
     },
-    "Phần 8 — sample buffer, Core Image, Vision." : {
+    "Phần 9 — sample buffer, Core Image, Vision." : {
 
     },
-    "Phần 9 — multi-cam, depth, Live Photo, Camera Control." : {
+    "Phần 10 — multi-cam, depth, Live Photo, Camera Control." : {
 
     },
     "Phân trang tháng" : {
@@ -6540,6 +6582,9 @@
 
     },
     "Phủ hết màn, không có detent hay drag để đóng — tự dựng nút Close" : {
+
+    },
+    "Picker mặc định" : {
 
     },
     "Picker, drag-snap, submit form" : {
@@ -6831,6 +6876,9 @@
 
     },
     "SectorMark và biểu đồ tròn" : {
+
+    },
+    "SegmentedControl" : {
 
     },
     "Selected" : {
@@ -7363,6 +7411,12 @@
         }
       }
     },
+    "Tham khảo trải nghiệm camera của BitePal" : {
+
+    },
+    "Tham khảo trải nghiệm camera của Dietfit" : {
+
+    },
     "Thấp nhất" : {
 
     },
@@ -7391,6 +7445,9 @@
           }
         }
       }
+    },
+    "Tháng" : {
+
     },
     "Theo ĐÚNG thứ tự: chọn identity = vị trí TRƯỚC, rồi mở mục #2, rồi bấm Xoá mục đầu. Cái đang mở hoá ra là #3 — trạng thái mở ở lại VỊ TRÍ cũ, còn nội dung đã tụt lên một bậc." : {
       "localizations" : {
@@ -7776,9 +7833,6 @@
         }
       }
     },
-    "UIKit Presentation" : {
-
-    },
     "UINotificationFeedbackGenerator. Ba nhịp có tiết tấu riêng — dùng để báo KẾT QUẢ, không dùng cho thao tác thường." : {
       "localizations" : {
         "en" : {
@@ -7866,6 +7920,9 @@
 
     },
     "Vào Settings → Ứng dụng → Draft → Ảnh để bật." : {
+
+    },
+    "Ví dụ thực tế" : {
 
     },
     "Vì gạt cái Picker cũng làm mất trạng thái mở: hai nhánh của switch là hai cây view khác nhau, nên @State bị dựng lại từ đầu. Cùng một nguyên nhân với cái bẫy ở trên." : {

@@ -2,7 +2,7 @@
 //  AdvancedCaptureScreen.swift
 //  Draft
 //
-//  Phần 9 — Phần sâu, biết là có để khi cần thì tra.
+//  Phần 10 — Phần sâu, biết là có để khi cần thì tra.
 //
 //  Sẽ học:
 //  - AVCaptureMultiCamSession: trước + sau cùng lúc, kén máy và tốn pin.
@@ -20,9 +20,9 @@ struct AdvancedCaptureScreen: View {
     ContentUnavailableView(
       "Chưa làm",
       systemImage: "camera.aperture",
-      description: Text("Phần 9 — multi-cam, depth, Live Photo, Camera Control.")
+      description: Text("Phần 10 — multi-cam, depth, Live Photo, Camera Control.")
     )
-    .navigationTitle("9. Nâng cao")
+    .navigationTitle("10. Nâng cao")
     .navigationBarTitleDisplayMode(.inline)
   }
 }

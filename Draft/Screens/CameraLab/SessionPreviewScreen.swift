@@ -12,9 +12,14 @@
 //  - startRunning() BLOCK luồng gọi → phải chạy trên session queue riêng, không phải main.
 //  - Vòng đời: chủ động dừng session khi preview biến mất.
 //
-//  sessionPreset được học riêng ở bài 3. Session Preset (tùy chọn).
+//  sessionPreset được học riêng ở bài 4. Session Preset (tùy chọn).
 //
-//  Official documentation: https://developer.apple.com/documentation/avfoundation/setting-up-a-capture-session
+//  Official documentation:
+//  - https://developer.apple.com/documentation/avfoundation/capture-setup
+//  - https://developer.apple.com/documentation/avfoundation/setting-up-a-capture-session
+//  - https://developer.apple.com/documentation/avfoundation/avcam-building-a-camera-app
+//  - https://developer.apple.com/documentation/avfoundation/building-a-responsive-camera-app-that-launches-quickly
+//
 
 import SwiftUI
 import AVFoundation
@@ -72,16 +77,20 @@ struct SessionPreviewScreen: View {
         .navigationTitle("2. Session & Preview")
         .navigationBarTitleDisplayMode(.inline)
     }
-    
-    
 }
 
 // @unchecked Sendable means we take responsibility for synchronization ourselves.
 nonisolated final class CameraSessionController: @unchecked Sendable {
     let captureSession = AVCaptureSession()
+    let supportsUltraWide = AVCaptureDevice.default(
+        .builtInUltraWideCamera,
+        for: .video,
+        position: .back
+    ) != nil
     private var isConfigured = false
+    private var videoInput: AVCaptureDeviceInput?
     
-    private let sessionQueue = DispatchQueue(label: "camera.session")
+    private let sessionQueue = DispatchQueue(label: "camera.session")   // a serial queue
     
     private func configureSession() -> Bool {
         captureSession.beginConfiguration()
@@ -102,6 +111,7 @@ nonisolated final class CameraSessionController: @unchecked Sendable {
         }
         
         captureSession.addInput(videoDeviceInput)
+        videoInput = videoDeviceInput
         return true
     }
     
@@ -148,6 +158,56 @@ nonisolated final class CameraSessionController: @unchecked Sendable {
 
             print("Preset:", captureSession.sessionPreset.rawValue)
         }
+    }
+
+    func changeZoom(_ zoom: Double) async -> Bool {
+        await withCheckedContinuation { continuation in
+            sessionQueue.async { [self] in
+                continuation.resume(returning: switchCamera(for: zoom))
+            }
+        }
+    }
+
+    private func switchCamera(for zoom: Double) -> Bool {
+        guard zoom == 0.5 || zoom == 1.0, let currentInput = videoInput else {
+            return false
+        }
+
+        // 0.5x và 1x là tên hiển thị tương đối với ống kính wide.
+        // Mỗi camera vật lý vẫn dùng videoZoomFactor mặc định là 1.
+        let deviceType: AVCaptureDevice.DeviceType = zoom == 0.5
+            ? .builtInUltraWideCamera
+            : .builtInWideAngleCamera
+
+        if currentInput.device.deviceType == deviceType {
+            return true
+        }
+
+        guard
+            let device = AVCaptureDevice.default(deviceType, for: .video, position: .back),
+            let newInput = try? AVCaptureDeviceInput(device: device)
+        else {
+            return false
+        }
+
+        captureSession.beginConfiguration()
+        defer { captureSession.commitConfiguration() }
+        captureSession.removeInput(currentInput)
+
+        guard captureSession.canAddInput(newInput) else {
+            // Giữ camera cũ nếu session không nhận input mới.
+            if captureSession.canAddInput(currentInput) {
+                captureSession.addInput(currentInput)
+            } else {
+                videoInput = nil
+                isConfigured = false
+            }
+            return false
+        }
+
+        captureSession.addInput(newInput)
+        videoInput = newInput
+        return true
     }
 
     func printSessionState() {

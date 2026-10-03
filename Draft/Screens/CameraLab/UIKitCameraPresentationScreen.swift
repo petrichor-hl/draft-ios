@@ -2,7 +2,7 @@
 //  UIKitCameraPresentationScreen.swift
 //  Draft
 //
-//  UIKit present CameraView với .overFullScreen, start sau khi animation hoàn tất.
+//  Phần 3 — UIKit present CameraView với .overFullScreen, start sau khi animation hoàn tất.
 //  - UIViewControllerRepresentable đưa UIKit presenter vào màn SwiftUI.
 //  - UIHostingController chứa CameraView viết bằng SwiftUI.
 //  - Completion của present chạy sau presentation và viewDidAppear.
@@ -15,7 +15,7 @@ import UIKit
 struct UIKitCameraPresentationScreen: View {
     var body: some View {
         CameraPresenter()
-            .navigationTitle("UIKit Presentation")
+            .navigationTitle("3. UIKit Presentation")
             .navigationBarTitleDisplayMode(.inline)
     }
 }

@@ -113,6 +113,12 @@ struct AppendixView: View {
             }
 
             Button {
+                coordinator.push(.segmentedControl)
+            } label: {
+                Text("SegmentedControl")
+            }
+
+            Button {
                 coordinator.push(.fixedSize)
             } label: {
                 Text(".fixedSize() — cần học")
