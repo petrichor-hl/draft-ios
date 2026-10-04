@@ -3524,6 +3524,7 @@
       }
     },
     "Cover %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4020,6 +4021,7 @@
       }
     },
     "Đóng" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4446,10 +4448,10 @@
         }
       }
     },
-    "Focus khi vào màn hình, mở lại bàn phím, nút Xong" : {
+    "Focus & keyboard" : {
 
     },
-    "Focus & keyboard" : {
+    "Focus khi vào màn hình, mở lại bàn phím, nút Xong" : {
 
     },
     "Focused border" : {
@@ -5205,10 +5207,10 @@
     "Keyboard" : {
 
     },
-    "Keyboard avoidance" : {
+    "Keyboard & Focus" : {
 
     },
-    "Keyboard & Focus" : {
+    "Keyboard avoidance" : {
 
     },
     "Keyboard Lab" : {
@@ -5948,10 +5950,10 @@
     "Một ngày giữa núi rừng" : {
 
     },
-    "Một ô nhập, hiển thị mã thành các ô riêng" : {
+    "Một ô nhập mã, giữ số 0 đầu và giới hạn độ dài" : {
 
     },
-    "Một ô nhập mã, giữ số 0 đầu và giới hạn độ dài" : {
+    "Một ô nhập, hiển thị mã thành các ô riêng" : {
 
     },
     "moveDisabled không phải ghim" : {
@@ -6147,7 +6149,7 @@
     "Nhấn giữ một hàng rồi kéo, hoặc bấm Edit để hiện tay nắm." : {
 
     },
-    "Nhấn Hide keyboard và Quan sát khi keyboard trượt xuống để ẩn" : {
+    "Nhấn Hide keyboard và Quan sát lỗi UI khi keyboard trượt xuống để ẩn" : {
 
     },
     "Nhận mã từ gợi ý hệ thống, kiểm tra trên thiết bị" : {
@@ -6156,7 +6158,7 @@
     "Nhãn nằm trên đầu cột. Để ý cột cao nhất: nhãn có bị đẩy tràn khỏi khung, hay Charts tự chừa chỗ cho nó?" : {
 
     },
-    "Nhấn vào RoundedRectangle để expand hoặc collapse nó\nQuan sát khi RoundedRectangle từ 200pt thu nhỏ về 70pt" : {
+    "Nhấn vào RoundedRectangle để expand hoặc collapse nó\nQuan sát lỗi UI khi RoundedRectangle từ 200pt thu nhỏ về 70pt" : {
 
     },
     "Nhập để mở bàn phím" : {
@@ -6185,6 +6187,7 @@
       }
     },
     "Nhật ký" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6977,6 +6980,7 @@
 
     },
     "Sheet %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -7156,13 +7160,13 @@
         }
       }
     },
-    "Skeleton hình chữ nhật" : {
-
-    },
     "Single field" : {
 
     },
     "Skeleton bo góc" : {
+
+    },
+    "Skeleton hình chữ nhật" : {
 
     },
     "Slide to Confirm (Kavsoft)" : {
@@ -8006,13 +8010,13 @@
     "User đã từ chối" : {
 
     },
-    "Validation & Submit" : {
+    "Username, password, mã OTP và cấu hình ô nhập" : {
 
     },
     "Validation" : {
 
     },
-    "Username, password, mã OTP và cấu hình ô nhập" : {
+    "Validation & Submit" : {
 
     },
     "Vẫn chồng, nhưng đối xứng quanh trục giữa thay vì mọc từ đáy. Không dải nào bị đường gốc ghìm nên hình dáng từng dải đọc dễ hơn hẳn chart G — cú phình của Mạng xã hội hiện thành một cái bụng rõ rệt. Cái giá phải trả: trục Y mất hết ý nghĩa nên ẩn luôn, chart này chỉ để cảm nhận nhịp chứ không để đọc số." : {
@@ -8021,10 +8025,10 @@
     "Vào Settings → Ứng dụng → Draft → Ảnh để bật." : {
 
     },
-    "Verification states" : {
+    "Verification & Recovery" : {
 
     },
-    "Verification & Recovery" : {
+    "Verification states" : {
 
     },
     "Ví dụ thực tế" : {
@@ -8299,6 +8303,7 @@
 
     },
     "Xoá" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
