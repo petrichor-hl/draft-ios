@@ -132,6 +132,7 @@ enum AppRoute: Hashable {
     case calendariOS18
     case logger
     case cameraLab
+    case biometricAuthenticationLab
     case cameraPermission
     case cameraImagePicker
     case cameraSessionPreview
@@ -404,6 +405,8 @@ extension AppRoute: View {
             LoggerScreen()
         case .cameraLab:
             CameraLab()
+        case .biometricAuthenticationLab:
+            BiometricAuthenticationLab()
         case .cameraPermission:
             CameraPermissionScreen()
         case .cameraImagePicker:
