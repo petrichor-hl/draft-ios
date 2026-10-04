@@ -125,6 +125,9 @@
     ".lineHeight(.exact) - iOS 26" : {
       "shouldTranslate" : false
     },
+    ".mask Lab" : {
+
+    },
     ".onMove" : {
 
     },

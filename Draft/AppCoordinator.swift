@@ -33,6 +33,7 @@ enum AppRoute: Hashable {
     case safeAreaInsetDynamicHeight
     case safeAreaInsetKeyboard
     case safeAreaLab
+    case maskLab
     case shimmerSkeletonLab
     case safeAreaPadding
     case safeAreaBar
@@ -184,6 +185,8 @@ extension AppRoute: View {
             SafeAreaInsetKeyboardScreen()
         case .safeAreaLab:
             SafeAreaLab()
+        case .maskLab:
+            MaskLab()
         case .shimmerSkeletonLab:
             ShimmerSkeletonLab()
         case .safeAreaPadding:

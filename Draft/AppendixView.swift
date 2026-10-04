@@ -34,6 +34,12 @@ struct AppendixView: View {
             }
 
             Button {
+                coordinator.push(.maskLab)
+            } label: {
+                Text(".mask Lab")
+            }
+
+            Button {
                 coordinator.push(.shimmerSkeletonLab)
             } label: {
                 Text("Shimmer & Skeleton Lab")
