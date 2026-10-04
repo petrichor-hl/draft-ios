@@ -71,6 +71,7 @@ struct CameraControlsScreen: View {
                 isPreviewVisible = true
             } label: {
                 Label("Open camera", systemImage: "camera")
+                    .frame(maxWidth: .infinity)
             }
             .buttonStyle(.borderedProminent)
             .controlSize(.large)

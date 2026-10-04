@@ -15,7 +15,6 @@ struct AppendixView: View {
             } label: {
                 Text("ScrollView Lab")
             }
-
             Button {
                 coordinator.push(.bottomSheetLab)
             } label: {
@@ -26,6 +25,12 @@ struct AppendixView: View {
                 coordinator.push(.keyboardLab)
             } label: {
                 Text("Keyboard Lab")
+            }
+            
+            Button {
+                coordinator.push(.safeAreaLab)
+            } label: {
+                Text("Safe Area Lab")
             }
 
             Button {
@@ -86,12 +91,6 @@ struct AppendixView: View {
                 coordinator.push(.toastLab)
             } label: {
                 Text("Toast Lab")
-            }
-
-            Button {
-                coordinator.push(.doubleSheetLab)
-            } label: {
-                Text("Double Sheet Lab")
             }
 
             Button {
@@ -158,6 +157,12 @@ struct AppendixView: View {
                 coordinator.push(.sliderToolbox)
             } label: {
                 Text("Slider Toolbox")
+            }
+
+            Button {
+                coordinator.push(.reorderListLab)
+            } label: {
+                Text("Reorder a List")
             }
 
             Button {

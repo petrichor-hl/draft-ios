@@ -125,8 +125,14 @@
     ".lineHeight(.exact) - iOS 26" : {
       "shouldTranslate" : false
     },
+    ".onMove" : {
+
+    },
     ".relative(.named)" : {
       "shouldTranslate" : false
+    },
+    ".safeAreaInset" : {
+
     },
     ".sheet" : {
 
@@ -476,6 +482,9 @@
         }
       }
     },
+    "1 · onMove" : {
+
+    },
     "1 · Parsing chuỗi ISO 8601" : {
       "localizations" : {
         "en" : {
@@ -687,22 +696,6 @@
         }
       }
     },
-    "1. Chồng nhau" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "1. Stacked"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "1. Apilados"
-          }
-        }
-      }
-    },
     "1. Column" : {
 
     },
@@ -737,22 +730,6 @@
     "1. Giải phẫu một Chart" : {
 
     },
-    "1. Hai .sheet chồng lên cùng một view" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "1. Two .sheet modifiers stacked on the same view"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "1. Dos .sheet apilados sobre la misma vista"
-          }
-        }
-      }
-    },
     "1. ImagePicker" : {
       "localizations" : {
         "en" : {
@@ -770,6 +747,9 @@
       }
     },
     "1. Location Details — BarMark" : {
+
+    },
+    "1. onMove + EditButton" : {
 
     },
     "1. Safe Area" : {
@@ -915,6 +895,9 @@
         }
       }
     },
+    "2 · editActions" : {
+
+    },
     "2 · Một cái đơn lẻ" : {
       "localizations" : {
         "en" : {
@@ -995,22 +978,6 @@
         }
       }
     },
-    "2. Anh em" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "2. Siblings"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "2. Vistas hermanas"
-          }
-        }
-      }
-    },
     "2. AttributedString" : {
       "localizations" : {
         "en" : {
@@ -1055,6 +1022,9 @@
     "2. Dynamic Height (iOS 16+)" : {
 
     },
+    "2. editActions" : {
+
+    },
     "2. Feedback Generator" : {
       "localizations" : {
         "en" : {
@@ -1067,22 +1037,6 @@
           "stringUnit" : {
             "state" : "machine_translated",
             "value" : "2. Feedback Generator"
-          }
-        }
-      }
-    },
-    "2. Hai .sheet ở hai view anh em" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "2. Two .sheet modifiers on two sibling views"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "2. Dos .sheet en dos vistas hermanas"
           }
         }
       }
@@ -1165,6 +1119,9 @@
           }
         }
       }
+    },
+    "3 · Hàng bị khoá" : {
+
     },
     "3 · Multi-expand" : {
       "localizations" : {
@@ -1278,22 +1235,6 @@
         }
       }
     },
-    "3. .sheet(item:)" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "3. .sheet(item:)"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "3. .sheet(item:)"
-          }
-        }
-      }
-    },
     "3. Chụp ảnh" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1346,27 +1287,14 @@
     "3. Dynamic Height (iOS 18+)" : {
 
     },
+    "3. Hàng bị khoá" : {
+
+    },
     "3. Location Details" : {
 
     },
     "3. Modifier hai tầng" : {
 
-    },
-    "3. Một .sheet(item:) duy nhất" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "3. A single .sheet(item:)"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "3. Un único .sheet(item:)"
-          }
-        }
-      }
     },
     "3. Range" : {
 
@@ -1416,6 +1344,9 @@
 
     },
     "4 — Thanh theo mốc, tự dựng" : {
+
+    },
+    "4 · DragGesture" : {
 
     },
     "4 · Ép locale tường minh (độc lập với toggle)" : {
@@ -1526,26 +1457,6 @@
     "4. Fixed 400pt" : {
 
     },
-    "4. Hai .fullScreenCover" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "4. Two .fullScreenCover modifiers"
-          }
-        }
-      }
-    },
-    "4. Hai fullScreenCover" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "4. Two fullScreenCovers"
-          }
-        }
-      }
-    },
     "4. Line" : {
 
     },
@@ -1579,6 +1490,9 @@
 
     },
     "4. Toolbox" : {
+
+    },
+    "4. Tự dựng bằng DragGesture" : {
 
     },
     "4K" : {
@@ -1668,16 +1582,6 @@
     "5. interpolationMethod" : {
 
     },
-    "5. Một .sheet + một .fullScreenCover" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "5. One .sheet + one .fullScreenCover"
-          }
-        }
-      }
-    },
     "5. Quay video" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1685,16 +1589,6 @@
           "stringUnit" : {
             "state" : "machine_translated",
             "value" : "5. Video recording"
-          }
-        }
-      }
-    },
-    "5. sheet + cover" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "5. sheet + cover"
           }
         }
       }
@@ -1739,26 +1633,6 @@
     },
     "6. Area" : {
 
-    },
-    "6. Đảo thứ tự" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "6. Reversed order"
-          }
-        }
-      }
-    },
-    "6. Đảo thứ tự: cover trước, sheet sau" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "6. Reversed order: cover first, sheet second"
-          }
-        }
-      }
     },
     "6. Điều khiển" : {
 
@@ -2207,16 +2081,6 @@
     "Account" : {
 
     },
-    "activeSheet" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "activeSheet"
-          }
-        }
-      }
-    },
     "Ẩn" : {
       "localizations" : {
         "en" : {
@@ -2301,6 +2165,12 @@
     "Area gradient, trục Y bên phải, miền khít dữ liệu" : {
 
     },
+    "Auto" : {
+
+    },
+    "Auto-scroll khi kéo sát mép, hàng cao khác nhau, và VoiceOver. Đó là phần List cho không, và là lý do nên dùng List nếu được." : {
+
+    },
     "AVCaptureMetadataOutput — dùng session rẻ nhất" : {
       "localizations" : {
         "en" : {
@@ -2320,9 +2190,6 @@
           }
         }
       }
-    },
-    "Auto" : {
-
     },
     "Average on %@s" : {
 
@@ -2419,6 +2286,12 @@
     "Ba vùng cùng mọc từ đáy 0 và đè lên nhau, phải hạ opacity mới nhìn xuyên được. Đổi lại mỗi chuỗi có đáy phẳng riêng nên so sánh trực tiếp được: thấy rõ tuần thứ sáu Mạng xã hội gần đuổi kịp Tìm kiếm. Cái mất là TỔNG — không còn đường viền nào cho biết cộng lại bao nhiêu." : {
 
     },
+    "background" : {
+
+    },
+    "Background & Overlay" : {
+
+    },
     "Bấm **+100 kcal** ở mỗi section rồi quan sát WaterCard: màu nền đổi + số lần body tăng = có re-render." : {
       "localizations" : {
         "en" : {
@@ -2444,6 +2317,9 @@
           }
         }
       }
+    },
+    "Bấm Sửa (Edit): Sun và Moon không có tay nắm. Nhưng thử kéo Leaf lên trên Sun xem." : {
+
     },
     "Bấm thẳng vào header thì DisclosureGroup tự gói animation. Đổi state từ bên ngoài thì không ai gói giùm — đó là khác biệt đáng nhớ nhất ở màn này." : {
       "localizations" : {
@@ -2537,6 +2413,9 @@
         }
       }
     },
+    "Bản tự viết còn crash" : {
+
+    },
     "Bảng xếp hạng không cần lưới: người ta đọc con số ở cuối thanh chứ không dóng lên trục. Ẩn trục X rồi gắn annotation .trailing là ra bố cục quen thuộc của Screen Time hay báo cáo chi tiêu. chartXScale phải tự đặt rộng hơn giá trị lớn nhất, nếu không nhãn của thanh dài nhất bị đẩy ra ngoài khung." : {
 
     },
@@ -2576,6 +2455,12 @@
       }
     },
     "Basics" : {
+
+    },
+    "Bật \"Cho xoá\" là đổi .move thành .all: hiện thêm nút xoá đỏ khi đang hiện tay nắm, và vuốt trái để xoá." : {
+
+    },
+    "Bật công tắc: hàng ghim ở một ForEach không kéo được, phần còn lại đi qua một Binding mà setter luôn dán hàng ghim lên đầu." : {
 
     },
     "Bắt đầu" : {
@@ -2812,25 +2697,8 @@
     "Các loại chart" : {
 
     },
-    "Cách đúng — enum quyết định sheet nào đang mở" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "The right way — an enum decides which sheet is open"
-          }
-        }
-      }
-    },
-    "Cách gắn" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "How it’s attached"
-          }
-        }
-      }
+    "Cách có sẵn — và cái bẫy của toOffset" : {
+
     },
     "Cách hiện tại — offset + animation" : {
 
@@ -2854,6 +2722,9 @@
           }
         }
       }
+    },
+    "Cài đặt move" : {
+
     },
     "Cái xẹp xuống và cái giãn ra nằm trong cùng một withAnimation, vì cùng đọc một biến. Ở mục 3 mỗi row có transaction riêng nên không có chuyện đó." : {
       "localizations" : {
@@ -3019,6 +2890,9 @@
         }
       }
     },
+    "Chạm thanh để đổi chiều cao 70 ↔ 200pt bằng animation" : {
+
+    },
     "Change Square Size" : {
       "localizations" : {
         "en" : {
@@ -3134,16 +3008,6 @@
         }
       }
     },
-    "Chỉ có một biến, nên không thể rơi vào trạng thái hai sheet cùng bật." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "There’s only one variable, so you can’t end up in a state where both sheets are on."
-          }
-        }
-      }
-    },
     "Chỉ có nghĩa khi bắn liên tục" : {
       "localizations" : {
         "en" : {
@@ -3179,46 +3043,6 @@
     "Chỉ khai MIỀN, không đụng tới mốc. Nhưng miền rộng ra 24 giờ khiến Charts tự đổi bước chia từ 3 giờ sang 6 giờ, ra đúng 00/06/12/18 như Apple Health." : {
 
     },
-    "Chỉ mở A" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "Open A only"
-          }
-        }
-      }
-    },
-    "Chỉ mở B" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "Open B only"
-          }
-        }
-      }
-    },
-    "Chỉ mở cover" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "Open the cover only"
-          }
-        }
-      }
-    },
-    "Chỉ mở sheet" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "Open the sheet only"
-          }
-        }
-      }
-    },
     "Chỉ rung khi TĂNG. Closure nhận (old, new) và trả về SensoryFeedback? — trả nil là không rung. Bấm giảm để nghe sự im lặng." : {
       "localizations" : {
         "en" : {
@@ -3238,7 +3062,13 @@
     "Chỉnh edges & placement để thấy lề tác động lên content vs indicator" : {
 
     },
+    "Cho xoá (editActions: .all)" : {
+
+    },
     "Chọn" : {
+
+    },
+    "Chọn \"tự viết\" rồi kéo một hàng XUỐNG — nó rơi thấp hơn chỗ thả một hàng." : {
 
     },
     "Chọn năm sinh" : {
@@ -3303,16 +3133,6 @@
         }
       }
     },
-    "Chưa có sự kiện nào" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "No events yet"
-          }
-        }
-      }
-    },
     "Chưa dựng — chevron ↔ +/−, trái ↔ phải" : {
       "localizations" : {
         "en" : {
@@ -3344,6 +3164,9 @@
       }
     },
     "Chưa hỏi" : {
+
+    },
+    "Chưa kéo lần nào." : {
 
     },
     "Chưa làm" : {
@@ -3610,16 +3433,6 @@
           "stringUnit" : {
             "state" : "machine_translated",
             "value" : "Cover %@"
-          }
-        }
-      }
-    },
-    "Cover có đi chung cửa với sheet không?" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "Does a cover go through the same door as a sheet?"
           }
         }
       }
@@ -4151,15 +3964,8 @@
         }
       }
     },
-    "Double Sheet Lab" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "Double Sheet Lab"
-          }
-        }
-      }
+    "DragGesture gắn cả hàng thì vuốt dọc trên hàng sẽ là kéo, ScrollView không cuộn được nữa. Muốn nắm cả hàng thì ghép LongPressGesture().sequenced(before: DragGesture()) — vuốt nhanh là cuộn, giữ rồi mới kéo." : {
+
     },
     "Dữ liệu cao nhất chỉ 190. Trục Y có nới lên 400 để chứa đường này không? RectangleMark ở màn Vùng nền thì CÓ — vùng 15.000–20.000 kéo trục lên 20.000 và bóp bẹp mọi cột." : {
 
@@ -4203,16 +4009,6 @@
     "Dựng theo ảnh mẫu: track cắt làm hai mảnh chừa khoảng hở cho thumb, tick ẩn đi khi rơi vào khoảng hở đó, nhãn là bóng thoại có đuôi vẽ bằng Path. So với section trên: Apple vẽ tick NẰM DƯỚI track, ở đây tick nằm ĐÈ LÊN track.\n\nSnap bỏ luôn được biến anchor của món 2 — vị trí ngón tay quyết định tất cả, vì kết quả còn phải đi qua một phép làm tròn về mốc nên lệch vài pt không đổi được gì.\n\nMốc không bắt buộc cách đều: vị trí tính theo GIÁ TRỊ, và snap tìm mốc gần nhất cũng theo giá trị chứ không theo pixel.\n\nMỗi lần qua mốc có rung .selection." : {
 
     },
-    "Đúng trường hợp cần test — sheet thứ hai đi đâu?" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "Exactly the case worth testing — where does the second sheet go?"
-          }
-        }
-      }
-    },
     "ĐÚNG và MƯỢT. Shading tô theo toạ độ tuyệt đối nên màu vừa bám giá trị vừa nội suy liên tục. Phải cộng origin của plotFrame vì chartOverlay phủ cả trục trong khi proxy.position tính từ mép vùng vẽ. Và VẪN CHỌN ĐƯỢC. Canvas che touch, nên overlay phải .allowsHitTesting(false) — đặt BÊN TRONG closure của chartOverlay, lên riêng GeometryReader. Đặt sau dấu đóng là chặn luôn cả Chart, chart điếc hoàn toàn." : {
 
     },
@@ -4253,6 +4049,9 @@
         }
       }
     },
+    "Dynamic height" : {
+
+    },
     "Dynamic Height Bottom Sheet iOS 16+" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -4274,6 +4073,9 @@
           }
         }
       }
+    },
+    "Dynamic height, keyboard" : {
+
     },
     "E — annotation trên RuleMark(x:), position: .top" : {
 
@@ -4339,6 +4141,12 @@
         }
       }
     },
+    "edge, alignment, spacing, content" : {
+
+    },
+    "EdgeInsets hoặc edges + length" : {
+
+    },
     "Edges" : {
       "localizations" : {
         "en" : {
@@ -4348,6 +4156,12 @@
           }
         }
       }
+    },
+    "edgesIgnoringSafeArea" : {
+
+    },
+    "editActions" : {
+
     },
     "EEE, d MMM yyyy" : {
       "localizations" : {
@@ -4391,6 +4205,9 @@
     },
     "English" : {
       "shouldTranslate" : false
+    },
+    "Episode Title" : {
+
     },
     "Explore pie charts and interactivity" : {
 
@@ -4524,6 +4341,12 @@
         }
       }
     },
+    "ForEach($items, editActions: .move)" : {
+
+    },
+    "ForEach(items) { … }.onMove { … }" : {
+
+    },
     "foregroundStyle KHÔNG có by: nên không sinh scale, không tách series, đường vẫn liền. Màu đến từ VỊ TRÍ trên khung chứ không từ giá trị — đổi chartYScale là màu đổi theo." : {
 
     },
@@ -4604,6 +4427,15 @@
           }
         }
       }
+    },
+    "Ghi chú" : {
+
+    },
+    "Ghim" : {
+
+    },
+    "Ghim thật nằm ở dữ liệu" : {
+
     },
     "Giá" : {
 
@@ -4735,16 +4567,6 @@
     "Hai hàng chung MỘT giá trị, chỉ khác cách vẽ icon. Kéo hàng nào cũng được, hàng kia chạy theo.\n\nChạm đâu nhảy đó rồi kéo bám: startLocation lo cú nhảy, translation lo phần kéo tiếp. Thumb chỉ đi được quãng width − 28 chứ không phải width, nên lúc đổi toạ độ chạm về phần trăm phải trừ nửa thumb — thiếu phép trừ đó thì chạm sát mép phải không bao giờ ra 100%.\n\nNhãn % chỉ hiện khi ngón tay còn trên thanh. Nó là overlay của thumb nên đi theo thumb sẵn, không có phép tính vị trí ngang nào riêng." : {
 
     },
-    "Hai loại khác nhau có thành hai kênh độc lập?" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "Do two different types give you two independent channels?"
-          }
-        }
-      }
-    },
     "Hai ô, một toolbar" : {
       "localizations" : {
         "en" : {
@@ -4850,6 +4672,15 @@
         }
       }
     },
+    "Hello, World!" : {
+
+    },
+    "Here is the short description for the latest episode." : {
+
+    },
+    "Hide keyboard" : {
+
+    },
     "Hiện" : {
       "localizations" : {
         "en" : {
@@ -4879,6 +4710,9 @@
           }
         }
       }
+    },
+    "Hiện bàn phím để quan sát thanh đáy và List" : {
+
     },
     "Hiện lưới line height" : {
       "localizations" : {
@@ -4976,6 +4810,12 @@
           }
         }
       }
+    },
+    "ignoresSafeArea" : {
+
+    },
+    "ignoresSafeAreaEdges — có hoặc không có style" : {
+
     },
     "Image from Gallery" : {
       "localizations" : {
@@ -5123,6 +4963,9 @@
         }
       }
     },
+    "Kéo chậm qua vài hàng: các hàng dạt ra nhưng dòng items không đổi. Chỉ lúc thả nó mới đổi — đúng một lần." : {
+
+    },
     "kéo chậm ra ~1.5s" : {
       "localizations" : {
         "en" : {
@@ -5132,6 +4975,9 @@
           }
         }
       }
+    },
+    "Kéo chỉ đổi offset, thả mới đổi mảng" : {
+
     },
     "Kéo duration lên 4–5 giây rồi bấm Toggle. Ở tốc độ thường (0.6s) mắt không phân biệt nổi, cả bốn ô trông y như nhau.\n\nRanh giới: giữa hai giá trị có tồn tại \"giá trị ở giữa\" không?\n\n✅ 28.4pt là một cỡ chữ hợp lệ → nội suy được, chữ lớn dần từng frame.\n\n❌ Không có kiểu chữ nào nửa serif nửa sans, cũng không có chuỗi nào nằm giữa \"Xin chào\" và \"Tạm biệt\". Không nội suy được, SwiftUI CHỒNG MỜ ảnh cũ với ảnh mới trong đúng khoảng thời gian đó — chạy chậm sẽ thấy rõ hai chữ đè lên nhau.\n\nNên phát biểu cho đủ: animation là nội suy giá trị; chỗ nào không nội suy được thì mặc định lùi về crossfade. contentTransition (bài 3) chính là chỗ bạn chọn hiệu ứng thay cho cái crossfade mặc định đó.\n\nCái conform Animatable là các đại lượng số — CGFloat, Double, CGSize, CGPoint, Angle, Color, EdgeInsets, UnitPoint. Kiểu chữ, chuỗi, Bool, Image, enum thì không." : {
       "localizations" : {
@@ -5172,6 +5018,9 @@
           }
         }
       }
+    },
+    "Kéo tay nắm ☰ — nhấc ngay, không cần nhấn giữ." : {
+
     },
     "Kéo thumb qua ngưỡng để xác nhận — DragGesture + offset" : {
       "localizations" : {
@@ -5221,6 +5070,15 @@
         }
       }
     },
+    "Kéo xong thì dòng items ngay trên tự đổi — SwiftUI ghi thẳng vào mảng qua binding. So với mục 1: không move(fromOffsets:), không toOffset." : {
+
+    },
+    "Kéo xuống đáy thì toOffset = số phần tử cũ, sau khi remove thì lớn hơn count 1 → insert(at:) văng. Code ở đây phải min() để khỏi crash." : {
+
+    },
+    "Keyboard" : {
+
+    },
     "Keyboard Lab" : {
       "localizations" : {
         "en" : {
@@ -5243,16 +5101,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "keyboardLayoutGuide — barra separada, se detiene suave - como Zalo"
-          }
-        }
-      }
-    },
-    "Khác anchor thì có thoát được không?" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "Does a different anchor get you around it?"
           }
         }
       }
@@ -5289,6 +5137,12 @@
         }
       }
     },
+    "Không cần closure, và tay nắm luôn hiện" : {
+
+    },
+    "Không cần Edit vẫn kéo được" : {
+
+    },
     "Không cắt gọt gì cả, mà sửa từ gốc: thay vì để AreaMark tự tìm đường gốc rồi tô xuống tận đó, ta nói luôn yStart là cận dưới của miền, nên vùng tô không bao giờ đi xa hơn đáy khung. Dài hơn cách C một chút nhưng không dựa vào hành vi clip nào — và là cách duy nhất nếu muốn đáy nằm ở mức khác, ví dụ tô từ giá tham chiếu lên." : {
 
     },
@@ -5321,6 +5175,12 @@
           }
         }
       }
+    },
+    "Không có chỗ nào báo người dùng vừa dời gì. Cần ghi log hay lưu thì nghe onChange(of: items), hoặc quay về onMove." : {
+
+    },
+    "Không có closure nào" : {
+
     },
     "Không có LabeledContent nào ở đây, nhưng trên **iOS 27** mở ra y hệt A." : {
 
@@ -5384,16 +5244,6 @@
     },
     "Khung vẫn 400pt dù content chỉ 60pt — không co theo content" : {
 
-    },
-    "Kịch bản" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "Scenarios"
-          }
-        }
-      }
     },
     "km" : {
       "localizations" : {
@@ -5598,6 +5448,9 @@
         }
       }
     },
+    "Luôn hiện tay nắm" : {
+
+    },
     "Lượt" : {
 
     },
@@ -5651,6 +5504,9 @@
       }
     },
     "mask() chặn item tràn vào top & bottom safe area" : {
+
+    },
+    "Mất cái móc" : {
 
     },
     "Mất lưới dọc, còn vạch chia và nhãn giờ. Dùng khi muốn nền sạch mà vẫn giữ lưới ngang để đọc giá trị." : {
@@ -5783,86 +5639,6 @@
         }
       }
     },
-    "Mở A" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "Open A"
-          }
-        }
-      }
-    },
-    "Mở A và B trong cùng một tick" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "Open A and B in the same tick"
-          }
-        }
-      }
-    },
-    "Mở A, 1,5s sau đổi sang B" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "Open A, then switch to B 1.5s later"
-          }
-        }
-      }
-    },
-    "Mở A, 1,5s sau mở B (A vẫn đang present)" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "Open A, then B 1.5s later (A is still presented)"
-          }
-        }
-      }
-    },
-    "Mở B" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "Open B"
-          }
-        }
-      }
-    },
-    "Mở B, 1,5s sau mở A (B vẫn đang present)" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "Open B, then A 1.5s later (B is still presented)"
-          }
-        }
-      }
-    },
-    "Mở cả hai trong cùng một tick" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "Open both in the same tick"
-          }
-        }
-      }
-    },
-    "Mở cover, 1,5s sau mở sheet" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "Open the cover, then the sheet 1.5s later"
-          }
-        }
-      }
-    },
     "Mở một mục thì mục đang mở tự xẹp. Không có dòng code nào đi đóng nó — nó đóng vì `expandedID` không còn trỏ vào nó nữa." : {
       "localizations" : {
         "en" : {
@@ -5895,16 +5671,6 @@
           "stringUnit" : {
             "state" : "machine_translated",
             "value" : "Open the sheet, then show a snackbar"
-          }
-        }
-      }
-    },
-    "Mở sheet, 1,5s sau mở cover" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "Open the sheet, then the cover 1.5s later"
           }
         }
       }
@@ -6026,6 +5792,12 @@
     "Một mảng, ba loại Mark, không modifier nào" : {
 
     },
+    "moveDisabled không phải ghim" : {
+
+    },
+    "moveDisabled không phải ghim — ghim thật nằm ở dữ liệu" : {
+
+    },
     "MovieFileOutput, thêm audio input, gián đoạn cuộc gọi" : {
       "localizations" : {
         "en" : {
@@ -6098,6 +5870,19 @@
           "stringUnit" : {
             "state" : "machine_translated",
             "value" : "Five .success haptics fire 120 ms apart. Because each one lasts longer than that gap, they pile on top of each other into a meaningless buzz — the user can’t count how many events there were.\n\nThe takeaway: Notification is only for the FINAL RESULT of a task. For an action that repeats many times, use Selection or Impact."
+          }
+        }
+      }
+    },
+    "Nằm ở index %lld" : {
+
+    },
+    "Nằm ở index %lld, lẽ ra là %lld" : {
+      "localizations" : {
+        "vi" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Nằm ở index %1$lld, lẽ ra là %2$lld"
           }
         }
       }
@@ -6194,7 +5979,19 @@
     "Nhãn đè LÊN cột nên không chiếm thêm chỗ. Chữ đổi sang trắng vì nền cột đậm — annotation không tự biết nó đang nằm trên nền gì." : {
 
     },
+    "Nhấn giữ một hàng rồi kéo, hoặc bấm Edit để hiện tay nắm." : {
+
+    },
+    "Nhấn Hide keyboard và Quan sát khi keyboard trượt xuống để ẩn" : {
+
+    },
     "Nhãn nằm trên đầu cột. Để ý cột cao nhất: nhãn có bị đẩy tràn khỏi khung, hay Charts tự chừa chỗ cho nó?" : {
+
+    },
+    "Nhấn vào RoundedRectangle để expand hoặc collapse nó\nQuan sát khi RoundedRectangle từ 200pt thu nhỏ về 70pt" : {
+
+    },
+    "Nhập để mở bàn phím" : {
 
     },
     "Nhập gì đó" : {
@@ -6226,6 +6023,9 @@
         }
       }
     },
+    "Nhật ký onMove" : {
+
+    },
     "Nhảy" : {
       "localizations" : {
         "en" : {
@@ -6236,6 +6036,9 @@
         }
       }
     },
+    "Nhìn dòng items = […]" : {
+
+    },
     "Nhớ mục ② của bài Basics: Int và String không animate được. .numericText() là cách SwiftUI lách — nó không nội suy con số mà cuộn từng chữ số như đồng hồ cơ. Tương tự .symbolEffect(.replace) morph giữa hai SF Symbol thay vì đổi phựt." : {
       "localizations" : {
         "en" : {
@@ -6245,6 +6048,9 @@
           }
         }
       }
+    },
+    "Nó chỉ cấm nhấc hàng đó lên. Kéo Leaf lên đầu là Sun và Moon bị đẩy xuống, ghim hay không cũng vậy." : {
+
     },
     "No image selected" : {
       "localizations" : {
@@ -6371,9 +6177,6 @@
         }
       }
     },
-    "OK" : {
-
-    },
     "ObservableObject — track cả object" : {
       "localizations" : {
         "en" : {
@@ -6413,6 +6216,9 @@
     "Off" : {
 
     },
+    "OK" : {
+
+    },
     "On" : {
 
     },
@@ -6420,6 +6226,9 @@
 
     },
     "overFullScreen, chờ animation hoàn tất rồi start camera" : {
+
+    },
+    "overlay" : {
 
     },
     "Parse được block, nhưng render thì sao?" : {
@@ -6716,6 +6525,9 @@
     "RectangleMark làm dải mục tiêu, vùng cảnh báo" : {
 
     },
+    "regions, edges — và overload có alignment" : {
+
+    },
     "RelativeDateTimeFormatter" : {
       "localizations" : {
         "en" : {
@@ -6725,6 +6537,12 @@
           }
         }
       }
+    },
+    "Reorder a List" : {
+
+    },
+    "Reorder a List (2 Ways) - Sean Allen" : {
+
     },
     "Reset" : {
       "localizations" : {
@@ -6795,6 +6613,18 @@
     "RuleMark" : {
 
     },
+    "Safe area" : {
+
+    },
+    "Safe Area Lab" : {
+
+    },
+    "safeAreaBar" : {
+
+    },
+    "safeAreaInset" : {
+
+    },
     "safeAreaInset — thanh nhập desync khi kéo" : {
       "localizations" : {
         "en" : {
@@ -6810,6 +6640,9 @@
           }
         }
       }
+    },
+    "safeAreaPadding" : {
+
     },
     "SAI. Gradient trải theo bounding box của TỪNG mark: đoạn sáng cao vỏn vẹn 58–72 BPM mà vẫn đủ năm màu, đáng lẽ xanh dương toàn bộ vì nằm dưới 95. Chuyển foregroundStyle ra tầng chart cũng không đổi gì." : {
 
@@ -7262,6 +7095,9 @@
     "String, khuyết T4" : {
 
     },
+    "style + ignoresSafeAreaEdges" : {
+
+    },
     "style: .medium / .short" : {
       "localizations" : {
         "en" : {
@@ -7387,6 +7223,9 @@
         }
       }
     },
+    "Tách hàng ghim ra Section riêng" : {
+
+    },
     "Tách segment khi khuyết dữ liệu, miền và mốc của trục" : {
 
     },
@@ -7432,6 +7271,9 @@
     "Tham khảo trải nghiệm camera của Dietfit" : {
 
     },
+    "Tháng" : {
+
+    },
     "Thấp nhất" : {
 
     },
@@ -7461,10 +7303,10 @@
         }
       }
     },
-    "Tháng" : {
+    "The torch may be unavailable on this camera." : {
 
     },
-    "The torch may be unavailable on this camera." : {
+    "Thêm xoá chỉ tốn một chữ" : {
 
     },
     "Theo ĐÚNG thứ tự: chọn identity = vị trí TRƯỚC, rồi mở mục #2, rồi bấm Xoá mục đầu. Cái đang mở hoá ra là #3 — trạng thái mở ở lại VỊ TRÍ cũ, còn nội dung đã tụt lên một bậc." : {
@@ -7506,22 +7348,15 @@
         }
       }
     },
+    "Thử kéo một hàng lên section Ghim xem có thả vào được không." : {
+
+    },
     "Thứ tự" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "machine_translated",
             "value" : "Order"
-          }
-        }
-      }
-    },
-    "Thứ tự modifier hay loại presentation mới quyết định?" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "Is it the modifier order or the presentation type that decides?"
           }
         }
       }
@@ -7623,6 +7458,9 @@
       }
     },
     "Tổng ba macro phải bằng 100%." : {
+
+    },
+    "toOffset đếm trên mảng cũ" : {
 
     },
     "Toolbar Done" : {
@@ -7828,6 +7666,9 @@
         }
       }
     },
+    "Từ iOS 16, List có onMove cho nhấn giữ rồi kéo ngay. EditButton chỉ để hiện tay nắm — dễ thấy hơn, và là đường duy nhất với VoiceOver." : {
+
+    },
     "Tự vẽ sóng: intensity × sharpness × duration" : {
       "localizations" : {
         "en" : {
@@ -7972,6 +7813,9 @@
         }
       }
     },
+    "Vì sao chỉ nắm ở tay nắm" : {
+
+    },
     "Vì sao không được lặp" : {
       "localizations" : {
         "en" : {
@@ -8014,16 +7858,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vídeo de la galería"
-          }
-        }
-      }
-    },
-    "View này giữ .sheet A — List bên dưới giữ .sheet B" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "machine_translated",
-            "value" : "This view holds .sheet A — the List below holds .sheet B"
           }
         }
       }
@@ -8179,6 +8013,9 @@
 
     },
     "WWDC23" : {
+
+    },
+    "Xem cột toOffset trong nhật ký: kéo xuống thì nó luôn lớn hơn index thật 1 đơn vị, kéo lên thì bằng." : {
 
     },
     "Xếp hàng bằng .delay(index × nhịp) — tách từ màn FAB" : {

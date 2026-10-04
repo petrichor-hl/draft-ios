@@ -29,6 +29,16 @@ class AppCoordinator {
 
 enum AppRoute: Hashable {
     case scrollViewLab
+    case safeAreaInsetLab
+    case safeAreaInsetDynamicHeight
+    case safeAreaInsetKeyboard
+    case safeAreaLab
+    case safeAreaPadding
+    case safeAreaBar
+    case ignoresSafeArea
+    case safeAreaBackground
+    case safeAreaOverlay
+    case edgesIgnoringSafeArea
     case scrollViewSafeArea
     case scrollViewContentMargins
     case scrollViewSwipeActions
@@ -75,13 +85,6 @@ enum AppRoute: Hashable {
     case languagePicker
     case snackBarLab
     case toastLab
-    case doubleSheetLab
-    case doubleSheetChained
-    case doubleSheetSibling
-    case doubleSheetItem
-    case doubleCover
-    case sheetAndCover
-    case coverAndSheetReversed
     case hapticsLab
     case hapticsSensory
     case hapticsGenerator
@@ -158,6 +161,13 @@ enum AppRoute: Hashable {
     case chartStocks
     case chartViewPerMonth
     case sliderToolbox
+    case reorderListLab
+    case reorderTwoWaysEditActions
+    case reorderTwoWaysOnMove
+    case reorderOnMove
+    case reorderEditActions
+    case reorderLockedRows
+    case reorderCustomGesture
 }
 
 extension AppRoute: View {
@@ -165,6 +175,26 @@ extension AppRoute: View {
         switch self {
         case .scrollViewLab:
             ScrollViewLab()
+        case .safeAreaInsetLab:
+            SafeAreaInsetLab()
+        case .safeAreaInsetDynamicHeight:
+            SafeAreaInsetDynamicHeightScreen()
+        case .safeAreaInsetKeyboard:
+            SafeAreaInsetKeyboardScreen()
+        case .safeAreaLab:
+            SafeAreaLab()
+        case .safeAreaPadding:
+            SafeAreaPaddingScreen()
+        case .safeAreaBar:
+            SafeAreaBarScreen()
+        case .ignoresSafeArea:
+            IgnoresSafeAreaScreen()
+        case .safeAreaBackground:
+            SafeAreaBackgroundScreen()
+        case .safeAreaOverlay:
+            SafeAreaOverlayScreen()
+        case .edgesIgnoringSafeArea:
+            EdgesIgnoringSafeAreaScreen()
         case .scrollViewSafeArea:
             ScrollViewSafeAreaScreen()
         case .scrollViewContentMargins:
@@ -257,20 +287,6 @@ extension AppRoute: View {
             SnackBarLab()
         case .toastLab:
             DemoToastFirstView()
-        case .doubleSheetLab:
-            DoubleSheetLab()
-        case .doubleSheetChained:
-            ChainedSheetScreen()
-        case .doubleSheetSibling:
-            SiblingSheetScreen()
-        case .doubleSheetItem:
-            SingleSheetItemScreen()
-        case .doubleCover:
-            DoubleCoverScreen()
-        case .sheetAndCover:
-            SheetAndCoverScreen()
-        case .coverAndSheetReversed:
-            CoverAndSheetReversedScreen()
         case .hapticsLab:
             HapticsLab()
         case .hapticsSensory:
@@ -423,6 +439,20 @@ extension AppRoute: View {
             ViewPerMonthScreen()
         case .sliderToolbox:
             SliderToolbox()
+        case .reorderListLab:
+            ReorderListLab()
+        case .reorderTwoWaysEditActions:
+            TwoWaysEditActionsScreen()
+        case .reorderTwoWaysOnMove:
+            TwoWaysOnMoveScreen()
+        case .reorderOnMove:
+            OnMoveReorderScreen()
+        case .reorderEditActions:
+            EditActionsReorderScreen()
+        case .reorderLockedRows:
+            LockedRowsReorderScreen()
+        case .reorderCustomGesture:
+            CustomGestureReorderScreen()
         }
     }
 }
