@@ -181,33 +181,25 @@ struct SlideToConfirm: View {
 
 private struct SlideToConfirmShimmer: View {
     var isActive: Bool
-    
-    @State private var startDate = Date()
-    
+
     var body: some View {
-        // Draw each frame directly so slider animations cannot retarget the shimmer.
-        TimelineView(.animation(paused: !isActive)) { timeline in
-            Canvas { context, size in
-                let elapsed = max(0, timeline.date.timeIntervalSince(startDate))
-                let progress = CGFloat(elapsed.truncatingRemainder(dividingBy: 2.5) / 2.5)
+        if isActive {
+            GeometryReader { geometry in
+                let size = geometry.size
                 let stripeWidth: CGFloat = 15
-                let x = (size.width - stripeWidth) / 2
-                    - size.width / 1.8
-                    + size.width * 1.2 * progress
-                let stripe = CGRect(
-                    x: x,
-                    y: (size.height - size.width) / 2,
-                    width: stripeWidth,
-                    height: size.width
-                )
-                
-                context.fill(Path(stripe), with: .foreground)
+                let startX = (size.width - stripeWidth) / 2 - size.width / 1.8
+
+                Rectangle()
+                    .fill(.foreground)
+                    .frame(width: stripeWidth, height: size.width)
+                    .offset(x: startX, y: (size.height - size.width) / 2)
+                    .keyframeAnimator(initialValue: CGFloat.zero, repeating: true) { stripe, progress in
+                        stripe.offset(x: size.width * 1.2 * progress)
+                    } keyframes: { _ in
+                        MoveKeyframe(CGFloat.zero)
+                        LinearKeyframe(CGFloat(1), duration: 1.5)
+                    }
             }
         }
-        .transaction { transaction in
-            transaction.animation = nil
-            transaction.disablesAnimations = true
-        }
-        .allowsHitTesting(false)
     }
 }
