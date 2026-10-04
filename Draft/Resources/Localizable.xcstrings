@@ -787,6 +787,9 @@
         }
       }
     },
+    "1. Text shimmer" : {
+
+    },
     "1. UIImagePickerController ⭐️" : {
       "localizations" : {
         "en" : {
@@ -1082,6 +1085,9 @@
         }
       }
     },
+    "2. Skeleton shapes" : {
+
+    },
     "3 — cắt đoạn tại biên zone, mỗi đoạn một màu cứng" : {
 
     },
@@ -1234,6 +1240,9 @@
           }
         }
       }
+    },
+    "3. Article card shimmer" : {
+
     },
     "3. Chụp ảnh" : {
       "extractionState" : "stale",
@@ -1542,6 +1551,9 @@
           }
         }
       }
+    },
+    "5 phút đọc" : {
+
     },
     "5 style" : {
       "localizations" : {
@@ -2890,6 +2902,9 @@
         }
       }
     },
+    "Chậm lại một chút để tận hưởng những điều nhỏ bé trên hành trình." : {
+
+    },
     "Chạm thanh để đổi chiều cao 70 ↔ 200pt bằng animation" : {
 
     },
@@ -3609,6 +3624,9 @@
       }
     },
     "Đang chọn" : {
+
+    },
+    "Đang chuẩn bị nội dung…" : {
 
     },
     "Đang focus" : {
@@ -5108,6 +5126,9 @@
     "Khai cả xStart/xEnd thì vùng co lại thành hình chữ nhật. BẮT BUỘC có chartXScale: thiếu nó thì RectangleMark giới thiệu T3 và T5 trước ForEach, band scale xếp chúng vào hai dải đầu và thứ tự thành T3/T5/T2/T4/T6." : {
 
     },
+    "Khám phá" : {
+
+    },
     "Khi content height bên trong ScrollView lớn hơn ScrollView height thì mới scroll được." : {
 
     },
@@ -5254,6 +5275,9 @@
           }
         }
       }
+    },
+    "LabArticleCard().shimmer() áp dụng hiệu ứng lên cả thẻ. Những phần có nền cũng tham gia vào mask." : {
+
     },
     "Label tuỳ biến" : {
       "localizations" : {
@@ -5503,6 +5527,9 @@
         }
       }
     },
+    "Mask nằm riêng trong overlay: vệt màu chỉ hiện trong nét chữ, còn chữ gốc giữ nguyên opacity." : {
+
+    },
     "mask() chặn item tràn vào top & bottom safe area" : {
 
     },
@@ -5618,6 +5645,9 @@
           }
         }
       }
+    },
+    "Minh Anh" : {
+
     },
     "minute" : {
       "localizations" : {
@@ -5790,6 +5820,9 @@
       }
     },
     "Một mảng, ba loại Mark, không modifier nào" : {
+
+    },
+    "Một ngày giữa núi rừng" : {
 
     },
     "moveDisabled không phải ghim" : {
@@ -6519,6 +6552,9 @@
         }
       }
     },
+    "Rectangle, RoundedRectangle và Circle dùng chung .shimmer(). Gắn modifier vào HStack để một vệt quét qua cả avatar lẫn các dòng chữ." : {
+
+    },
     "RectangleMark + color scale liên tục" : {
 
     },
@@ -6788,6 +6824,9 @@
         }
       }
     },
+    "Shimmer & Skeleton Lab" : {
+
+    },
     "Show Bottom Sheet" : {
       "localizations" : {
         "en" : {
@@ -6954,6 +6993,12 @@
           }
         }
       }
+    },
+    "Skeleton hình chữ nhật" : {
+
+    },
+    "Skeleton bo góc" : {
+
     },
     "Slide to Confirm (Kavsoft)" : {
       "localizations" : {
@@ -7199,6 +7244,9 @@
           }
         }
       }
+    },
+    "Swipe to Pay" : {
+
     },
     "Switch camera" : {
 

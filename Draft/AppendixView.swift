@@ -34,6 +34,12 @@ struct AppendixView: View {
             }
 
             Button {
+                coordinator.push(.shimmerSkeletonLab)
+            } label: {
+                Text("Shimmer & Skeleton Lab")
+            }
+
+            Button {
                 coordinator.push(.localizeDaytime)
             } label: {
                 Text("Localize Datetime")
