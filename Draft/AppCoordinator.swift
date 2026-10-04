@@ -35,6 +35,17 @@ enum AppRoute: Hashable {
     case safeAreaLab
     case maskLab
     case shimmerSkeletonLab
+    case formLab
+    case formPassword
+    case formLeadingIcon
+    case formNumericInput
+    case formAutofill
+    case formKeyboardAvoidance
+    case formInitialFocus
+    case formNextFocus
+    case formFocusedBorder
+    case formValidation
+    case formSubmission
     case safeAreaPadding
     case safeAreaBar
     case ignoresSafeArea
@@ -189,6 +200,28 @@ extension AppRoute: View {
             MaskLab()
         case .shimmerSkeletonLab:
             ShimmerSkeletonLab()
+        case .formLab:
+            FormLab()
+        case .formPassword:
+            FormPasswordScreen()
+        case .formLeadingIcon:
+            FormLeadingIconScreen()
+        case .formNumericInput:
+            FormNumericInputScreen()
+        case .formAutofill:
+            FormAutofillScreen()
+        case .formKeyboardAvoidance:
+            FormKeyboardAvoidanceScreen()
+        case .formInitialFocus:
+            FormInitialFocusScreen()
+        case .formNextFocus:
+            FormNextFocusScreen()
+        case .formFocusedBorder:
+            FormFocusedBorderScreen()
+        case .formValidation:
+            FormValidationScreen()
+        case .formSubmission:
+            FormSubmissionScreen()
         case .safeAreaPadding:
             SafeAreaPaddingScreen()
         case .safeAreaBar:

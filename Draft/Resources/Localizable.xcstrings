@@ -755,6 +755,9 @@
     "1. onMove + EditButton" : {
 
     },
+    "1. Password visibility" : {
+
+    },
     "1. Safe Area" : {
 
     },
@@ -1053,6 +1056,9 @@
     "2. Kiểu dữ liệu → loại trục" : {
 
     },
+    "2. Leading icon" : {
+
+    },
     "2. Locations Toggle" : {
 
     },
@@ -1308,6 +1314,9 @@
     "3. Modifier hai tầng" : {
 
     },
+    "3. Numeric input" : {
+
+    },
     "3. Range" : {
 
     },
@@ -1426,6 +1435,9 @@
       }
     },
     "4. `by:` và scale" : {
+
+    },
+    "4. Autofill" : {
 
     },
     "4. Cụm single-open" : {
@@ -1597,6 +1609,9 @@
     "5. interpolationMethod" : {
 
     },
+    "5. Keyboard avoidance" : {
+
+    },
     "5. Quay video" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1655,6 +1670,9 @@
     "6. Điều khiển camera" : {
 
     },
+    "6. Initial focus" : {
+
+    },
     "6. maxHeight 400pt" : {
 
     },
@@ -1711,6 +1729,9 @@
     "7. maxHeight trong sheet" : {
 
     },
+    "7. Next / Done" : {
+
+    },
     "7. Point / Scatter" : {
 
     },
@@ -1742,6 +1763,9 @@
         }
       }
     },
+    "8. Focused border" : {
+
+    },
     "8. Nâng cao" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1768,6 +1792,9 @@
     "9. Heatmap" : {
 
     },
+    "9. Validation" : {
+
+    },
     "9. Xử lý frame" : {
 
     },
@@ -1775,6 +1802,9 @@
 
     },
     "10. Nâng cao" : {
+
+    },
+    "10. Submission" : {
 
     },
     "11 nhóm chủ đề trong tài liệu Animations của Apple" : {
@@ -2126,6 +2156,9 @@
         }
       }
     },
+    "Ẩn mặc định, eye button bật/tắt hiển thị" : {
+
+    },
     "Animation Basics" : {
       "localizations" : {
         "en" : {
@@ -2184,6 +2217,9 @@
 
     },
     "Auto-scroll khi kéo sát mép, hàng cao khác nhau, và VoiceOver. Đó là phần List cho không, và là lý do nên dùng List nếu được." : {
+
+    },
+    "Autofill" : {
 
     },
     "AVCaptureMetadataOutput — dùng session rẻ nhất" : {
@@ -2473,6 +2509,9 @@
 
     },
     "Bật \"Cho xoá\" là đổi .move thành .all: hiện thêm nút xoá đỏ khi đang hiện tay nắm, và vuốt trái để xoá." : {
+
+    },
+    "Bắt buộc, định dạng, xác nhận mật khẩu — lỗi từng ô" : {
 
     },
     "Bật công tắc: hàng ghim ở một ForEach không kéo được, phần còn lại đi qua một Binding mà setter luôn dán hàng ghim lên đầu." : {
@@ -3061,6 +3100,9 @@
     "Chỉ khai MIỀN, không đụng tới mốc. Nhưng miền rộng ra 24 giờ khiến Charts tự đổi bước chia từ 3 giờ sang 6 giờ, ra đúng 00/06/12/18 như Apple Health." : {
 
     },
+    "Chỉ nhận số — kiểm tra cả gõ và paste" : {
+
+    },
     "Chỉ rung khi TĂNG. Closure nhận (old, new) và trả về SensoryFeedback? — trả nil là không rung. Bấm giảm để nghe sự im lặng." : {
       "localizations" : {
         "en" : {
@@ -3226,6 +3268,9 @@
           }
         }
       }
+    },
+    "Chuyển focus, cuộn tới ô tiếp theo, kết thúc nhập" : {
+
     },
     "City" : {
 
@@ -3883,6 +3928,9 @@
         }
       }
     },
+    "Đổi màu viền theo focus và trạng thái lỗi" : {
+
+    },
     "Đổi ống kính, flash/torch, zoom, tap-to-focus, xoay máy" : {
       "localizations" : {
         "en" : {
@@ -4362,6 +4410,9 @@
         }
       }
     },
+    "Focused border" : {
+
+    },
     "ForEach($items, editActions: .move)" : {
 
     },
@@ -4369,6 +4420,9 @@
 
     },
     "foregroundStyle KHÔNG có by: nên không sinh scale, không tách series, đường vẫn liền. Màu đến từ VỊ TRÍ trên khung chứ không từ giá trị — đổi chartYScale là màu đổi theo." : {
+
+    },
+    "Form Lab" : {
 
     },
     "Foundation KHÔNG đổi km→miles trực tiếp. Nó đi 2 bước: về mét (canonical) rồi ra miles. Mét là điểm trung chuyển chung." : {
@@ -4812,6 +4866,9 @@
     "I — stacking: .center, tức streamgraph" : {
 
     },
+    "Icon đầu ô nhập, căn chỉnh với nội dung" : {
+
+    },
     "identity" : {
       "localizations" : {
         "en" : {
@@ -4873,6 +4930,9 @@
           }
         }
       }
+    },
+    "Initial focus" : {
+
     },
     "Input" : {
       "localizations" : {
@@ -5098,6 +5158,12 @@
 
     },
     "Keyboard" : {
+
+    },
+    "Keyboard avoidance" : {
+
+    },
+    "Keyboard & Focus" : {
 
     },
     "Keyboard Lab" : {
@@ -5338,6 +5404,9 @@
         }
       }
     },
+    "Leading icon" : {
+
+    },
     "Learn Animation" : {
       "localizations" : {
         "en" : {
@@ -5405,6 +5474,9 @@
       }
     },
     "LineMark" : {
+
+    },
+    "Loading, chặn gửi lặp, lỗi server và thử lại" : {
 
     },
     "Loại" : {
@@ -5952,6 +6024,9 @@
         }
       }
     },
+    "Next / Done" : {
+
+    },
     "Ngăn kéo tự dựng" : {
 
     },
@@ -6163,6 +6238,9 @@
         }
       }
     },
+    "Numeric input" : {
+
+    },
     "Nút 1: A nhảy tức thì, B vẫn mượt → .animation(_:value:) không cần ai cho phép.\nNút 2: A bò chậm 1.5 giây, còn B vẫn snappy → animation gắn tại view GHI ĐÈ transaction từ withAnimation." : {
       "localizations" : {
         "en" : {
@@ -6202,6 +6280,9 @@
           }
         }
       }
+    },
+    "Ô nhập gần đáy vẫn nhìn thấy khi bàn phím mở" : {
+
     },
     "Ở tầng UIKit cả năm nằm chung MỘT enum. Lên SwiftUI, Apple tách thành hai overload: light/medium/heavy thành `weight`, soft/rigid thành `flexibility`. Cùng phần cứng, khác cách gọi tên.\n\nĐối chiếu chéo: mở màn SensoryFeedback, bấm .impact(weight: .heavy) ở intensity 1.00, rồi quay lại đây bấm .heavy ở 1.00 — y hệt nhau." : {
       "localizations" : {
@@ -6298,6 +6379,9 @@
           }
         }
       }
+    },
+    "Password visibility" : {
+
     },
     "Pause → Play" : {
       "localizations" : {
@@ -7166,6 +7250,9 @@
         }
       }
     },
+    "Submission" : {
+
+    },
     "Subscription Plan" : {
 
     },
@@ -7717,6 +7804,9 @@
         }
       }
     },
+    "Tự focus ô đầu tiên khi vào màn hình" : {
+
+    },
     "Từ iOS 16, List có onMove cho nhấn giữ rồi kéo ngay. EditButton chỉ để hiện tay nắm — dễ thấy hơn, và là đường duy nhất với VoiceOver." : {
 
     },
@@ -7833,6 +7923,15 @@
       }
     },
     "User đã từ chối" : {
+
+    },
+    "Validation & Submit" : {
+
+    },
+    "Validation" : {
+
+    },
+    "Username, password, mã OTP và cấu hình ô nhập" : {
 
     },
     "Vẫn chồng, nhưng đối xứng quanh trục giữa thay vì mọc từ đáy. Không dải nào bị đường gốc ghìm nên hình dáng từng dải đọc dễ hơn hẳn chart G — cú phình của Mạng xã hội hiện thành một cái bụng rõ rệt. Cái giá phải trả: trục Y mất hết ý nghĩa nên ẩn luôn, chart này chỉ để cảm nhận nhịp chứ không để đọc số." : {

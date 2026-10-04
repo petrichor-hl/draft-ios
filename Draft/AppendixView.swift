@@ -46,6 +46,12 @@ struct AppendixView: View {
             }
 
             Button {
+                coordinator.push(.formLab)
+            } label: {
+                Text("Form Lab")
+            }
+
+            Button {
                 coordinator.push(.localizeDaytime)
             } label: {
                 Text("Localize Datetime")
