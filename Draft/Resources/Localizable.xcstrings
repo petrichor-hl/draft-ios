@@ -5987,6 +5987,9 @@
         }
       }
     },
+    "Month" : {
+
+    },
     "Một biến Panel.ID? ở cha — hai cái cùng mở là không biểu diễn được" : {
       "localizations" : {
         "en" : {
@@ -6865,6 +6868,9 @@
     "ScrollView Lab" : {
 
     },
+    "Sean Allen" : {
+
+    },
     "Second View" : {
       "localizations" : {
         "en" : {
@@ -6888,6 +6894,9 @@
 
     },
     "Selected hour" : {
+
+    },
+    "Selected Month" : {
 
     },
     "Selection" : {
@@ -7642,6 +7651,12 @@
     "TOTAL" : {
 
     },
+    "Total views on YouTube channel by month" : {
+
+    },
+    "Total: %lld" : {
+
+    },
     "Tracking" : {
       "localizations" : {
         "en" : {
@@ -8023,6 +8038,9 @@
         }
       }
     },
+    "Views" : {
+
+    },
     "Vùng" : {
 
     },
@@ -8274,6 +8292,9 @@
           }
         }
       }
+    },
+    "YouTube Views" : {
+
     },
     "yStart…yEnd — thanh không neo vào đường gốc" : {
 

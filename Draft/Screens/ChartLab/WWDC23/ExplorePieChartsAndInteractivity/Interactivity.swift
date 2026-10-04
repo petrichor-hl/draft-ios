@@ -108,7 +108,6 @@ struct Interactivity: View {
           )
           .foregroundStyle(Color.gray.s500.opacity(0.2))
           .offset(yStart: -10)
-          .zIndex(-1)
           .annotation(
             position: .top,
             spacing: 0,
