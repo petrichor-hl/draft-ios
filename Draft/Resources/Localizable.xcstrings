@@ -777,6 +777,9 @@
         }
       }
     },
+    "1. Single field" : {
+
+    },
     "1. Text" : {
       "localizations" : {
         "en" : {
@@ -1078,6 +1081,9 @@
         }
       }
     },
+    "2. Segmented appearance" : {
+
+    },
     "2. Session & Preview" : {
       "localizations" : {
         "en" : {
@@ -1320,6 +1326,9 @@
     "3. Range" : {
 
     },
+    "3. Separate fields" : {
+
+    },
     "3. swift-markdown" : {
       "localizations" : {
         "en" : {
@@ -1484,6 +1493,9 @@
     "4. Line" : {
 
     },
+    "4. Paste & replacement" : {
+
+    },
     "4. Phase & Keyframe" : {
       "localizations" : {
         "en" : {
@@ -1590,6 +1602,9 @@
         }
       }
     },
+    "5. Autofill" : {
+
+    },
     "5. Cap 400pt" : {
 
     },
@@ -1670,6 +1685,9 @@
     "6. Điều khiển camera" : {
 
     },
+    "6. Focus & keyboard" : {
+
+    },
     "6. Initial focus" : {
 
     },
@@ -1738,6 +1756,9 @@
     "7. Quay video" : {
 
     },
+    "7. Verification states" : {
+
+    },
     "7. Vùng nền" : {
 
     },
@@ -1786,7 +1807,13 @@
     "8. Quét QR / barcode" : {
 
     },
+    "8. Resend & countdown" : {
+
+    },
     "8. RuleMark" : {
+
+    },
+    "9. Complete flow" : {
 
     },
     "9. Heatmap" : {
@@ -3386,6 +3413,9 @@
     "Column, Bar, Line, Area, Point, Pie, Range, Heatmap" : {
 
     },
+    "Complete flow" : {
+
+    },
     "Còn lại" : {
 
     },
@@ -3647,6 +3677,9 @@
           }
         }
       }
+    },
+    "Dán cả mã, thay vùng chọn, xử lý dữ liệu không hợp lệ" : {
+
     },
     "Đang bắn…" : {
       "localizations" : {
@@ -4410,6 +4443,12 @@
         }
       }
     },
+    "Focus khi vào màn hình, mở lại bàn phím, nút Xong" : {
+
+    },
+    "Focus & keyboard" : {
+
+    },
     "Focused border" : {
 
     },
@@ -4608,6 +4647,9 @@
 
     },
     "Gradient, dải min–max, stacked và streamgraph" : {
+
+    },
+    "Gửi lại mã, đếm ngược và thử lại khi gửi thất bại" : {
 
     },
     "H — stacking: .unstacked" : {
@@ -5816,6 +5858,9 @@
         }
       }
     },
+    "Mỗi chữ số một ô, chuyển focus và xử lý backspace" : {
+
+    },
     "Mọi cột cao bằng nhau, giá trị tuyệt đối biến mất, chỉ còn TỈ TRỌNG: Online nở dần qua bốn quý trong khi Cửa hàng co lại — điều chart A giấu mất vì quý nào cột cũng cao hơn quý trước. Trục Y đổi sang thang 0–100 nhưng KHÔNG tự thêm dấu %, muốn có thì phải tự format nhãn." : {
 
     },
@@ -5898,6 +5943,12 @@
 
     },
     "Một ngày giữa núi rừng" : {
+
+    },
+    "Một ô nhập, hiển thị mã thành các ô riêng" : {
+
+    },
+    "Một ô nhập mã, giữ số 0 đầu và giới hạn độ dài" : {
 
     },
     "moveDisabled không phải ghim" : {
@@ -6096,6 +6147,9 @@
     "Nhấn Hide keyboard và Quan sát khi keyboard trượt xuống để ẩn" : {
 
     },
+    "Nhận mã từ gợi ý hệ thống, kiểm tra trên thiết bị" : {
+
+    },
     "Nhãn nằm trên đầu cột. Để ý cột cao nhất: nhãn có bị đẩy tràn khỏi khung, hay Charts tự chừa chỗ cho nó?" : {
 
     },
@@ -6106,6 +6160,9 @@
 
     },
     "Nhập gì đó" : {
+
+    },
+    "Nhập mã → xác minh → sửa lỗi hoặc gửi lại → thành công" : {
 
     },
     "Nhập vào" : {
@@ -6342,6 +6399,9 @@
     "Open camera" : {
 
     },
+    "OTP — Verification Code Lab" : {
+
+    },
     "overFullScreen, chờ animation hoàn tất rồi start camera" : {
 
     },
@@ -6381,6 +6441,9 @@
       }
     },
     "Password visibility" : {
+
+    },
+    "Paste & replacement" : {
 
     },
     "Pause → Play" : {
@@ -6667,6 +6730,9 @@
     "Reorder a List (2 Ways) - Sean Allen" : {
 
     },
+    "Resend & countdown" : {
+
+    },
     "Reset" : {
       "localizations" : {
         "en" : {
@@ -6843,6 +6909,9 @@
     "SectorMark và biểu đồ tròn" : {
 
     },
+    "Segmented appearance" : {
+
+    },
     "SegmentedControl" : {
 
     },
@@ -6894,6 +6963,9 @@
           }
         }
       }
+    },
+    "Separate fields" : {
+
     },
     "Series gộp hai thành phố — foregroundStyle(by:) sinh legend" : {
 
@@ -7082,6 +7154,9 @@
       }
     },
     "Skeleton hình chữ nhật" : {
+
+    },
+    "Single field" : {
 
     },
     "Skeleton bo góc" : {
@@ -7456,6 +7531,9 @@
           }
         }
       }
+    },
+    "Thiếu mã, đang xác minh, sai mã, hết hạn và thành công" : {
+
     },
     "Thông báo" : {
       "localizations" : {
@@ -7938,6 +8016,12 @@
 
     },
     "Vào Settings → Ứng dụng → Draft → Ảnh để bật." : {
+
+    },
+    "Verification states" : {
+
+    },
+    "Verification & Recovery" : {
 
     },
     "Ví dụ thực tế" : {

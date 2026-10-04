@@ -46,6 +46,16 @@ enum AppRoute: Hashable {
     case formFocusedBorder
     case formValidation
     case formSubmission
+    case otpVerificationLab
+    case otpSingleField
+    case otpSegmentedAppearance
+    case otpSeparateFields
+    case otpPaste
+    case otpAutofill
+    case otpFocus
+    case otpVerificationStates
+    case otpResend
+    case otpCompleteFlow
     case safeAreaPadding
     case safeAreaBar
     case ignoresSafeArea
@@ -222,6 +232,26 @@ extension AppRoute: View {
             FormValidationScreen()
         case .formSubmission:
             FormSubmissionScreen()
+        case .otpVerificationLab:
+            OTPVerificationLab()
+        case .otpSingleField:
+            OTPSingleFieldScreen()
+        case .otpSegmentedAppearance:
+            OTPSegmentedAppearanceScreen()
+        case .otpSeparateFields:
+            OTPSeparateFieldsScreen()
+        case .otpPaste:
+            OTPPasteScreen()
+        case .otpAutofill:
+            OTPAutofillScreen()
+        case .otpFocus:
+            OTPFocusScreen()
+        case .otpVerificationStates:
+            OTPVerificationStatesScreen()
+        case .otpResend:
+            OTPResendScreen()
+        case .otpCompleteFlow:
+            OTPCompleteFlowScreen()
         case .safeAreaPadding:
             SafeAreaPaddingScreen()
         case .safeAreaBar:

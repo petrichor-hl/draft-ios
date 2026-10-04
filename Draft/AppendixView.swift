@@ -52,6 +52,12 @@ struct AppendixView: View {
             }
 
             Button {
+                coordinator.push(.otpVerificationLab)
+            } label: {
+                Text("OTP — Verification Code Lab")
+            }
+
+            Button {
                 coordinator.push(.localizeDaytime)
             } label: {
                 Text("Localize Datetime")
