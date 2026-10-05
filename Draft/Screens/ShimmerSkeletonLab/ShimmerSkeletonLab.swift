@@ -19,20 +19,20 @@ struct ShimmerSkeletonLab: View {
         Section {
             Text("Swipe to Pay")
                 .font(.system(size: 44, weight: .semibold))
-                .shimmer(color: .red)
+                .shimmer(color: .red, useGradient: true)
                 .padding(.vertical, 16)
 
             Text("Đang chuẩn bị nội dung…")
                 .font(.headline)
                 .foregroundStyle(.indigo)
-                .shimmer()
+                .shimmer(useGradient: true)
                 .padding(.vertical, 8)
 
             Text("Đang chuẩn bị nội dung…")
                 .font(.headline)
                 .foregroundStyle(.indigo)
                 .opacity(0.4)
-                .shimmer(color: .red)
+                .shimmer(color: .red, useGradient: true)
                 .padding(.vertical, 8)
         } header: {
             Text("1. Text shimmer")
