@@ -152,9 +152,3 @@ private enum MarginPlacementOption: String, CaseIterable, Identifiable {
         }
     }
 }
-
-#Preview {
-    NavigationStack {
-        ContentMarginsScreen()
-    }
-}

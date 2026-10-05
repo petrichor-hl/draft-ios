@@ -38,8 +38,3 @@ struct ScrollViewSafeAreaScreen: View {
       .toolbar(.hidden, for: .navigationBar)
     }
 }
-
-#Preview {
-  ScrollViewSafeAreaScreen()
-    .environment(AppCoordinator())
-}

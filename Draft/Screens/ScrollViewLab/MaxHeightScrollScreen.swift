@@ -55,9 +55,3 @@ struct MaxHeightScrollScreen: View {
     .navigationBarTitleDisplayMode(.inline)
   }
 }
-
-#Preview {
-  NavigationStack {
-    MaxHeightScrollScreen()
-  }
-}

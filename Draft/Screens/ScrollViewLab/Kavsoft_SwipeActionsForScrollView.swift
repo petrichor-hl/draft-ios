@@ -13,9 +13,3 @@ struct Kavsoft_SwipeActionsForScrollView: View {
       .navigationBarTitleDisplayMode(.inline)
   }
 }
-
-#Preview {
-  NavigationStack {
-    Kavsoft_SwipeActionsForScrollView()
-  }
-}

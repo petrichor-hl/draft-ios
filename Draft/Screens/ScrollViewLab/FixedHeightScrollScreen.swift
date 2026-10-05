@@ -63,9 +63,3 @@ struct FixedHeightScrollScreen: View {
     .navigationBarTitleDisplayMode(.inline)
   }
 }
-
-#Preview {
-  NavigationStack {
-    FixedHeightScrollScreen()
-  }
-}

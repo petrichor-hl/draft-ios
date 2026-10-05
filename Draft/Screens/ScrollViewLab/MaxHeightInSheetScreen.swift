@@ -123,9 +123,3 @@ private struct SheetBody: View {
     .presentationDragIndicator(.visible)
   }
 }
-
-#Preview {
-  NavigationStack {
-    MaxHeightInSheetScreen()
-  }
-}

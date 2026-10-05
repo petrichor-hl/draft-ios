@@ -69,9 +69,3 @@ struct CappedHeightScrollScreen: View {
     .navigationBarTitleDisplayMode(.inline)
   }
 }
-
-#Preview {
-  NavigationStack {
-    CappedHeightScrollScreen()
-  }
-}
