@@ -752,6 +752,9 @@
         }
       }
     },
+    "1. iOS 18+" : {
+
+    },
     "1. Location Details — BarMark" : {
 
     },
@@ -1063,6 +1066,9 @@
       }
     },
     "2. Interactivity" : {
+
+    },
+    "2. iOS 17 và trước đó" : {
 
     },
     "2. Kiểu dữ liệu → loại trục" : {
@@ -1499,9 +1505,6 @@
         }
       }
     },
-    "4. Fixed 400pt" : {
-
-    },
     "4. Line" : {
 
     },
@@ -1527,6 +1530,9 @@
           }
         }
       }
+    },
+    "4. Scroll Progress Bar Lab" : {
+
     },
     "4. Session Preset" : {
 
@@ -1617,9 +1623,6 @@
     "5. Autofill" : {
 
     },
-    "5. Cap 400pt" : {
-
-    },
     "5. Chụp ảnh" : {
 
     },
@@ -1632,6 +1635,9 @@
           }
         }
       }
+    },
+    "5. Fixed 400pt" : {
+
     },
     "5. interpolationMethod" : {
 
@@ -1691,6 +1697,9 @@
     "6. Area" : {
 
     },
+    "6. Cap 400pt" : {
+
+    },
     "6. Điều khiển" : {
 
     },
@@ -1701,9 +1710,6 @@
 
     },
     "6. Initial focus" : {
-
-    },
-    "6. maxHeight 400pt" : {
 
     },
     "6. Quét mã" : {
@@ -1756,7 +1762,7 @@
         }
       }
     },
-    "7. maxHeight trong sheet" : {
+    "7. maxHeight 400pt" : {
 
     },
     "7. Next / Done" : {
@@ -1797,6 +1803,9 @@
       }
     },
     "8. Focused border" : {
+
+    },
+    "8. maxHeight trong sheet" : {
 
     },
     "8. Nâng cao" : {
@@ -3837,6 +3846,9 @@
         }
       }
     },
+    "Demo này cần iOS 18 trở lên." : {
+
+    },
     "Đến" : {
 
     },
@@ -4581,6 +4593,9 @@
           }
         }
       }
+    },
+    "GeometryReader + PreferenceKey — ScrollView" : {
+
     },
     "Ghép cả hai: miền trọn 24 giờ, mốc mỗi 4 giờ. AxisMarks chọn BƯỚC, miền chọn ĐIỂM NEO — bước 4 giờ neo vào 00:00 nên ra 00/04/08/12/16/20." : {
 
@@ -5641,6 +5656,9 @@
         }
       }
     },
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet ante quis tortor euismod, vitae eleifend metus pretium. Nam eget pellentesque quam, quis molestie lacus. Mauris accumsan pharetra ultrices. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur accumsan finibus auctor. Maecenas ut libero at ipsum elementum laoreet. Nullam accumsan faucibus nisl sit amet luctus. Proin eu nisi et justo condimentum tristique. Proin sodales fringilla est, ac pellentesque diam porttitor sit amet. Pellentesque quis varius ligula. Pellentesque ut justo augue. Nullam aliquam lacus a metus aliquet, ut venenatis ex faucibus. Praesent at libero nec est ornare placerat. Proin gravida vehicula neque, non dignissim metus blandit ut. Vestibulum rutrum odio nec massa volutpat, in cursus ex sodales. Sed at sapien posuere, ornare nulla ut, convallis lorem.\n\nNunc at justo sit amet mauris eleifend molestie vitae ut orci. Donec eget enim vitae tellus pretium vulputate. Praesent ornare commodo nisi, ac convallis nulla vehicula sit amet. Praesent a justo nisl. Cras nec tincidunt massa, quis dignissim lorem. Aliquam non ante at purus vestibulum eleifend. Cras ipsum lacus, vestibulum et rutrum vel, vehicula vel nibh. Nulla efficitur, ante id molestie rhoncus, metus arcu molestie augue, auctor elementum mi felis sed lorem.\n\nSed volutpat orci massa, sed iaculis ipsum condimentum sed. Quisque cursus, elit semper auctor sollicitudin, urna diam rhoncus elit, sollicitudin tincidunt enim velit mattis orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin hendrerit sit amet purus et viverra. Morbi malesuada, libero nec lacinia auctor, erat sapien pharetra libero, nec eleifend enim felis et metus. Nulla hendrerit magna tortor, sit amet fermentum metus vestibulum sed. Morbi faucibus enim id tristique scelerisque. Quisque porta mi a porta imperdiet. Cras gravida mollis velit, et tempor turpis elementum mattis. Vivamus dictum id justo sit amet laoreet. Mauris interdum dolor a mi ullamcorper pellentesque. Aliquam nunc sapien, viverra vel orci non, consequat pellentesque mauris. Phasellus convallis consectetur eros, eu lobortis justo. Praesent massa erat, interdum eget mi in, dictum viverra augue. Cras ultrices felis at sollicitudin scelerisque.\n\nPhasellus mattis lacus nec rhoncus dapibus. Nunc aliquam porttitor magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer congue felis quis ligula placerat ultricies. Vivamus neque lorem, pulvinar sed velit sed, dignissim blandit dui. Aliquam vitae ullamcorper velit. Praesent enim arcu, interdum eu risus a, sodales scelerisque magna. Suspendisse vestibulum sollicitudin augue nec auctor. Maecenas venenatis, sem eu vestibulum dignissim, dui lectus condimentum ex, ut pretium erat eros nec dui. Duis eget purus ac ante ultrices posuere. Etiam porttitor enim eu nunc consequat pretium. Integer scelerisque bibendum lectus, ac laoreet felis venenatis sed. Integer sit amet tortor at nisi convallis pharetra. Etiam a ante pulvinar, congue ipsum sed, faucibus elit. Nullam feugiat, velit eget mattis congue, sem ipsum eleifend dui, at efficitur nisi dui quis ex. Duis lacus purus, volutpat vitae bibendum a, ultricies sit amet lectus." : {
+
+    },
     "Low" : {
 
     },
@@ -6469,6 +6487,9 @@
     "On" : {
 
     },
+    "onScrollGeometryChange — ScrollView và List" : {
+
+    },
     "Open camera" : {
 
     },
@@ -6726,6 +6747,12 @@
     "Pro" : {
 
     },
+    "Progress · iOS ≤17" : {
+
+    },
+    "Progress · iOS 18+" : {
+
+    },
     "Quý" : {
 
     },
@@ -6944,6 +6971,9 @@
 
     },
     "SCROLL ĐƯỢC" : {
+
+    },
+    "Scroll Progress Bar Lab" : {
 
     },
     "ScrollView & Safe Area" : {
@@ -7676,6 +7706,9 @@
           }
         }
       }
+    },
+    "Tính tiến độ cuộn: onScrollGeometryChange (iOS 18+) và GeometryReader + PreferenceKey (iOS ≤17)" : {
+
     },
     "Title" : {
       "localizations" : {

@@ -29,6 +29,9 @@ class AppCoordinator {
 
 enum AppRoute: Hashable {
     case scrollViewLab
+    case scrollProgressBarLab
+    case scrollProgressBarModern
+    case scrollProgressBarLegacy
     case safeAreaInsetLab
     case safeAreaInsetDynamicHeight
     case safeAreaInsetKeyboard
@@ -202,6 +205,16 @@ extension AppRoute: View {
         switch self {
         case .scrollViewLab:
             ScrollViewLab()
+        case .scrollProgressBarLab:
+            ScrollProgressBarLab()
+        case .scrollProgressBarModern:
+            if #available(iOS 18.0, *) {
+                ScrollProgressBarScreen_iOS_18()
+            } else {
+                Text("Demo này cần iOS 18 trở lên.")
+            }
+        case .scrollProgressBarLegacy:
+            ScrollProgressBarScreen_iOS_17()
         case .safeAreaInsetLab:
             SafeAreaInsetLab()
         case .safeAreaInsetDynamicHeight:
