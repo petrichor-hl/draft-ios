@@ -150,6 +150,9 @@
         }
       }
     },
+    "@Bindable" : {
+
+    },
     "@Namespace + matchedGeometryEffect" : {
 
     },
@@ -752,6 +755,9 @@
     "1. Location Details — BarMark" : {
 
     },
+    "1. Observable vs ObservableObject" : {
+
+    },
     "1. onMove + EditButton" : {
 
     },
@@ -1031,6 +1037,9 @@
         }
       }
     },
+    "2. Dependency trong body" : {
+
+    },
     "2. Dynamic Height (iOS 16+)" : {
 
     },
@@ -1255,6 +1264,9 @@
           }
         }
       }
+    },
+    "3. @Bindable" : {
+
     },
     "3. Article card shimmer" : {
 
@@ -2234,6 +2246,9 @@
     "Apple Health — Steps" : {
 
     },
+    "Apple: Managing model data in your app" : {
+
+    },
     "Area" : {
 
     },
@@ -2385,6 +2400,9 @@
           }
         }
       }
+    },
+    "Bấm đổi title của một sách. Kỳ vọng: chỉ BookView tương ứng tăng counter và đổi màu; LibraryView và các sách khác giữ nguyên." : {
+
     },
     "Bấm nút này rồi bấm NGAY ô \"Lạnh\" ở trên — nó sẽ rung dứt khoát như ô Ấm, vì cùng dùng chung coldGenerator và engine vừa được đánh thức.\n\nLàm lại: bấm nút này, đếm thầm 5 giây, rồi mới bấm ô \"Lạnh\" — độ trễ quay lại. Đó là lúc cửa sổ giữ nóng đã hết hạn." : {
       "localizations" : {
@@ -2638,6 +2656,18 @@
         }
       }
     },
+    "Book is available" : {
+
+    },
+    "BookEditView với TextField và Toggle" : {
+
+    },
+    "BookEditView.body: %lld lần" : {
+
+    },
+    "BookView.body chạy: %lld lần" : {
+
+    },
     "Bool: gán true" : {
       "localizations" : {
         "en" : {
@@ -2775,6 +2805,9 @@
         }
       }
     },
+    "Các BookView — đọc title" : {
+
+    },
     "Các capsule dùng chung id và namespace để animate giữa hai vị trí." : {
 
     },
@@ -2785,6 +2818,9 @@
 
     },
     "Cách hiện tại — offset + animation" : {
+
+    },
+    "Cách kiểm chứng" : {
 
     },
     "Cách nhìn rõ nhất mọi thứ ở trên: chậm lại rồi tắt clipShape, sẽ thấy hẳn chữ nằm ngoài viền trong lúc khung co." : {
@@ -3513,6 +3549,9 @@
     "Cột dọc: category ở trục X, stacked vs grouped" : {
 
     },
+    "Counter đo số lần body được đánh giá, không phải số lần vẽ pixel. SwiftUI có thể đánh giá body thêm khi điều hướng hoặc môi trường thay đổi. So sánh trước/sau mỗi lần bấm khi màn hình đã ổn định." : {
+
+    },
     "Counter: tapCount += 1" : {
       "localizations" : {
         "en" : {
@@ -3801,6 +3840,9 @@
     "Đến" : {
 
     },
+    "Dependency trong body" : {
+
+    },
     "Detent .height(600)" : {
 
     },
@@ -3965,6 +4007,9 @@
         }
       }
     },
+    "Đổi isAvailable sách 1 (không view nào đọc)" : {
+
+    },
     "Đổi màu viền theo focus và trạng thái lỗi" : {
 
     },
@@ -3987,6 +4032,9 @@
           }
         }
       }
+    },
+    "Đổi title sách %lld" : {
+
     },
     "Đơn vị đích" : {
       "localizations" : {
@@ -5348,6 +5396,9 @@
     "Không có vị trí trống cho T4" : {
 
     },
+    "Không đọc book.title trong body" : {
+
+    },
     "Không khai x nên vùng trải suốt chiều rộng. Viết trước ForEach nên nằm DƯỚI các cột — đây là vùng mục tiêu 7.000–9.000 bước." : {
 
     },
@@ -5519,6 +5570,15 @@
           }
         }
       }
+    },
+    "LibraryView" : {
+
+    },
+    "LibraryView chỉ đọc mảng books và truyền object xuống. BookView đọc book.title trong body nên tạo dependency với title." : {
+
+    },
+    "LibraryView truyền Book; chỉ BookView đọc title" : {
+
     },
     "LineMark" : {
 
@@ -6357,6 +6417,9 @@
         }
       }
     },
+    "Observable vs ObservableObject" : {
+
+    },
     "ObservableObject — track cả object" : {
       "localizations" : {
         "en" : {
@@ -6384,6 +6447,7 @@
       }
     },
     "Observation Lab: @Observable vs ObservableObject" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6392,6 +6456,9 @@
           }
         }
       }
+    },
+    "ObservationBindableScreen.body: %lld lần" : {
+
     },
     "Off" : {
 
@@ -7494,6 +7561,9 @@
     "Tháng" : {
 
     },
+    "Thao tác từ LibraryView" : {
+
+    },
     "Thấp nhất" : {
 
     },
@@ -7716,6 +7786,9 @@
 
     },
     "Total: %lld" : {
+
+    },
+    "Track từng property và track cả object; thử struct, mảng và Equatable" : {
 
     },
     "Tracking" : {
@@ -8102,6 +8175,9 @@
           }
         }
       }
+    },
+    "View cha" : {
+
     },
     "View xuất hiện/biến mất + contentTransition" : {
       "localizations" : {

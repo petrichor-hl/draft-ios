@@ -102,7 +102,7 @@ struct AppendixView: View {
             Button {
                 coordinator.push(.observationLab)
             } label: {
-                Text("Observation Lab: @Observable vs ObservableObject")
+                Text("Observation Lab")
             }
 
             Button {

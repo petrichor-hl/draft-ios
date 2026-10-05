@@ -1,5 +1,5 @@
 //
-//  ObservationLab.swift
+//  ObservationComparisonScreen.swift
 //  Draft
 //
 //  Thử nghiệm: @Observable (per-property tracking) vs ObservableObject (object-level).
@@ -304,12 +304,12 @@ private struct LegacySection: View {
 
 // MARK: - Screen
 
-struct ObservationLab: View {
+struct ObservationComparisonScreen: View {
   @State private var modernStore = ModernDiaryStore()
   @StateObject private var legacyStore = LegacyDiaryStore()
   
   var body: some View {
-    let _ = print("ObservationLab render")
+    let _ = print("ObservationComparisonScreen render")
     ScrollView {
       VStack(alignment: .leading, spacing: 24) {
         Text("Bấm **+100 kcal** ở mỗi section rồi quan sát WaterCard: màu nền đổi + số lần body tăng = có re-render.")
@@ -326,13 +326,13 @@ struct ObservationLab: View {
     }
     .environment(modernStore)
     .environmentObject(legacyStore)
-    .navigationTitle("Observation Lab")
+    .navigationTitle("Observable vs ObservableObject")
     .navigationBarTitleDisplayMode(.inline)
   }
 }
 
 #Preview {
   NavigationStack {
-    ObservationLab()
+    ObservationComparisonScreen()
   }
 }

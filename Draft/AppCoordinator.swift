@@ -105,6 +105,9 @@ enum AppRoute: Hashable {
     case fixedSize
     case lineHeightExact
     case observationLab
+    case observationComparison
+    case observationBodyTracking
+    case observationBindable
     case languagePicker
     case snackBarLab
     case toastLab
@@ -351,6 +354,12 @@ extension AppRoute: View {
             LineHeightExactScreen()
         case .observationLab:
             ObservationLab()
+        case .observationComparison:
+            ObservationComparisonScreen()
+        case .observationBodyTracking:
+            ObservationBodyTrackingScreen()
+        case .observationBindable:
+            ObservationBindableScreen()
         case .languagePicker:
             LanguagePickerScreen()
         case .snackBarLab:
