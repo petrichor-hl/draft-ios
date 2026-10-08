@@ -196,6 +196,12 @@ struct AppendixView: View {
             }
 
             Button {
+                coordinator.push(.carouselToolbox)
+            } label: {
+                Text("Carousel Toolbox")
+            }
+
+            Button {
                 coordinator.push(.reorderListLab)
             } label: {
                 Text("Reorder a List")

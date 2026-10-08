@@ -192,6 +192,10 @@ enum AppRoute: Hashable {
     case chartStocks
     case chartViewPerMonth
     case sliderToolbox
+    case carouselToolbox
+    case animatedCarouselSlider
+    case animatedPagingIndicators
+    case parallaxCarousel
     case reorderListLab
     case reorderTwoWaysEditActions
     case reorderTwoWaysOnMove
@@ -536,6 +540,14 @@ extension AppRoute: View {
             ViewPerMonthScreen()
         case .sliderToolbox:
             SliderToolbox()
+        case .carouselToolbox:
+            CarouselToolbox()
+        case .animatedCarouselSlider:
+            AnimatedCarouselSliderScreen()
+        case .animatedPagingIndicators:
+            AnimatedPagingIndicatorsScreen()
+        case .parallaxCarousel:
+            ParallaxCarouselScreen()
         case .reorderListLab:
             ReorderListLab()
         case .reorderTwoWaysEditActions:
