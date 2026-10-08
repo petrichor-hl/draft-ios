@@ -11,6 +11,12 @@ struct AppendixView: View {
     var body: some View {
         List {
             Button {
+                coordinator.push(.appearance)
+            } label: {
+                Text("Appearance")
+            }
+
+            Button {
                 coordinator.push(.scrollViewLab)
             } label: {
                 Text("ScrollView Lab")
@@ -203,13 +209,14 @@ struct AppendixView: View {
         }
         .navigationTitle("Appendix")
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    coordinator.push(.languagePicker)
-                } label: {
-                    Image(systemName: "globe")
-                }
+          ToolbarItem(placement: .topBarTrailing) {
+            Button {
+              coordinator.push(.languagePicker)
+            } label: {
+              Image(systemName: "globe")
             }
+            .accessibilityLabel("Language")
+          }
         }
     }
 }

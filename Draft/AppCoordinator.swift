@@ -112,6 +112,7 @@ enum AppRoute: Hashable {
     case observationBodyTracking
     case observationBindable
     case languagePicker
+    case appearance
     case snackBarLab
     case toastLab
     case hapticsLab
@@ -375,6 +376,8 @@ extension AppRoute: View {
             ObservationBindableScreen()
         case .languagePicker:
             LanguagePickerScreen()
+        case .appearance:
+            AppearanceScreen()
         case .snackBarLab:
             SnackBarLab()
         case .toastLab:

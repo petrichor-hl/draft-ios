@@ -9,4 +9,5 @@ import Foundation
 
 enum StorageKeys {
   static let appLanguage = "appLanguage"
+    static let appAppearance = "appAppearance"
 }

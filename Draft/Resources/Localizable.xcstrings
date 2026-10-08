@@ -10,6 +10,9 @@
     " " : {
       "shouldTranslate" : false
     },
+    "- Nền card dùng Background/Surface.\n- Tiêu đề dùng Text/Primary.\n- Mô tả dùng Text/Secondary." : {
+
+    },
     ".%@" : {
       "localizations" : {
         "en" : {
@@ -2174,6 +2177,9 @@
     "Account" : {
 
     },
+    "Action" : {
+
+    },
     "Ẩn" : {
       "localizations" : {
         "en" : {
@@ -2231,6 +2237,12 @@
 
     },
     "annotation là modifier của MARK nên gắn được có điều kiện — chỉ ngày nhiều bước nhất mới có nhãn. Closure nhận View bình thường: Label, padding, background, Capsule. NHƯNG chữ bị cắt thành \"9.\" — annotation bị bó chiều rộng theo bề ngang của mark." : {
+
+    },
+    "Appearance" : {
+
+    },
+    "Appearance hiện tại" : {
 
     },
     "Appendix" : {
@@ -2389,6 +2401,9 @@
 
     },
     "background" : {
+
+    },
+    "Background" : {
 
     },
     "Background & Overlay" : {
@@ -3105,6 +3120,9 @@
         }
       }
     },
+    "Chế độ hiển thị" : {
+
+    },
     "Chế độ tối" : {
       "localizations" : {
         "en" : {
@@ -3775,6 +3793,9 @@
     "Đảo hai tham số — khi nhãn dài thì phải nằm ngang" : {
 
     },
+    "Dark" : {
+
+    },
     "Date + unit: .day" : {
 
     },
@@ -4008,6 +4029,9 @@
           }
         }
       }
+    },
+    "Đổi chế độ bằng menu ở góc trên. System theo cài đặt thiết bị. Lựa chọn được lưu và áp dụng cho toàn app." : {
+
     },
     "Đối chứng: Picker hệ thống" : {
       "localizations" : {
@@ -5480,6 +5504,9 @@
     "Lam Tran" : {
       "shouldTranslate" : false
     },
+    "Language" : {
+
+    },
     "Language Picker" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -5593,6 +5620,9 @@
 
     },
     "LibraryView truyền Book; chỉ BookView đọc title" : {
+
+    },
+    "Light" : {
 
     },
     "LineMark" : {
@@ -5969,6 +5999,9 @@
           }
         }
       }
+    },
+    "Mỗi ô màu và mã HEX hiển thị variant đang dùng. Đổi Light/Dark để so sánh." : {
+
     },
     "Mỗi thanh mang đủ hai đầu, không chạm đường gốc nữa. Nhưng dữ liệu chỉ nằm trong 32–172 mà trục Y vẫn chạy từ 0: Swift Charts không phân biệt thanh neo với thanh nổi, hễ là mark số thì kéo miền về 0. Hậu quả là cả vùng dưới giá trị thấp nhất bỏ trống — nên range chart gần như luôn phải tự đặt chartYScale. Để ý bề rộng các dải chênh nhau bao nhiêu: giờ chạy bộ trải 108 nhịp, giờ nghỉ trưa chỉ 8. Đó mới là thứ range chart kể được." : {
 
@@ -6738,6 +6771,9 @@
     "presentationDetents([.height(600)]) — sheet luôn cao 600" : {
 
     },
+    "Primary action" : {
+
+    },
     "Print session state" : {
 
     },
@@ -7053,6 +7089,9 @@
           }
         }
       }
+    },
+    "Semantic colors" : {
+
     },
     "SensoryFeedback" : {
       "localizations" : {
@@ -7568,6 +7607,9 @@
           }
         }
       }
+    },
+    "Text" : {
+
     },
     "Thả tim" : {
       "localizations" : {
@@ -8363,6 +8405,9 @@
 
     },
     "Xem cột toOffset trong nhật ký: kéo xuống thì nó luôn lớn hơn index thật 1 đơn vị, kéo lên thì bằng." : {
+
+    },
+    "Xem trước" : {
 
     },
     "Xếp hàng bằng .delay(index × nhịp) — tách từ màn FAB" : {
