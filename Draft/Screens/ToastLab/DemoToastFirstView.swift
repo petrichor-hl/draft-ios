@@ -137,7 +137,7 @@ struct DemoToastFirstView: View {
         Text("Dismiss Sticky")
           .foregroundStyle(Color.white)
           .frame(width: 200, height: 40)
-          .background(Color.gray.s500, in: RoundedRectangle(cornerRadius: 12))
+          .background(Color.gray, in: RoundedRectangle(cornerRadius: 12))
       }
 
       NavigationLink("Go to Second View") {

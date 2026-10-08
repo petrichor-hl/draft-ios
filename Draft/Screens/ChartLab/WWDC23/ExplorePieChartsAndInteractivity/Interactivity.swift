@@ -106,7 +106,7 @@ struct Interactivity: View {
           RuleMark(
             x: .value("Selected", selectedDate, unit: .day)
           )
-          .foregroundStyle(Color.gray.s500.opacity(0.2))
+          .foregroundStyle(Color.gray.opacity(0.2))
           .offset(yStart: -10)
           .annotation(
             position: .top,

@@ -77,7 +77,7 @@ struct VolumeSlider: View {
 
         ZStack(alignment: .leading) {
           Capsule()
-            .fill(Color.gray.s200)
+            .fill(Color(uiColor: .systemGray5))
             .frame(height: Self.trackHeight)
 
           // Phần đã tô dừng ở TÂM thumb, không phải mép trái nó — nếu không

@@ -54,7 +54,7 @@ struct StepSlider: View {
           .frame(width: max(thumbX - Self.notch, 0), height: Self.trackHeight)
 
         Capsule()
-          .fill(Color.gray.s200)
+          .fill(Color(uiColor: .systemGray5))
           .frame(
             width: max(width - thumbX - Self.thumbSize - Self.notch, 0),
             height: Self.trackHeight

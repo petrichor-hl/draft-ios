@@ -161,7 +161,7 @@ struct StepsSelectionScreen: View {
         Chart {
           if let selectedSample {
             RuleMark(x: .value("Selected hour", selectedSample.start, unit: .hour))
-              .foregroundStyle(Color.gray.s500.opacity(0.4))
+              .foregroundStyle(Color.gray.opacity(0.4))
               .offset(yStart: -10)
               .zIndex(-1)
               .annotation(

@@ -65,7 +65,7 @@ struct MacroRatioInputRow: View {
     .background(Color(.systemBackground), in: .rect(cornerRadius: 16))
     .overlay {
       RoundedRectangle(cornerRadius: 16)
-        .strokeBorder(Color.gray.s200, lineWidth: 1)
+        .strokeBorder(Color(uiColor: .systemGray5), lineWidth: 1)
     }
   }
 }
