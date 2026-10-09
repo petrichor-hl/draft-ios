@@ -29,6 +29,8 @@ class AppCoordinator {
 
 enum AppRoute: Hashable {
     case scrollViewLab
+    case tabViewLab
+    case scrollableTabView
     case infiniteLoopingScrollViewLab
     case scrollProgressBarLab
     case scrollProgressBarModern
@@ -216,6 +218,10 @@ extension AppRoute: View {
         switch self {
         case .scrollViewLab:
             ScrollViewLab()
+        case .tabViewLab:
+            TabViewLab()
+        case .scrollableTabView:
+            ScrollableTabViewScreen()
         case .infiniteLoopingScrollViewLab:
             InfiniteLoopingScrollViewLab()
         case .scrollProgressBarLab:

@@ -35,6 +35,12 @@ struct AppendixView: View {
             }
             
             Button {
+                coordinator.push(.tabViewLab)
+            } label: {
+                Text("TabView Lab")
+            }
+            
+            Button {
                 coordinator.push(.shareSheetLab)
             } label: {
                 Text("Share Sheet Lab")
