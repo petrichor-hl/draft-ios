@@ -117,15 +117,15 @@
 import SwiftUI
 
 struct LoggerScreen: View {
-  var body: some View {
-    Text("TODO")
-      .navigationTitle("Logger")
-      .navigationBarTitleDisplayMode(.inline)
-  }
+    var body: some View {
+        Text("TODO")
+            .navigationTitle("Logger")
+            .navigationBarTitleDisplayMode(.inline)
+    }
 }
 
 #Preview {
-  NavigationStack {
-    LoggerScreen()
-  }
+    NavigationStack {
+        LoggerScreen()
+    }
 }

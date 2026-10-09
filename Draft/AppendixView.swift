@@ -21,6 +21,7 @@ struct AppendixView: View {
             } label: {
                 Text("ScrollView Lab")
             }
+
             Button {
                 coordinator.push(.bottomSheetLab)
             } label: {
@@ -31,6 +32,12 @@ struct AppendixView: View {
                 coordinator.push(.keyboardLab)
             } label: {
                 Text("Keyboard Lab")
+            }
+            
+            Button {
+                coordinator.push(.shareSheetLab)
+            } label: {
+                Text("Share Sheet Lab")
             }
             
             Button {
@@ -148,12 +155,6 @@ struct AppendixView: View {
             }
 
             Button {
-                coordinator.push(.segmentedControl)
-            } label: {
-                Text("SegmentedControl")
-            }
-
-            Button {
                 coordinator.push(.fixedSize)
             } label: {
                 Text(".fixedSize() — cần học")
@@ -199,6 +200,12 @@ struct AppendixView: View {
                 coordinator.push(.carouselToolbox)
             } label: {
                 Text("Carousel Toolbox")
+            }
+            
+            Button {
+                coordinator.push(.segmentedControl)
+            } label: {
+                Text("SegmentedControl")
             }
 
             Button {

@@ -145,7 +145,6 @@ private struct SemanticColorRow: View {
                     RoundedRectangle(cornerRadius: 10)
                         .strokeBorder(Color.Semantic.Text.secondary.opacity(0.3), lineWidth: 1)
                 }
-                .accessibilityHidden(true)
             
             VStack(alignment: .leading, spacing: 4) {
                 Text(name)

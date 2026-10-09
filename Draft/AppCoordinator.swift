@@ -73,6 +73,11 @@ enum AppRoute: Hashable {
     case scrollViewMaxHeight
     case scrollViewMaxHeightInSheet
     case bottomSheetLab
+    case shareSheetLab
+    case shareLink
+    case shareText
+    case shareReceiptImage
+    case shareUIKitControls
     case fixedHeightBottomSheet
     case dynamicHeightBottomSheet
     case dynamicHeightBottomSheetiOS18
@@ -302,6 +307,16 @@ extension AppRoute: View {
             MaxHeightInSheetScreen()
         case .bottomSheetLab:
             BottomSheetLab()
+        case .shareSheetLab:
+            ShareSheetLab()
+        case .shareLink:
+            ShareLinkScreen()
+        case .shareText:
+            ShareTextScreen()
+        case .shareReceiptImage:
+            ShareReceiptImageScreen()
+        case .shareUIKitControls:
+            ShareUIKitControlsScreen()
         case .fixedHeightBottomSheet:
             FixedHeightBottomSheet()
         case .dynamicHeightBottomSheet:

@@ -789,6 +789,9 @@
         }
       }
     },
+    "1. Share a link" : {
+
+    },
     "1. Single field" : {
 
     },
@@ -1118,6 +1121,9 @@
         }
       }
     },
+    "2. Share text" : {
+
+    },
     "2. Skeleton shapes" : {
 
     },
@@ -1350,6 +1356,9 @@
     "3. Separate fields" : {
 
     },
+    "3. Share a receipt image" : {
+
+    },
     "3. swift-markdown" : {
       "localizations" : {
         "en" : {
@@ -1550,6 +1559,9 @@
 
     },
     "4. Tự dựng bằng DragGesture" : {
+
+    },
+    "4. UIKit controls" : {
 
     },
     "4K" : {
@@ -2211,6 +2223,12 @@
       }
     },
     "Ẩn mặc định, eye button bật/tắt hiển thị" : {
+
+    },
+    "Animated Carousel Slider" : {
+
+    },
+    "Animated Paging Indicators" : {
 
     },
     "Animation Basics" : {
@@ -3009,6 +3027,9 @@
         }
       }
     },
+    "Carousel Toolbox" : {
+
+    },
     "Case mới của hệ điều hành." : {
 
     },
@@ -3207,6 +3228,12 @@
       }
     },
     "Chi tiêu" : {
+
+    },
+    "Chia sẻ chuỗi văn bản, so sánh action với URL" : {
+
+    },
+    "Chia sẻ URL bằng ShareLink, thêm tiêu đề và preview" : {
 
     },
     "Chín kiểu đoạn nối: thẳng, cong, bậc thang" : {
@@ -5634,6 +5661,9 @@
     "Loại" : {
 
     },
+    "Loại trừ activity, theo dõi hoàn tất hoặc hủy chia sẻ" : {
+
+    },
     "Locale đang chọn: %@\nLocale.current: %@" : {
       "localizations" : {
         "en" : {
@@ -6532,6 +6562,9 @@
     "overlay" : {
 
     },
+    "Parallax Carousel Scroll" : {
+
+    },
     "Parse được block, nhưng render thì sao?" : {
       "localizations" : {
         "en" : {
@@ -6857,6 +6890,9 @@
         }
       }
     },
+    "Render biên nhận thành ảnh, chia sẻ như ảnh tham chiếu" : {
+
+    },
     "Reorder a List" : {
 
     },
@@ -7110,6 +7146,18 @@
 
     },
     "Settings" : {
+
+    },
+    "Share a link" : {
+
+    },
+    "Share a receipt image" : {
+
+    },
+    "Share Sheet Lab" : {
+
+    },
+    "Share text" : {
 
     },
     "Sheet %@" : {
@@ -7475,6 +7523,15 @@
 
     },
     "Swift Charts: Raise the bar" : {
+
+    },
+    "SwiftUI — ShareLink" : {
+
+    },
+    "SwiftUI Animated Carousel Slider With Paging Control" : {
+
+    },
+    "SwiftUI Animated Paging Indicators" : {
 
     },
     "SwiftUI chỉ chạy transition khi IDENTITY của view thay đổi — view mới xuất hiện hoặc view cũ mất đi. Nếu bạn chỉ đổi nội dung (Text(\"A\") → Text(\"B\")) thì view vẫn là chính nó, không có gì để chèn hay gỡ. Muốn ép có transition, gắn .id(value) để mỗi giá trị là một view khác nhau." : {
@@ -8068,6 +8125,12 @@
           }
         }
       }
+    },
+    "UIKit — UIActivityViewController" : {
+
+    },
+    "UIKit controls" : {
+
     },
     "UINotificationFeedbackGenerator. Ba nhịp có tiết tấu riêng — dùng để báo KẾT QUẢ, không dùng cho thao tác thường." : {
       "localizations" : {
