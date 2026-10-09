@@ -755,6 +755,9 @@
         }
       }
     },
+    "1. Infinite Looping ScrollView" : {
+
+    },
     "1. iOS 18+" : {
 
     },
@@ -1070,6 +1073,9 @@
           }
         }
       }
+    },
+    "2. Infinite Looping ScrollView - Carousel" : {
+
     },
     "2. Interactivity" : {
 
@@ -5091,6 +5097,9 @@
           }
         }
       }
+    },
+    "Infinite Looping ScrollView Lab" : {
+
     },
     "Initial focus" : {
 

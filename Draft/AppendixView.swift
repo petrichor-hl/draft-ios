@@ -41,6 +41,12 @@ struct AppendixView: View {
             }
             
             Button {
+                coordinator.push(.infiniteLoopingScrollViewLab)
+            } label: {
+                Text("Infinite Looping ScrollView Lab")
+            }
+            
+            Button {
                 coordinator.push(.safeAreaLab)
             } label: {
                 Text("Safe Area Lab")

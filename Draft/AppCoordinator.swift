@@ -29,6 +29,7 @@ class AppCoordinator {
 
 enum AppRoute: Hashable {
     case scrollViewLab
+    case infiniteLoopingScrollViewLab
     case scrollProgressBarLab
     case scrollProgressBarModern
     case scrollProgressBarLegacy
@@ -215,6 +216,8 @@ extension AppRoute: View {
         switch self {
         case .scrollViewLab:
             ScrollViewLab()
+        case .infiniteLoopingScrollViewLab:
+            InfiniteLoopingScrollViewLab()
         case .scrollProgressBarLab:
             ScrollProgressBarLab()
         case .scrollProgressBarModern:
