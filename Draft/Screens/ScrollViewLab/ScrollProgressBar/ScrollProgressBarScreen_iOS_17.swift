@@ -52,28 +52,30 @@ struct ScrollProgressBarScreen_iOS_17: View {
                     .padding(.horizontal)
                     .background {
                         // Đo toàn bộ nội dung và vị trí của nó trong viewport.
-                        GeometryReader { scrollContent in
-                            Color.clear.preference(
-                                key: ContentFrameKey.self,
-                                value: scrollContent.frame(in: .named(scrollSpace))
-                            )
+                        GeometryReader { geometry in
+                            Color.clear
+                                .preference(
+                                    key: ContentFrameKey.self,
+                                    value: geometry.frame(in: .named(scrollSpace))
+                                )
+                                .onPreferenceChange(ContentFrameKey.self) { newFrame in
+                                    contentFrame = newFrame
+                                }
                         }
                     }
             }
             .coordinateSpace(name: scrollSpace)
             .background {
                 GeometryReader { viewport in
-                    Color.clear.preference(
-                        key: ViewportHeightKey.self,
-                        value: viewport.size.height
-                    )
+                    Color.clear
+                        .preference(
+                            key: ViewportHeightKey.self,
+                            value: viewport.size.height
+                        )
+                        .onPreferenceChange(ViewportHeightKey.self) { newHeight in
+                            viewportHeight = newHeight
+                        }
                 }
-            }
-            .onPreferenceChange(ContentFrameKey.self) { newFrame in
-                contentFrame = newFrame
-            }
-            .onPreferenceChange(ViewportHeightKey.self) { newHeight in
-                viewportHeight = newHeight
             }
         }
         .navigationTitle("Progress · iOS and earlier")
