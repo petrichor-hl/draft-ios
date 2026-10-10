@@ -14,10 +14,23 @@ struct LoopingScrollView<Content: View, Collecntion: RandomAccessCollection>: Vi
     var items: Collecntion
     @ViewBuilder var content: (Collecntion.Element) -> Content
 
+    init(
+        width: CGFloat,
+        spacing: CGFloat = 0,
+        items: Collecntion,
+        @ViewBuilder content: @escaping (Collecntion.Element) -> Content
+    ) {
+        precondition(width > 0, "LoopingScrollView width must be greater than zero.")
+        self.width = width
+        self.spacing = spacing
+        self.items = items
+        self.content = content
+    }
+
     var body: some View {
         GeometryReader { geometry in
             let size = geometry.size
-            let repeatingCount = width > 0 ? Int((size.width / width).rounded()) : 1
+            let repeatingCount = Int((size.width / (width + spacing)).rounded(.down)) + 1
 
             ScrollView(.horizontal) {
                 LazyHStack(spacing: spacing) {
@@ -97,11 +110,11 @@ fileprivate struct ScrollViewHelper: UIViewRepresentable {
             let mainContentSize = CGFloat(itemCount) * width
             let spacingSize = CGFloat(itemCount) * spacing
 
-            if minX > (mainContentSize + spacingSize) {
+            if (minX + scrollView.contentInset.left) > (mainContentSize + spacingSize) {
                 scrollView.contentOffset.x -= mainContentSize + spacingSize
             }
 
-            if minX < 0 {
+            if (minX + scrollView.contentInset.left) < 0 {
                 scrollView.contentOffset.x += mainContentSize + spacingSize
             }
         }
