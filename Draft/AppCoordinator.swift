@@ -207,6 +207,7 @@ enum AppRoute: Hashable {
     case animatedCarouselSlider
     case animatedPagingIndicators
     case parallaxCarousel
+    case coverFlow
     case reorderListLab
     case reorderTwoWaysEditActions
     case reorderTwoWaysOnMove
@@ -581,6 +582,8 @@ extension AppRoute: View {
             AnimatedPagingIndicatorsScreen()
         case .parallaxCarousel:
             ParallaxCarouselScreen()
+        case .coverFlow:
+            CoverFlowScreen()
         case .reorderListLab:
             ReorderListLab()
         case .reorderTwoWaysEditActions:

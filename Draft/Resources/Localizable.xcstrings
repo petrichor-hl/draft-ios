@@ -510,7 +510,11 @@
         }
       }
     },
+    "1 cột" : {
+
+    },
     "1 cột — chiều cao" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -527,6 +531,7 @@
       }
     },
     "1 cột — mục tiêu nước uống" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -543,6 +548,7 @@
       }
     },
     "1 cột trần — năm sinh" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -960,7 +966,11 @@
         }
       }
     },
+    "2 cột" : {
+
+    },
     "2 cột — cân nặng" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -977,6 +987,7 @@
       }
     },
     "2 cột — khoảng tuổi" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -991,6 +1002,9 @@
           }
         }
       }
+    },
+    "2 cột — OverlaidList" : {
+
     },
     "2️⃣ RemoveLast" : {
       "localizations" : {
@@ -1190,7 +1204,11 @@
         }
       }
     },
+    "3 cột" : {
+
+    },
     "3 cột — ngày sự kiện" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1205,6 +1223,9 @@
           }
         }
       }
+    },
+    "3 cột — OverlaidList" : {
+
     },
     "3 loại" : {
       "localizations" : {
@@ -2755,6 +2776,7 @@
       }
     },
     "Bước 1cm, từ 120 đến 220 — 101 hàng thay vì 17. Ca để xem việc tái dùng cell có thật sự cần không: cuộn một mạch hết dải mà không giật thì cả hai bản đang làm đúng việc." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2781,6 +2803,7 @@
       }
     },
     "Bước 250ml, từ 2000 đến 6000. Hai hàng cùng một dữ liệu — mở lần lượt rồi vuốt để so cảm giác cuộn, không chỉ so ảnh." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2868,6 +2891,9 @@
     "Cách có sẵn — và cái bẫy của toOffset" : {
 
     },
+    "Cách dựng" : {
+
+    },
     "Cách hiện tại — offset + animation" : {
 
     },
@@ -2893,6 +2919,9 @@
           }
         }
       }
+    },
+    "Cách tiếp cận" : {
+
     },
     "Cài đặt move" : {
 
@@ -3040,6 +3069,9 @@
 
     },
     "Case mới của hệ điều hành." : {
+
+    },
+    "CellMasks" : {
 
     },
     "CHẠM CAP" : {
@@ -3508,6 +3540,9 @@
           }
         }
       }
+    },
+    "ColorEffect" : {
+
     },
     "Column" : {
 
@@ -4797,6 +4832,7 @@
       }
     },
     "Hai cột cuộn rời nhau dưới chung một plinth, nhưng CÓ ràng buộc: chạm trần 200 thì phần lẻ bị kẹp về 0. Phần khó không nằm ở việc sửa state mà ở chỗ bắt bánh xe đi theo khi cú kẹp rơi đúng lúc nó đang trôi. Giá trị lưu là Int phần mười kg, không phải Double." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5452,6 +5488,7 @@
 
     },
     "Không có nhãn đơn vị, chỉ còn cột số — chỗ nhìn rõ nhất phần nén khoảng cách của bản collection. Cận trên là năm hiện tại, tính lúc chạy chứ không viết cứng." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6141,6 +6178,9 @@
     "Mục tiêu %lld kcal/ngày. Kéo một trong hai thumb: mỗi thumb chỉ đụng hai macro kề nó, macro còn lại đứng yên và tổng vẫn là 100 — vì thứ bị sửa là BIÊN chứ không phải từng số.\n\nMột DragGesture duy nhất đặt trên cả dải, không phải hai gesture gắn lên hai thumb: khi hai thumb chồng nhau thì hit-test hết phân biệt được. Giá trị mới tính bằng mốc-lúc-bắt-đầu + translation, không cộng dồn vào giá trị hiện tại." : {
 
     },
+    "Mục tiêu nước uống" : {
+
+    },
     "Multi-cam, depth, Live Photo, Camera Control, nhiệt độ máy" : {
       "localizations" : {
         "en" : {
@@ -6574,6 +6614,9 @@
     "overFullScreen, chờ animation hoàn tất rồi start camera" : {
 
     },
+    "OverlaidList" : {
+
+    },
     "overlay" : {
 
     },
@@ -6767,6 +6810,9 @@
         }
       }
     },
+    "Picker(.wheel) hệ thống" : {
+
+    },
     "Pie / Donut" : {
 
     },
@@ -6851,6 +6897,7 @@
 
     },
     "Ràng buộc đổi CHẤT so với ca cân nặng: ở đó hai cột luôn đủ hàng, chỉ giá trị bị kẹp. Ở đây SỐ HÀNG của cột ngày co dãn theo tháng và năm (28/29/30/31), nên mảng nguồn ngắn lại ngay dưới chân bánh xe. Thử chọn 31/01 rồi kéo tháng sang 02." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -6861,6 +6908,7 @@
       }
     },
     "Ràng buộc không kẹp về một HẰNG SỐ như ca cân nặng mà theo giá trị cột kia, và vượt qua thì ĐÙN cột kia đi chứ không ghì cột đang kéo lại. Nhờ vậy cú sửa rơi vào cột đang đứng yên — một đường vá khác hẳn phần còn lại của kho. Canonical là ClosedRange, nên khoảng lộn ngược không phải hiển thị xấu mà là crash." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -7559,6 +7607,9 @@
         }
       }
     },
+    "SwiftUI CoverFlow - iOS 17" : {
+
+    },
     "SwiftUI iOS 17+ — khai báo theo state" : {
       "localizations" : {
         "en" : {
@@ -8134,6 +8185,9 @@
     "Tương tác với Swift Charts" : {
 
     },
+    "UICollectionView" : {
+
+    },
     "UIKit — prepare(), impact, notification, selection" : {
       "localizations" : {
         "en" : {
@@ -8169,6 +8223,9 @@
           }
         }
       }
+    },
+    "UITableView" : {
+
     },
     "Unable to change torch" : {
 

@@ -22,6 +22,12 @@ struct CarouselToolbox: View {
             } label: {
                 Text("Parallax Carousel Scroll")
             }
+
+            Button {
+                coordinator.push(.coverFlow)
+            } label: {
+                Text("SwiftUI CoverFlow - iOS 17")
+            }
         }
         .navigationTitle("Carousel Toolbox")
     }

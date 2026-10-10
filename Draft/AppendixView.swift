@@ -161,12 +161,6 @@ struct AppendixView: View {
             }
 
             Button {
-                coordinator.push(.wheelPickerLab)
-            } label: {
-                Text("Wheel Picker Toolbox")
-            }
-
-            Button {
                 coordinator.push(.fixedSize)
             } label: {
                 Text(".fixedSize() — cần học")
@@ -200,6 +194,12 @@ struct AppendixView: View {
                 coordinator.push(.chartLab)
             } label: {
                 Text("Chart Lab")
+            }
+
+            Button {
+                coordinator.push(.wheelPickerLab)
+            } label: {
+                Text("Wheel Picker Toolbox")
             }
 
             Button {
