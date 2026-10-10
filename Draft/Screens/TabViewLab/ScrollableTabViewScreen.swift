@@ -84,6 +84,14 @@ struct ScrollableTabViewScreen: View {
                     }
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 10)
+                    // Đặt tap gesture ở lớp dưới như này hoặc lớp trên đều được
+                    // Lớp trên là sau dòng .padding(.vertical, 10) ở line 108
+                    .contentShape(.capsule)
+                    .onTapGesture { _ in
+                        withAnimation(.snappy) {
+                            selectedTab = tab
+                        }
+                    }
                 }
             }
             .foregroundStyle(.gray)
@@ -98,12 +106,6 @@ struct ScrollableTabViewScreen: View {
                     }
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 10)
-                    .contentShape(.capsule)
-                    .onTapGesture { _ in
-                        withAnimation(.snappy) {
-                            selectedTab = tab
-                        }
-                    }
                 }
             }
             .symbolVariant(.fill)
