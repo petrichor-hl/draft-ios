@@ -135,6 +135,9 @@ enum AppRoute: Hashable {
     case hapticsCore
     case hapticsRealWorld
     case wheelPickerLab
+    case systemWheelLab
+    case tableWheelLab
+    case collectionWheelLab
     case segmentedControl
     case flowRow
     case accordion
@@ -432,6 +435,12 @@ extension AppRoute: View {
             CoreHapticsScreen()
         case .wheelPickerLab:
             WheelPickerLabScreen()
+        case .systemWheelLab:
+            SystemWheelLabScreen()
+        case .tableWheelLab:
+            TableWheelLabScreen()
+        case .collectionWheelLab:
+            CollectionWheelLabScreen()
         case .segmentedControl:
             SegmentedControlScreen()
         case .hapticsRealWorld:

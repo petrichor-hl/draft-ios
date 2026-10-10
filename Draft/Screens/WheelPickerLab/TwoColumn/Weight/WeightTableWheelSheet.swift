@@ -25,7 +25,7 @@
 //      ghép   tenths = kg * 10 + lẻ
 //
 //  Chỉ đổi sang chuỗi "60.0" ở lúc HIỂN THỊ, và bằng nội suy chuỗi thủ công
-//  chứ không qua formatter số — xem cảnh báo locale ở `WheelPickerLabScreen`.
+//  chứ không qua formatter số — xem cảnh báo locale ở `TableWheelLabScreen`.
 //
 //  ═══════════════════════════════════════════════════════════════════════════
 //  2. RÀNG BUỘC GIỮA HAI CỘT — và vì sao nó tốn hơn vẻ ngoài

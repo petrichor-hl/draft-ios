@@ -101,7 +101,7 @@ struct WaterGoalCollectionWheelSheet: View {
         .foregroundStyle(.tertiary)
         .multilineTextAlignment(.center)
         // Sheet cao theo detent, mà detent lại đo từ chính nội dung này —
-        // xem `heightReader` ở `WheelPickerLabScreen`. Nội dung luôn hụt đúng
+        // xem `heightReader` ở `CollectionWheelLabScreen`. Nội dung luôn hụt đúng
         // phần safe area đáy, và view CO GIÃN NHẤT gánh chỗ hụt: không có
         // `fixedSize` thì đoạn này rút 2 dòng xuống 1 dòng có "…".
         .fixedSize(horizontal: false, vertical: true)
