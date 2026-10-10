@@ -19,7 +19,7 @@ struct CollectionWheelLabScreen: View {
 
   var body: some View {
     List {
-      Section("Cách dựng — 1 cột") {
+      Section("Cách tiếp cận") {
         Picker("Cách dựng", selection: $rendering) {
           Text("OverlaidList").tag(CollectionWheelRendering.overlaidLists)
           Text("CellMasks").tag(CollectionWheelRendering.cellMasks)
