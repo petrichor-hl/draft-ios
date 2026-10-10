@@ -209,9 +209,9 @@ struct TableWheelColumn: UIViewRepresentable {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(
-        withIdentifier: WheelCell.reuseID,
+        withIdentifier: WheelItemCell.reuseID,
         for: indexPath
-      ) as! WheelCell
+      ) as! WheelItemCell
       cell.setText(parent.values[indexPath.row])
       return cell
     }
@@ -316,7 +316,7 @@ struct TableWheelColumn: UIViewRepresentable {
 
     private func restyle(_ cell: UITableViewCell, in tableView: UITableView) {
       let rowHeight = parent.metrics.rowHeight
-      guard let wheelCell = cell as? WheelCell else { return }
+      guard let wheelCell = cell as? WheelItemCell else { return }
       // `bounds.origin` của scroll view CHÍNH LÀ contentOffset, nên `bounds.midY`
       // đã là tâm nhìn thấy trong toạ độ nội dung. Không dùng `contentInset` ở
       // đây: lúc layout đầu tiên nó chưa được gán, và tâm sẽ tính lệch.
@@ -370,7 +370,7 @@ final class CenteredWheelTable: UITableView {
     // Mặc định `.normal` trôi rất xa mới dừng, đọc như trượt chứ không như bánh xe.
     self.decelerationRate = .fast
 
-    self.register(WheelCell.self, forCellReuseIdentifier: WheelCell.reuseID)
+    self.register(WheelItemCell.self, forCellReuseIdentifier: WheelItemCell.reuseID)
   }
 
   required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
@@ -419,8 +419,8 @@ centeringInset   │             │
 
 // MARK: - Cell
 
-private final class WheelCell: UITableViewCell {
-  static let reuseID = "WheelCell"
+private final class WheelItemCell: UITableViewCell {
+  static let reuseID = "WheelItemCell"
 
   private let label = UILabel()
   private var currentWeight: UIFont.Weight?
