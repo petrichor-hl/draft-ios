@@ -110,7 +110,15 @@ struct TableWheelColumn: UIViewRepresentable {
   }
 
   func updateUIView(_ table: CenteredWheelTable, context: Context) {
+    let valuesChanged = context.coordinator.parent.values != values
     context.coordinator.parent = self
+
+    // Mảng ngày có thể đổi 31 → 30/28/29. Reload trước khi căn offset,
+    // kể cả lúc đang cuộn, để UITableView không giữ số hàng của mảng cũ.
+    if valuesChanged {
+      table.reloadData()
+      table.layoutIfNeeded()
+    }
 
     // Không kéo bánh xe khi ngón tay còn chạm hoặc còn trôi — giật ngay dưới ngón.
     guard !table.isDragging, !table.isDecelerating else { return }
