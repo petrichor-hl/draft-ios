@@ -2,7 +2,7 @@
 //  CollectionWheelPairPicker.swift
 //  Draft
 //
-//  Hai cột `CollectionWheelColumn` dưới chung một plinth.
+//  Hai cột `OverlaidCollectionWheelColumn` dưới chung một plinth.
 //
 //  Nằm cạnh `TableWheelPairPicker` trong `TwoColumn/` vì cùng một lý do: thư
 //  mục chia theo SỐ CỘT, và cách xếp hai cột thì giống nhau ở cả hai cách
@@ -34,30 +34,49 @@ struct CollectionWheelPairPicker: View {
 
   var metrics: CollectionWheelMetrics = .default
 
+  @State private var leadingScrollSync = OverlaidWheelScrollSync()
+  @State private var trailingScrollSync = OverlaidWheelScrollSync()
+
   var body: some View {
     ZStack {
-      WheelPlinth(unitLabel: unitLabel, height: metrics.centerRowHeight)
-
-      HStack(spacing: 0) {
-        CollectionWheelColumn(
-          values: leadingValues,
-          selectedIndex: $leadingIndex,
-          metrics: metrics
-        )
-        .frame(width: leadingWidth)
-
-        Text(separator)
-          .font(.system(size: metrics.fontSize, weight: .bold))
-          .frame(width: separatorWidth)
-
-        CollectionWheelColumn(
-          values: trailingValues,
-          selectedIndex: $trailingIndex,
-          metrics: metrics
-        )
-        .frame(width: trailingWidth)
-      }
+      plinth
+      overlaidColumns(.unselected)
+      overlaidColumns(.selected)
+        .mask { plinth }
+        .allowsHitTesting(false)
     }
     .frame(height: metrics.height)
+  }
+
+  private var plinth: WheelPlinth {
+    WheelPlinth(unitLabel: unitLabel, height: metrics.centerRowHeight)
+  }
+
+  private func overlaidColumns(_ appearance: OverlaidWheelAppearance) -> some View {
+    HStack(spacing: 0) {
+      OverlaidCollectionWheelColumn(
+        values: leadingValues,
+        selectedIndex: $leadingIndex,
+        metrics: metrics,
+        appearance: appearance,
+        scrollSync: leadingScrollSync
+      )
+      .frame(width: leadingWidth)
+
+      Text(separator)
+        .font(.system(size: metrics.fontSize, weight: .bold))
+        .foregroundStyle(appearance == .unselected ? Color.gray : Color.primary)
+        .frame(width: separatorWidth)
+
+      OverlaidCollectionWheelColumn(
+        values: trailingValues,
+        selectedIndex: $trailingIndex,
+        metrics: metrics,
+        appearance: appearance,
+        scrollSync: trailingScrollSync
+      )
+      .frame(width: trailingWidth)
+    }
+    .frame(maxWidth: .infinity)
   }
 }

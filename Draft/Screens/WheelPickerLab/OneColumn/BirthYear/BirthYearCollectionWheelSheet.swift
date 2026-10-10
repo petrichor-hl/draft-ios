@@ -13,6 +13,7 @@ import SwiftUI
 
 struct BirthYearCollectionWheelSheet: View {
   @Binding var year: Int
+  let rendering: CollectionWheelRendering
 
   @Environment(\.dismiss) private var dismiss
   @State private var selectedIndex: Int
@@ -28,7 +29,8 @@ struct BirthYearCollectionWheelSheet: View {
     Array(earliestYear...currentYear)
   }
 
-  init(year: Binding<Int>) {
+  init(year: Binding<Int>, rendering: CollectionWheelRendering = .overlaidLists) {
+    self.rendering = rendering
     self._year = year
     self._selectedIndex = State(initialValue: Self.nearestIndex(to: year.wrappedValue))
   }
@@ -41,7 +43,8 @@ struct BirthYearCollectionWheelSheet: View {
 
       CollectionWheelPicker(
         values: Self.values.map { String($0) },
-        selectedIndex: $selectedIndex
+        selectedIndex: $selectedIndex,
+        rendering: rendering
       )
       .padding(.horizontal, 24)
       .padding(.vertical, 24)

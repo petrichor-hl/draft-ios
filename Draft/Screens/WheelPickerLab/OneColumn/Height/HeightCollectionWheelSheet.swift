@@ -15,6 +15,7 @@ import SwiftUI
 
 struct HeightCollectionWheelSheet: View {
   @Binding var valueCm: Int
+  let rendering: CollectionWheelRendering
 
   @Environment(\.dismiss) private var dismiss
   @State private var selectedIndex: Int
@@ -22,7 +23,8 @@ struct HeightCollectionWheelSheet: View {
   static let range = 120...220
   static let values: [Int] = Array(range)
 
-  init(valueCm: Binding<Int>) {
+  init(valueCm: Binding<Int>, rendering: CollectionWheelRendering = .overlaidLists) {
+    self.rendering = rendering
     self._valueCm = valueCm
     self._selectedIndex = State(initialValue: Self.nearestIndex(to: valueCm.wrappedValue))
   }
@@ -36,7 +38,8 @@ struct HeightCollectionWheelSheet: View {
       CollectionWheelPicker(
         values: Self.values.map { String($0) },
         selectedIndex: $selectedIndex,
-        unitLabel: "cm"
+        unitLabel: "cm",
+        rendering: rendering
       )
       .padding(.horizontal, 24)
       .padding(.vertical, 24)

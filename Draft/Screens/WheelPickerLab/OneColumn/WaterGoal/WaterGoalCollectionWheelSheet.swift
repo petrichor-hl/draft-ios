@@ -14,6 +14,7 @@ import SwiftUI
 
 struct WaterGoalCollectionWheelSheet: View {
   @Binding var valueMl: Int
+  let rendering: CollectionWheelRendering
 
   @Environment(\.dismiss) private var dismiss
   @State private var selectedIndex: Int
@@ -34,7 +35,8 @@ struct WaterGoalCollectionWheelSheet: View {
   /// `State(initialValue:)` chỉ ăn ở lần dựng đầu của một view identity — các
   /// lần SwiftUI dựng lại struct sau đó đều bỏ qua, nên không có chuyện nó ghi
   /// đè vị trí người dùng vừa cuộn tới.
-  init(valueMl: Binding<Int>) {
+  init(valueMl: Binding<Int>, rendering: CollectionWheelRendering = .overlaidLists) {
+    self.rendering = rendering
     self._valueMl = valueMl
     self._selectedIndex = State(initialValue: Self.nearestIndex(to: valueMl.wrappedValue))
   }
@@ -48,7 +50,8 @@ struct WaterGoalCollectionWheelSheet: View {
       CollectionWheelPicker(
         values: Self.values.map { String($0) },
         selectedIndex: $selectedIndex,
-        unitLabel: "ml"
+        unitLabel: "ml",
+        rendering: rendering
       )
       .padding(.horizontal, 24)
       .padding(.vertical, 24)

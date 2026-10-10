@@ -34,33 +34,54 @@ struct CollectionWheelTriplePicker: View {
 
   var metrics: CollectionWheelMetrics = CollectionWheelMetrics(fontSize: 30)
 
+  @State private var dayScrollSync = OverlaidWheelScrollSync()
+  @State private var monthScrollSync = OverlaidWheelScrollSync()
+  @State private var yearScrollSync = OverlaidWheelScrollSync()
+
   var body: some View {
     ZStack {
-      WheelPlinth(unitLabel: unitLabel, height: metrics.centerRowHeight)
-
-      HStack(spacing: 0) {
-        CollectionWheelColumn(
-          values: dayValues,
-          selectedIndex: $dayIndex,
-          metrics: metrics
-        )
-        .frame(width: dayWidth)
-
-        CollectionWheelColumn(
-          values: monthValues,
-          selectedIndex: $monthIndex,
-          metrics: metrics
-        )
-        .frame(width: monthWidth)
-
-        CollectionWheelColumn(
-          values: yearValues,
-          selectedIndex: $yearIndex,
-          metrics: metrics
-        )
-        .frame(width: yearWidth)
-      }
+      plinth
+      overlaidColumns(.unselected)
+      overlaidColumns(.selected)
+        .mask { plinth }
+        .allowsHitTesting(false)
     }
     .frame(height: metrics.height)
+  }
+
+  private var plinth: WheelPlinth {
+    WheelPlinth(unitLabel: unitLabel, height: metrics.centerRowHeight)
+  }
+
+  private func overlaidColumns(_ appearance: OverlaidWheelAppearance) -> some View {
+    HStack(spacing: 0) {
+      OverlaidCollectionWheelColumn(
+        values: dayValues,
+        selectedIndex: $dayIndex,
+        metrics: metrics,
+        appearance: appearance,
+        scrollSync: dayScrollSync
+      )
+      .frame(width: dayWidth)
+
+      OverlaidCollectionWheelColumn(
+        values: monthValues,
+        selectedIndex: $monthIndex,
+        metrics: metrics,
+        appearance: appearance,
+        scrollSync: monthScrollSync
+      )
+      .frame(width: monthWidth)
+
+      OverlaidCollectionWheelColumn(
+        values: yearValues,
+        selectedIndex: $yearIndex,
+        metrics: metrics,
+        appearance: appearance,
+        scrollSync: yearScrollSync
+      )
+      .frame(width: yearWidth)
+    }
+    .frame(maxWidth: .infinity)
   }
 }

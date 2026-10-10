@@ -4,19 +4,12 @@
 //
 //  Kho wheel picker. Đi từ ca đơn giản nhất — MỘT cột, bước không đều, có nhãn
 //  đơn vị — rồi hai cột (cân nặng, khoảng tuổi) và ba cột (ngày sự kiện), tất cả
-//  trên cùng một viên gạch `TableWheelColumn` / `CollectionWheelColumn` không
-//  sửa dòng nào.
+//  dùng column riêng cho table và từng cách dựng collection.
 //
 //  Mọi ca đều mở bằng `.sheet` với detent đo được, TRỪ khoảng tuổi — ca đó đẩy
 //  sang màn hình mới, và chỗ đó là cố ý: `Spacer` bị cấm trong sheet vì phá
 //  phép đo (xem `heightReader`) nhưng lại cần thiết ở màn đẩy. Cùng một nội
 //  dung, hai ràng buộc bố cục ngược nhau.
-//
-//  ⚠️ Component tự dựng ở đây CHỈ DÙNG API iOS 16. Target của Draft là 18.6 —
-//     con số 26.5 nhìn thấy trong project settings là mức của PROJECT, target
-//     đè lên nó — nên compiler vẫn nuốt trôi `scrollTargetBehavior` /
-//     `.scrollPosition` (iOS 17+). Lỡ tay dùng thì không có cảnh báo nào, chỉ
-//     là cả kho không mang đi đâu được nữa.
 //
 
 import SwiftUI
@@ -37,6 +30,7 @@ struct WheelPickerLabScreen: View {
   /// ngược. Lý do ở `AgeRangeTableWheelScreen`.
   @State private var ageRange = 25...45
 
+  @State private var rendering: CollectionWheelRendering = .overlaidLists
   @State private var presented: Sheet?
 
   /// Chiều cao ĐO ĐƯỢC của sheet đang mở — xem `.sheet` ở cuối `body`.
@@ -60,6 +54,15 @@ struct WheelPickerLabScreen: View {
 
   var body: some View {
     List {
+      Section("UICollectionView — 1 cột") {
+        Picker("Cách dựng", selection: $rendering) {
+          Text("Hai danh sách").tag(CollectionWheelRendering.overlaidLists)
+          Text("Hai mask mỗi cell").tag(CollectionWheelRendering.cellMasks)
+          Text("colorEffect").tag(CollectionWheelRendering.colorEffect)
+        }
+        .pickerStyle(.segmented)
+      }
+
       Section {
         row("Picker(.wheel) hệ thống", value: waterGoalMl, unit: "ml") { presented = .systemPicker }
         row("UITableView tự dựng", value: waterGoalMl, unit: "ml") { presented = .tableWheel }
@@ -284,15 +287,15 @@ struct WheelPickerLabScreen: View {
     case .tableWheel:
       WaterGoalTableWheelSheet(valueMl: $waterGoalMl)
     case .collectionWheel:
-      WaterGoalCollectionWheelSheet(valueMl: $waterGoalMl)
+      WaterGoalCollectionWheelSheet(valueMl: $waterGoalMl, rendering: rendering)
     case .heightTable:
       HeightTableWheelSheet(valueCm: $heightCm)
     case .heightCollection:
-      HeightCollectionWheelSheet(valueCm: $heightCm)
+      HeightCollectionWheelSheet(valueCm: $heightCm, rendering: rendering)
     case .birthYearTable:
       BirthYearTableWheelSheet(year: $birthYear)
     case .birthYearCollection:
-      BirthYearCollectionWheelSheet(year: $birthYear)
+      BirthYearCollectionWheelSheet(year: $birthYear, rendering: rendering)
     case .weightTable:
       WeightTableWheelSheet(tenths: $weightTenths)
     case .weightCollection:
